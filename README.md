@@ -1,1 +1,1 @@
-# Binary Beasts - OT Security Awareness Training
+# Binary Beasts - OT Security Awareness Training: Frontend
