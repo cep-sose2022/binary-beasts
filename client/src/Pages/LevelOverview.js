@@ -1,9 +1,11 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import service from "./../service";
 
 function LevelOverview() {
     let navigate = useNavigate();
 
+    // test for service
+    console.log(service.getLevel('level1'));
 
     return(
         <div>
