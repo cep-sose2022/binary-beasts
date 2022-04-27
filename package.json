@@ -1,0 +1,19 @@
+{
+  "name": "binarybeastsbackend",
+  "version": "1.0.0",
+  "description": "Backend for BinaryBeast's OT-Security Awareness Training",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BBeasts100/BinaryBeastsBackend.git"
+  },
+  "author": "BinaryBeasts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BBeasts100/BinaryBeastsBackend/issues"
+  },
+  "homepage": "https://github.com/BBeasts100/BinaryBeastsBackend#readme"
+}
