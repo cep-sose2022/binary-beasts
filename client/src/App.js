@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
 import Homepage from "./Pages/Homepage";
 import Leaderboard from './Pages/Leaderboard';
 import LevelOverview from './Pages/LevelOverview';
