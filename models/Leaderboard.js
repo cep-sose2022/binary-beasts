@@ -6,10 +6,6 @@ const leaderboardSchema = mongoose.Schema(
             type: String,
             required: [true, 'Please add a userName'],
         },
-        eventId: {
-            type: String,
-            required: [true, 'Please add a eventId'],
-        },
         levelId: {
             type: String,
             required: [true, 'Please add a levelId'],
