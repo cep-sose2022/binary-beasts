@@ -1,13 +1,15 @@
+const service = {};
+
 /**
  * get all data from backend for one level
  * @param levelName
  * @returns {any}
  */
-const getLevel = (levelName) => {
-    var xmlHttp = new XMLHttpRequest();
+service.getLevel = (levelName) => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/game/getLevel/${levelName}`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -15,11 +17,11 @@ const getLevel = (levelName) => {
  * get all levels from backend
  * @returns {any}
  */
-const getAllLevels = () => {
-    var xmlHttp = new XMLHttpRequest();
+service.getAllLevels = () => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/game/getAllLevels`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -28,11 +30,11 @@ const getAllLevels = () => {
  * @param levelId
  * @returns {any}
  */
-const getEvent = (levelId) => {
-    var xmlHttp = new XMLHttpRequest();
+service.getEvent = (levelId) => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/game/getEvent/${levelId}`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -41,11 +43,11 @@ const getEvent = (levelId) => {
  * @param eventId
  * @returns {any}
  */
-const getEventCard = (eventId) => {
-    var xmlHttp = new XMLHttpRequest();
+service.getEventCard = (eventId) => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/game//getEventCard/${eventId}`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -54,11 +56,11 @@ const getEventCard = (eventId) => {
  * @param cardId
  * @returns {any}
  */
-const getCard = (cardId) => {
-    var xmlHttp = new XMLHttpRequest();
+service.getCard = (cardId) => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/game/getCard/${cardId}`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -66,42 +68,40 @@ const getCard = (cardId) => {
  * get leaderboard from backend
  * @returns {any}
  */
- const getLeaderboard = () => {
-    var xmlHttp = new XMLHttpRequest();
+service.getLeaderboard = () => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/leaderboard/getLeaderboard`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
- }
+}
 
 /**
  * get leaderboard for a user from backend
  * @param username
  * @returns {any}
  */
- const getUserLeaderboard = (username) => {
-    var xmlHttp = new XMLHttpRequest();
+service.getUserLeaderboard = (username) => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", `http://localhost:5000/leaderboard/getUserLeaderboard/${username}`, false );
     xmlHttp.send( null );
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
- }
+}
 
 /**
  * get leaderboard for a user from backend
  * @param body
  * @returns {any}
  */
- const postUserLeaderboard = (body) => {
-    var xmlHttp = new XMLHttpRequest();
+service.postUserLeaderboard = (body) => {
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", `http://localhost:5000/leaderboard/postLeaderboard/`, false );
     xmlHttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     xmlHttp.send(body);
-    var jsonResponse = JSON.parse(xmlHttp.responseText);
+    const jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
- }
-
-
-module.exports = {
-    getLevel, getAllLevels, getEvent, getEventCard, getCard, getLeaderboard, getUserLeaderboard, postUserLeaderboard
 }
+
+
+module.exports = service;
