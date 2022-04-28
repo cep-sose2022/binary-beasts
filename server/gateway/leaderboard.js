@@ -1,5 +1,5 @@
 const express = require('express');
-const { getLeaderboard, getUserLeaderboard, postLeaderboard } = require("../controller/gameController");
+const { getLeaderboard, getUserLeaderboard, postLeaderboard } = require("../controller/leaderboardController");
 const gateway = express.Router();
 
 

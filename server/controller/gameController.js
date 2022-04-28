@@ -3,7 +3,6 @@ const Level = require('../models/levelModel');
 const Event = require('../models/eventModel');
 const EventCard = require('../models/cardEventModel');
 const Card = require('../models/cardModel');
-const Leaderboard = require('../models/leaderboardModel');
 
 /**
  * returns one level with all events and cards
@@ -79,39 +78,6 @@ const getCard =  asyncHandler(async (req, res) => {
     }
 })
 
-const getLeaderboard =  asyncHandler(async (req, res) => {
-    try {
-        const leaderboard = await Leaderboard.find();
-        console.log(leaderboard);
-        res.status(200).json({ leaderboard });
-    } catch (err) {
-        res.json({ message: err.message });
-    }
-})
-
-const getUserLeaderboard =  asyncHandler(async (req, res) => {
-    try {
-        const userLeaderboard = await Leaderboard.find({ username: req.params.username });
-        console.log(userLeaderboard);
-        res.status(200).json({ userLeaderboard });
-    } catch (err) {
-        res.json({ message: err.message });
-    }
-})
-
-const postLeaderboard =  asyncHandler(async (req, res) => {
-    try {
-        const userLevel = req.body;
-        console.log(userLevel);
-        const newLevelLeaderboard = new Leaderboard(userLevel);
-        await newLevelLeaderboard.save();
-        
-        res.status(200).json({ newLevelLeaderboard });
-    } catch (err) {
-        res.json({ message: err.message });
-    }
-})
-
 module.exports = {
-    getLevel, getAllLevels, getEvent, getEventCard, getCard, getLeaderboard, getUserLeaderboard, postLeaderboard
+    getLevel, getAllLevels, getEvent, getEventCard, getCard
 }
