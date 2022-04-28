@@ -1,21 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import service from "./../service";
 
 function LevelOverview() {
+
     let navigate = useNavigate();
-
-    // test for service
-    const levels = service.getAllLevels();
-    console.log('levels.....', levels);
-    const events = service.getEvent(levels[0]);
-    console.log('events.....', events);
-    const cards = service.getEventCard(events[0]);
-    console.log('cards.....', cards);
-    const card = service.getCard(cards[0]);
-    console.log('card.....', card);
-
-
-
 
     return(
         <div>
