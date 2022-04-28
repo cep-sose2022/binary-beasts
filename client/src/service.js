@@ -57,7 +57,43 @@ const getCard = (cardId) => {
     return xmlHttp.responseText;
 }
 
+/**
+ * get leaderboard from backend
+ * @returns {string}
+ */
+ const getLeaderboard = () => {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", `http://localhost:5000/leaderboard/getLeaderboard`, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+/**
+ * get leaderboard for a user from backend
+ * @param username
+ * @returns {string}
+ */
+ const getUserLeaderboard = (username) => {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", `http://localhost:5000/leaderboard/getUserLeaderboard/${username}`, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+/**
+ * get leaderboard for a user from backend
+ * @param body
+ * @returns {string}
+ */
+ const postUserLeaderboard = (body) => {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", `http://localhost:5000/leaderboard/postLeaderboard/`, false );
+    xmlHttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    xmlHttp.send(body);
+    return xmlHttp.responseText;
+}
+
 
 module.exports = {
-    getLevel, getAllLevels, getEvent, getEventCard, getCard
+    getLevel, getAllLevels, getEvent, getEventCard, getCard, getLeaderboard, getUserLeaderboard, postUserLeaderboard
 }
