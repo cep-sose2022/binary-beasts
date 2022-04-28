@@ -32,7 +32,14 @@ function Home(props) {
                   {instructionsOpen &&
                       <div id="how-to-play" name="how-to-play">
                           <h3>Spielanleitung</h3>
-                          <p>Es gibt Szenarien auf die du als </p>
+                          <p>Es gibt unterschiedliche Szenarien, die Sie durchlaufen werden. 
+                          Sie haben dabei freie Wahl, welches Sie wählen, aber wenn Sie eins begonnen haben, 
+                          müssen Sie es erst zu Ende spielen, bevor Sie andere spielen können.
+                          In jedem Szenario kommen Ereignisse auf die reagieren müssen, indem Sie Karten ausspielen.
+                          Dabei müssen Sie beachten, dass Sie jede Karte nur einmal benutzen können. 
+                          Haben Sie sich entschieden wie Sie auf das Ereignis reagieren und eine Karte gewählt, folgt das nächste Ereignis mit neuen Karten.
+                          Bei manchen Szenarien bleiben die alten Karten erhalten, aber darauf sollten Sie sich nicht verlassen.
+                           </p>
                       </div>
                   }
             </div>
