@@ -7,8 +7,11 @@ const connectDB = require('./config/db');
 const gameRoute = require('./gateway/game');
 const leaderboardRoute = require('./gateway/leaderboard');
 
-connectDB();
+const swaggerUi = require('swagger-ui-express'),
+    swaggerDocument = require('./../swagger.json');
 
+
+connectDB();
 
 const app = express();
 app.use(express.json())
@@ -24,19 +27,12 @@ app.use(function (req, res, next) {
     next();
 });
 
-/**
- * can be use when getting cors-problems
- */
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
-
 app.use('/game', gameRoute);
+
 app.use('/leaderboard', leaderboardRoute);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)
+);
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 

@@ -1,0 +1,176 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "CRUD operations - Binary Beasts",
+    "description": "CRUD operations - Binary Beasts"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+   "/game/getLevel/{name}": {
+     "get": {
+       "tags":["game"],
+       "description": "get one level",
+       "consumes": [
+         "application/x-www-form-urlencoded"
+       ],
+       "responses": {
+         "200": {
+           "description": "OK"
+         },
+         "401": {
+           "description": "UNAUTHORIZED"
+         },
+         "403": {
+           "description": "FORBIDDEN"
+         }
+       },
+       "parameters": [
+         {
+           "name": "name",
+           "in": "path",
+           "description": "level name",
+           "type": "string",
+           "required": true
+         }
+       ]
+     }
+   },
+    "/game/getAllLevels": {
+      "get": {
+        "tags":["game"],
+        "description": "get all levels",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/game/getEvent/{levelId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get all levels",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "levelId",
+            "in": "path",
+            "description": "level id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/game/getEventCard/{eventId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get all cards for one event",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "event id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/game/getCard/{cardId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get all cards for one event",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "path",
+            "description": "card id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/leaderboard/getLeaderboard": {
+      "get": {
+        "tags":["leaderboard"],
+        "description": "get all leaderboards",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": []
+      }
+    }
+  }
+}
+
+
