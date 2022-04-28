@@ -3,6 +3,7 @@ const Level = require('../models/levelModel');
 const Event = require('../models/eventModel');
 const EventCard = require('../models/cardEventModel');
 const Card = require('../models/cardModel');
+const Leaderboard = require('../models/leaderboardModel');
 
 const CardEvent = require('../models/cardEventModel');
 
@@ -62,6 +63,16 @@ const getCard =  asyncHandler(async (req, res) => {
     }
 })
 
+const getLeaderboard =  asyncHandler(async (req, res) => {
+    try {
+        const leaderboard = await Leaderboard.find();
+        console.log(leaderboard);
+        res.status(200).json({ leaderboard });
+    } catch (err) {
+        res.json({ message: err.message });
+    }
+})
+
 module.exports = {
-    getLevel, getEvent, getEventCard, getCard
+    getLevel, getEvent, getEventCard, getCard, getLeaderboard
 }

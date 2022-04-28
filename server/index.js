@@ -5,6 +5,7 @@ const path = require("path");
 const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
 const gameRoute = require('./gateway/game');
+const leaderboardRoute = require('./gateway/leaderboard');
 
 connectDB();
 
@@ -12,5 +13,7 @@ connectDB();
 const app = express();
 
 app.use('/game', gameRoute);
+app.use('/leaderboard', leaderboardRoute);
+
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 
