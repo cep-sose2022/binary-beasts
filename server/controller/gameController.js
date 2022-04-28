@@ -4,10 +4,28 @@ const Event = require('../models/eventModel');
 const EventCard = require('../models/cardEventModel');
 const Card = require('../models/cardModel');
 
-const getLevel =  asyncHandler(async (req, res) => {
+const CardEvent = require('../models/cardEventModel');
+
+const getLevel = asyncHandler(async (req, res) => {
     try {
-        const level = await Level.find();
-        console.log(level);
+        const level = await Level.find({name: req.params.name});
+        const levelId = level[0]._id.toHexString();
+        const events = await Event.find({levelId: levelId});
+        level.push({events});
+
+        for (let i = 0; i < level[1].events.length; i++) {
+            const cardEvents = await CardEvent.find({eventId: level[1].events[i]._id.toHexString()});
+            const ids = [];
+            cardEvents.forEach(e => ids.push(e.cardId));
+            const cards = [];
+            for (const id of ids) {
+                const card = await Card.findById(id);
+                cards.push(card);
+
+            }
+
+            level[1].events[i] = {cards};
+        }
         res.status(200).json({ level });
     } catch (err) {
         res.json({ message: err.message });
