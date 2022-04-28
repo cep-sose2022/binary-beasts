@@ -20,4 +20,4 @@ const leaderboardSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Leaderboard', leaderboardSchema, 'Leaderboard');
+module.exports = mongoose.model('Leaderboard', leaderboardSchema);
