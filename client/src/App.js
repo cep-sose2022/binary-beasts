@@ -5,15 +5,20 @@ import Leaderboard from './Pages/Leaderboard';
 import LevelOverview from './Pages/LevelOverview';
 import Progress from "./Pages/Progresspage";
 import Game from "./Pages/Game";
+import logo from "./images/logobb.png";
 
 function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to="/"> Home </Link>
-        <Link to="/progress"> Fortschritt </Link>
-        <Link to="/leaderboard"> Leaderboard </Link>
-        <Link to="/leveloverview"> Levels </Link>
+        <div class="logo"><img src={logo} alt="not found"></img></div>
+        {/* <div class="background"><img src={background} alt="not found"></img></div> */}
+        <div class ="navlinks">
+          <li><Link to="/"> Home </Link></li>
+          <li><Link to="/progress"> Fortschritt </Link></li>
+          <li><Link to="/leaderboard"> Leaderboard </Link></li>
+          <li><Link to="/leveloverview"> Levels </Link></li>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Homepage />}/>
