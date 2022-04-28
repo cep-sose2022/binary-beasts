@@ -15,9 +15,12 @@ const leaderboardSchema = mongoose.Schema(
             required: [true, 'Please add a score'],
         },
     },
+    { 
+        versionKey: false 
+    },
     {
         timestamps: false,
-    }
+    },
 )
 
 module.exports = mongoose.model('Leaderboard', leaderboardSchema, 'Leaderboard');

@@ -83,6 +83,19 @@ const getUserLeaderboard =  asyncHandler(async (req, res) => {
     }
 })
 
+const postLeaderboard =  asyncHandler(async (req, res) => {
+    try {
+        const userLevel = req.body;
+        console.log(userLevel);
+        const newLevelLeaderboard = new Leaderboard(userLevel);
+        await newLevelLeaderboard.save();
+        
+        res.status(200).json({ newLevelLeaderboard });
+    } catch (err) {
+        res.json({ message: err.message });
+    }
+})
+
 module.exports = {
-    getLevel, getEvent, getEventCard, getCard, getLeaderboard, getUserLeaderboard
+    getLevel, getEvent, getEventCard, getCard, getLeaderboard, getUserLeaderboard, postLeaderboard
 }
