@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const leaderboardSchema = mongoose.Schema(
     {
-        userName: {
+        username: {
             type: String,
             required: [true, 'Please add a userName'],
         },

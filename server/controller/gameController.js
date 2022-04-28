@@ -73,6 +73,16 @@ const getLeaderboard =  asyncHandler(async (req, res) => {
     }
 })
 
+const getUserLeaderboard =  asyncHandler(async (req, res) => {
+    try {
+        const userLeaderboard = await Leaderboard.find({ username: req.params.username });
+        console.log(userLeaderboard);
+        res.status(200).json({ userLeaderboard });
+    } catch (err) {
+        res.json({ message: err.message });
+    }
+})
+
 module.exports = {
-    getLevel, getEvent, getEventCard, getCard, getLeaderboard
+    getLevel, getEvent, getEventCard, getCard, getLeaderboard, getUserLeaderboard
 }
