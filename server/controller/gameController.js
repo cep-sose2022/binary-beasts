@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const Level = require('../models/levelModel');
 const Event = require('../models/eventModel');
+const EventCard = require('../models/cardEventModel');
 
 const getLevel =  asyncHandler(async (req, res) => {
     try {
@@ -22,6 +23,16 @@ const getEvent =  asyncHandler(async (req, res) => {
     }
 })
 
+const getEventCard =  asyncHandler(async (req, res) => {
+    try {
+        const eventCard = await EventCard.find({ eventId: req.params.eventId });
+        console.log(eventCard);
+        res.status(200).json({ eventCard });
+    } catch (err) {
+        res.json({ message: err.message });
+    }
+})
+
 module.exports = {
-    getLevel, getEvent
+    getLevel, getEvent, getEventCard
 }
