@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const cardEventSchema = mongoose.Schema(
     {
@@ -16,4 +16,4 @@ const cardEventSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('CardEvent', cardEventSchema)
+module.exports = mongoose.model('CardEvent', cardEventSchema, 'CardEvent');

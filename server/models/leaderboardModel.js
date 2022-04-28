@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const leaderboardSchema = mongoose.Schema(
     {
@@ -20,4 +20,4 @@ const leaderboardSchema = mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Leaderboard', leaderboardSchema)
+module.exports = mongoose.model('Leaderboard', leaderboardSchema);
