@@ -5,6 +5,7 @@ import LevelOverview from './Pages/LevelOverview';
 import Progress from "./Pages/Progresspage";
 import Game from "./Pages/Game";
 import logo from "./images/logobb.png";
+import './App.css';
 
 function App() {
   return (
