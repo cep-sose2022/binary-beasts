@@ -4,8 +4,9 @@ const Event = require('../models/eventModel');
 const EventCard = require('../models/cardEventModel');
 const Card = require('../models/cardModel');
 
-const CardEvent = require('../models/cardEventModel');
-
+/**
+ * returns one level with all events and cards
+ */
 const getLevel = asyncHandler(async (req, res) => {
     try {
         const level = await Level.find({name: req.params.name});
@@ -14,23 +15,38 @@ const getLevel = asyncHandler(async (req, res) => {
         level.push({events});
 
         for (let i = 0; i < level[1].events.length; i++) {
-            const cardEvents = await CardEvent.find({eventId: level[1].events[i]._id.toHexString()});
+            const cardEvents = await EventCard.find({eventId: level[1].events[i]._id.toHexString()});
             const ids = [];
             cardEvents.forEach(e => ids.push(e.cardId));
-            const cards = [];
+            const cards1 = [];
             for (const id of ids) {
                 const card = await Card.findById(id);
-                cards.push(card);
-
+                cards1.push(card);
             }
 
-            level[1].events[i] = {cards};
+            const cards = {
+                event: i + 1,
+                cards: cards1,
+            };
+            level.push(cards);
         }
         res.status(200).json({ level });
     } catch (err) {
         res.json({ message: err.message });
     }
-})
+});
+
+/**
+ * returns all levels
+ */
+const getAllLevels = asyncHandler(async (req, res) => {
+    try {
+        const allLevels = await Level.find();
+        res.status(200).json({ allLevels });
+    } catch (err) {
+        res.json({ message: err.message });
+    }
+});
 
 const getEvent =  asyncHandler(async (req, res) => {
     try {
@@ -63,5 +79,5 @@ const getCard =  asyncHandler(async (req, res) => {
 })
 
 module.exports = {
-    getLevel, getEvent, getEventCard, getCard
+    getLevel, getAllLevels, getEvent, getEventCard, getCard
 }
