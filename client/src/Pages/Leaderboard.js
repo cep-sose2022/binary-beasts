@@ -93,7 +93,7 @@ function merger(left,right){
     const arr = [];
 
     while(left.length && right.length){
-      if(left[0].score < right[0].score){
+      if(left[0].score > right[0].score){
         arr.push(left.shift())
       }else{
         arr.push(right.shift())
