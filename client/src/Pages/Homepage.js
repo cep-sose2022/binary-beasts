@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-
-
+import logo from "../images/logo_binary_beasts.png";
+import '../App.css';
 
 function Home(props) {
     let navigate = useNavigate();
@@ -14,34 +14,30 @@ function Home(props) {
 
     return(
         <div id="home-container" name="home-container">
-            <h1>Home Page</h1>
+            {/* <h1>Home Page</h1> */}
             <div id="home-info" name="home-info">
-                <h1>Name der Software</h1>
+
+                <h1>Willkommen bei Binary Beasts</h1>
+                <image src={logo}></image>
                 <p id="introduction" name="introduction">Kurze Einleitung</p>
             </div>
 
             <div id="user-login" name="user-login">
                 <label for="nickname">Nickname:</label>
-                <input id="nickname" name="nickname" type="text"  onChange={e => updateName(e)} ></input> 
-                <button onClick={()=> {
-                    navigate("/leveloverview");
-                    }
-                }
-                    >Spielen!
-                </button>
+
+                <input id="nickname" name="nickname" type="text"></input><br/>
             </div>
-            <div id="description" name="description">
-                <button id="instruction" name="instruction" 
-                onClick={(e)=> 
-                    {
-                        instructionsOpen ? setInstructionsOpen(false) : setInstructionsOpen(true); /* toggle button for how-to-play */
-                        
-                    } 
-                }
+            <div id="play"><button className="playbutton"onClick={()=> navigate("/leveloverview")}
+                    >Spielen
+            </button></div>
+            
+                <button id="instructionbutton" name="instruction" 
+                onClick={()=> {instructionsOpen ? setInstructionsOpen(false) : setInstructionsOpen(true)}} /* toggle button for how-to-play*/
                   >Spielanleitung
                 </button>
+                <div id="description">
                   {instructionsOpen &&
-                      <div id="how-to-play" name="how-to-play">
+                        <div id="how-to-play" name="how-to-play">
                           <h3>Spielanleitung</h3>
                           <p>Es gibt unterschiedliche Szenarien, die Sie durchlaufen werden. 
                           Sie haben dabei freie Wahl, welches Sie wählen, aber wenn Sie eins begonnen haben, 
@@ -53,7 +49,7 @@ function Home(props) {
                            </p>
                       </div>
                   }
-            </div>
+                  </div>
         </div>
     );
 }

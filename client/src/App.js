@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import Homepage from "./Pages/Homepage";
 import Leaderboard from './Pages/Leaderboard';
 import LevelOverview from './Pages/LevelOverview';
@@ -14,10 +14,10 @@ function App() {
         <div class="logo"><img src={logo} alt="not found"></img></div>
         {/* <div class="background"><img src={background} alt="not found"></img></div> */}
         <div class ="navlinks">
-          <li><Link to="/"> Home </Link></li>
-          <li><Link to="/progress"> Fortschritt </Link></li>
-          <li><Link to="/leaderboard"> Leaderboard </Link></li>
-          <li><Link to="/leveloverview"> Levels </Link></li>
+          <li><NavLink activeClassName="active" to="/"> Home </NavLink></li>
+          <li><NavLink activeClassName="active" to="/leveloverview"> Levels </NavLink></li>
+          <li><NavLink activeClassName="active" to="/progress"> Fortschritt </NavLink></li>
+          <li><NavLink activeClassName="active" to="/leaderboard"> Leaderboard </NavLink></li>
         </div>
       </nav>
       <Routes>
