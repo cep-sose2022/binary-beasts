@@ -104,20 +104,31 @@ a:hover{
 }
 .playbutton{
     text-transform: uppercase;
-    background-color: #48ffd5;
-    color: #0e2a47;
+    background-image: url("./images/background.PNG");
+    background-size: cover;
+
+    color: #48ffd5;
     width: 150px;
     height: 100px;
     font-size: 30px;
     border-radius: 35px;
-    border: 0px;
+    border: 40px;
+    border: #48ffd5;
+    border-width: thin;
+    border-style: solid;
 }
+.playbutton:hover{
+    background-image: none;
 
+    color: #0e2a47;
+    background-color: #48ffd5;
+}
 #instructionbutton{
+    
     text-transform: uppercase;
     background-image: url("./images/background.PNG");
     background-size: cover;
-    color: #ffffffce;
+    color: #ffffff;
     margin: auto;
     padding: 5px;
     border: 1px;
@@ -172,7 +183,7 @@ a:hover{
     background-image: none;
 
     color: #0e2a47;
-    background-color: #ffffffce; 
+    background-color: #ededed; 
 }
 
 #levelButton1{
