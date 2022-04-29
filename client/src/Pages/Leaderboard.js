@@ -1,13 +1,13 @@
 import React from "react";
 import service from "./../service";
 
-const leaderboard = service.getLeaderboard();
 
 
-function Leaderboard() {
-
+function Leaderboard(props) {
+    
     // test for service
-    console.log('Leaderboard: ', leaderboard);
+    const leaderboard = service.getLeaderboard();
+    console.log('.....Leaderboard: ', leaderboard);
     const userLeaderboard = service.getUserLeaderboard("test1");
     console.log('User-Leaderboard: ', userLeaderboard);
 
@@ -27,11 +27,27 @@ function Leaderboard() {
             <h1>Leaderboard-Ranking</h1>
             <div id="board-container" name="board-container">
                 <table id="board" name="board">
-                    <th>
-                        <td>User</td>
-                        <td>Score</td>
-                    </th>
+                    <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Score</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                 {
+                    sortUserScore(leaderboard.leaderboard).map(key => {
+                        return  (
+                            <tr key={key}>
+                                <td>
+                                    {key.username} 
+                                </td>
+                                <td>
+                                    {key.score}
+                                </td>
+                            </tr>
+                            )    
+                    })
+                    /*
                     Object.keys(leaderboard.leaderboard).map((key) => {
                         return  (
                         <tr>
@@ -44,31 +60,32 @@ function Leaderboard() {
                         </tr>
                         )    
                     })
+                    */
                 }
+                </tbody>
                 </table>
             </div>
+            <p>sortiert nach score</p> 
         </div>
     );
 }
 
-/*
-function sumScore(){
-    for (let i = 0; i < leaderboard.length; i++) {
-        
-        
-    }
-}
-*/
+//show users by name
+function sortUserName(){
 
-/*
-function sortUser(array,half = array.length/2){ //mergesort
+}
+
+
+// inspired by: https://reactgo.com/merge-sort-algorithm-javascript/
+//mergesort for ranking users after score
+function sortUserScore(array, half = array.length/2){ //input: leaderboard.leaderboard -> whole objects are sorted
     if(array.length < 2){
         return array
       }
     
       const left = array.splice(0,half); //left part of array
     
-      return merger(sortUser(left),sortUser(array))
+      return merger(sortUserScore(left),sortUserScore(array))
 }
 
 
@@ -76,7 +93,7 @@ function merger(left,right){
     const arr = [];
 
     while(left.length && right.length){
-      if(left[0] < right [0]){
+      if(left[0].score < right[0].score){
         arr.push(left.shift())
       }else{
         arr.push(right.shift())
@@ -86,6 +103,6 @@ function merger(left,right){
     return [...arr,...left,...right];
   
 }
-*/
+
 
 export default Leaderboard;
