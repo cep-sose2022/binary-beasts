@@ -23,9 +23,9 @@ function Leaderboard(props) {
 
 
     return(
-        <div>
+        <div id="board-container" name="board-container">
             <h1>Leaderboard-Ranking</h1>
-            <div id="board-container" name="board-container">
+            <div>
                 <table id="board" name="board">
                     <thead>
                     <tr>

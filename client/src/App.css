@@ -60,7 +60,7 @@ a:hover{
     background-image: url("./images/factory2.1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom;
+    background-position: center -80px;
     height: 89.1vh;
 
     display: grid;
@@ -124,7 +124,6 @@ a:hover{
     background-color: #48ffd5;
 }
 #instructionbutton{
-    
     text-transform: uppercase;
     background-image: url("./images/background.PNG");
     background-size: cover;
@@ -143,6 +142,7 @@ a:hover{
     width: 90vw;
     height: 7vh;
 }
+
 #how-to-play{
         background-image: url("./images/background.PNG");
         background-size: cover;
@@ -196,10 +196,20 @@ a:hover{
     top:-30px;
     left:380px; 
 }
-
 /* #level-overview-container h1{
     color: #0e2a47;
 } */
+
+/* Leaderboard */
+#board-container{
+    background-image: url("./images/oilrig.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -120px;
+    margin: auto;
+    height: 89.1vh;
+    display: grid;
+}
 
 /* Progress */
 #progress-container{
