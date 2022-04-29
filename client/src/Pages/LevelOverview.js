@@ -8,27 +8,27 @@ function LevelOverview() {
     console.log(service.getLevel('level1'));
 
     return(
-        <div>
-            <h1>Level-Übersicht</h1>
+        <div id="level-overview-container">
+            <h1> Level-Übersicht</h1>
             <ol>
                 <li>
-                    <button onClick={() => {
+                    <button id="levelButton1" className="levelButton"onClick={() => {
                         navigate("/game", {
                         state: {
                           levelid: 1
                         }
                     });
-                    }}>Level 1
+                    }}>1
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => {
+                    <button id="levelButton2" className="levelButton" onClick={() => {
                         navigate("/game", {
                         state: {
                           levelid: 2
                         }
                     });
-                    }}>Level 2
+                    }}>2
                     </button>
                 </li>
             </ol>
