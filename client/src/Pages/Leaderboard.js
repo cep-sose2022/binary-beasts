@@ -21,6 +21,7 @@ function Leaderboard(props) {
     //const postUserLeaderboard = service.postUserLeaderboard(body);
     //console.log('Post-User-Leaderboard: ', postUserLeaderboard);
 
+    let rank = 0;
 
     return(
         <div id="board-container" name="board-container">
@@ -29,15 +30,18 @@ function Leaderboard(props) {
                 <table id="board" name="board">
                     <thead>
                     <tr>
+                        <th>Platz</th>
                         <th>User</th>
-                        <th>Score</th>
+                        <th>Punkte</th>
                     </tr>
                     </thead>
                     <tbody>
                 {
                     sortUserScore(leaderboard.leaderboard).map(key => {
+                        rank++; //rank starts with 0 -> increase before adding new user
                         return  (
                             <tr key={key}>
+                                <td>{rank}</td>
                                 <td>
                                     {key.username} 
                                 </td>
@@ -65,7 +69,6 @@ function Leaderboard(props) {
                 </tbody>
                 </table>
             </div>
-            <p>sortiert nach score</p> 
         </div>
     );
 }
