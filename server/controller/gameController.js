@@ -4,80 +4,136 @@ const Event = require('../models/eventModel');
 const EventCard = require('../models/cardEventModel');
 const Card = require('../models/cardModel');
 
-/**
- * returns one level with all events and cards
- */
-const getLevel = asyncHandler(async (req, res) => {
-    try {
-        const level = await Level.find({name: req.params.name});
-        const levelId = level[0]._id.toHexString();
-        const events = await Event.find({levelId: levelId});
-        level.push({events});
+const gameController = {};
 
-        for (let i = 0; i < level[1].events.length; i++) {
-            const cardEvents = await EventCard.find({eventId: level[1].events[i]._id.toHexString()});
+/**
+ * @desc get one level with all events and cards
+ * @route GET /game/getLevel
+ * @access public
+ */
+gameController.getLevel = asyncHandler(async (req, res) => {
+    try {
+        // levelSchema to return
+        let tempLevel1 = {
+            _id: String,
+            name: String,
+            events: {type: Object}
+        };
+
+        const tempLevel2 = await Level.find({name: req.params.name});
+        tempLevel1._id = tempLevel2[0].id;
+        tempLevel1.name = tempLevel2[0].name;
+        const levelId = tempLevel1._id;
+        const events = await Event.find({levelId: levelId});
+        for (let i = 0; i < events.length; i++) {
+            // eventSchema to return
+            let event =  {
+                _id: String,
+                name: String,
+                text: Array,
+                levelId: String,
+                cards: {type: Object}
+            };
+            event._id  = events[i]._id;
+            event.name  = events[i].name;
+            event.text  = events[i].text;
+            event.levelId  = events[i].levelId;
+            tempLevel1.events[i] = event;
+        }
+
+        for (let i = 0; i < Object.keys(tempLevel1.events).length - 1; i++) {
+            const cardEvents = await EventCard.find({eventId: tempLevel1.events[i]._id.toHexString()});
             const ids = [];
             cardEvents.forEach(e => ids.push(e.cardId));
             const cards1 = [];
             for (const id of ids) {
                 const card = await Card.findById(id);
-                cards1.push(card);
-            }
+                let cards =  {
+                    // cardSchema to return
+                    _id: String,
+                    name: String,
+                    text: Array,
+                    points: Number,
+                    nextEvent: Number,
+                    nextImage: String
 
-            const cards = {
-                event: i + 1,
-                cards: cards1,
-            };
-            level.push(cards);
+                };
+
+                cards._id  = card._id;
+                cards.name  = card.name;
+                cards.text  = card.text;
+                cards.points  = card.points;
+                cards.nextEvent  = card.nextEvent;
+                cards1.push(cards);
+            }
+            tempLevel1.events[i].cards = cards1;
         }
+
+        const level = tempLevel1;
+
         res.status(200).json({ level });
     } catch (err) {
-        res.json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
 });
 
 /**
- * returns all levels
+ * @desc get all levels
+ * @route GET /game/getAllLevels
+ * @access public
  */
-const getAllLevels = asyncHandler(async (req, res) => {
+gameController.getAllLevels = asyncHandler(async (req, res) => {
     try {
         const allLevels = await Level.find();
         res.status(200).json({ allLevels });
     } catch (err) {
-        res.json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
 });
 
-const getEvent =  asyncHandler(async (req, res) => {
+/**
+ * @desc get all events for one level
+ * @route GET /game/getEvents
+ * @access public
+ */
+gameController.getEvents =  asyncHandler(async (req, res) => {
     try {
         const event = await Event.find({ levelId: req.params.levelId });
         console.log(event);
         res.status(200).json({ event });
     } catch (err) {
-        res.json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
 })
 
-const getEventCard =  asyncHandler(async (req, res) => {
+/**
+ * @desc get all cards for one event
+ * @route GET /game/getEventCards
+ * @access public
+ */
+gameController.getEventCards =  asyncHandler(async (req, res) => {
     try {
         const eventCard = await EventCard.find({ eventId: req.params.eventId });
         console.log(eventCard);
         res.status(200).json({ eventCard });
     } catch (err) {
-        res.json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
 })
 
-const getCard =  asyncHandler(async (req, res) => {
+/**
+ * @desc get one card
+ * @route GET /game/getCard
+ * @access public
+ */
+gameController.getCard =  asyncHandler(async (req, res) => {
     try {
         const card = await Card.findById(req.params.cardId);
         console.log(card);
         res.status(200).json({ card });
     } catch (err) {
-        res.json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
 })
 
-module.exports = {
-    getLevel, getAllLevels, getEvent, getEventCard, getCard
-}
+module.exports = gameController;

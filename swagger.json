@@ -1,0 +1,292 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "CRUD operations - Binary Beasts",
+    "description": "CRUD operations - Binary Beasts"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+   "/game/getLevel/{name}": {
+     "get": {
+       "tags":["game"],
+       "description": "get one level with all events and cards",
+       "consumes": [
+         "application/x-www-form-urlencoded"
+       ],
+       "responses": {
+         "200": {
+           "description": "OK"
+         },
+         "401": {
+           "description": "UNAUTHORIZED"
+         },
+         "403": {
+           "description": "FORBIDDEN"
+         }
+       },
+       "parameters": [
+         {
+           "name": "name",
+           "in": "path",
+           "description": "level name",
+           "type": "string",
+           "required": true
+         }
+       ]
+     }
+   },
+    "/game/getAllLevels": {
+      "get": {
+        "tags":["game"],
+        "description": "get all levels",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/game/getEvents/{levelId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get all events for one level",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "levelId",
+            "in": "path",
+            "description": "level id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/game/getEventCards/{eventId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get all cards for one event",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "event id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/game/getCard/{cardId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get one card",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "path",
+            "description": "card id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/leaderboard/getLeaderboard": {
+      "get": {
+        "tags":["leaderboard"],
+        "description": "get all leaderboards",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/leaderboard/getUserLeaderboard/{username}": {
+      "get": {
+        "tags":["leaderboard"],
+        "description": "get all leaderboards",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "username",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/leaderboard/postLeaderboard": {
+      "post": {
+        "tags":["leaderboard"],
+        "description": "post new entire in Leaderboard collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "leaderBoard data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "levelId": {
+                  "type": "string"
+                },
+                "score": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/leaderboard/deleteLeaderboard": {
+      "delete": {
+        "tags":["internal"],
+        "description": "delete all entries in Leaderboard collection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/leaderboard/getSocres": {
+      "get": {
+        "tags":["leaderboard"],
+        "description": "get a sorted list from LeaderBoard collection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          },
+          "403": {
+            "description": "FORBIDDEN"
+          }
+        },
+        "parameters": []
+      }
+    }
+  }
+}
+
+
