@@ -1,13 +1,11 @@
 const express = require('express');
-const controler = require("../controller/gameController");
-const {getLevel, getAllLevels, getEvent, getEventCard, getCard} = require("../controller/gameController");
+const gameController = require("../controller/gameController");
 const gateway = express.Router();
 
-gateway.route('/getLevel/:name').get(getLevel);
-gateway.route('/getAllLevels').get(getAllLevels);
-gateway.route('/getEvent/:levelId').get(getEvent);
-gateway.route('/getEventCard/:eventId').get(getEventCard);
-gateway.route('/getCard/:cardId').get(getCard);
-
+gateway.route('/getLevel/:name').get(gameController.getLevel);
+gateway.route('/getAllLevels').get(gameController.getAllLevels);
+gateway.route('/getEvents/:levelId').get(gameController.getEvents);
+gateway.route('/getEventCards/:eventId').get(gameController.getEventCards);
+gateway.route('/getCard/:cardId').get(gameController.getCard);
 
 module.exports = gateway;
