@@ -1,4 +1,6 @@
+const backendUrl = 'http://localhost:5000';
 const service = {};
+let jsonResponse;
 
 /**
  * get all data from backend for one level
@@ -7,9 +9,9 @@ const service = {};
  */
 service.getLevel = (levelName) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/game/getLevel/${levelName}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/getLevel/${levelName}`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -19,9 +21,9 @@ service.getLevel = (levelName) => {
  */
 service.getAllLevels = () => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/game/getAllLevels`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/getAllLevels`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -30,11 +32,11 @@ service.getAllLevels = () => {
  * @param levelId
  * @returns {any}
  */
-service.getEvent = (levelId) => {
+service.getEvents = (levelId) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/game/getEvent/${levelId}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/getEvents/${levelId}`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -43,11 +45,11 @@ service.getEvent = (levelId) => {
  * @param eventId
  * @returns {any}
  */
-service.getEventCard = (eventId) => {
+service.getEventCards = (eventId) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/game//getEventCard/${eventId}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game//getEventCards/${eventId}`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -58,9 +60,9 @@ service.getEventCard = (eventId) => {
  */
 service.getCard = (cardId) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/game/getCard/${cardId}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/getCard/${cardId}`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -70,9 +72,9 @@ service.getCard = (cardId) => {
  */
 service.getLeaderboard = () => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/leaderboard/getLeaderboard`, false );
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getLeaderboard`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
@@ -83,23 +85,42 @@ service.getLeaderboard = () => {
  */
 service.getUserLeaderboard = (username) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `http://localhost:5000/leaderboard/getUserLeaderboard/${username}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getUserLeaderboard/${username}`, false );
     xmlHttp.send( null );
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
 /**
- * get leaderboard for a user from backend
- * @param body
+ * sends leaderboard data to server
+ * @param username
+ * @param levelId
+ * @param score
  * @returns {any}
  */
-service.postUserLeaderboard = (body) => {
+service.postUserLeaderboard = (username, levelId, score) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "POST", `http://localhost:5000/leaderboard/postLeaderboard/`, false );
+    const body = ({
+        username: username,
+        levelId: levelId,
+        score: score
+    });
+    xmlHttp.open( "POST", `${backendUrl}/leaderboard/postLeaderboard/`, false );
     xmlHttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    xmlHttp.send(body);
-    const jsonResponse = JSON.parse(xmlHttp.responseText);
+    xmlHttp.send(JSON.stringify(body));
+    jsonResponse = JSON.parse(xmlHttp.responseText);
+    return jsonResponse;
+}
+
+/**
+ * get a sorted list for users scores from backend
+ * @returns {any}
+ */
+service.getSocres = () => {
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getSocres`, false );
+    xmlHttp.send( null );
+    jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
 }
 
