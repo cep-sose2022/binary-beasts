@@ -6,6 +6,6 @@ gateway.route('/getLeaderboard').get(leaderBoardController.getLeaderboard);
 gateway.route('/getUserLeaderboard/:username').get(leaderBoardController.getUserLeaderboard);
 gateway.route('/postLeaderboard').post(leaderBoardController.postLeaderboard);
 gateway.route('/deleteLeaderboard').delete(leaderBoardController.deleteLeaderboard); // internal
-gateway.route('/getSocres').get(leaderBoardController.getSocres);
+gateway.route('/getScores').get(leaderBoardController.getScores);
 
 module.exports = gateway;

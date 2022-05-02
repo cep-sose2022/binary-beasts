@@ -83,7 +83,7 @@ leaderBoardController.deleteLeaderboard =  asyncHandler(async (req, res) => {
  * @route GET /leaderboard/getSocres
  * @access public
  */
-leaderBoardController.getSocres =  asyncHandler(async (req, res) => {
+leaderBoardController.getScores =  asyncHandler(async (req, res) => {
     try {
         const userLeaderboard = await Leaderboard.find();
         let users = [];
