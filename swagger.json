@@ -12,7 +12,7 @@
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
-   "/game/getLevel/{name}": {
+   "/game/get-level/{name}": {
      "get": {
        "tags":["game"],
        "description": "get one level with all events and cards",
@@ -41,7 +41,7 @@
        ]
      }
    },
-    "/game/getAllLevels": {
+    "/game/get-all-levels": {
       "get": {
         "tags":["game"],
         "description": "get all levels",
@@ -62,7 +62,36 @@
         "parameters": []
       }
     },
-    "/game/getEvents/{levelId}": {
+    "/game/get-level-name/{levelId}": {
+      "get": {
+        "tags":["game"],
+        "description": "get level name",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "levelId",
+            "in": "path",
+            "description": "level id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/game/get-events/{levelId}": {
       "get": {
         "tags":["game"],
         "description": "get all events for one level",
@@ -91,7 +120,7 @@
         ]
       }
     },
-    "/game/getEventCards/{eventId}": {
+    "/game/get-event-cards/{eventId}": {
       "get": {
         "tags":["game"],
         "description": "get all cards for one event",
@@ -120,7 +149,7 @@
         ]
       }
     },
-    "/game/getCard/{cardId}": {
+    "/game/get-card/{cardId}": {
       "get": {
         "tags":["game"],
         "description": "get one card",
@@ -149,7 +178,7 @@
         ]
       }
     },
-    "/leaderboard/getLeaderboard": {
+    "/leaderboard/get-leaderboard": {
       "get": {
         "tags":["leaderboard"],
         "description": "get all leaderboards",
@@ -170,7 +199,7 @@
         "parameters": []
       }
     },
-    "/leaderboard/getUserLeaderboard/{username}": {
+    "/leaderboard/get-user-leaderboard/{username}": {
       "get": {
         "tags":["leaderboard"],
         "description": "get all leaderboards",
@@ -199,7 +228,7 @@
         ]
       }
     },
-    "/leaderboard/postLeaderboard": {
+    "/leaderboard/post-leaderboard": {
       "post": {
         "tags":["leaderboard"],
         "description": "post new entire in Leaderboard collection",
@@ -244,7 +273,7 @@
         ]
       }
     },
-    "/leaderboard/deleteLeaderboard": {
+    "/leaderboard/delete-leaderboard": {
       "delete": {
         "tags":["internal"],
         "description": "delete all entries in Leaderboard collection",
@@ -265,7 +294,7 @@
         "parameters": []
       }
     },
-    "/leaderboard/getScores": {
+    "/leaderboard/get-scores": {
       "get": {
         "tags":["leaderboard"],
         "description": "get a sorted list from LeaderBoard collection",

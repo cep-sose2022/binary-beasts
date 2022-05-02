@@ -10,6 +10,7 @@ const leaderboardRoute = require('./gateway/leaderboard');
 const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./../swagger.json');
 
+const frontend = 'http://localhost:3000';
 
 connectDB();
 
@@ -20,7 +21,7 @@ app.use(express.json())
  * can be use when getting cors-problems
  */
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', frontend);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -31,8 +32,6 @@ app.use('/game', gameRoute);
 
 app.use('/leaderboard', leaderboardRoute);
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)
-);
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 

@@ -8,7 +8,7 @@ const gameController = {};
 
 /**
  * @desc get one level with all events and cards
- * @route GET /game/getLevel
+ * @route GET /game/get-level/${name}
  * @access public
  */
 gameController.getLevel = asyncHandler(async (req, res) => {
@@ -79,7 +79,7 @@ gameController.getLevel = asyncHandler(async (req, res) => {
 
 /**
  * @desc get all levels
- * @route GET /game/getAllLevels
+ * @route GET /game/get-all-levels
  * @access public
  */
 gameController.getAllLevels = asyncHandler(async (req, res) => {
@@ -92,8 +92,23 @@ gameController.getAllLevels = asyncHandler(async (req, res) => {
 });
 
 /**
+ * @desc get level name
+ * @route GET /game/get-level-name/{levelId}
+ * @access public
+ */
+gameController.getLevelName = asyncHandler(async (req, res) =>{
+    try {
+        const level = await Level.findById(req.params.levelId);
+        const levelName = level.name;
+        res.status(200).json({ levelName });
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+/**
  * @desc get all events for one level
- * @route GET /game/getEvents
+ * @route GET /game/get-events/${levelId}
  * @access public
  */
 gameController.getEvents =  asyncHandler(async (req, res) => {
@@ -108,7 +123,7 @@ gameController.getEvents =  asyncHandler(async (req, res) => {
 
 /**
  * @desc get all cards for one event
- * @route GET /game/getEventCards
+ * @route GET /game/get-event-cards/${eventId}
  * @access public
  */
 gameController.getEventCards =  asyncHandler(async (req, res) => {
@@ -123,7 +138,7 @@ gameController.getEventCards =  asyncHandler(async (req, res) => {
 
 /**
  * @desc get one card
- * @route GET /game/getCard
+ * @route GET /game/get-card/${cardId}
  * @access public
  */
 gameController.getCard =  asyncHandler(async (req, res) => {
