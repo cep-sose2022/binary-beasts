@@ -9,7 +9,7 @@ let jsonResponse;
  */
 service.getLevel = (levelName) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/getLevel/${levelName}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/get-level/${levelName}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -21,7 +21,20 @@ service.getLevel = (levelName) => {
  */
 service.getAllLevels = () => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/getAllLevels`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/get-all-levels`, false );
+    xmlHttp.send( null );
+    jsonResponse = JSON.parse(xmlHttp.responseText);
+    return jsonResponse;
+}
+
+/**
+ * returns level name
+ * @param levelId
+ * @returns {any}
+ */
+service.getLevelName = (levelId) => {
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", `${backendUrl}/game/get-level-name/${levelId}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -34,7 +47,7 @@ service.getAllLevels = () => {
  */
 service.getEvents = (levelId) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/getEvents/${levelId}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/get-events/${levelId}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -47,7 +60,7 @@ service.getEvents = (levelId) => {
  */
 service.getEventCards = (eventId) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game//getEventCards/${eventId}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/get-event-cards/${eventId}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -60,7 +73,7 @@ service.getEventCards = (eventId) => {
  */
 service.getCard = (cardId) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/getCard/${cardId}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/get-card/${cardId}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -72,7 +85,7 @@ service.getCard = (cardId) => {
  */
 service.getLeaderboard = () => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getLeaderboard`, false );
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/get-leaderboard`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -85,7 +98,7 @@ service.getLeaderboard = () => {
  */
 service.getUserLeaderboard = (username) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getUserLeaderboard/${username}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/get-user-leaderboard/${username}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
@@ -105,7 +118,7 @@ service.postUserLeaderboard = (username, levelId, score) => {
         levelId: levelId,
         score: score
     });
-    xmlHttp.open( "POST", `${backendUrl}/leaderboard/postLeaderboard/`, false );
+    xmlHttp.open( "POST", `${backendUrl}/leaderboard/post-leaderboard/`, false );
     xmlHttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     xmlHttp.send(JSON.stringify(body));
     jsonResponse = JSON.parse(xmlHttp.responseText);
@@ -118,7 +131,7 @@ service.postUserLeaderboard = (username, levelId, score) => {
  */
 service.getScores = () => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getScores`, false );
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/get-scores`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
