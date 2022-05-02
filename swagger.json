@@ -265,7 +265,7 @@
         "parameters": []
       }
     },
-    "/leaderboard/getSocres": {
+    "/leaderboard/getScores": {
       "get": {
         "tags":["leaderboard"],
         "description": "get a sorted list from LeaderBoard collection",
