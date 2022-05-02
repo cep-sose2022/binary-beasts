@@ -116,9 +116,9 @@ service.postUserLeaderboard = (username, levelId, score) => {
  * get a sorted list for users scores from backend
  * @returns {any}
  */
-service.getSocres = () => {
+service.getScores = () => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getSocres`, false );
+    xmlHttp.open( "GET", `${backendUrl}/leaderboard/getScores`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
