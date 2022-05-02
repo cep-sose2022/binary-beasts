@@ -2,7 +2,7 @@ import React from "react";
 import service from "../service";
 
 const allLevels = service.getAllLevels().allLevels;
-const userBoard = service.getUserLeaderboard("Shamel").userLeaderboard; // TODO adjust username
+const userBoard = service.getUserLeaderboard("Tabea").userLeaderboard; // TODO adjust username
 
 function Progress() {
     return(
@@ -34,18 +34,24 @@ function calcProgress(){
 function displayLevelScores(){
     return(
         <table>
+            <thead>
             <tr>
                 <th>Level</th>
                 <th>Punkte</th>
             </tr>
+            </thead>
+            <tbody>
             {
-            userBoard.forEach(element => {
-                return(<tr>
-               <td>{allLevels.getLevelName(element.id)}</td>
-               <td>{element.score}</td>
-               </tr>)
+            userBoard.map(element => {
+                return(
+                    <tr key={element}>
+                    <td>{service.getLevelName(element.levelId).levelName}</td>
+                    <td>{element.score}</td>
+                    </tr>
+               )
             })
             }
+            </tbody>
         </table>
     )
 }
