@@ -5,7 +5,7 @@ const leaderBoardController = {};
 
 /**
  * @desc get all entries in LeaderBoard collection
- * @route GET /leaderboard/getLeaderboard
+ * @route GET /leaderboard/get-leaderboard
  * @access public
  */
 leaderBoardController.getLeaderboard =  asyncHandler(async (req, res) => {
@@ -20,7 +20,7 @@ leaderBoardController.getLeaderboard =  asyncHandler(async (req, res) => {
 
 /**
  * @desc get all entries in LeaderBoard collection for one user
- * @route GET /leaderboard/getUserLeaderboard
+ * @route GET /leaderboard/get-user-leaderboard/${username}
  * @access public
  */
 leaderBoardController.getUserLeaderboard =  asyncHandler(async (req, res) => {
@@ -35,7 +35,7 @@ leaderBoardController.getUserLeaderboard =  asyncHandler(async (req, res) => {
 
 /**
  * @desc post new entire in Leaderboard collection
- * @route POST /leaderboard/postLeaderboard
+ * @route POST /leaderboard/post-leaderboard
  * @access public
  */
 leaderBoardController.postLeaderboard =  asyncHandler(async (req, res) => {
@@ -63,7 +63,7 @@ leaderBoardController.postLeaderboard =  asyncHandler(async (req, res) => {
 
 /**
  * @desc delete all entries in Leaderboard collection
- * @route DELETE /leaderboard/deleteLeaderboard
+ * @route DELETE /leaderboard/delete-leaderboard
  * @access public
  */
 leaderBoardController.deleteLeaderboard =  asyncHandler(async (req, res) => {
@@ -80,7 +80,7 @@ leaderBoardController.deleteLeaderboard =  asyncHandler(async (req, res) => {
 
 /**
  * @desc return a sorted list from LeaderBoard collection
- * @route GET /leaderboard/getSocres
+ * @route GET /leaderboard/get-scores
  * @access public
  */
 leaderBoardController.getScores =  asyncHandler(async (req, res) => {
