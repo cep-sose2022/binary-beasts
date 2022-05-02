@@ -23,11 +23,11 @@
          "200": {
            "description": "OK"
          },
+         "400": {
+         "description": "BAD REQUEST"
+         },
          "401": {
            "description": "UNAUTHORIZED"
-         },
-         "403": {
-           "description": "FORBIDDEN"
          }
        },
        "parameters": [
@@ -52,11 +52,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": []
@@ -73,11 +73,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": [
@@ -102,11 +102,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": [
@@ -131,11 +131,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": [
@@ -160,11 +160,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": []
@@ -181,11 +181,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": [
@@ -210,11 +210,11 @@
           "201": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": [
@@ -255,11 +255,11 @@
           "204": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": []
@@ -276,11 +276,11 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "BAD REQUEST"
+          },
           "401": {
             "description": "UNAUTHORIZED"
-          },
-          "403": {
-            "description": "FORBIDDEN"
           }
         },
         "parameters": []
@@ -288,5 +288,3 @@
     }
   }
 }
-
-
