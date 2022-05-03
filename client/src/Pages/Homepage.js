@@ -12,7 +12,7 @@ function Home(props) {
 
   function checkInput() {
     console.log(lib.getNickname());
-    if (nameInputField.current.value !== null) { //input cannot be empty
+    if (nameInputField.current.value != "") { //input cannot be empty
       if (lib.getNickname() === null || lib.getNickname() == nameInputField.current.value) { // validate user login
         lib.setNickname(nameInputField.current.value);
         navigate("/leveloverview");
