@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import logo from "../images/logo_binary_beasts.png";
 import '../App.css';
+import lib from "../library/bib";
 
 function Home(props) {
     let navigate = useNavigate();
@@ -25,7 +26,7 @@ function Home(props) {
             <div id="user-login" name="user-login">
                 <label for="nickname">Nickname:</label>
 
-                <input id="nickname" name="nickname" type="text"></input><br/>
+                <input id="nickname" name="nickname" type="text" onChange={e => lib.setNickname(e.target.value)}/><br/>
             </div>
             <div id="play"><button className="playbutton"onClick={()=> navigate("/leveloverview")}
                     >Spielen
