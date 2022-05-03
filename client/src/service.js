@@ -7,9 +7,9 @@ let jsonResponse;
  * @param levelName
  * @returns {any}
  */
-service.getLevel = (levelName) => {
+service.getLevel = (levelToken) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/get-level/${levelName}`, false );
+    xmlHttp.open( "GET", `${backendUrl}/game/get-level/${levelToken}`, false );
     xmlHttp.send( null );
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse;
