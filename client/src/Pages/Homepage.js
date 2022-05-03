@@ -2,16 +2,23 @@ import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import logo from "../images/logo_binary_beasts.png";
 import '../App.css';
-import lib from "../library/bib";
+import {useCookies} from "react-cookie";
+
+import Footer from "./Footer";
+
 
 function Home(props) {
-    let navigate = useNavigate();
-    const [instructionsOpen, setInstructionsOpen] = useState(false); //for showing "Spielanleitung"
-    const [nickname, setNickname] = useState();
+  let navigate = useNavigate();
+  let textInput = React.createRef(); //create a reference
+  const [instructionsOpen, setInstructionsOpen] = useState(false); //for showing "Spielanleitung"
+  const [nickname, setNickname] = useState();
+  const [cookies, setCookie] = useCookies("user");
 
-    const updateName = (event) => { // changes name to the input value
-        setNickname(event.target.value);
-      };
+    function updateName(event){  // changes name to the input value
+        setNickname(textInput.current.value);
+        setCookie("user", textInput.current.value, {path: "/"}); //writes input into cookie
+        console.log(cookies.user);
+    }
 
     return(
         <div id="home-container" name="home-container">
@@ -26,9 +33,9 @@ function Home(props) {
             <div id="user-login" name="user-login">
                 <label for="nickname">Nickname:</label>
 
-                <input id="nickname" name="nickname" type="text" onChange={e => lib.setNickname(e.target.value)}/><br/>
+                <input id="nickname" name="nickname" ref={textInput} type="text"></input><br/>
             </div>
-            <div id="play"><button className="playbutton"onClick={()=> navigate("/leveloverview")}
+            <div id="play"><button className="playbutton"onClick={(e)=> {updateName(e); navigate("/leveloverview")}}
                     >Spielen
             </button></div>
             
@@ -51,6 +58,7 @@ function Home(props) {
                       </div>
                   }
                   </div>
+                  <Footer />
         </div>
     );
 }
