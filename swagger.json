@@ -12,7 +12,7 @@
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
-   "/game/get-level/{name}": {
+   "/game/get-level/{token}": {
      "get": {
        "tags":["game"],
        "description": "get one level with all events and cards",
@@ -32,9 +32,9 @@
        },
        "parameters": [
          {
-           "name": "name",
+           "name": "token",
            "in": "path",
-           "description": "level name",
+           "description": "level token",
            "type": "string",
            "required": true
          }

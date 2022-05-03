@@ -20,7 +20,7 @@ gameController.getLevel = asyncHandler(async (req, res) => {
             events: {type: Object}
         };
 
-        const tempLevel2 = await Level.find({name: req.params.name});
+        const tempLevel2 = await Level.find({token: req.params.token});
         tempLevel1._id = tempLevel2[0].id;
         tempLevel1.name = tempLevel2[0].name;
         const levelId = tempLevel1._id;
