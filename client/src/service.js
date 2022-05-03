@@ -4,7 +4,7 @@ let jsonResponse;
 
 /**
  * get all data from backend for one level
- * @param levelName
+ * @param levelToken
  * @returns {any}
  */
 service.getLevel = (levelToken) => {
