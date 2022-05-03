@@ -1,14 +1,16 @@
 import React from "react";
 import service from "../service";
+import lib from "../library/bib.js";
 
 const allLevels = service.getAllLevels().allLevels;
-const userBoard = service.getUserLeaderboard("Tabea").userLeaderboard; // TODO adjust username
+const userBoard = service.getUserLeaderboard(lib.getNickname()).userLeaderboard; 
 
 function Progress() {
     return(
         <div id="progress-container">
+            {console.log(lib.getNickname())}
             <div id="headline" name="headline">
-                <h1>Fortschritt - Shamel{/* TODO needs to be adapted */}</h1>
+                <h1>Fortschritt - {lib.getNickname()}</h1>
             </div>
             <div id="overview" name="overview">
                 <h2>Gesamt</h2>
