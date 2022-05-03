@@ -1,10 +1,7 @@
 import React from "react";
 import service from "./../service";
 
-
-
 function Leaderboard(props) {
-    
     // test for service
     const leaderboard = service.getLeaderboard();
     console.log('.....Leaderboard: ', leaderboard);
@@ -22,10 +19,9 @@ function Leaderboard(props) {
     //const postUserLeaderboard = service.postUserLeaderboard(body);
     //console.log('Post-User-Leaderboard: ', postUserLeaderboard);
 
-
     return(
         <div id="board-container" name="board-container">
-            <h1>Leaderboard-Ranking</h1>
+            {/* <h1>Leaderboard-Ranking</h1> */}
             <div>
                 <table id="board" name="board">
                     <thead>

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import levelbg from "../images/leveloverviewbackground1.png";
 
 function LevelOverview() {
 
@@ -6,9 +7,8 @@ function LevelOverview() {
 
     return(
         <div id="level-overview-container">
-            <h1> Level-Übersicht</h1>
-            <ol>
-                <li>
+            <div id="playfield">
+                    {/* <img id="levelbg" src={levelbg}></img> */}
                     <button id="levelButton1" className="levelButton"onClick={() => {
                         navigate("/game", {
                         state: {
@@ -17,8 +17,6 @@ function LevelOverview() {
                     });
                     }}>1
                     </button>
-                </li>
-                <li>
                     <button id="levelButton2" className="levelButton" onClick={() => {
                         navigate("/game", {
                         state: {
@@ -27,8 +25,7 @@ function LevelOverview() {
                     });
                     }}>2
                     </button>
-                </li>
-            </ol>
+            </div>
         </div>
     );
 }

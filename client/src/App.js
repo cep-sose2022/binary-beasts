@@ -13,11 +13,11 @@ function App() {
       <nav>
         <div className="logo"><img src={logo} alt="not found"></img></div>
         {/* <div class="background"><img src={background} alt="not found"></img></div> */}
-        <div className ="navlinks">
-          <li><NavLink activeclassname="active" to="/"> Home </NavLink></li>
-          <li><NavLink activeclassname="active" to="/leveloverview"> Levels </NavLink></li>
-          <li><NavLink activeclassname="active" to="/progress"> Fortschritt </NavLink></li>
-          <li><NavLink activeclassname="active" to="/leaderboard"> Leaderboard </NavLink></li>
+        <div class ="navlinks">
+          <NavLink activeClassName="active" to="/"> Home </NavLink>
+          <NavLink activeClassName="active" to="/leveloverview"> Levels </NavLink>
+          <NavLink activeClassName="active" to="/progress"> Fortschritt </NavLink>
+          <NavLink activeClassName="active" to="/leaderboard"> Leaderboard </NavLink>
         </div>
       </nav>
       <Routes>

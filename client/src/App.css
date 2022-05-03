@@ -3,99 +3,125 @@
     font-family: 'Roboto', sans-serif;
  margin: 0px;
  padding: 0px;
-
 }
 h1{
-    font-weight: 500;
+    font-weight: 50vmax;
 }
 div{
     color: #ffffffe8;
 }
 body{
     background-color: #ffffffce;
-    }
-
+}
 /* Nav */
-nav li a{ 
+nav a{ 
     text-decoration: none;
     color: #ffffffe8;
-    ;
+    font-size: clamp(1vmax,2vmax,2vmax);
+    text-transform: uppercase;
+    padding-left: 3vmax;
+    text-align: right;
+    vertical-align: middle;
 }
+.navlinks { 
+   margin: 0px;
+   display: flex;
+   flex-wrap: nowrap;
+}
+
 .active{
     color: #48ffd5;
 }
 nav{
-    background-image: url("./images/background.PNG");
+    background-image: url("./images/background.png");
+    width: 100%;
     background-size: cover;
-    align-content: left;
-    text-align: right;
-    height: 100px;
+
+    display: flex;
+    align-items: center; /* align vertical */
+    justify-content: right;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 9.7vh;
+
     border: 0px;
-    border-bottom: 3px;
+    border-bottom: 0.3vh;
     border-style: solid;
     border-color: #ffffffe8;
-}
+    min-height: 1.5rem;
 
-.navlinks li{
-    margin: 0 auto;
-
-    padding: 20px 15px 20px 50px;
-    text-transform: uppercase;
-    font-size: clamp(1rem,3vw,3.25rem);
-     display: inline-block;
 }
 a:hover{
     color: #48ffd5;
 }
-
-.logo img{
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-    float: left;
-    }
-
+.logo{
+    margin: auto;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+}
+ .logo img{
+    width: 8vh;
+    height: 8vh;
+    min-height: 2vmax;
+    min-width: 2vmax;
+/*     min-height: 2rem;
+    min-width: 2rem; */
+    margin-right: auto;
+}
 /* Home */
 #home-container{
     background-image: url("./images/factory2.1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center -80px;
-    height: 89.1vh;
+    background-position: center;
+    height: 90vh;
 
     display: grid;
     justify-items: center;
 }
 
 #home-info{
-    background-image: url("./images/background.PNG");
+    font-size: clamp(0.5vmax,0.5vmax,1vmax);
+    padding: 5px;
+    border: 0.1rem;
+    height: 8vh;
+    
+    background-image: url("./images/background.png");
     background-size: cover;
     color: #ffffffce;
     margin: auto;
-    padding: 5px;
-    border: 5px;
+    
     border-style: solid;
     border-color: #48ffd5;
     border-radius: 10px;
-    height: 10vh;
 }
-
-#introduction{
-}
-#user-login{
-    background-image: url("./images/background.PNG");
+#how-to-play{
+    font-size: 0.7vmax;
+    background-image: url("./images/background.png");
     background-size: cover;
     color: #ffffffce;
     margin: auto;
     padding: 5px;
-    border: 2px;
+    border: 0.1rem;
+    border-style: solid;
+    border-color: #48ffd5;
+    border-radius: 10px;
+}
+#user-login,#instructionbutton{  
+    background-image: url("./images/background.png");
+    background-size: cover;
+    color: #ffffffce;
+    margin: auto;
+    padding: 5px;
+    border: 0.1rem;
     border-style: solid;
     border-color: #48ffd5;
     border-radius: 10px;
 }
 #description{
     margin: auto;
-    height: 10vh;
+    height: 20vh;
     margin: auto;
 }
 #play{
@@ -104,15 +130,14 @@ a:hover{
 }
 .playbutton{
     text-transform: uppercase;
-    background-image: url("./images/background.PNG");
+    background-image: url("./images/background.png");
     background-size: cover;
 
     color: #48ffd5;
-    width: 150px;
-    height: 100px;
-    font-size: 30px;
-    border-radius: 35px;
-    border: 40px;
+    padding: 2vmax;
+    font-size: 2vmax;
+    border-radius: 5vmax;
+    border: 0.1rem;
     border: #48ffd5;
     border-width: thin;
     border-style: solid;
@@ -123,19 +148,6 @@ a:hover{
     color: #0e2a47;
     background-color: #48ffd5;
 }
-#instructionbutton{
-    text-transform: uppercase;
-    background-image: url("./images/background.PNG");
-    background-size: cover;
-    color: #ffffff;
-    margin: auto;
-    padding: 5px;
-    border: 1px;
-    border-style: solid;
-    border-color: #48ffd5;
-    border-radius: 10px;
-    height: 3vh;
-}
 
 #description{
     display: flex;
@@ -143,72 +155,100 @@ a:hover{
     height: 7vh;
 }
 
-#how-to-play{
-        background-image: url("./images/background.PNG");
-        background-size: cover;
-        color: #ffffffce;
-        margin: auto;
-        padding: 5px;
-        border: 2px;
-        border-style: solid;
-        border-color: #48ffd5;
-        border-radius: 10px;
-}
-
 /* leveloverview */
 #level-overview-container{
+    background-image: url("./images/factory2.1.png");
+    background-size: cover;
+    height: 90vh;
+
+
+    display: grid;
+    justify-items: center; 
+    align-items: center;
+}
+
+#playfield{
     background-image: url("./images/leveloverviewbackground1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: auto;
-    height: 89.1vh;
-    display: grid;
+
+width: 90vw;
+max-width: 95vw;
+max-height:85vh;
+min-height: 15rem;
+aspect-ratio: 2/1;
+
+    border: 0.1rem;
+    border: #48ffd5;
+    border-width: medium;
+    border-style: solid;
+    border-radius: 15px;
 }
 
 .levelButton{
-        background-image: url("./images/background.PNG");
+    font-size: 1.5vmin;    
+    background-image: url("./images/background.png");
         background-size: cover;
         color: #48ffd5;
         margin: auto;
-        border: 2px;
+        border: 0.2vmin;
         border-style: solid;
         border-color: #48ffd5;
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        height: 3vmin;
+        width: 3vmin;
+        position:relative; 
 }
 
 .levelButton:hover{
     background-image: none;
-
     color: #0e2a47;
     background-color: #ededed; 
 }
 
 #levelButton1{
-    position:relative; 
-    top:-80px;
-    left:235px; 
+top: 39%;
+left: 12.5%;
 }
+
 #levelButton2{
-    position:relative; 
-    top:-30px;
-    left:380px; 
+    top: 48%;
+    left: 18%;
 }
-/* #level-overview-container h1{
-    color: #0e2a47;
-} */
 
 /* Leaderboard */
 #board-container{
-    background-image: url("./images/oilrig.jpg");
+    background-image: url("./images/oilrig2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center -120px;
     margin: auto;
     height: 89.1vh;
     display: grid;
+    justify-content: center;
+}
+
+table,td,th{
+    background-color: #e7e7e764;
+    margin: 20px;
+    border: solid 1px;
+    border-collapse: collapse;
+    font-size: 30px;
+    color: #0b2037;
+    border-color: #ededed;
+}
+tr:nth-of-type(even){
+    background-color: #48ffd471;
+}
+
+th{
+    border: solid 1px;
+
+    border-bottom: solid 1px;
+    background-color: #0b2037ad;
+    color: #6dffdd;
+    border-color: #ededed;
 }
 
 /* Progress */
