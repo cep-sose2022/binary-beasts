@@ -265,3 +265,8 @@ th{
 .game {
     background-color: black;
 }
+
+.gameNavbar {
+    margin-left: 20px;
+    padding-left: 20px;
+}
