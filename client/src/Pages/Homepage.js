@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import logo from "../images/logo_binary_beasts.png";
 import '../App.css';
 import lib from "../library/bib";
 import Navbar from "../Navbar";
@@ -18,12 +17,9 @@ function Home(props) {
         <>
         <Navbar />
         <div id="home-container" name="home-container">
-            {/* <h1>Home Page</h1> */}
             <div id="home-info" name="home-info">
-
                 <h1>Willkommen bei Binary Beasts</h1>
-                <image src={logo}></image>
-                <p id="introduction" name="introduction">Kurze Einleitung</p>
+                 <p id="introduction" name="introduction">Kurze Einleitung</p>
             </div>
 
             <div id="user-login" name="user-login">

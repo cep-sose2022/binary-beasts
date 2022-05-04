@@ -9,13 +9,19 @@ function Game() {
     const location = useLocation();
     return(
         <>
-        <nav>
-            <div className="logo"><img src={logo} alt="not found"></img></div>
+        <nav className="gameNavbar">
             {/* <div class="background"><img src={background} alt="not found"></img></div> */}
-            <div className="gameNavbar">
-                <p>Punkte: </p>
-                <h1>Spiel</h1>
+            <div id="navlevelround"className="navgamecontent">
+                <p>Level: <span>1</span> </p>
+                <p>Round: <span>1</span> </p>
             </div>
+            <div className="navgamecontent">
+                <p>Time: <span>00:00</span> </p>
+            </div>
+            <div id="score" className="navgamecontent">
+                <p>Score: <span>40</span></p>
+            </div>
+            
         </nav>
         <div className="game">
             {/* <h2>Level {location.state.levelid}</h2> */}

@@ -4,9 +4,10 @@ import logo from "./images/logobb.png";
 
 function Navbar() {
     return(
-        <nav>
-        <div className="logo"><img src={logo} alt="not found"></img></div>
-        {/* <div class="background"><img src={background} alt="not found"></img></div> */}
+        <nav id="navmain">
+        <div className="logo">
+          <img src={logo} alt="not found"></img>
+        </div>
         <div class ="navlinks">
           <NavLink activeClassName="active" to="/"> Home </NavLink>
           <NavLink activeClassName="active" to="/leveloverview"> Levels </NavLink>

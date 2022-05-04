@@ -27,14 +27,14 @@ function LevelOverview() {
                     });
                     }}>2
                     </button>
-                    <button className="levelButton" onClick={() => {
+                    {/* <button className="levelButton" onClick={() => {
                         navigate("/game", {
                         state: {
                           levelid: 3
                         }
                     });
                     }}>3
-                    </button>
+                    </button> */}
             </div>
         </div>
         </>
