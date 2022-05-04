@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import logo from "../images/logo_binary_beasts.png";
 import '../App.css';
 import lib from "../library/bib";
+import Navbar from "../Navbar";
 
 function Home(props) {
     let navigate = useNavigate();
@@ -14,6 +15,8 @@ function Home(props) {
       };
 
     return(
+        <>
+        <Navbar />
         <div id="home-container" name="home-container">
             {/* <h1>Home Page</h1> */}
             <div id="home-info" name="home-info">
@@ -52,6 +55,7 @@ function Home(props) {
                   }
                   </div>
         </div>
+        </>
     );
 }
 

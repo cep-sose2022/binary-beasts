@@ -261,3 +261,7 @@ th{
     height: 89.1vh;
     display: grid;
 }
+
+.game {
+    background-color: black;
+}

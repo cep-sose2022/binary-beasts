@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import levelbg from "../images/leveloverviewbackground1.png";
+import Navbar from "../Navbar";
 
 function LevelOverview() {
 
     let navigate = useNavigate();
 
     return(
+        <>
+        <Navbar />
         <div id="level-overview-container">
             <div id="playfield">
                     {/* <img id="levelbg" src={levelbg}></img> */}
@@ -27,6 +29,7 @@ function LevelOverview() {
                     </button>
             </div>
         </div>
+        </>
     );
 }
 
