@@ -234,9 +234,9 @@ left: 12.5%;
     background-image: url("./images/oilrig2.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center -120px;
+    background-position: center center;
     margin: auto;
-    height: 89.1vh;
+    height: 90vh;
     display: grid;
     justify-content: center;
 }
@@ -249,6 +249,8 @@ table,td,th{
     font-size: 30px;
     color: #0b2037;
     border-color: #ededed;
+    text-align: left;
+    padding: 1vh;
 }
 tr:nth-of-type(even){
     background-color: #48ffd471;
@@ -256,7 +258,7 @@ tr:nth-of-type(even){
 
 th{
     border: solid 1px;
-
+    font-weight: 900;
     border-bottom: solid 1px;
     background-color: #0b2037ad;
     color: #6dffdd;
@@ -270,7 +272,7 @@ th{
     background-size: cover;
     background-position: center;
     margin: auto;
-    height: 89.1vh;
+    height: 90vh;
     display: grid;
 }
 
@@ -279,11 +281,11 @@ th{
     background-color: black;
 }
 .gameNavbar {
-    background-image: url(images/background2.png);
+    background-image: url(images/background2.jpg);
     background-size: cover;
     background-position: center;
 
-/*     background-color: #48ffd5;*/    
+/*background-color: #48ffd5;*/    
     display: flex;
     align-items: center; /* align vertical */
     justify-content: space-between;
