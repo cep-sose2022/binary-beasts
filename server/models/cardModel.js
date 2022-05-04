@@ -23,6 +23,10 @@ const cardSchema = mongoose.Schema(
             type: String,
             required: [true, 'Please add next Image'],
         },
+        nextEventText: {
+            type: Number,
+            required: [true, 'Please add next event text'],
+        }
     },
     {
         timestamps: false,

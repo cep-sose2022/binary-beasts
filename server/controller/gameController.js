@@ -55,7 +55,8 @@ gameController.getLevel = asyncHandler(async (req, res) => {
                     text: Array,
                     points: Number,
                     nextEvent: Number,
-                    nextImage: String
+                    nextImage: String,
+                    nextEventText: Number
                 };
 
                 cards._id  = card._id;
@@ -64,6 +65,7 @@ gameController.getLevel = asyncHandler(async (req, res) => {
                 cards.points  = card.points;
                 cards.nextEvent  = card.nextEvent;
                 cards.nextImage  = card.nextImage;
+                cards.nextEventText = card.nextEventText;
                 cards1.push(cards);
             }
             tempLevel1.events[i].cards = cards1;
