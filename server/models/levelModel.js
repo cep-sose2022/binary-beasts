@@ -6,6 +6,10 @@ const levelSchema = mongoose.Schema(
             type: String,
             required: [true, 'Please add a name '],
         },
+        token: {
+            type: String,
+            required: [true, 'Please add a token '],
+        },
         versionKey: false
     },
     {
