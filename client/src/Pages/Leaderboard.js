@@ -1,5 +1,6 @@
 import React from "react";
 import service from "./../service";
+import Navbar from "../Navbar";
 
 function Leaderboard(props) {
     // test for service
@@ -20,6 +21,8 @@ function Leaderboard(props) {
     //console.log('Post-User-Leaderboard: ', postUserLeaderboard);
 
     return(
+        <>
+        <Navbar />
         <div id="board-container" name="board-container">
             {/* <h1>Leaderboard-Ranking</h1> */}
             <div>
@@ -52,6 +55,7 @@ function Leaderboard(props) {
                 </table>
             </div>
         </div>
+        </>
     );
 }
 

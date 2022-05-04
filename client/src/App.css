@@ -14,33 +14,19 @@ body{
     background-color: #ffffffce;
 }
 /* Nav */
-nav a{ 
-    text-decoration: none;
-    color: #ffffffe8;
-    font-size: clamp(1vmax,2vmax,2vmax);
-    text-transform: uppercase;
-    padding-left: 3vmax;
-    text-align: right;
-    vertical-align: middle;
-}
-.navlinks { 
-   margin: 0px;
-   display: flex;
-   flex-wrap: nowrap;
-}
+#navmain{
+    width: 98vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-position: center;
 
-.active{
-    color: #48ffd5;
-}
-nav{
     background-image: url("./images/background.png");
-    width: 100%;
     background-size: cover;
+    background-position: center;
 
     display: flex;
     align-items: center; /* align vertical */
-    justify-content: right;
-    display: flex;
+    justify-content: space-around;
     flex-wrap: nowrap;
     height: 9.7vh;
 
@@ -49,26 +35,42 @@ nav{
     border-style: solid;
     border-color: #ffffffe8;
     min-height: 1.5rem;
+}
+.navlinks { 
+    width: 50vw;
 
-}
-a:hover{
-    color: #48ffd5;
-}
-.logo{
-    margin: auto;
-    margin-left: 0px;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+ }
+nav a{ 
+    text-decoration: none;
+    color: #ffffffe8;
+    font-size: clamp(1vmax,2vmax,2vmax);
+    text-transform: uppercase;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.logo{
+    width: 50vw;
+    display: flex;
+    justify-content: left;
 }
  .logo img{
     width: 8vh;
     height: 8vh;
     min-height: 2vmax;
     min-width: 2vmax;
-/*     min-height: 2rem;
-    min-width: 2rem; */
-    margin-right: auto;
 }
+
+.active{
+    color: #48ffd5;
+}
+a:hover{
+    color: #48ffd5;
+}
+
 /* Home */
 #home-container{
     background-image: url("./images/factory2.1.png");
@@ -89,6 +91,9 @@ a:hover{
     
     background-image: url("./images/background.png");
     background-size: cover;
+    background-position: center;
+
+
     color: #ffffffce;
     margin: auto;
     
@@ -97,9 +102,12 @@ a:hover{
     border-radius: 10px;
 }
 #how-to-play{
-    font-size: 0.7vmax;
+    
     background-image: url("./images/background.png");
     background-size: cover;
+    background-position: center;
+    
+    font-size: 0.7vmax;
     color: #ffffffce;
     margin: auto;
     padding: 5px;
@@ -111,6 +119,8 @@ a:hover{
 #user-login,#instructionbutton{  
     background-image: url("./images/background.png");
     background-size: cover;
+    background-position: center;
+
     color: #ffffffce;
     margin: auto;
     padding: 5px;
@@ -132,6 +142,7 @@ a:hover{
     text-transform: uppercase;
     background-image: url("./images/background.png");
     background-size: cover;
+    background-position: center;
 
     color: #48ffd5;
     padding: 2vmax;
@@ -161,7 +172,6 @@ a:hover{
     background-size: cover;
     height: 90vh;
 
-
     display: grid;
     justify-items: center; 
     align-items: center;
@@ -189,7 +199,9 @@ aspect-ratio: 2/1;
 .levelButton{
     font-size: 1.5vmin;    
     background-image: url("./images/background.png");
-        background-size: cover;
+    background-size: cover;
+    background-position: center;
+
         color: #48ffd5;
         margin: auto;
         border: 0.2vmin;
@@ -222,9 +234,9 @@ left: 12.5%;
     background-image: url("./images/oilrig2.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center -120px;
+    background-position: center center;
     margin: auto;
-    height: 89.1vh;
+    height: 90vh;
     display: grid;
     justify-content: center;
 }
@@ -237,6 +249,8 @@ table,td,th{
     font-size: 30px;
     color: #0b2037;
     border-color: #ededed;
+    text-align: left;
+    padding: 1vh;
 }
 tr:nth-of-type(even){
     background-color: #48ffd471;
@@ -244,7 +258,7 @@ tr:nth-of-type(even){
 
 th{
     border: solid 1px;
-
+    font-weight: 900;
     border-bottom: solid 1px;
     background-color: #0b2037ad;
     color: #6dffdd;
@@ -258,6 +272,52 @@ th{
     background-size: cover;
     background-position: center;
     margin: auto;
-    height: 89.1vh;
+    height: 90vh;
     display: grid;
+}
+
+/* Game*/
+.game {
+    background-color: black;
+}
+.gameNavbar {
+    background-image: url(images/background2.jpg);
+    background-size: cover;
+    background-position: center;
+
+/*background-color: #48ffd5;*/    
+    display: flex;
+    align-items: center; /* align vertical */
+    justify-content: space-between;
+    padding-left: 1vmax;
+    padding-right: 1vmax;
+    width: 98vw;
+    height: 9.7vh;
+
+    border: 0px;
+    border-bottom: 0.3vh;
+    border-style: solid;
+    border-color: #ffffffe8;
+    min-height: 1.5rem;
+}
+.navgamecontent{ 
+    width: 60vw;
+    color: #000000;
+    font-size: clamp(1vmax,2vmax,2vmax);
+    text-transform: uppercase;
+    text-align: left;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-around;
+}
+#navlevelround{
+    width: 20vw;
+    justify-content: space-between;
+}
+#score{
+    width: 20vw;
+    justify-content: right;
+}
+span{
+    color: #1c62ad;
 }

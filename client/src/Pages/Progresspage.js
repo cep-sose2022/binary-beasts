@@ -1,12 +1,15 @@
 import React from "react";
 import service from "../service";
 import lib from "../library/bib.js";
+import Navbar from "../Navbar";
 
 const allLevels = service.getAllLevels().allLevels;
 const userBoard = service.getUserLeaderboard(lib.getNickname()).userLeaderboard; 
 
 function Progress() {
     return(
+        <>
+        <Navbar />
         <div id="progress-container">
             {console.log(lib.getNickname())}
             <div id="headline" name="headline">
@@ -21,6 +24,7 @@ function Progress() {
                 {displayLevelScores()}
             </div>
         </div>
+        </>
     );
 }
 
