@@ -3,8 +3,10 @@ import mail from './../../images/level1/mail.jpg';
 import login from './../../images/level1/login.jpg';
 import download from './../../images/level1/download.jpg';
 import service from './../../service';
+import {useNavigate} from 'react-router-dom';
 
 function Level1() {
+    let navigate = useNavigate();
     const level = service.getLevel('level1');
     const [currentEvent, setCurrentEvent] = useState(1);
 
@@ -20,26 +22,20 @@ function Level1() {
 
     const handleAnswerButtonClick = (cardOption) => {
         setCurrentEvent(cardOption.nextEvent);
+        setEventTextNumber(cardOption.nextEventText);
         if (cardOption.nextImage === 'mail') {
             setCurrentImage(mail);
         } else if (cardOption.nextImage === 'login') {
             setCurrentImage(login);
         } else if (cardOption.nextImage === 'download') {
             setCurrentImage(download);
-        } else if ((cardOption.name === 'card1' || (cardOption.name === 'card3'))) {
-            setEventTextNumber(2);
-        } else if (cardOption.name === 'card2') {
-            setEventTextNumber(0);
-        } else if (cardOption.name === 'card4') {
-            setEventTextNumber(1);
-        } else if ((cardOption.name === 'card5' || (cardOption.name === 'card6'))) {
-            setEventTextNumber(2);
+        } else if (cardOption.nextEvent === 0) {
+            navigate('./../LevelOverview');
         }
     }
 
     return (
         <div className='app'>
-            ) : (
             <>
                 <div className='images'>
                     <img src={currentImage} className='img'/>
