@@ -4,6 +4,10 @@ import login from './../../images/level1/login.jpg';
 import download from './../../images/level1/download.jpg';
 import service from './../../service';
 import {useNavigate} from 'react-router-dom';
+import lib from '../../library/bib.js';
+
+lib.setLevelStartScore('level1');
+const startScore = lib.getScore();
 
 function Level1() {
     let navigate = useNavigate();
@@ -23,6 +27,7 @@ function Level1() {
     const handleAnswerButtonClick = (cardOption) => {
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
+        lib.updateScore(cardOption.points);
         if (cardOption.nextImage === 'mail') {
             setCurrentImage(mail);
         } else if (cardOption.nextImage === 'login') {
@@ -30,6 +35,8 @@ function Level1() {
         } else if (cardOption.nextImage === 'download') {
             setCurrentImage(download);
         } else if (cardOption.nextEvent === 0) {
+            const dif = lib.getScore() - startScore;
+            service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
             navigate('./../LevelOverview');
         }
     }
