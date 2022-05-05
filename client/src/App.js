@@ -4,7 +4,11 @@ import Leaderboard from './Pages/Leaderboard';
 import LevelOverview from './Pages/LevelOverview';
 import Progress from "./Pages/Progresspage";
 import Game from "./Pages/Game";
+import FAQ from "./Pages/subpages/FAQ";
 import './App.css';
+import { Fragment } from 'react';
+import AboutUs from './Pages/subpages/AboutUs';
+import PrivacyPolicy from './Pages/subpages/PrivacyPolicy';
 
 function App() {
 
@@ -17,6 +21,9 @@ function App() {
         <Route path="/leaderboard" element={<Leaderboard />}/>
         <Route path="/leveloverview" element={<LevelOverview />}/>
         <Route path="/game" element={<Game />}/>
+        <Route path="/faq" element={<FAQ />}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
+        <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
       </Routes>
     </BrowserRouter>
   );
