@@ -7,7 +7,6 @@ font-family: 'Roboto', sans-serif;
 h1{
     font-weight: 50vmax;
 }
-
 body{
     background-color: #ffffffce;
 }
@@ -48,7 +47,6 @@ nav a{
     text-align: right;
     vertical-align: middle;
 }
-
 .logo{
     width: 50vw;
     display: flex;
@@ -60,7 +58,6 @@ nav a{
     min-height: 2vmax;
     min-width: 2vmax;
 }
-
 .active{
     color: #48ffd5;
 }
@@ -367,8 +364,6 @@ th{
     width: 60vw;
     max-height:50vh;
     aspect-ratio: 100/44.1;
-}
-.gamecontainer img{
 }
 .gamecontainer button{
     width: 12vw;
