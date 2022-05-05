@@ -23,24 +23,7 @@ lib.getNickname = () => {
  * @param levelToken
  */
 lib.setLevelStartScore = (levelToken) => {
-    const scores = service.getScores();
-    let userScore = 0;
-
-    // check if user has a score in database using service
-    for (let i = 0; i < scores.sortedUsers.length; i++) {
-        if (scores.sortedUsers[i].username === lib.getNickname()) {
-            userScore = scores.sortedUsers[i].score;
-        }
-    }
-
-    // check if user has a score for THIS level in database using service
-    const level = service.getLevel(levelToken);
-    const leaderBoard = service.getUserLeaderboard(lib.getNickname());
-    for (let i = 0; i < leaderBoard.userLeaderboard.length; i++) {
-        if(leaderBoard.userLeaderboard[i].levelId === level.level._id) {
-            userScore -= leaderBoard.userLeaderboard[i].score;
-        }
-    }
+    const userScore = 0;
     localStorage.setItem('score', userScore);
 };
 
