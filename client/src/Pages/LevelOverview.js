@@ -10,7 +10,6 @@ function LevelOverview() {
         <Navbar />
         <div id="level-overview-container">
             <div id="playfield">
-                    {/* <img id="levelbg" src={levelbg}></img> */}
                     <button id="levelButton1" className="levelButton"onClick={() => {
                         navigate("/game", {
                         state: {
