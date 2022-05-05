@@ -24,7 +24,7 @@ lib.getNickname = () => {
  */
 lib.setLevelStartScore = (levelToken) => {
     const userScore = 0;
-    localStorage.setItem('score', userScore);
+    localStorage.setItem('score', 0);
 };
 
 /**
