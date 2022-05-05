@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import '../App.css';
 import lib from "../library/bib.js";
 import Navbar from "../Navbar";
+import Footer from "./subpages/Footer";
 
 function Home(props) {
   let navigate = useNavigate();
@@ -72,6 +73,7 @@ function Home(props) {
         }
       </div>
     </div>
+    <Footer/>
     </>
   );
 }
