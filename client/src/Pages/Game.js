@@ -9,47 +9,9 @@ function Game() {
     const location = useLocation();
     return(
         <>
-        <nav className="gameNavbar">
-            {/* <div class="background"><img src={background} alt="not found"></img></div> */}
-            <div id="navlevelround"className="navgamecontent">
-                <p>Level: <span>1</span> </p>
-                <p>Round: <span>1</span> </p>
-            </div>
-            <div className="navgamecontent">
-                <p>Time: <span>00:00</span> </p>
-            </div>
-            <div id="score" className="navgamecontent">
-                <p>Score: <span>40</span></p>
-            </div>
-            
-        </nav>
-        <div className="gamecontainer">
-            <div id="game">
-                <div id="event">
-                    <div id="eventmessagecontainer">
-                            <div id="eventmessage">
-                            
-                            </div>
-                    </div>
-                    <div id="eventimagecontainer">
-                        <div id="eventimage">
-                            <img src={logo}></img>
-                        </div>
-                    </div>
-                </div>
-                <div id="actionscontainer">
-                    
-                        <button>lul</button>
-                        <button>lul</button>
-                        <button>lul</button>
-                </div>
-            </div>
-            {/* <h2>Level {location.state.levelid}</h2> */}
-            {/* {location.state.levelid === 1 && <Level1 />}
-            {location.state.levelid === 2 && <Level2 />}
-            {location.state.levelid === 3 && <Level3 />} */}
-            
-        </div>
+        {location.state.levelid === 1 && <Level1 />}
+        {location.state.levelid === 2 && <Level2 />}
+        {location.state.levelid === 3 && <Level3 />}
         </>
     );
 }
