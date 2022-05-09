@@ -10,18 +10,19 @@ function Progress() {
     return(
         <>
         <Navbar />
-        <div id="progress-container">
+        <div id="progress-container" className="container">
             {console.log(lib.getNickname())}
-            <div id="headline" name="headline">
+            <div id="info" className="box">
                 <h1>Fortschritt - {lib.getNickname()}</h1>
-            </div>
-            <div id="overview" name="overview">
+            
+            <div id="overview">
                 <h2>Gesamt</h2>
                 {calcProgress()}
             </div>
-            <div id="level-scores" name="level-scores">
+            <div id="level-scores">
                 <h2>Level-Überblick</h2>
                 {displayLevelScores()}
+            </div>
             </div>
         </div>
         </>

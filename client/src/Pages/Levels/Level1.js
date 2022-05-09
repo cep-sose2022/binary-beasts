@@ -73,28 +73,26 @@ function Level1() {
 
     return (
         <div className='app'>
-            <>
-                
-            <nav className="gameNavbar">
+            <>  
+            <nav id="gameNavbar">
             {/* <div class="background"><img src={background} alt="not found"></img></div> */}
             <div id="navlevelround"className="navgamecontent">
-                <p>Level: <span>1</span> </p>
+                <p>Level: <span>1</span></p>
                 <p>Round: <span>{currentRound}</span> </p>
             </div>
-            <div className="navgamecontent">
+            <div id="navtimer" className="navgamecontent">
                 <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
             </div>
             <div id="score" className="navgamecontent">
                 <p>Score: <span>{lib.getScore()}</span></p>
-            </div>
-            
+            </div>   
         </nav>
-        <div className="gamecontainer">
+        <div id="gamecontainer" className="container">
             <div id="game">
                 <div id="event">
                     <div id="eventmessagecontainer">
                             <div id="eventmessage">
-                            <div className='event-text'>{!eventText ? "Loading..." : eventText}</div>
+                            <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
                             </div>
                     </div>
                     <div id="eventimagecontainer">
@@ -110,7 +108,7 @@ function Level1() {
                 </div>
             </div>   
         </div>
-                
+        
                 {/* <div className='images'>
                     <img src={currentImage} className='img'/>
                 </div>
