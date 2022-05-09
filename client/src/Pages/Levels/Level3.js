@@ -105,22 +105,59 @@ function Level3() {
     };
 
     return (
-        <div className='app'>
-            <>
-                <div className='images'>
-                    <img src={currentImage} className='img'/>
-                </div>
-                <div className='cards'>
-                    {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                        <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
-                    ))}
-                </div>
-                <div className='questions'>
-                    <br/>
-                    <div className='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
-                </div>
-            </>
-        </div>
+      <div className='app'>
+      <>
+          
+      <nav className="gameNavbar">
+      {/* <div class="background"><img src={background} alt="not found"></img></div> */}
+      <div id="navlevelround"className="navgamecontent">
+          <p>Level: <span>1</span> </p>
+          <p>Round: <span>1</span> </p>
+      </div>
+      <div className="navgamecontent">
+          <p>Time: <span>00:00</span> </p>
+      </div>
+      <div id="score" className="navgamecontent">
+          <p>Score: <span>40</span></p>
+      </div>
+      
+  </nav>
+  <div className="gamecontainer">
+      <div id="game">
+          <div id="event">
+              <div id="eventmessagecontainer">
+                      <div id="eventmessage">
+                      <div className='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
+                      </div>
+              </div>
+              <div id="eventimagecontainer">
+                  <div id="eventimage">
+                  <img src={currentImage} className='img'/>
+                  </div>
+              </div>
+          </div>
+          <div id="actionscontainer">
+          {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
+                  <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+              ))}
+          </div>
+      </div>   
+  </div>
+          
+          {/* <div className='images'>
+              <img src={currentImage} className='img'/>
+          </div>
+          <div className='cards'>
+              {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
+                  <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+              ))}
+          </div>
+          <div className='questions'>
+              <br/>
+              <div className='event-text'>{!eventText ? "Loading..." : eventText}</div>
+          </div> */}
+      </>
+  </div>
     );
 }
 
