@@ -27,39 +27,38 @@ function Home(props) {
 
   }
 
-
   return (
     <>
     <Navbar />
-    <div id="home-container" name="home-container">
-      <div id="home-info" name="home-info">
+    <div id="home-container" className="container">
+      <div id="home-info" className="box">
         <h1>Willkommen bei Binary Beasts</h1>
-        <p id="introduction" name="introduction">Kurze Einleitung</p>
+        <p id="introduction">Kurze Einleitung</p>
       </div>
 
-      <div id="user-login" name="user-login">
+      <div id="user-login" className="box">
         <label for="nickname">Nickname:</label>
 
-        <input id="nickname" name="nickname" type="text" ref={nameInputField} /><br />
+        <input id="nickname" type="text" ref={nameInputField} /><br />
       </div>
 
-      <div id="login-message" name="login-message">
+      <div id="login-message" className="box">
         {inputMessage === 1 ? <p>Sie sind bereits angemeldet als "{lib.getNickname()}".</p> : //return the fitting feedback for inputField
           (inputMessage === 2 ? <p>Sie müssen einen Namen angeben.</p>:<p>Willkommen</p>)
         }
       </div>
 
-      <div id="play"><button className="playbutton" onClick={() => { checkInput() }}
+      <div id="play"><button id="playbutton" onClick={() => { checkInput() }}
       >Spielen
       </button></div>
 
-      <button id="instructionbutton" name="instruction"
+      <button id="instructionbutton"
         onClick={() => { instructionsOpen ? setInstructionsOpen(false) : setInstructionsOpen(true) }} /* toggle button for how-to-play*/
       >Spielanleitung
       </button>
       <div id="description">
         {instructionsOpen &&
-          <div id="how-to-play" name="how-to-play">
+          <div id="how-to-play" className="box">
             <h3>Spielanleitung</h3>
             <p>Es gibt unterschiedliche Szenarien, die Sie durchlaufen werden.
               Sie haben dabei freie Wahl, welches Sie wählen, aber wenn Sie eins begonnen haben,
