@@ -4,10 +4,12 @@ import {useNavigate} from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
 
-lib.setLevelStartScore('level1');
-const startScore = lib.getScore();
+
 
 function Level3() {
+
+    lib.setLevelStartScore('level1');
+    const startScore = lib.getScore();
 
      // Timer
      const { startingMinutes = 4, startingSeconds = 0 } = 4;
