@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
 const gameRoute = require('./gateway/game');
 const leaderboardRoute = require('./gateway/leaderboard');
+const userRoute = require('./gateway/user');
 
 const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./../swagger.json');
@@ -31,6 +32,8 @@ app.use(function (req, res, next) {
 app.use('/game', gameRoute);
 
 app.use('/leaderboard', leaderboardRoute);
+
+app.use('/user', userRoute);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
