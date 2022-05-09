@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import mail from './../../images/level1/mail.jpg';
 import login from './../../images/level1/login.jpg';
 import download from './../../images/level1/download.jpg';
@@ -10,9 +10,37 @@ lib.setLevelStartScore('level1');
 const startScore = lib.getScore();
 
 function Level1() {
+
+    // Timer
+    const { startingMinutes = 4, startingSeconds = 0 } = 4;
+    const [mins, setMinutes] = useState(startingMinutes);
+    const [secs, setSeconds] = useState(startingSeconds);
+    useEffect(() => {
+        let sampleInterval = setInterval(() => {
+            if (secs > 0) {
+                setSeconds(secs - 1);
+            }
+            if (secs === 0) {
+                if (mins === 0) {
+                    const dif = lib.getScore() - startScore;
+                    service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+                    navigate('./../LevelOverview');
+                } else {
+                    setMinutes(mins - 1);
+                    setSeconds(59);
+                }
+            }
+        }, 1000);
+        return () => {
+            clearInterval(sampleInterval);
+        };
+    });
+
+
     let navigate = useNavigate();
     const level = service.getLevel('level1');
     const [currentEvent, setCurrentEvent] = useState(1);
+    const [currentRound, setCurrentRound] = useState(1);
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
@@ -27,6 +55,7 @@ function Level1() {
     const handleAnswerButtonClick = (cardOption) => {
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
+        setCurrentRound(currentRound + 1);
         lib.updateScore(cardOption.points);
         if (cardOption.nextImage === 'mail') {
             setCurrentImage(mail);
@@ -49,13 +78,13 @@ function Level1() {
             {/* <div class="background"><img src={background} alt="not found"></img></div> */}
             <div id="navlevelround"className="navgamecontent">
                 <p>Level: <span>1</span> </p>
-                <p>Round: <span>1</span> </p>
+                <p>Round: <span>{currentRound}</span> </p>
             </div>
             <div className="navgamecontent">
-                <p>Time: <span>00:00</span> </p>
+                <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
             </div>
             <div id="score" className="navgamecontent">
-                <p>Score: <span>40</span></p>
+                <p>Score: <span>{lib.getScore()}</span></p>
             </div>
             
         </nav>
