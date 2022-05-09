@@ -2,11 +2,42 @@ import React, {useState} from "react";
 import service from './../../service';
 import {useNavigate} from 'react-router-dom';
 import "../../index.css";
+import lib from '../../library/bib.js';
+
+lib.setLevelStartScore('level1');
+const startScore = lib.getScore();
 
 function Level3() {
+
+     // Timer
+     const { startingMinutes = 4, startingSeconds = 0 } = 4;
+     const [mins, setMinutes] = useState(startingMinutes);
+     const [secs, setSeconds] = useState(startingSeconds);
+     React.useEffect(() => {
+         let sampleInterval = setInterval(() => {
+             if (secs > 0) {
+                 setSeconds(secs - 1);
+             }
+             if (secs === 0) {
+                 if (mins === 0) {
+                     const dif = lib.getScore() - startScore;
+                     service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+                     navigate('./../LevelOverview');
+                 } else {
+                     setMinutes(mins - 1);
+                     setSeconds(59);
+                 }
+             }
+         }, 1000);
+         return () => {
+             clearInterval(sampleInterval);
+         };
+     });
+
     let navigate = useNavigate();
     const level = service.getLevel('level3');
     const [currentEvent, setCurrentEvent] = useState(1);
+    const [currentRound, setCurrentRound] = useState(1);
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
@@ -38,9 +69,11 @@ function Level3() {
       } else if(!compatibilityChecked && usbInfected && dataSaved && currentEvent == 3 ) {
         setEventText(level.level.events[currentEvent - 1].text[9]);
         setCombatibilityChecked(true);
+        setUsbInfected(false);
       } else if(!compatibilityChecked && usbInfected && currentEvent == 3 ) {
         setEventText(level.level.events[currentEvent - 1].text[3]);
         setCombatibilityChecked(true);
+        setUsbInfected(false);
       } else if(!compatibilityChecked && dataSaved && currentEvent == 3 ) {
         setEventText(level.level.events[currentEvent - 1].text[10]);
         setCombatibilityChecked(true);
@@ -67,6 +100,8 @@ function Level3() {
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
+        setCurrentRound(currentRound + 1);
+        lib.updateScore(cardOption.points);
 
         if(cardOption.name == 'card4') {
           setCombatibilityChecked(true);
@@ -111,14 +146,14 @@ function Level3() {
       <nav className="gameNavbar">
       {/* <div class="background"><img src={background} alt="not found"></img></div> */}
       <div id="navlevelround"className="navgamecontent">
-          <p>Level: <span>1</span> </p>
-          <p>Round: <span>1</span> </p>
+          <p>Level: <span>3</span> </p>
+          <p>Round: <span>{currentRound}</span> </p>
       </div>
       <div className="navgamecontent">
-          <p>Time: <span>00:00</span> </p>
+          <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
       </div>
       <div id="score" className="navgamecontent">
-          <p>Score: <span>40</span></p>
+          <p>Score: <span>{lib.getScore()}</span></p>
       </div>
       
   </nav>
