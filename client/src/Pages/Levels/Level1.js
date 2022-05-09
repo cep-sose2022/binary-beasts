@@ -12,7 +12,8 @@ const startScore = lib.getScore();
 function Level1() {
 
     // Timer
-    const { startingMinutes = 4, startingSeconds = 0 } = 4;
+    const startingMinutes = 4;
+    const startingSeconds = 0;
     const [mins, setMinutes] = useState(startingMinutes);
     const [secs, setSeconds] = useState(startingSeconds);
     useEffect(() => {
