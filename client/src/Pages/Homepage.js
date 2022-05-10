@@ -11,27 +11,36 @@ function Home(props) {
   let navigate = useNavigate();
   let nameInputField = React.createRef(); // for referencing inputField and setting name on button click
   let pinInputField = React.createRef();
+  let [loggedIn, setLoggedIn] = useState(lib.getNickname() != null);
   const [instructionsOpen, setInstructionsOpen] = useState(false); //for showing "Spielanleitung"
   const [inputMessage, setInputMessage] = useState(0); //for omitting swapping between users
 
   function checkInput() {
-    //console.log(lib.getNickname());
-    if (nameInputField.current.value != "") { //input cannot be empty
-      console.log(service.checkUser(nameInputField.current.value, pinInputField.current.value))
-      if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { // validate user login
-        lib.setNickname(nameInputField.current.value);
-        
+      if ((nameInputField.current.value === "" || pinInputField.current.value === "") && !loggedIn) {
+        setInputMessage(2);
+      } else if ((nameInputField.current.value === "" || pinInputField.current.value === "") && loggedIn) { 
         navigate("/leveloverview");
-      }
-      else {
-        service.postUser(nameInputField.current.value, pinInputField.current.value);
+      } else if (loggedIn) { 
+        if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) {
+          lib.setNickname(nameInputField.current.value);
+          navigate("/leveloverview");
+        }
+      } else if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { // validate user login
         lib.setNickname(nameInputField.current.value);
-        setInputMessage(1);
+        setInputMessage(4);
+        setLoggedIn(true);
+      } else {
+        const newUserCreated = service.postUser(nameInputField.current.value, pinInputField.current.value);
+        console.log(newUserCreated.newUser === undefined);
+        if(newUserCreated.newUser !== undefined) {
+          lib.setNickname(nameInputField.current.value);
+          setInputMessage(1);
+          setLoggedIn(true);
+        } else {
+          setInputMessage(3);
+        }
+        
       }
-    }
-    else 
-      setInputMessage(2); 
-
   }
 
   return (
@@ -55,12 +64,13 @@ function Home(props) {
 
       <div id="login-message" className="box">
         {inputMessage === 1 ? <p>Neuer User mit dem Nicknamen "{lib.getNickname()}" wurde erstellt.</p> : //return the fitting feedback for inputField
-          (inputMessage === 2 ? <p>Sie müssen einen Namen angeben.</p>:<p>Willkommen</p>)
+          (inputMessage === 2 ? <p>Bitte füllen Sie beide Felder aus</p>: 
+          (inputMessage === 3 ? <p>Es existiert bereits ein User mit diesem Nicknamen</p> : <p>Willkommen {lib.getNickname()}</p>))
         }
       </div>
 
-      <div id="play"><button id="playbutton" onClick={() => { checkInput() }}
-      >Spielen
+      <div id="play"><button id="playbutton" onClick={() => { checkInput() }}>
+       {loggedIn ? <p>Spielen</p>: <p>Login</p>}
       </button></div>
 
       <button id="instructionbutton"
