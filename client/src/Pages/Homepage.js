@@ -4,23 +4,30 @@ import { useNavigate } from "react-router-dom";
 import '../App.css';
 import lib from "../library/bib.js";
 import Navbar from "../Navbar";
+import service from "../service";
 import Footer from "./subpages/Footer";
 
 function Home(props) {
   let navigate = useNavigate();
   let nameInputField = React.createRef(); // for referencing inputField and setting name on button click
+  let pinInputField = React.createRef();
   const [instructionsOpen, setInstructionsOpen] = useState(false); //for showing "Spielanleitung"
   const [inputMessage, setInputMessage] = useState(0); //for omitting swapping between users
 
   function checkInput() {
-    console.log(lib.getNickname());
+    //console.log(lib.getNickname());
     if (nameInputField.current.value != "") { //input cannot be empty
-      if (lib.getNickname() === null || lib.getNickname() == nameInputField.current.value) { // validate user login
+      console.log(service.checkUser(nameInputField.current.value, pinInputField.current.value))
+      if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { // validate user login
         lib.setNickname(nameInputField.current.value);
+        
         navigate("/leveloverview");
       }
-      else 
-        setInputMessage(1); //does not allow to change users
+      else {
+        service.postUser(nameInputField.current.value, pinInputField.current.value);
+        lib.setNickname(nameInputField.current.value);
+        setInputMessage(1);
+      }
     }
     else 
       setInputMessage(2); 
@@ -40,10 +47,14 @@ function Home(props) {
         <label for="nickname">Nickname:</label>
 
         <input id="nickname" type="text" ref={nameInputField} /><br />
+        <br />
+        <label for="pin">Pin:</label>
+
+        <input id="pin" type="text" ref={pinInputField} /><br />
       </div>
 
       <div id="login-message" className="box">
-        {inputMessage === 1 ? <p>Sie sind bereits angemeldet als "{lib.getNickname()}".</p> : //return the fitting feedback for inputField
+        {inputMessage === 1 ? <p>Neuer User mit dem Nicknamen "{lib.getNickname()}" wurde erstellt.</p> : //return the fitting feedback for inputField
           (inputMessage === 2 ? <p>Sie müssen einen Namen angeben.</p>:<p>Willkommen</p>)
         }
       </div>
