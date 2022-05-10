@@ -137,5 +137,30 @@ service.getScores = () => {
     return jsonResponse;
 }
 
+service.postUser = (nickname, pin) => {
+    const xmlHttp = new XMLHttpRequest();
+    const body = ({
+        nickname: nickname,
+        pin: pin
+    });
+    xmlHttp.open( "POST", `${backendUrl}/user/post-user/`, false );
+    xmlHttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    xmlHttp.send(JSON.stringify(body));
+    jsonResponse = JSON.parse(xmlHttp.responseText);
+    return jsonResponse;
+}
+
+service.checkUser = (nickname, pin) => {
+    const xmlHttp = new XMLHttpRequest();
+    const body = ({
+        pin: pin
+    });
+    xmlHttp.open( "POST", `${backendUrl}/user/check-user/${nickname}`, false );
+    xmlHttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    xmlHttp.send(JSON.stringify(body));
+    jsonResponse = JSON.parse(xmlHttp.responseText);
+    return jsonResponse.exists;
+}
+
 
 module.exports = service;
