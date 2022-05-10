@@ -12,9 +12,16 @@ userController.postUser =  asyncHandler(async (req, res) => {
     try {
         let user = req.body;
         const newUser = new User(user);
-        await newUser.save();
-
-        res.status(201).json({ newUser });
+        const userExists = await User.exists({ nickname: req.body.nickname });
+        let exists = false;
+        if(userExists) exists = true;
+        if (!exists) {
+            await newUser.save();
+            res.status(201).json({ newUser });
+        } else {
+            res.status(403).json({message: err.message});
+        }
+        
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -28,9 +35,7 @@ userController.postUser =  asyncHandler(async (req, res) => {
  userController.checkUser =  asyncHandler(async (req, res) => {
     try {
         let pin = req.body;
-        //const user = await User.find({ nickname: req.params.nickname, pin: pin.pin });
         const userExists = await User.exists({ nickname: req.params.nickname, pin: pin.pin });
-        console.log(userExists);
         let exists = false;
         if(userExists) exists = true;
         res.status(201).json({ exists: exists });
