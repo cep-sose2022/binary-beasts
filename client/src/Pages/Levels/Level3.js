@@ -146,43 +146,41 @@ function Level3() {
 
     return (
       <div className='app'>
-      <>
-          
-      <nav className="gameNavbar">
-      {/* <div class="background"><img src={background} alt="not found"></img></div> */}
-      <div id="navlevelround"className="navgamecontent">
-          <p>Level: <span>3</span> </p>
-          <p>Round: <span>{currentRound}</span> </p>
-      </div>
-      <div className="navgamecontent">
-          <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
-      </div>
-      <div id="score" className="navgamecontent">
-          <p>Score: <span>{lib.getScore()}</span></p>
-      </div>
-      
-  </nav>
-  <div className="gamecontainer">
-      <div id="game">
-          <div id="event">
-              <div id="eventmessagecontainer">
-                      <div id="eventmessage">
-                      <div className='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
-                      </div>
-              </div>
-              <div id="eventimagecontainer">
-                  <div id="eventimage">
-                  <img src={currentImage} className='img'/>
-                  </div>
-              </div>
-          </div>
-          <div id="actionscontainer">
-          {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                  <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
-              ))}
-          </div>
-      </div>   
-  </div>
+            <>  
+            <nav id="gameNavbar">
+            {/* <div class="background"><img src={background} alt="not found"></img></div> */}
+            <div id="navlevelround"className="navgamecontent">
+                <p>Level: <span>1</span></p>
+                <p>Round: <span>{currentRound}</span> </p>
+            </div>
+            <div id="navtimer" className="navgamecontent">
+                <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
+            </div>
+            <div id="score" className="navgamecontent">
+                <p>Score: <span>{lib.getScore()}</span></p>
+            </div>   
+        </nav>
+        <div id="gamecontainer" className="container">
+            <div id="game">
+                <div id="event">
+                    <div id="eventmessagecontainer">
+                            <div id="eventmessage">
+                            <div id='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
+                            </div>
+                    </div>
+                    <div id="eventimagecontainer">
+                        <div id="eventimage">
+                        <img src={currentImage} className='img'/>
+                        </div>
+                    </div>
+                </div>
+                <div id="actionscontainer">
+                {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
+                        <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                    ))}
+                </div>
+            </div>   
+        </div>
           
           {/* <div className='images'>
               <img src={currentImage} className='img'/>
