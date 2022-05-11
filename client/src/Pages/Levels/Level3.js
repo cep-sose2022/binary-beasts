@@ -5,12 +5,9 @@ import "../../index.css";
 import lib from '../../library/bib.js';
 
 
+  
 
 function Level3() {
-
-    lib.setLevelStartScore('level1');
-    const startScore = lib.getScore();
-
      // Timer
      const { startingMinutes = 4, startingSeconds = 0 } = 4;
      const [mins, setMinutes] = useState(startingMinutes);
@@ -53,6 +50,11 @@ function Level3() {
     const [cardSevenPlayed, setCardSevenPlayed] = useState(false);
     const [cardElevenPlayed, setCardElevenPlayed] = useState(false);
     const [gameOver, setGameOver] = useState(false);
+
+     if(currentRound === 1) {
+      lib.setLevelStartScore('level3');  
+     }
+     const startScore = lib.getScore();
 
     React.useEffect(() => {
       //setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
@@ -104,6 +106,7 @@ function Level3() {
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
         lib.updateScore(cardOption.points);
+        console.log(lib.getScore());
 
         if(cardOption.name == 'card4') {
           setCombatibilityChecked(true);
