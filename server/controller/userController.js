@@ -38,7 +38,7 @@ userController.postUser =  asyncHandler(async (req, res) => {
         const userExists = await User.exists({ nickname: req.params.nickname, pin: pin.pin });
         let exists = false;
         if(userExists) exists = true;
-        res.status(201).json({ exists: exists });
+        res.status(200).json({ exists: exists });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
