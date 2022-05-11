@@ -314,6 +314,96 @@
         },
         "parameters": []
       }
+    },
+    "/user/check-user/{nickname}": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "post new entire in Leaderboard collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "nickname",
+            "in": "path",
+            "description": "nickname",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "leaderBoard data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties": {
+                "pin": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/user/post-user": {
+      "post": {
+        "tags":["user"],
+        "description": "post new entire in Leaderboard collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "leaderBoard data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties": {
+                "nickname": {
+                  "type": "string"
+                },
+                "pin": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
     }
   }
 }
