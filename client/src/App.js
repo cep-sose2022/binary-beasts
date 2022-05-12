@@ -9,6 +9,7 @@ import './App.css';
 import { Fragment } from 'react';
 import AboutUs from './Pages/subpages/AboutUs';
 import PrivacyPolicy from './Pages/subpages/PrivacyPolicy';
+import Win from './Pages/subpages/Win';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/faq" element={<FAQ />}/>
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
+        <Route path="/win" element={!localStorage.getItem('levelNumber') ? <LevelOverview /> : <Win/>}/>
       </Routes>
     </BrowserRouter>
   );
