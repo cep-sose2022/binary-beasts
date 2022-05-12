@@ -404,6 +404,258 @@
           }
         ]
       }
+    },
+    "/backup/post-card-event-backup": {
+      "post": {
+        "tags":["backup"],
+        "description": "make a copy from CardEvent collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/get-card-event-backup": {
+      "get": {
+        "tags":["backup"],
+        "description": "get backup cardEvent",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/post-card-backup": {
+      "post": {
+        "tags":["backup"],
+        "description": "make a copy from Card collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/get-card-backup": {
+      "get": {
+        "tags":["backup"],
+        "description": "get backup card",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/post-event-backup": {
+      "post": {
+        "tags":["backup"],
+        "description": "make a copy from Event collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/get-event-backup": {
+      "get": {
+        "tags":["backup"],
+        "description": "get backup event",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/post-leaderboard-backup": {
+      "post": {
+        "tags":["backup"],
+        "description": "make a copy from Leaderboard collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/get-leaderboard-backup": {
+      "get": {
+        "tags":["backup"],
+        "description": "get backup leaderboard",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/post-level-backup": {
+      "post": {
+        "tags":["backup"],
+        "description": "make a copy from Level collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/get-level-backup": {
+      "get": {
+        "tags":["backup"],
+        "description": "get backup level",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/post-user-backup": {
+      "post": {
+        "tags":["backup"],
+        "description": "make a copy from User collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/backup/get-user-backup": {
+      "get": {
+        "tags":["backup"],
+        "description": "get backup user",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": []
+      }
     }
   }
 }

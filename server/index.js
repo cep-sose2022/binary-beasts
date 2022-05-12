@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 const gameRoute = require('./gateway/game');
 const leaderboardRoute = require('./gateway/leaderboard');
 const userRoute = require('./gateway/user');
+const backupRoute = require('./gateway/backup');
 
 const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./../swagger.json');
@@ -34,6 +35,8 @@ app.use('/game', gameRoute);
 app.use('/leaderboard', leaderboardRoute);
 
 app.use('/user', userRoute);
+
+app.use('/backup', backupRoute);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
