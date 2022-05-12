@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Level1 from "./Levels/Level1";
 import Level2 from "./Levels/Level2"
 import Level3 from "./Levels/Level3";
 import service from '../service';
-import {useNavigate} from 'react-router-dom';
 import lib from '../library/bib.js';
 
-function Game() {
+function Game(){
     const location = useLocation();
     const startScore = lib.getScore();
     let navigate = useNavigate();    

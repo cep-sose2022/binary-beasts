@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mail from './../../images/level1/mail.jpg';
 import login from './../../images/level1/login.jpg';
 import download from './../../images/level1/download.jpg';
 import service from './../../service';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
 
 lib.setLevelStartScore('level1');
@@ -45,30 +45,30 @@ function Level1() {
 
     return (
         <div className='app'>
-            <>  
-           
-        <div id="gamecontainer" className="container">
-            <div id="game">
-                <div id="event">
-                    <div id="eventmessagecontainer">
-                            <div id="eventmessage">
-                            <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
+            <>
+
+                <div id="gamecontainer" className="container">
+                    <div id="game">
+                        <div id="event">
+                            <div id="eventmessagecontainer">
+                                <div id="eventmessage">
+                                    <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
+                                </div>
                             </div>
-                    </div>
-                    <div id="eventimagecontainer">
-                        <div id="eventimage">
-                        <img src={currentImage} className='img'/>
+                            <div id="eventimagecontainer">
+                                <div id="eventimage">
+                                    <img src={currentImage} className='img' />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="actionscontainer">
+                            {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                            ))}
                         </div>
                     </div>
                 </div>
-                <div id="actionscontainer">
-                {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                        <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
-                    ))}
-                </div>
-            </div>   
-        </div>
-        
+
                 {/* <div className='images'>
                     <img src={currentImage} className='img'/>
                 </div>
