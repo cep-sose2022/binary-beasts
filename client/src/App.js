@@ -1,25 +1,28 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from "./Pages/Homepage";
 import Leaderboard from './Pages/Leaderboard';
 import LevelOverview from './Pages/LevelOverview';
 import Progress from "./Pages/Progresspage";
 import Game from "./Pages/Game";
+import FAQ from "./Pages/subpages/FAQ";
+import './App.css';
+import AboutUs from './Pages/subpages/AboutUs';
+import PrivacyPolicy from './Pages/subpages/PrivacyPolicy';
 
 function App() {
+
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/"> Home </Link>
-        <Link to="/progress"> Fortschritt </Link>
-        <Link to="/leaderboard"> Leaderboard </Link>
-        <Link to="/leveloverview"> Levels </Link>
-      </nav>
+      
       <Routes>
         <Route path="/" element={<Homepage />}/>
         <Route path="/progress" element={<Progress />}/>
         <Route path="/leaderboard" element={<Leaderboard />}/>
         <Route path="/leveloverview" element={<LevelOverview />}/>
         <Route path="/game" element={<Game />}/>
+        <Route path="/faq" element={<FAQ />}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
+        <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
       </Routes>
     </BrowserRouter>
   );
