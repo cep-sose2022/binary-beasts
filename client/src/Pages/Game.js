@@ -4,13 +4,11 @@ import { useNavigate } from "react-router-dom";
 import Level1 from "./Levels/Level1";
 import Level2 from "./Levels/Level2"
 import Level3 from "./Levels/Level3";
+import logo from "../images/kanye-west-stare.gif";
 import service from "../service";
 import lib from "../library/bib";
 
 function Game(props) {
-    const location = useLocation();
-    const startScore = lib.getScore();
-    let navigate = useNavigate(); 
 
     // Timer
     const { startingMinutes = 4, startingSeconds = 0 } = 4;
@@ -38,12 +36,58 @@ function Game(props) {
     });
     // end of Timer  
 
+    const location = useLocation();
+    let navigate = useNavigate(); 
+    
+    let level = service.getLevel("level1"); //default Level if none is selected
+    const startScore = lib.getScore();
+    
+    const [currentEvent, setCurrentEvent] = useState(1);
+    const [currentRound, setCurrentRound] = useState(1);
+    const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
+    const [eventText, setEventText] = useState(level.level.events[0].text[0]);
+    const [eventTextNumber, setEventTextNumber] = useState(0);
+    const [currentImage, setCurrentImage] = useState(null);
+    /*
+
+    function setLevel(lvlNumber){
+        level = service.getLevel("level" + lvlNumber);
+        lib.setLevelStartScore("level" + lvlNumber);
+    }
+
+    React.useEffect(() => {
+        setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
+        setCurrentCards(level.level.events[currentEvent - 1].cards);
+    }, [currentEvent]);
+
+    const handleCardClick = (cardOption) => {
+        setCurrentEvent(cardOption.nextEvent);
+        setEventTextNumber(cardOption.nextEventText);
+        setCurrentRound(currentRound + 1);
+        setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
+        lib.updateScore(cardOption.points);
+
+       if (cardOption.nextEvent === 0) {
+            endGame();
+        }
+    }
+
+    function endGame() {
+        const dif = lib.getScore() - startScore;
+        service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+        navigate('./../LevelOverview');
+    }
+
+*/
+
     return (
         <div className='app'>
         <>
             <nav className="gameNavbar">
+                {/* <div class="background"><img src={background} alt="not found"></img></div> */}
                 <div id="navlevelround" className="navgamecontent">
                     <p>Level: <span>{location.state.levelid}</span> </p>
+                    <p>Round: <span>{currentRound}</span> </p>
                 </div>
                 <div className="navgamecontent">
                     <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
