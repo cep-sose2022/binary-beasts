@@ -56,7 +56,6 @@ function Game() {
     return(
         <>
         <nav id="gameNavbar">
-            {/* <div class="background"><img src={background} alt="not found"></img></div> */}
             <div id="navlevelround"className="navgamecontent">
                 <p>Level: <span>1</span></p>
             </div>
