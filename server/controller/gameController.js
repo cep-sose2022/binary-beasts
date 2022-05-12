@@ -18,11 +18,14 @@ gameController.getLevel = asyncHandler(async (req, res) => {
             _id: String,
             name: String,
             token: String,
+            description: String,
             events: {type: Object}
         };
         const tempLevel2 = await Level.find({token: req.params.token});
         tempLevel1._id = tempLevel2[0].id;
         tempLevel1.name = tempLevel2[0].name;
+        tempLevel1.token = tempLevel2[0].token;
+        tempLevel1.description = tempLevel2[0].description;
         const levelId = tempLevel1._id;
         const events = await Event.find({levelId: levelId});
         for (let i = 0; i < events.length; i++) {
