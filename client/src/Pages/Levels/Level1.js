@@ -1,43 +1,15 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mail from './../../images/level1/mail.jpg';
 import login from './../../images/level1/login.jpg';
 import download from './../../images/level1/download.jpg';
 import service from './../../service';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
 
 lib.setLevelStartScore('level1');
 const startScore = lib.getScore();
 
 function Level1() {
-
-    // Timer
-    const startingMinutes = 4;
-    const startingSeconds = 0;
-    const [mins, setMinutes] = useState(startingMinutes);
-    const [secs, setSeconds] = useState(startingSeconds);
-    useEffect(() => {
-        let sampleInterval = setInterval(() => {
-            if (secs > 0) {
-                setSeconds(secs - 1);
-            }
-            if (secs === 0) {
-                if (mins === 0) {
-                    const dif = lib.getScore() - startScore;
-                    service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
-                    navigate('./../LevelOverview');
-                } else {
-                    setMinutes(mins - 1);
-                    setSeconds(59);
-                }
-            }
-        }, 1000);
-        return () => {
-            clearInterval(sampleInterval);
-        };
-    });
-
-
     let navigate = useNavigate();
     const level = service.getLevel('level1');
     const [currentEvent, setCurrentEvent] = useState(1);
@@ -73,42 +45,30 @@ function Level1() {
 
     return (
         <div className='app'>
-            <>  
-            <nav id="gameNavbar">
-            {/* <div class="background"><img src={background} alt="not found"></img></div> */}
-            <div id="navlevelround"className="navgamecontent">
-                <p>Level: <span>1</span></p>
-                <p>Round: <span>{currentRound}</span> </p>
-            </div>
-            <div id="navtimer" className="navgamecontent">
-                <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
-            </div>
-            <div id="score" className="navgamecontent">
-                <p>Score: <span>{lib.getScore()}</span></p>
-            </div>   
-        </nav>
-        <div id="gamecontainer" className="container">
-            <div id="game">
-                <div id="event">
-                    <div id="eventmessagecontainer">
-                            <div id="eventmessage">
-                            <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
+            <>
+
+                <div id="gamecontainer" className="container">
+                    <div id="game">
+                        <div id="event">
+                            <div id="eventmessagecontainer">
+                                <div id="eventmessage">
+                                    <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
+                                </div>
                             </div>
-                    </div>
-                    <div id="eventimagecontainer">
-                        <div id="eventimage">
-                        <img src={currentImage} className='img'/>
+                            <div id="eventimagecontainer">
+                                <div id="eventimage">
+                                    <img src={currentImage} className='img' />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="actionscontainer">
+                            {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                            ))}
                         </div>
                     </div>
                 </div>
-                <div id="actionscontainer">
-                {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                        <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
-                    ))}
-                </div>
-            </div>   
-        </div>
-        
+
                 {/* <div className='images'>
                     <img src={currentImage} className='img'/>
                 </div>
