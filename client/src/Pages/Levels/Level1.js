@@ -11,32 +11,6 @@ const startScore = lib.getScore();
 
 function Level1() {
 
-    // Timer
-    const startingMinutes = 4;
-    const startingSeconds = 0;
-    const [mins, setMinutes] = useState(startingMinutes);
-    const [secs, setSeconds] = useState(startingSeconds);
-    useEffect(() => {
-        let sampleInterval = setInterval(() => {
-            if (secs > 0) {
-                setSeconds(secs - 1);
-            }
-            if (secs === 0) {
-                if (mins === 0) {
-                    const dif = lib.getScore() - startScore;
-                    service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
-                    navigate('./../LevelOverview');
-                } else {
-                    setMinutes(mins - 1);
-                    setSeconds(59);
-                }
-            }
-        }, 1000);
-        return () => {
-            clearInterval(sampleInterval);
-        };
-    });
-
 
     let navigate = useNavigate();
     const level = service.getLevel('level1');
@@ -73,21 +47,10 @@ function Level1() {
 
     return (
         <div className='app'>
-            <>  
-            <nav id="gameNavbar">
-            {/* <div class="background"><img src={background} alt="not found"></img></div> */}
-            <div id="navlevelround"className="navgamecontent">
-                <p>Level: <span>1</span></p>
-                <p>Round: <span>{currentRound}</span> </p>
-            </div>
-            <div id="navtimer" className="navgamecontent">
-                <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
-            </div>
-            <div id="score" className="navgamecontent">
-                <p>Score: <span>{lib.getScore()}</span></p>
-            </div>   
-        </nav>
-        <div id="gamecontainer" className="container">
+            <>
+                
+            
+        <div className="gamecontainer">
             <div id="game">
                 <div id="event">
                     <div id="eventmessagecontainer">
