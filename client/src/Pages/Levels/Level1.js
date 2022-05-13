@@ -43,8 +43,9 @@ function Level1() {
         } else if (cardOption.nextEvent === 0) {
             const dif = lib.getScore() - startScore;
             service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+            // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '1');
-            localStorage.setItem('feedback', level.level.description);
+            localStorage.setItem('feedback', level.level.events[3].text[1]);
             navigate('../win');
         }
     }
