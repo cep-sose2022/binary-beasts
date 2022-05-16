@@ -27,7 +27,7 @@ backupController.postCardEventBackup =  asyncHandler(async (req, res) => {
             await _CopyOfCardEvent.deleteOne(obj._id);
         }
         await cardEvent.forEach(e => _CopyOfCardEvent.insertMany(e));
-        res.status(200).json({success: true});
+        res.status(201).json({success: true});
     } catch (err) {
         res.json({ message: err.message });
     }
@@ -60,7 +60,7 @@ backupController.postCardBackup =  asyncHandler(async (req, res) => {
             await _CopyOfCard.deleteOne(obj._id);
         }
         await card.forEach(e => _CopyOfCard.insertMany(e));
-        res.status(200).json({success: true});
+        res.status(201).json({success: true});
     } catch (err) {
         res.json({ message: err.message });
     }
@@ -93,7 +93,7 @@ backupController.postEventBackup =  asyncHandler(async (req, res) => {
             await _CopyOfEvent.deleteOne(obj._id);
         }
         await event.forEach(e => _CopyOfEvent.insertMany(e));
-        res.status(200).json({success: true});
+        res.status(201).json({success: true});
     } catch (err) {
         res.json({ message: err.message });
     }
@@ -126,7 +126,7 @@ backupController.postLeaderboardBackup =  asyncHandler(async (req, res) => {
             await _CopyOfLeaderboard.deleteOne(obj._id);
         }
         await leaderboard.forEach(e => _CopyOfLeaderboard.insertMany(e));
-        res.status(200).json({success: true});
+        res.status(201).json({success: true});
     } catch (err) {
         res.json({ message: err.message });
     }
@@ -159,7 +159,7 @@ backupController.postLevelBackup =  asyncHandler(async (req, res) => {
             await _CopyOfLevel.deleteOne(obj._id);
         }
         await level.forEach(e => _CopyOfLevel.insertMany(e));
-        res.status(200).json({success: true});
+        res.status(201).json({success: true});
     } catch (err) {
         res.json({ message: err.message });
     }
@@ -192,7 +192,7 @@ backupController.postUserBackup =  asyncHandler(async (req, res) => {
             await _CopyOfLeaderboard.deleteOne(obj._id);
         }
         await user.forEach(e => _CopyOfUser.insertMany(e));
-        res.status(200).json({success: true});
+        res.status(201).json({success: true});
     } catch (err) {
         res.json({ message: err.message });
     }
