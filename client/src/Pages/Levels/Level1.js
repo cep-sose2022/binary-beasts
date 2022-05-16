@@ -6,16 +6,19 @@ import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
 
+// set score back to zero
+lib.setLevelStartScore('level1');
+
+// get level data from backend
+const level = service.getLevel('level1');
+
 function Level1() {
 
-    // set score back to zero
-    lib.setLevelStartScore('level1');
     // save start score
     const startScore = lib.getScore();
 
     let navigate = useNavigate();
-    // get level data from backend
-    const level = service.getLevel('level1');
+
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
