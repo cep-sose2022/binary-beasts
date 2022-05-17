@@ -1,4 +1,3 @@
-const service = require('./../service');
 const lib = {};
 
 /**
@@ -23,7 +22,6 @@ lib.getNickname = () => {
  * @param levelToken
  */
 lib.setLevelStartScore = (levelToken) => {
-    const userScore = 0;
     localStorage.setItem('score', 0);
 };
 
@@ -43,6 +41,14 @@ lib.updateScore = (points) => {
  */
 lib.getScore = () => {
     return parseInt(localStorage.getItem('score'));
+};
+
+/**
+ * Delay for a number of milliseconds
+ */
+lib.wait = (delay) => {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
 };
 
 module.exports = lib;
