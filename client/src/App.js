@@ -15,7 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      
+
       <Routes>
         <Route path="/" element={<Homepage />}/>
         <Route path="/progress" element={<Progress />}/>
@@ -25,7 +25,7 @@ function App() {
         <Route path="/faq" element={<FAQ />}/>
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
-        <Route path="/win" element={!localStorage.getItem('levelNumber') ? <LevelOverview /> : <Win/>}/>
+        <Route path="/win" element={<Win/>}/>
       </Routes>
     </BrowserRouter>
   );
