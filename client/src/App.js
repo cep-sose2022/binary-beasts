@@ -6,7 +6,6 @@ import Progress from "./Pages/Progresspage";
 import Game from "./Pages/Game";
 import FAQ from "./Pages/subpages/FAQ";
 import './App.css';
-import { Fragment } from 'react';
 import AboutUs from './Pages/subpages/AboutUs';
 import PrivacyPolicy from './Pages/subpages/PrivacyPolicy';
 import Win from './Pages/subpages/Win';
