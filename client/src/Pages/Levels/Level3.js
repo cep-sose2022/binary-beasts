@@ -73,6 +73,10 @@ function Level3() {
 
     if (gameOver) {
       setCurrentCards(currentCards.filter(card => false));
+      service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
+      localStorage.setItem('levelNumber', '3');
+      localStorage.setItem('feedback', "Gratulation! Sie haben nun den Vorgang der Installation von Patches erfolgreich gemeistert! Behalten Sie im Hinterkopf, regelmäßig nach Sicherheitspatches Ausschau zu halten. Beachten Sie ebenfalls, dass nicht immer Sicherheitspatches für ICS-Geräte verfügbar sind oder eine Installation oft nicht möglich ist. In solchen Fällen sollte immer eine Risikoanalyse mit alternativen Ausgleichsmaßnahmen wie die im Beispiel erfolgte Netzsegmentierung erfolgen. Machen Sie es Hackern nicht durch veraltete Systeme einfach!");
+      navigate('../win');
     }
   }, [eventTextNumber, currentEvent]);
 
