@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import service from "../../service";
 import { useNavigate } from "react-router-dom";
 import lib from "../../library/bib";
@@ -12,7 +12,10 @@ function Level4() {
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventTextNumber, setEventTextNumber] = useState(0);
-    let startScore = lib.getScore();
+    let startScore = lib.getScore(); 
+
+    const history = useState(currentEvent);
+    
 
     let encryptDrive = false;
     let scanForVirus = false;
@@ -23,19 +26,16 @@ function Level4() {
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent].text[eventTextNumber]);
         setCurrentCards(level.level.events[currentEvent].cards);
-        console.log("useEffect - event Text: " + eventText);
-        console.log("useEffect - Cards: " + currentCards);
+        
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
-        setEventTextNumber(cardOption.nextEventText);
-        setCurrentEvent(cardOption.nextEvent);
-        lib.updateScore(cardOption.points);
-        console.log("handleClick - event Text: " + eventText);
-        console.log("handleClick - Cards: " + cardOption.nextEvent);
         if (cardOption.name === "card0"){
             
         }
+        setEventTextNumber(cardOption.nextEventText);
+        setCurrentEvent(cardOption.nextEvent);
+        lib.updateScore(cardOption.points);
     }
 
     const endGame = () => {
