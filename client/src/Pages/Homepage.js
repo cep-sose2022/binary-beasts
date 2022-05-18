@@ -72,7 +72,7 @@ function Home(props) {
       </div>
 
       <div id="play"><button id="playbutton" onClick={() => { checkInput() }}>
-       {loggedIn ? <p>Spielen</p>: <p>Login</p>}
+       {loggedIn ? <>Spielen</>: <p>Login</p>}
       </button></div>
 
       <button id="instructionbutton"
