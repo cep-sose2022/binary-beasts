@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Level1 from "./Levels/Level1";
 import Level2 from "./Levels/Level2"
 import Level3 from "./Levels/Level3";
+import Level5 from "./Levels/Level5";
 import service from '../service';
 import lib from '../library/bib.js';
 
@@ -13,10 +14,10 @@ function Game(){
     let navigate = useNavigate();    
 
      // Timer
-     const startingMinutes = 4;
+     /* const startingMinutes = 4;
      const startingSeconds = 0;
      const [mins, setMinutes] = useState(startingMinutes);
-     const [secs, setSeconds] = useState(startingSeconds);
+     const [secs, setSeconds] = useState(startingSeconds); */
 
      let level;
     switch(location.state.levelid){
@@ -28,10 +29,13 @@ function Game(){
             break;    
         case 3:
             level = service.getLevel("level3");
-            break;    
+            break;
+        case 5:
+            level = service.getLevel("level5");
+        break;    
     }
     
-     useEffect(() => {
+     /* useEffect(() => {
          let sampleInterval = setInterval(() => {
              if (secs > 0) {
                  setSeconds(secs - 1);
@@ -50,7 +54,7 @@ function Game(){
          return () => {
              clearInterval(sampleInterval);
          };
-     });
+     }); */
      //end of Timer
 
     return(
@@ -60,7 +64,7 @@ function Game(){
                 <p>Level: <span>1</span></p>
             </div>
             <div id="navtimer" className="navgamecontent">
-                <p>Time: <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> </p>
+                <p>Time: {/* <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> */} </p>
             </div>
             <div id="score" className="navgamecontent">
                 <p>Score: <span>{lib.getScore()}</span></p>
@@ -70,6 +74,7 @@ function Game(){
         {location.state.levelid === 1 && <Level1 />}
         {location.state.levelid === 2 && <Level2 />}
         {location.state.levelid === 3 && <Level3 />}
+        {location.state.levelid === 5 && <Level5 />}
         </>
     );
 }

@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
-import mail from './../../images/level5/mail.jpg';
-import login from './../../images/level5/login.jpg';
-import download from './../../images/level5/download.jpg';
+import mail from './../../images/level1/mail.jpg';
+import login from './../../images/level1/login.jpg';
+import download from './../../images/level1/download.jpg';
 import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
-
+const level = service.getLevel('level5');
 function Level5() {
 
     // set score back to zero
@@ -15,7 +15,7 @@ function Level5() {
 
     let navigate = useNavigate();
     // get level data from backend
-    const level = service.getLevel('level5');
+    
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
@@ -34,7 +34,7 @@ function Level5() {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentRound(currentRound + 1);
         lib.updateScore(cardOption.points);
-        /* if (cardOption.nextImage === 'mail') {
+        if (cardOption.nextImage === 'mail') {
             setCurrentImage(mail);
         } else if (cardOption.nextImage === 'login') {
             setCurrentImage(login);
@@ -45,9 +45,9 @@ function Level5() {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '1');
-            localStorage.setItem('feedback', level.level.events[3].text[1]);
+            localStorage.setItem('feedback', level.level.events[5].text[1]);
             navigate('../win');
-        } */
+        }
     }
 
     return (
