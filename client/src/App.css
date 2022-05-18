@@ -316,3 +316,13 @@
         background-image: url("./images/factory1.png");
         justify-content: left;
     }
+
+    label{
+        float: left;
+        clear: left;
+        text-align: left;
+    }
+
+    input {
+        float: right;
+      }
