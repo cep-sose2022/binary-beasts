@@ -12,7 +12,7 @@
     
     #home-container,#gamecontainer,
     #level-overview-container, #board-container,
-    #progress-container{
+    #progress-container, #win-container{
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -128,7 +128,7 @@
         border-width: thin;
         border-style: solid;
     }
-    #playbutton:hover, #gamecontainer button:hover{
+    #playbutton:hover, #gamecontainer button:hover, #levelOverview-button:hover{
         background-image: none;
     
         color: #0e2a47;
@@ -327,3 +327,18 @@
         float: right;
         color: #000000;
       }
+
+    /* Win */
+    #win-container{
+        background-image: url("./images/background.png");
+        background-position: center center;
+        font-size: 30px;
+    }
+
+    #win-description{
+        font-size: 20px;
+    }
+
+    #levelOverview-button{
+        font-size: 20px;
+    }
