@@ -7,9 +7,8 @@ font-family: 'Roboto', sans-serif;
 }
 
 body{
-    background-color: #ff0000ce;
+    background-color: #6f6f6f;
 }
-
 #home-container,#gamecontainer,
 #level-overview-container, #board-container,
 #progress-container{
@@ -282,7 +281,26 @@ left: 12.5%;
     top: 48%;
     left: 18%;
 }
-
+#levelButton3{
+    top: 52%;
+    left: 31%;
+}
+#levelButton4{
+    top: 48%;
+    left: 18%;
+}
+#levelButton5{
+    top: 48%;
+    left: 18%;
+}
+#levelButton6{
+    top: 48%;
+    left: 18%;
+}
+#levelButton7{
+    top: 48%;
+    left: 18%;
+}
 /* Leaderboard */
 #board-container{
     background-image: url("./images/oilrig2.png");
