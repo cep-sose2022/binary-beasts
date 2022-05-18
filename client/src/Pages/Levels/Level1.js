@@ -5,6 +5,7 @@ import download from './../../images/level1/download.jpg';
 import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
+import cardImages from '../../library/cardImages.js';
 
 // set score back to zero
 lib.setLevelStartScore('level1');
@@ -72,7 +73,11 @@ function Level1() {
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                    <img src={cardImages.getCardImage(cardOption.image)}/>
+                                    <br />
+                                    {cardOption.text}
+                                </button>
                             ))}
                         </div>
                     </div>
