@@ -3,6 +3,8 @@ import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
+import cardImages from '../../library/cardImages.js';
+import orga from './../../images/cardImages/orga.png';
 
 let protectionInstalled = false;
 let networkSegmented = false;
@@ -172,7 +174,11 @@ function Level2() {
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                    <img src={cardImages.getCardImage(cardOption.image)}/>
+                                    <br />
+                                    {cardOption.text}
+                                </button>
                             ))}
                         </div>
                     </div>
