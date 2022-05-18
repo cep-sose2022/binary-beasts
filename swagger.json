@@ -656,6 +656,199 @@
         },
         "parameters": []
       }
+    },
+    "/add-data/post-level": {
+      "post": {
+        "tags":["add-data"],
+        "description": "add a new level to Level collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "level data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/add-data/post-event": {
+      "post": {
+        "tags":["add-data"],
+        "description": "add a new event to Event collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "event data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "levelId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/add-data/post-card": {
+      "post": {
+        "tags":["add-data"],
+        "description": "add a new card to Card collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "card data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "points": {
+                  "type": "number"
+                },
+                "nextEvent": {
+                  "type": "number"
+                },
+                "nextImage": {
+                  "type": "string"
+                },
+                "nextEventText": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/add-data/post-card-event": {
+      "post": {
+        "tags":["add-data"],
+        "description": "add a new cardEvent to CardEvent collection",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "card event data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "body"
+              ],
+              "properties":
+              {
+                "eventId": {
+                  "type": "string"
+                },
+                "cardIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
     }
   }
 }

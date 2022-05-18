@@ -29,6 +29,9 @@ const cardSchema = mongoose.Schema(
         }
     },
     {
+        versionKey: false
+    },
+    {
         timestamps: false,
     }
 )

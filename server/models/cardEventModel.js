@@ -12,6 +12,9 @@ const cardEventSchema = mongoose.Schema(
         },
     },
     {
+        versionKey: false
+    },
+    {
         timestamps: false,
     }
 )
