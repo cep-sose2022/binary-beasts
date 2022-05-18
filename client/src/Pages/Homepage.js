@@ -49,7 +49,9 @@ function Home(props) {
     <div id="home-container" className="container">
       <div id="home-info" className="box">
         <h1>Willkommen bei Binary Beasts</h1>
-        <p id="introduction">Kurze Einleitung</p>
+        <p id="introduction">Willkommen zum OT-Security-Awareness Training von Binary Beasts!<br />
+        Hier lernen Sie auf eine spannende und spielerische Weise die Wichtigkeit<br/ >
+        von OT-Security und wie man diese sicherstellt. Wir wünschen Ihnen viel Spaß!</p>
       </div>
 
       <div id="user-login" className="box">
