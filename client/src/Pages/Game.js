@@ -14,10 +14,10 @@ function Game(){
     let navigate = useNavigate();    
 
      // Timer
-     /* const startingMinutes = 4;
+     const startingMinutes = 4;
      const startingSeconds = 0;
      const [mins, setMinutes] = useState(startingMinutes);
-     const [secs, setSeconds] = useState(startingSeconds); */
+     const [secs, setSeconds] = useState(startingSeconds);
 
      let level;
     switch(location.state.levelid){
@@ -35,7 +35,7 @@ function Game(){
         break;    
     }
     
-     /* useEffect(() => {
+     useEffect(() => {
          let sampleInterval = setInterval(() => {
              if (secs > 0) {
                  setSeconds(secs - 1);
@@ -54,7 +54,7 @@ function Game(){
          return () => {
              clearInterval(sampleInterval);
          };
-     }); */
+     });
      //end of Timer
 
     return(
@@ -64,7 +64,7 @@ function Game(){
                 <p>Level: <span>1</span></p>
             </div>
             <div id="navtimer" className="navgamecontent">
-                <p>Time: {/* <span>{mins}:{secs < 10 ? `0${secs}` : secs}</span> */} </p>
+                <p>Time: {<span>{mins}:{secs < 10 ? `0${secs}` : secs}</span>} </p>
             </div>
             <div id="score" className="navgamecontent">
                 <p>Score: <span>{lib.getScore()}</span></p>
