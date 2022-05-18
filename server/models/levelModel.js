@@ -14,6 +14,8 @@ const levelSchema = mongoose.Schema(
             type: String,
             required: [true, 'Please add a description '],
         },
+    },
+    {
         versionKey: false
     },
     {
