@@ -16,6 +16,9 @@ const eventSchema = mongoose.Schema(
         },
     },
     {
+        versionKey: false
+    },
+    {
         timestamps: false,
     }
 )
