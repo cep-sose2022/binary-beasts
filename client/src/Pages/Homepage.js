@@ -17,32 +17,24 @@ function Home(props) {
 
   function checkInput() {
     if (loggedIn)
-    navigate("/leveloverview");
-      if ((nameInputField.current.value === "" || pinInputField.current.value === "") && !loggedIn) {
-        setInputMessage(2);
-      } else if ((nameInputField.current.value === "" || pinInputField.current.value === "") && loggedIn) { 
-        navigate("/leveloverview");
-      } else if (loggedIn) { 
-        if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { //change user
-          lib.setNickname(nameInputField.current.value);
-          navigate("/leveloverview");
-        }
-      } else if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { // validate user login
+      navigate("/leveloverview");
+    if ((nameInputField.current.value === "" || pinInputField.current.value === "") && !loggedIn) {
+      setInputMessage(2);
+    } else if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { // validate user login
+      lib.setNickname(nameInputField.current.value);
+      setInputMessage(4);
+      setLoggedIn(true);
+    } else {
+      const newUserCreated = service.postUser(nameInputField.current.value, pinInputField.current.value);
+      console.log(newUserCreated.newUser === undefined);
+      if(newUserCreated.newUser !== undefined) {
         lib.setNickname(nameInputField.current.value);
-        setInputMessage(4);
+        setInputMessage(1);
         setLoggedIn(true);
       } else {
-        const newUserCreated = service.postUser(nameInputField.current.value, pinInputField.current.value);
-        console.log(newUserCreated.newUser === undefined);
-        if(newUserCreated.newUser !== undefined) {
-          lib.setNickname(nameInputField.current.value);
-          setInputMessage(1);
-          setLoggedIn(true);
-        } else {
-          setInputMessage(3);
-        }
-        
-      }
+        setInputMessage(3);
+      } 
+    }
   }
 
   return (
@@ -77,8 +69,14 @@ function Home(props) {
       </div>
 
       <div id="play"><button id="playbutton" onClick={() => { checkInput() }}>
-       {loggedIn ? <>Spielen</>: <p>Login</p>}
-      </button></div>
+        {loggedIn ? <>Spielen</>: <p>Login</p>}
+        </button>
+      </div>
+
+      { loggedIn &&
+          <button id="logout" name="logout" onClick={() => {localStorage.removeItem("username"); setLoggedIn(false);}}>Log Out</button>
+        
+      }
 
       <button id="instructionbutton"
         onClick={() => { instructionsOpen ? setInstructionsOpen(false) : setInstructionsOpen(true) }} /* toggle button for how-to-play*/
