@@ -12,12 +12,24 @@ function Game(){
     const location = useLocation();
     let navigate = useNavigate();
 
+<<<<<<< HEAD
     const [levelName, setLevelName] = useState("");
     const [previousScore, setPreviousScore] = useState(0);
     const [currentScore, setCurrentScore] = useState(0);
     
     let level;
     switch(location.state.levelid){
+=======
+     // Timer
+     const startingMinutes = 4;
+     const startingSeconds = 0;
+     const [mins, setMinutes] = useState(startingMinutes);
+     const [secs, setSeconds] = useState(startingSeconds);
+
+     let level;
+     level = service.getLevel("level"+location.state.levelid);
+   /* switch(location.state.levelid){
+>>>>>>> cce2d34 (BB-119: Insert basic code into level 4)
         case 1:
             level = service.getLevel("level1");
             break;
@@ -26,6 +38,7 @@ function Game(){
             break;    
         case 3:
             level = service.getLevel("level3");
+<<<<<<< HEAD
             break;
         case 5:
             level = service.getLevel("level5");
@@ -33,6 +46,32 @@ function Game(){
             level = service.getLevel("level6");
         break;    
     }
+=======
+            break;    
+    }*/
+    
+     useEffect(() => {
+         let sampleInterval = setInterval(() => {
+             if (secs > 0) {
+                 setSeconds(secs - 1);
+             }
+             if (secs === 0) {
+                 if (mins === 0) {
+                     const dif = lib.getScore() - startScore;
+                     service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+                     navigate('./../LevelOverview');
+                 } else {
+                     setMinutes(mins - 1);
+                     setSeconds(59);
+                 }
+             }
+         }, 1000);
+         return () => {
+             clearInterval(sampleInterval);
+         };
+     });
+     //end of Timer
+>>>>>>> cce2d34 (BB-119: Insert basic code into level 4)
 
     return(
         <>
