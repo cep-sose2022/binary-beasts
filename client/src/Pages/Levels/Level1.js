@@ -57,10 +57,13 @@ function Level1(props) {
                 service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             } else if (lib.getScore() < 0) {
                 service.postUserLeaderboard(lib.getNickname(), level.level._id, 0);
+            } if (cardOption.name === 'card11') {
+                localStorage.setItem('feedback', level.level.events[5].text[1]);
+            } else if (cardOption.name === 'card12') {
+                localStorage.setItem('feedback', level.level.events[5].text[2]);
             }
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '1');
-            localStorage.setItem('feedback', level.level.events[5].text[1]);
             navigate('../win');
         }
     }
