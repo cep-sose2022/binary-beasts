@@ -5,8 +5,8 @@ import Level1 from "./Levels/Level1";
 import Level2 from "./Levels/Level2"
 import Level3 from "./Levels/Level3";
 import Level5 from "./Levels/Level5";
+import Level6 from "./Levels/Level6";
 import service from '../service';
-import lib from '../library/bib.js';
 
 function Game(){
     const location = useLocation();
@@ -29,6 +29,8 @@ function Game(){
             break;
         case 5:
             level = service.getLevel("level5");
+        case 6:
+            level = service.getLevel("level6");
         break;    
     }
 
@@ -43,9 +45,9 @@ function Game(){
             </div>
             <div id="score" className="navgamecontent">
                 <p>Score:  
-                    {currentScore === previousScore && <span className="gameNavbar-blue">{currentScore}</span>}
-                    {currentScore > previousScore && <span className="score-green">{currentScore}</span>}
-                    {currentScore < previousScore && <span className="score-red">{currentScore}</span>}
+                    {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore}</span>}
+                    {currentScore > previousScore && <span className="score-green"> {currentScore}</span>}
+                    {currentScore < previousScore && <span className="score-red"> {currentScore}</span>}
                 </p>
             </div>   
         </nav>
@@ -54,6 +56,7 @@ function Game(){
         {location.state.levelid === 2 && <Level2 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 3 && <Level3 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 5 && <Level5 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         </>
     );
 }
