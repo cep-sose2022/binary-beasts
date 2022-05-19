@@ -6,6 +6,11 @@ import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
 const level = service.getLevel('level5');
+
+const cardsPlayed = [];
+let rooms=0;
+let fail=0;
+
 function Level5() {
 
     // set score back to zero
@@ -24,28 +29,56 @@ function Level5() {
     const [eventTextNumber, setEventTextNumber] = useState(0);
     const [currentImage, setCurrentImage] = useState(mail);
 
+    //refreshes Evettext and Currentcards
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards);
+        
+        console.log(cardsPlayed);
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        if(cardOption.name=="card2"){
+            cardsPlayed.push('card2');
+        }
+        if(cardOption.name=="card3"){
+            cardsPlayed.push('card3');
+        }
+        if(cardOption.name=="card4"){
+            cardsPlayed.push('card4');
+        }
+        if(cardOption.name=="card5"){
+            cardsPlayed.push('card5');
+        }
+        if(cardOption.name=="card56"){
+            rooms++;
+        }
+        if(cardOption.name=="card1"){
+            fail++;
+        }
+        
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
+        setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
         lib.updateScore(cardOption.points);
-        if (cardOption.nextImage === 'mail') {
+        
+        /* if (cardOption.nextImage === 'mail') {
             setCurrentImage(mail);
         } else if (cardOption.nextImage === 'login') {
             setCurrentImage(login);
         } else if (cardOption.nextImage === 'download') {
             setCurrentImage(download);
-        } else if (cardOption.nextEvent === 0) {
+        } else  */
+        if (cardOption.nextEvent === 0 || rooms==4) {
             const dif = lib.getScore() - startScore;
             service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '1');
             localStorage.setItem('feedback', level.level.events[5].text[1]);
+            navigate('../win');
+        }
+        if(fail==2){
             navigate('../win');
         }
     }
