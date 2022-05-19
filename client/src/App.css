@@ -173,6 +173,10 @@ a:hover{
     justify-content: right;
 }
 #gameNavbar span{
+    
+}
+
+.gameNavbar-blue {
     color: #1c62ad;
 }
 
@@ -356,4 +360,12 @@ input {
 
 #levelOverview-button{
     font-size: 20px;
+}
+
+.score-green {
+    color: green;
+}
+
+.score-red {
+    color: red;
 }
