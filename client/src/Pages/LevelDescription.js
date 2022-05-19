@@ -10,17 +10,23 @@ function Leveldescription() {
     const levels = service.getAllLevels();
     const level = levels.allLevels.filter(level => level.token === "level" + levelNumber);
     return(
-      <div>
+      <div id="description-container" className="container">
           <h1>{level[0].name}</h1>
-          <p>{level[0].description}</p>
-          <button onClick={() => {
+          
+          <div id="level-description" className="box">
+            <p>{level[0].description}</p>
+          </div>
+          
+          
+          
+          <button id="levelOverview-button" onClick={() => {
             navigate("/game", {
               state: {
                 levelid: levelNumber
               }
             });
           }}>Starten</button>
-          <button onClick={() => {
+          <button id="levelOverview-button" onClick={() => {
             navigate("/leveloverview");
           }}>Zurück</button>
       </div>

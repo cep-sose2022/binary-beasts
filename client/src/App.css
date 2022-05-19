@@ -16,7 +16,7 @@ background-color: #000000;
 } 
 #home-container,#gamecontainer,
 #level-overview-container, #board-container,
-#progress-container, #win-container{
+#progress-container, #win-container, #description-container{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -362,10 +362,22 @@ input {
     font-size: 20px;
 }
 
+/* Score */
 .score-green {
     color: green;
 }
 
 .score-red {
     color: red;
+}
+
+/* Leveldescription */
+#description-container {
+    background-image: url("./images/background.png");
+    background-position: center center;
+    font-size: 30px;
+}
+
+#level-description{
+    font-size: 20px;
 }
