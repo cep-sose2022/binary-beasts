@@ -16,12 +16,14 @@ function Home(props) {
   const [inputMessage, setInputMessage] = useState(0); //for omitting swapping between users
 
   function checkInput() {
+    if (loggedIn)
+    navigate("/leveloverview");
       if ((nameInputField.current.value === "" || pinInputField.current.value === "") && !loggedIn) {
         setInputMessage(2);
       } else if ((nameInputField.current.value === "" || pinInputField.current.value === "") && loggedIn) { 
         navigate("/leveloverview");
       } else if (loggedIn) { 
-        if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) {
+        if (service.checkUser(nameInputField.current.value, pinInputField.current.value)) { //change user
           lib.setNickname(nameInputField.current.value);
           navigate("/leveloverview");
         }
@@ -53,16 +55,19 @@ function Home(props) {
         Hier lernen Sie auf eine spannende und spielerische Weise die Wichtigkeit<br/ >
         von OT-Security und wie man diese sicherstellt. Wir wünschen Ihnen viel Spaß!</p>
       </div>
-
+    {
+      localStorage.getItem("username") === null && // hide login-form when logged in
       <div id="user-login" className="box">
         <label for="nickname">Nickname:</label>
 
         <input id="nickname" type="text" ref={nameInputField} /><br />
         <br />
         <label for="pin">Pin:</label>
+        {console.log(loggedIn)}
 
         <input id="pin" type="text" ref={pinInputField} /><br />
       </div>
+}
 
       <div id="login-message" className="box">
         {inputMessage === 1 ? <p>Neuer User mit dem Nicknamen "{lib.getNickname()}" wurde erstellt.</p> : //return the fitting feedback for inputField
@@ -85,11 +90,13 @@ function Home(props) {
             <h3>Spielanleitung</h3>
             <p>Es gibt unterschiedliche Szenarien, die Sie durchlaufen werden.
               Sie haben dabei freie Wahl, welches Sie wählen, aber wenn Sie eins begonnen haben,
-              müssen Sie es erst zu Ende spielen, bevor Sie andere spielen können.
-              In jedem Szenario kommen Ereignisse auf die reagieren müssen, indem Sie Karten ausspielen.
+              müssen Sie es erst zu Ende spielen, bevor Sie andere spielen können. <br/>
+              In jedem Szenario kommen Ereignisse auf die Sie reagieren müssen, indem Sie Karten ausspielen.
               Dabei müssen Sie beachten, dass Sie jede Karte nur einmal benutzen können.
-              Haben Sie sich entschieden wie Sie auf das Ereignis reagieren und eine Karte gewählt, folgt das nächste Ereignis mit neuen Karten.
-              Bei manchen Szenarien bleiben die alten Karten erhalten, aber darauf sollten Sie sich nicht verlassen.
+              Haben Sie sich entschieden wie Sie auf das Ereignis reagieren und eine Karte gewählt, folgt das nächste Ereignis mit neuen Karten. 
+              Bei manchen Szenarien bleiben die alten Karten erhalten, aber darauf sollten Sie sich nicht verlassen. <br/>
+              Jede Karte gibt unterschiedlich viele Punkte, das Ziel ist es kluge Entscheidungen zu treffen um eine möglichst hohe Punktzahl zu erreichen.
+              Sie können ein Szenario mehrmals spielen und sich dadurch verbessern. 
             </p>
           </div>
         }
