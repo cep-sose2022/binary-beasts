@@ -6,6 +6,7 @@ import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 import orga from './../../images/cardImages/orga.png';
 
+
 let protectionInstalled = false;
 let networkSegmented = false;
 
@@ -25,9 +26,9 @@ let card20Played = false;
 const level = service.getLevel('level2');
 const cardsPlayed = [];
 
-function Level2() {
+function Level2(props) {
     let navigate = useNavigate();
-    
+
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
@@ -38,8 +39,8 @@ function Level2() {
 
     if (currentRound === 1) {
         lib.setLevelStartScore('level2');
+        props.passLevelName(level.level.name);
     }
-    const startScore = lib.getScore();
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
@@ -67,8 +68,10 @@ function Level2() {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
+        
+        props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
-        console.log(lib.getScore());
+        props.passCurrentScore(lib.getScore());
 
         if (cardOption.name == 'card1') {
             cardsPlayed.push('card9');

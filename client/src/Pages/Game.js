@@ -10,16 +10,13 @@ import lib from '../library/bib.js';
 
 function Game(){
     const location = useLocation();
-    const startScore = lib.getScore();
-    let navigate = useNavigate();    
+    let navigate = useNavigate();
 
-     // Timer
-     const startingMinutes = 4;
-     const startingSeconds = 0;
-     const [mins, setMinutes] = useState(startingMinutes);
-     const [secs, setSeconds] = useState(startingSeconds);
-
-     let level;
+    const [levelName, setLevelName] = useState("");
+    const [previousScore, setPreviousScore] = useState(0);
+    const [currentScore, setCurrentScore] = useState(0);
+    
+    let level;
     switch(location.state.levelid){
         case 1:
             level = service.getLevel("level1");
@@ -34,47 +31,29 @@ function Game(){
             level = service.getLevel("level5");
         break;    
     }
-    
-     useEffect(() => {
-         let sampleInterval = setInterval(() => {
-             if (secs > 0) {
-                 setSeconds(secs - 1);
-             }
-             if (secs === 0) {
-                 if (mins === 0) {
-                     const dif = lib.getScore() - startScore;
-                     service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
-                     navigate('./../LevelOverview');
-                 } else {
-                     setMinutes(mins - 1);
-                     setSeconds(59);
-                 }
-             }
-         }, 1000);
-         return () => {
-             clearInterval(sampleInterval);
-         };
-     });
-     //end of Timer
 
     return(
         <>
         <nav id="gameNavbar">
             <div id="navlevelround"className="navgamecontent">
-                <p>Level: <span>1</span></p>
+                <p>Level: <span className="gameNavbar-blue">{levelName}</span></p>
             </div>
             <div id="navtimer" className="navgamecontent">
-                <p>Time: {<span>{mins}:{secs < 10 ? `0${secs}` : secs}</span>} </p>
+                {/* <p>Time: {<span className="gameNavbar-blue">{mins}:{secs < 10 ? `0${secs}` : secs}</span>} </p> */}
             </div>
             <div id="score" className="navgamecontent">
-                <p>Score: <span>{lib.getScore()}</span></p>
+                <p>Score:  
+                    {currentScore === previousScore && <span className="gameNavbar-blue">{currentScore}</span>}
+                    {currentScore > previousScore && <span className="score-green">{currentScore}</span>}
+                    {currentScore < previousScore && <span className="score-red">{currentScore}</span>}
+                </p>
             </div>   
         </nav>
 
-        {location.state.levelid === 1 && <Level1 />}
-        {location.state.levelid === 2 && <Level2 />}
-        {location.state.levelid === 3 && <Level3 />}
-        {location.state.levelid === 5 && <Level5 />}
+        {location.state.levelid === 1 && <Level1 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 2 && <Level2 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 3 && <Level3 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 5 && <Level5 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         </>
     );
 }

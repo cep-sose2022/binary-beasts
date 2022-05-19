@@ -13,7 +13,7 @@ lib.setLevelStartScore('level1');
 // get level data from backend
 const level = service.getLevel('level1');
 
-function Level1() {
+function Level1(props) {
 
     // save start score
     const startScore = lib.getScore();
@@ -28,6 +28,9 @@ function Level1() {
     const [eventTextNumber, setEventTextNumber] = useState(0);
     const [currentImage, setCurrentImage] = useState(mail);
 
+    if (currentRound === 1) props.passLevelName(level.level.name);
+    
+
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
         setCurrentCards(level.level.events[currentEvent - 1].cards);
@@ -37,7 +40,11 @@ function Level1() {
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentRound(currentRound + 1);
+
+        props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
+        props.passCurrentScore(lib.getScore());
+
         if (cardOption.nextImage === 'mail') {
             setCurrentImage(mail);
         } else if (cardOption.nextImage === 'login') {

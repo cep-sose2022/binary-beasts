@@ -3,11 +3,11 @@ import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
+import cardImages from '../../library/cardImages.js';
 
 
 
-
-function Level3() {
+function Level3(props) {
 
   let navigate = useNavigate();
   const level = service.getLevel('level3');
@@ -29,6 +29,7 @@ function Level3() {
 
   if (currentRound === 1) {
     lib.setLevelStartScore('level3');
+    props.passLevelName(level.level.name);
   }
   const startScore = lib.getScore();
 
@@ -85,8 +86,11 @@ function Level3() {
     setEventTextNumber(cardOption.nextEventText);
     setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
     setCurrentRound(currentRound + 1);
+
+    props.passPreviousScore(lib.getScore());
     lib.updateScore(cardOption.points);
-    console.log(lib.getScore());
+    props.passCurrentScore(lib.getScore());
+
 
     if (cardOption.name == 'card4') {
       setCombatibilityChecked(true);
@@ -144,24 +148,15 @@ function Level3() {
             </div>
             <div id="actionscontainer">
               {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                  <img src={cardImages.getCardImage(cardOption.image)} />
+                  <br />
+                  {cardOption.text}
+                </button>
               ))}
             </div>
           </div>
         </div>
-
-        {/* <div className='images'>
-              <img src={currentImage} className='img'/>
-          </div>
-          <div className='cards'>
-              {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                  <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
-              ))}
-          </div>
-          <div className='questions'>
-              <br/>
-              <div className='event-text'>{!eventText ? "Loading..." : eventText}</div>
-          </div> */}
       </>
     </div>
   );
