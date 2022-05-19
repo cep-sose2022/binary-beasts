@@ -3,22 +3,8 @@ import service from "./../service";
 import Navbar from "../Navbar";
 
 function Leaderboard(props) {
-    // test for service
-    const leaderboard = service.getLeaderboard();
-    console.log('.....Leaderboard: ', leaderboard);
-    const userLeaderboard = service.getUserLeaderboard("test1");
-    console.log('User-Leaderboard: ', userLeaderboard);
+
     const boardScores = service.getScores();
-
-    const body = JSON.stringify({
-        username: "httpInsertTest",
-        levelId: "test",
-        score: 5
-    });
-
-    //Comment out for sending post-request for above body
-    //const postUserLeaderboard = service.postUserLeaderboard(body);
-    //console.log('Post-User-Leaderboard: ', postUserLeaderboard);
 
     return(
         <>

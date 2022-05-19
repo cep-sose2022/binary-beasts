@@ -29,6 +29,7 @@ function Game(){
             break;
         case 5:
             level = service.getLevel("level5");
+            break;
         case 6:
             level = service.getLevel("level6");
         break;    
