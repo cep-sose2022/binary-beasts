@@ -11,7 +11,7 @@ function LevelOverview() {
         <div id="level-overview-container">
             <div id="playfield">
                     <button id="levelButton1" className="levelButton"onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 1
                         }
@@ -19,7 +19,7 @@ function LevelOverview() {
                     }}>1
                     </button>
                     <button id="levelButton2" className="levelButton" onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 2
                         }
@@ -27,7 +27,7 @@ function LevelOverview() {
                     }}>2
                     </button>
                     <button id="levelButton3" className="levelButton" onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 3
                         }
@@ -35,7 +35,7 @@ function LevelOverview() {
                     }}>3
                     </button>
                     <button id="levelButton4" className="levelButton" onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 4
                         }
@@ -43,7 +43,7 @@ function LevelOverview() {
                     }}>4
                     </button>
                     <button id="levelButton5" className="levelButton" onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 5
                         }
@@ -51,7 +51,7 @@ function LevelOverview() {
                     }}>5
                     </button>
                     {/* <button className="levelButton" onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 6
                         }
@@ -59,7 +59,7 @@ function LevelOverview() {
                     }}>6
                     </button>
                     <button className="levelButton" onClick={() => {
-                        navigate("/game", {
+                        navigate("/description", {
                         state: {
                           levelid: 7
                         }
