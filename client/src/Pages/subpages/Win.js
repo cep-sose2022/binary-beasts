@@ -29,6 +29,7 @@ function Win() {
                 localStorage.removeItem('levelNumber');
                 localStorage.removeItem('feedback');
                 localStorage.removeItem('level');
+                lib.setLevelStartScore('zero');
                 navigate("/leveloverview");
             }}>Level Overview</button>
         </div>
