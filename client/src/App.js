@@ -8,7 +8,7 @@ import FAQ from "./Pages/subpages/FAQ";
 import './App.css';
 import AboutUs from './Pages/subpages/AboutUs';
 import PrivacyPolicy from './Pages/subpages/PrivacyPolicy';
-import Win from './Pages/subpages/Win';
+import Win from './Pages/subpages/Levelcompletion';
 import Leveldescription from './Pages/LevelDescription';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Route path="/faq" element={<FAQ />}/>
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
-        <Route path="/win" element={<Win/>}/>
+        <Route path="/levelcompletion" element={<Win/>}/>
         <Route path="/description" element={<Leveldescription/>}/>
       </Routes>
     </BrowserRouter>
