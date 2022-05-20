@@ -17,9 +17,10 @@ background-color: #000000;
 #home-container,#gamecontainer,
 #level-overview-container, #board-container,
 #progress-container, #win-container, #description-container{
+    /* width: 100vw; */
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     height: 90vh;
 
     margin: auto;
@@ -27,9 +28,7 @@ background-color: #000000;
     justify-items: center;
     align-items: center;
 }
-.container{
 
-}
 .box,button{
     background-image: url("./images/background.png");
     background-size: cover;
@@ -45,13 +44,10 @@ background-color: #000000;
     border-style: solid;
     background-image: url("./images/background.png");
 }
-button{
-    
-}
 
 /* Nav */
 #navmain,#gameNavbar{
-    width: 98vw;
+    width: 97.1vw;
     height: 9.7vh;
     min-height: 1.5rem;
     padding-left: 1vmax;
@@ -71,7 +67,7 @@ button{
     justify-content: space-around;
     background-image: url("./images/background.png");
 }
-.navlinks { 
+nav .navlinks { 
     width: 50vw;
 
     display: flex;
@@ -98,7 +94,7 @@ nav a{
 .active{
     color: #48ffd5;
 }
-a:hover{
+nav a:hover{
     color: #48ffd5;
 }
 
@@ -132,7 +128,7 @@ a:hover{
     border-width: thin;
     border-style: solid;
 }
-#playbutton:hover, #gamecontainer button:hover, #levelOverview-button:hover{
+#playbutton:hover, #gamecontainer button:hover, .levelOverview-button:hover{
     background-image: none;
 
     color: #0e2a47;
@@ -277,6 +273,20 @@ a:hover{
     width: 3vmin;
     position:relative; 
 }
+.levelButton .boxDescriptionButton{
+    position: absolute;
+    top:-4vh;
+    left: -8vh;
+    opacity: 0;
+    height: 8vh;
+    width: 10vw;
+}
+.levelButton .box2{
+    width: auto;
+}
+.levelButton .boxDescriptionButton:hover{
+    opacity: 1;
+}
 .levelButton:hover{
     background-image: none;
     color: #0e2a47;
@@ -303,9 +313,14 @@ left: 12.5%;
     left: 74%;
 }
 /* Leaderboard */
+
 #board-container{
     background-image: url("./images/oilrig2.png");
-    background-position: center center;
+    
+    background-attachment: fixed;
+    background-position: 0 top;
+    height: auto;
+    min-height: 90vh;
 }
 table,td,th{
     background-color: #e7e7e764;
@@ -358,7 +373,7 @@ input {
     font-size: 20px;
 }
 
-#levelOverview-button{
+.levelOverview-button{
     font-size: 20px;
 }
 
@@ -373,7 +388,7 @@ input {
 
 /* Leveldescription */
 #description-container {
-    background-image: url("./images/background.png");
+    background-image: url("./images/Leveloverviewblurred.png");
     background-position: center center;
     font-size: 30px;
 }
@@ -381,3 +396,38 @@ input {
 #level-description{
     font-size: 20px;
 }
+#description-container .box{
+    background-image: none;
+    background-color: #3bc9a895;
+    border-color: #0b2037;
+    width: 50vw;
+    height: 25vh;
+    display: grid;
+    justify-items: center;
+}
+.box2{
+    background-color: #3bc9a895;
+    border-radius: 0.5vh;
+}
+/* footer */
+footer{
+     width: 99.1vw;
+    background-image: url(images/background2.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    /* height: 5vh; */
+}
+a:hover{
+    color: #0b2037;
+}
+/* footer .navlinks2{
+    width: 20vw;
+}
+footer ul{
+    width: 10vw;
+}
+footer p{
+    width: 0vw;
+} */
