@@ -10,7 +10,7 @@ import cardImages from '../../library/cardImages.js';
 
 // set score back to zero
 lib.setLevelStartScore('level1');
-
+let level;
 // get level data from backend
 
 
@@ -21,7 +21,7 @@ function Level1(props) {
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
-    let level;
+    
     if (currentRound === 1) {
         lib.setLevelStartScore('level1');
         level = service.getLevel('level1');

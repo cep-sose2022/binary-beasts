@@ -20,7 +20,7 @@ let gameOver = false;
 
 //const level = service.getLevel('level6');
 
-
+let level;
 function Level2(props) {
     let navigate = useNavigate();
 
@@ -39,10 +39,6 @@ function Level2(props) {
     const [eventTextNumber, setEventTextNumber] = useState(0);
     const [currentImage, setCurrentImage] = useState(null);
 
-    if (currentRound === 1) {
-        lib.setLevelStartScore('level2');
-        props.passLevelName(level.level.name);
-    }
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);

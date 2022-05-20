@@ -25,6 +25,7 @@ let card20Played = false;
 
 
 const cardsPlayed = [];
+let level;
 
 function Level2(props) {
     let navigate = useNavigate();
@@ -32,7 +33,7 @@ function Level2(props) {
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
-    let level;
+    
     if (currentRound === 1) {
         lib.setLevelStartScore('level2');
         level = service.getLevel('level2');

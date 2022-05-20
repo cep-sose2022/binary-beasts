@@ -6,13 +6,18 @@ import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 
 
-
+let level;
 function Level3(props) {
 
   let navigate = useNavigate();
-  const level = service.getLevel('level3');
   const [currentEvent, setCurrentEvent] = useState(1);
   const [currentRound, setCurrentRound] = useState(1);
+
+  if (currentRound === 1) {
+    lib.setLevelStartScore('level3');
+    level = service.getLevel('level3');
+    props.passLevelName(level.level.name);
+  }
 
   const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
   const [eventText, setEventText] = useState(level.level.events[0].text[0]);
@@ -27,10 +32,7 @@ function Level3(props) {
   const [cardElevenPlayed, setCardElevenPlayed] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
-  if (currentRound === 1) {
-    lib.setLevelStartScore('level3');
-    props.passLevelName(level.level.name);
-  }
+  
   const startScore = lib.getScore();
 
   React.useEffect(() => {

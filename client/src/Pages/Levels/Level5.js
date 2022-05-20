@@ -10,7 +10,7 @@ import lib from '../../library/bib.js';
 const cardsPlayed = [];
 let rooms=0;
 let fail=0;
-
+let level;
 function Level5(props) {
 
     // set score back to zero
@@ -24,7 +24,6 @@ function Level5(props) {
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
-    let level;
     if (currentRound === 1) {
         lib.setLevelStartScore('level5');
         level = service.getLevel('level5');
