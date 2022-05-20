@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
-import orga from './../../images/cardImages/orga.png';
 
 
 let protectionInstalled = false;
@@ -19,8 +18,6 @@ let hacked = false;
 let dataSecured = false;
 
 let lost = false;
-let gameOver = false;
-
 let card20Played = false;
 
 
@@ -33,25 +30,30 @@ function Level2(props) {
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
-    
     if (currentRound === 1) {
         lib.setLevelStartScore('level2');
         level = service.getLevel('level2');
         props.passLevelName(level.level.name);
+        lost = false;
+        protectionInstalled = false;
+        networkSegmented = false;
+        antivirusInstalled = false;
+        seperatedNotPatchedICS = false;
+        softwareWhitelisted = false;
+        signaturesChecked = false;
+        hacked = false;
+        dataSecured = false;
+        lost = false;
+        card20Played = false;
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
     const [eventTextNumber, setEventTextNumber] = useState(0);
-    const [currentImage, setCurrentImage] = useState(null);
-
-    
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
         setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
-
-        
     }, [currentEvent]);
 
     React.useEffect(() => {
@@ -62,10 +64,6 @@ function Level2(props) {
             setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
         }
 
-        if (gameOver) {
-            setCurrentCards(currentCards.filter(card => false));
-        }
-        
     }, [eventTextNumber, currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
@@ -73,7 +71,7 @@ function Level2(props) {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
-        
+
         props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
         props.passCurrentScore(lib.getScore());
@@ -86,7 +84,7 @@ function Level2(props) {
             dataSecured = true;
             cardsPlayed.push('card10');
             cardsPlayed.push('card19');
-        } 
+        }
         if (cardOption.name === 'card4') protectionInstalled = true;
         if (cardOption.name === 'card7') networkSegmented = true;
         if (cardOption.name == 'card10') {
@@ -96,7 +94,7 @@ function Level2(props) {
         if (cardOption.name === 'card12') {
             cardsPlayed.push('card21');
             softwareWhitelisted = true;
-        } 
+        }
         if (cardOption.name === 'card13') {
             cardsPlayed.push('card22');
         }
@@ -114,24 +112,24 @@ function Level2(props) {
         }
         if (cardOption.name === 'card22') {
             hacked = false;
-            if(cardOption.name === 'card22' && dataSecured) setEventTextNumber(13);
-        } 
+            if (cardOption.name === 'card22' && dataSecured) setEventTextNumber(13);
+        }
         if (cardOption.name === 'card23') signaturesChecked = true;
-        
-        
-        if(cardOption.name === 'card25' && hacked) {
+
+
+        if (cardOption.name === 'card25' && hacked) {
             setEventTextNumber(12);
         }
 
 
-        if(networkSegmented && protectionInstalled) {
+        if (networkSegmented && protectionInstalled) {
             networkSegmented = false;
             protectionInstalled = false;
             setCurrentEvent(2);
             setEventTextNumber(0);
         }
 
-        if(antivirusInstalled && seperatedNotPatchedICS) {
+        if (antivirusInstalled && seperatedNotPatchedICS) {
             antivirusInstalled = false;
             seperatedNotPatchedICS = false;
             setCurrentEvent(3);
@@ -145,11 +143,12 @@ function Level2(props) {
             setEventTextNumber(1);
         }
         if (lost) {
-            setCurrentEvent(3);
-            setEventTextNumber(2);
-            gameOver = true;
+            service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
+            localStorage.setItem('levelNumber', '2');
+            localStorage.setItem('feedback', 'Sie haben leider verloren! Sie haben sich leider zuerst für Aktionen entschieden, die zu diesem Zeitpunkt eine geringere Priorität hatten. Somit hatten Hacker genug Zeit, sich in das ICS-System einzuhacken und die Kontrolle zu erlangen. Achten Sie das nächste Mal darauf!');
+            navigate('../levelcompletion');
         }
-        if(currentEvent === 3 && signaturesChecked && softwareWhitelisted) {
+        if (currentEvent === 3 && signaturesChecked && softwareWhitelisted) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '2');
             localStorage.setItem('feedback', 'Gratulation! Sie haben sich effektiv gegen Zero-Day-Exploits geschützt! Durch die Überprüfung der digitalen Signaturen haben Sie bei einer Software festgestellt, dass durch einen Zero-Day eine Backdoor geschaffen wurde, die wahrscheinlich für einen späteren Angriff gedacht war. Dies konnten Sie aber nun verhindern, bevor dieser Angriff durchgeführt wurde. Durch das Whitelisting haben Sie ebenfalls das Risikopotenzial auf zukünftige Zero-Days reduziert. Aber bleiben Sie trotzdem auf der Hut! Es kann auf der autorisierten Software trotzdem vorkommen, dass durch Zero-Days eine Infektion mit Schadsoftware möglich ist.');
@@ -174,16 +173,11 @@ function Level2(props) {
                                     <div id='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
                                 </div>
                             </div>
-                            <div id="eventimagecontainer">
-                                <div id="eventimage">
-                                    <img src={currentImage} className='img' />
-                                </div>
-                            </div>
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
                                 <button onClick={() => handleAnswerButtonClick(cardOption)}>
-                                    <img src={cardImages.getCardImage(cardOption.image)}/>
+                                    <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
                                 </button>
