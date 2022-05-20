@@ -17,23 +17,26 @@ function Game(){
     const [currentScore, setCurrentScore] = useState(0);
     
     let level;
-    switch(location.state.levelid){
-        case 1:
-            level = service.getLevel("level1");
+    React.useEffect(() => {
+        switch(location.state.levelid){
+            case 1:
+                console.log('stop');
+                level = service.getLevel("level1");
+                break;
+           case 2:
+               level = service.getLevel("level2");
+               break;
+           case 3:
+               level = service.getLevel("level3");
+               break;
+            case 5:
+                level = service.getLevel("level5");
+                break;
+            case 6:
+                level = service.getLevel("level6");
             break;
-        case 2:
-            level = service.getLevel("level2");
-            break;    
-        case 3:
-            level = service.getLevel("level3");
-            break;
-        case 5:
-            level = service.getLevel("level5");
-            break;
-        case 6:
-            level = service.getLevel("level6");
-        break;    
-    }
+        }
+    }, []);
 
     return(
         <>
