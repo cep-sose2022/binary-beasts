@@ -39,6 +39,7 @@ function Home(props) {
 
   return (
     <>
+    <div id="homepageall">
     <Navbar />
     <div id="home-container" className="container">
       <div id="home-info" className="box">
@@ -101,6 +102,7 @@ function Home(props) {
       </div>
     </div>
     <Footer/>
+    </div>
     </>
   );
 }
