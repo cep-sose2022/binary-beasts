@@ -89,7 +89,7 @@ function Level2(props) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '6');
             localStorage.setItem('feedback', 'Gratulation! Sie haben nun zusammen mit dem IT-Administrator die wichtigsten Schritte für die Einrichtung eines sicheren Remote Access erarbeitet. Vergessen Sie nicht, dass die Verwendung eines Remote Access im Industrieumfeld trotz ihres praktischen Nutzens sicherheitstechnisch nicht zu empfehlen ist. Lässt es sich aber dennoch nicht verhindern, wissen Sie nun worauf Sie achten sollen. Ein kleiner Hinweis: In den meisten Industrieanlagen sind solche Konzepte für Remote Access bereits umgesetzt und in Nutzung, es schadet aber nicht, diese noch einmal auf die eben gelernten Kriterien zu überprüfen. Gerade Standardpasswörter sind keine Seltenheit in einer solchen Umgebung, da solche Anlagen zum Teil vor langer Zeit aufgebaut und konfiguriert wurden, als Remote Access noch überhaupt kein Thema war.');
-            navigate('../win');
+            navigate('../levelcompletion');
         }
     }
 

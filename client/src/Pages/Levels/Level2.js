@@ -153,7 +153,7 @@ function Level2(props) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '2');
             localStorage.setItem('feedback', 'Gratulation! Sie haben sich effektiv gegen Zero-Day-Exploits geschützt! Durch die Überprüfung der digitalen Signaturen haben Sie bei einer Software festgestellt, dass durch einen Zero-Day eine Backdoor geschaffen wurde, die wahrscheinlich für einen späteren Angriff gedacht war. Dies konnten Sie aber nun verhindern, bevor dieser Angriff durchgeführt wurde. Durch das Whitelisting haben Sie ebenfalls das Risikopotenzial auf zukünftige Zero-Days reduziert. Aber bleiben Sie trotzdem auf der Hut! Es kann auf der autorisierten Software trotzdem vorkommen, dass durch Zero-Days eine Infektion mit Schadsoftware möglich ist.');
-            navigate('../win');
+            navigate('../levelcompletion');
         }
     }
 

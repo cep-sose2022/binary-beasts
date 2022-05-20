@@ -71,7 +71,7 @@ function Level1(props) {
             }
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '1');
-            navigate('../win');
+            navigate('../levelcompletion');
         }
     }
 
