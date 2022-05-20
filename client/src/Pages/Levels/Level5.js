@@ -5,16 +5,16 @@ import download from './../../images/level1/download.jpg';
 import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
-const level = service.getLevel('level5');
+//const level = service.getLevel('level5');
 
 const cardsPlayed = [];
 let rooms=0;
 let fail=0;
 
-function Level5() {
+function Level5(props) {
 
     // set score back to zero
-    lib.setLevelStartScore('level5');
+    //lib.setLevelStartScore('level5');
     // save start score
     const startScore = lib.getScore();
 
@@ -23,6 +23,13 @@ function Level5() {
     
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
+
+    let level;
+    if (currentRound === 1) {
+        lib.setLevelStartScore('level5');
+        level = service.getLevel('level5');
+        props.passLevelName(level.level.name);
+    }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);

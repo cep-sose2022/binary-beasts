@@ -18,7 +18,7 @@ let playedCard16 = false;
 
 let gameOver = false;
 
-const level = service.getLevel('level6');
+//const level = service.getLevel('level6');
 
 
 function Level2(props) {
@@ -26,6 +26,13 @@ function Level2(props) {
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
+
+    let level;
+    if (currentRound === 1) {
+        lib.setLevelStartScore('level6');
+        level = service.getLevel('level6');
+        props.passLevelName(level.level.name);
+    }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);

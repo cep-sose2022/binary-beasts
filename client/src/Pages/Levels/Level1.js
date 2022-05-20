@@ -12,7 +12,7 @@ import cardImages from '../../library/cardImages.js';
 lib.setLevelStartScore('level1');
 
 // get level data from backend
-const level = service.getLevel('level1');
+
 
 function Level1(props) {
 
@@ -21,12 +21,19 @@ function Level1(props) {
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
+    let level;
+    if (currentRound === 1) {
+        lib.setLevelStartScore('level1');
+        level = service.getLevel('level1');
+        props.passLevelName(level.level.name);
+    }
+
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
     const [eventTextNumber, setEventTextNumber] = useState(0);
     const [currentImage, setCurrentImage] = useState(mail);
 
-    if (currentRound === 1) props.passLevelName(level.level.name);
+    
     
 
     React.useEffect(() => {
