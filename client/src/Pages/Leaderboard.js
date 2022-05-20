@@ -22,7 +22,8 @@ function Leaderboard(props) {
 
     return(
         <>
-        <Navbar />
+        <div></div>
+        <Navbar id="leaderboard_nav"/>
         <div id="board-container" name="board-container">
             {/* <h1>Leaderboard-Ranking</h1> */}
             <div>
@@ -37,7 +38,6 @@ function Leaderboard(props) {
                     <tbody>
                 {
                     boardScores.sortedUsers.map(key => {
-                        
                         return  (
                             <tr key={key}>
                                 <td>{key.rank}</td>
