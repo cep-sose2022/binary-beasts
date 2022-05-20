@@ -30,10 +30,8 @@ function Level3(props) {
   const [patchDocumented, setPatchDocumented] = useState(false);
   const [cardSevenPlayed, setCardSevenPlayed] = useState(false);
   const [cardElevenPlayed, setCardElevenPlayed] = useState(false);
+  const [card13Played, setCard13Played] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-
-  
-  const startScore = lib.getScore();
 
   React.useEffect(() => {
     //setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
@@ -47,7 +45,7 @@ function Level3(props) {
   React.useEffect(() => {
     if (usbInfected && cardSevenPlayed) {
       setEventText(level.level.events[currentEvent - 1].text[4]);
-      setCardSevenPlayed(false)
+      setCardSevenPlayed(false);
       setUsbInfected(false);
     } else if (!compatibilityChecked && usbInfected && dataSaved && currentEvent == 3) {
       setEventText(level.level.events[currentEvent - 1].text[9]);
@@ -78,7 +76,8 @@ function Level3(props) {
       setCurrentCards(currentCards.filter(card => false));
       service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
       localStorage.setItem('levelNumber', '3');
-      localStorage.setItem('feedback', "Gratulation! Sie haben nun den Vorgang der Installation von Patches erfolgreich gemeistert! Behalten Sie im Hinterkopf, regelmäßig nach Sicherheitspatches Ausschau zu halten. Beachten Sie ebenfalls, dass nicht immer Sicherheitspatches für ICS-Geräte verfügbar sind oder eine Installation oft nicht möglich ist. In solchen Fällen sollte immer eine Risikoanalyse mit alternativen Ausgleichsmaßnahmen wie die im Beispiel erfolgte Netzsegmentierung erfolgen. Machen Sie es Hackern nicht durch veraltete Systeme einfach!");
+      if(card13Played) localStorage.setItem('feedback', "Schade! Sie hätten nicht auf den Sicherheitspatch warten sollen, sondern andere Maßnahmen ergreifen sollen. Da Sie dies nicht getan haben, haben Hacker in der Zwischenzeit die Schwachstelle des Patches ausgenutzt und haben nun die Kontrolle über das ICS-System!");
+      else localStorage.setItem('feedback', "Gratulation! Sie haben nun den Vorgang der Installation von Patches erfolgreich gemeistert! Behalten Sie im Hinterkopf, regelmäßig nach Sicherheitspatches Ausschau zu halten. Beachten Sie ebenfalls, dass nicht immer Sicherheitspatches für ICS-Geräte verfügbar sind oder eine Installation oft nicht möglich ist. In solchen Fällen sollte immer eine Risikoanalyse mit alternativen Ausgleichsmaßnahmen wie die im Beispiel erfolgte Netzsegmentierung erfolgen. Machen Sie es Hackern nicht durch veraltete Systeme einfach!");
       navigate('../levelcompletion');
     }
   }, [eventTextNumber, currentEvent]);
@@ -120,6 +119,7 @@ function Level3(props) {
 
     if (cardOption.name == 'card12' || cardOption.name == 'card13') {
       setGameOver(true);
+      if(cardOption.name == 'card13') setCard13Played(true);
     }
 
   }
