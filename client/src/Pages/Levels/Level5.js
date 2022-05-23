@@ -20,7 +20,7 @@ function Level5(props) {
 
     let navigate = useNavigate();
     // get level data from backend
-    
+
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
