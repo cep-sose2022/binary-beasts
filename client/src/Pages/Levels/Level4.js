@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import service from "../../service";
 import { useNavigate } from "react-router-dom";
-import lib from "../../library/bib";
+import lib, { getScore } from "../../library/bib";
 
 
 const level = service.getLevel('level4');
@@ -28,41 +28,42 @@ function Level4(props) { //external devices
     let dynEventText;
 
     //passing on levelName to game 
-    if (currentRound === 1) 
+    if (currentRound === 1)
         props.passLevelName(level.level.name);
 
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]); //-1 because eventName and eventNumber differ by 1
-       
+
         //set cards 
-        if (currentEvent === 1) //== baseEvent
+        if (currentEvent === 1)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))); //don't show already used cards
         else if (!isolatedNetwork)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card10" || "card21"))); // two events have one card less
         else
             setCurrentCards(level.level.events[currentEvent - 1].cards);
-            console.log("history (useEffect): " + nextEventHistory + " - currenEvent: " + currentEvent);
+
+        console.log("history (useEffect): " + nextEventHistory + " - currenEvent: " + currentEvent);
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
-        
         if (currentEvent === 1) {
             handleBaseEvent(cardOption);
         } else if (cardOption.name === "card0") {
             determineNextEvent(cardOption);
-        } else if (cardOption.name === "card17") {
-            
-        } else {
+        }  else {
             nextEventHistory.push(cardOption.nextEvent); //add nextEvent to history
             checkExceptions(cardOption);
             setEventTextNumber(cardOption.nextEventText);
             setCurrentEvent(cardOption.nextEvent);
         }
-        
-        renderScore(cardOption);
-        
-        setCurrentRound(currentRound++);
+
+        //render score
+        props.passPreviousScore(lib.getScore());
+        lib.updateScore(cardOption.points);
+        props.passCurrentScore(lib.getScore());
+
+        setCurrentRound(currentRound + 1);
     }
 
     /**
@@ -77,19 +78,16 @@ function Level4(props) { //external devices
             return;
         } else if (currentEvent === 1) { //basic event with security meassures 
             dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
-        } else if (currentEvent === dynEvent) { //
+        } else if (/*cardOption.name != "card17" && */ currentEvent === dynEvent) { //card17 references same event
             dynEvent = 1;
-        } else if (cardOption.name === "card17") {
-            dynEvent = currentEvent; //reference to the same event 
-            isScanned = true; //TODO exclude option, of event9 text 0
         }
         else {
-            checkExceptions(cardOption);
+            //checkExceptions(cardOption);
             console.log("something went wrong");
         }
+        checkExceptions(cardOption);
         setEventTextNumber(dynEventText);
         setCurrentEvent(dynEvent);
-        renderScore(cardOption);
 
         console.log("dynEvent (after): " + dynEvent);
     }
@@ -107,12 +105,15 @@ function Level4(props) { //external devices
             ;
 
         cardsPlayed.push(cardOption.name);
+        console.log("cardsPlayed: " + cardsPlayed);
         determineNextEvent(cardOption);
     }
 
     const checkExceptions = (cardOption) => {
         if (cardOption.name === "card17") {
             isScanned = true;
+            cardsPlayed.push(cardOption.name);
+            //dynEventText=1; //card17 leads to same event again
         } else if (cardOption.name === "card16") {
             if (isScanned) {
                 if (whitelisting)
@@ -142,16 +143,11 @@ function Level4(props) { //external devices
 
     };
 
-    const renderScore = (cardOption) =>{
-        props.passPreviousScore(lib.getScore());
-        lib.updateScore(cardOption.points);
-        props.passCurrentScore(lib.getScore());
-    }
-
     const endGame = () => {
-        //  const dif = lib.getScore() - startScore;
-        //  service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
-        localStorage.setItem('levelNumber', '1');
+        const dif = lib.getScore() - startScore;
+        service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+        localStorage.setItem('levelNumber', '4');
+        localStorage.setItem('feedback', '- Noch zu erledigen - ');
         navigate('../win');
     }
 
