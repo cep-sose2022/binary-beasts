@@ -13,7 +13,6 @@ let physicalLocks = false;
 const cardsPlayed = [];
 const nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
 
-let isLevelNameSet = false;
 let isScanned = false;
 
 function Level4(props) { //external devices
@@ -21,22 +20,24 @@ function Level4(props) { //external devices
     const [currentEvent, setCurrentEvent] = useState(1);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
+    const [currentRound, setCurrentRound] = useState(1);
     const [eventTextNumber, setEventTextNumber] = useState(0);
     let startScore = lib.getScore();
 
     let dynEvent;
     let dynEventText;
 
-
-    if (!isLevelNameSet) {
+    //passing on levelName to game 
+    if (currentRound === 1) 
         props.passLevelName(level.level.name);
-        isLevelNameSet = true;
-    }
+
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]); //-1 because eventName and eventNumber differ by 1
+       
+        //set cards 
         if (currentEvent === 1) //== baseEvent
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))); //don't show already used cards
         else if (!isolatedNetwork)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card10" || "card21"))); // two events have one card less
         else
@@ -45,21 +46,23 @@ function Level4(props) { //external devices
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        
         if (currentEvent === 1) {
             handleBaseEvent(cardOption);
         } else if (cardOption.name === "card0") {
             determineNextEvent(cardOption);
         } else if (cardOption.name === "card17") {
-
+            
         } else {
             nextEventHistory.push(cardOption.nextEvent); //add nextEvent to history
             checkExceptions(cardOption);
             setEventTextNumber(cardOption.nextEventText);
             setCurrentEvent(cardOption.nextEvent);
         }
-        props.passPreviousScore(lib.getScore());
-        lib.updateScore(cardOption.points);
-        props.passCurrentScore(lib.getScore());
+        
+        renderScore(cardOption);
+        
+        setCurrentRound(currentRound++);
     }
 
     /**
@@ -69,12 +72,13 @@ function Level4(props) { //external devices
         dynEvent = nextEventHistory[nextEventHistory.length - 1]; //get the next event from history
         dynEventText = 0; //all events that follow card0 only have one text
         console.log("dynEvent (before): " + dynEvent);
-        if (currentEvent === 1) { //basic event with security meassures 
+        if (currentEvent === 14) {
+            endGame();
+            return;
+        } else if (currentEvent === 1) { //basic event with security meassures 
             dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
         } else if (currentEvent === dynEvent) { //
             dynEvent = 1;
-        } else if (currentEvent === 13) {
-            endGame();
         } else if (cardOption.name === "card17") {
             dynEvent = currentEvent; //reference to the same event 
             isScanned = true; //TODO exclude option, of event9 text 0
@@ -85,6 +89,8 @@ function Level4(props) { //external devices
         }
         setEventTextNumber(dynEventText);
         setCurrentEvent(dynEvent);
+        renderScore(cardOption);
+
         console.log("dynEvent (after): " + dynEvent);
     }
 
@@ -105,11 +111,7 @@ function Level4(props) { //external devices
     }
 
     const checkExceptions = (cardOption) => {
-        if (cardOption.name === "card10" || cardOption.name === "card21") {
-            //check for isolatedNetwork -> set this card visible or not
-            if (!isolatedNetwork)
-                setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => cardOption.name != ("card10" || "card21")));
-        } else if (cardOption.name === "card17") {
+        if (cardOption.name === "card17") {
             isScanned = true;
         } else if (cardOption.name === "card16") {
             if (isScanned) {
@@ -139,6 +141,12 @@ function Level4(props) { //external devices
         }
 
     };
+
+    const renderScore = (cardOption) =>{
+        props.passPreviousScore(lib.getScore());
+        lib.updateScore(cardOption.points);
+        props.passCurrentScore(lib.getScore());
+    }
 
     const endGame = () => {
         //  const dif = lib.getScore() - startScore;
