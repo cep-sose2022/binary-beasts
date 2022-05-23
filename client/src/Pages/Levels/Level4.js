@@ -78,11 +78,10 @@ function Level4(props) { //external devices
             return;
         } else if (currentEvent === 1) { //basic event with security meassures 
             dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
-        } else if (/*cardOption.name != "card17" && */ currentEvent === dynEvent) { //card17 references same event
+        } else if (currentEvent === dynEvent) { 
             dynEvent = 1;
         }
         else {
-            //checkExceptions(cardOption);
             console.log("something went wrong");
         }
         checkExceptions(cardOption);
@@ -112,8 +111,6 @@ function Level4(props) { //external devices
     const checkExceptions = (cardOption) => {
         if (cardOption.name === "card17") {
             isScanned = true;
-            cardsPlayed.push(cardOption.name);
-            //dynEventText=1; //card17 leads to same event again
         } else if (cardOption.name === "card16") {
             if (isScanned) {
                 if (whitelisting)
