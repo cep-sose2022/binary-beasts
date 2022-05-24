@@ -16,7 +16,7 @@ background-color: #000000;
 } 
 #home-container,#gamecontainer,
 #level-overview-container, #board-container,
-#progress-container, #win-container, #description-container{
+#progress-container, #win-container, #description-container,#gamecontainerlvl5{
     width: auto;
     background-repeat: no-repeat;
     background-size: cover;
@@ -134,7 +134,7 @@ nav a:hover{
     border-width: thin;
     border-style: solid;
 }
-#playbutton:hover, #gamecontainer button:hover, .levelOverview-button:hover{
+#playbutton:hover, #gamecontainer button:hover, .levelOverview-button:hover, #gamecontainerlvl5 button:hover{
     background-image: none;
 
     color: #0e2a47;
@@ -182,12 +182,26 @@ nav a:hover{
 .gameNavbar-blue {
     color: #1c62ad;
 }
-
 /* Gamecontainer */
-#gamecontainer {
+#gamecontainer{
     background-image: url(images/serverroom.jpg);
     background-position: center, center;
     background-size: cover;
+}
+#gamecontainerlvl5{
+    position: absolute;
+    top: 10vh;
+}
+#backgroundlvl5container{
+    height: 90vh;
+    background-color: #ededed;
+}
+#backgroundlvl5{
+    display:block;
+    width: 100vw;
+    height: 90vh;
+    object-fit: cover;
+    filter: blur(3px);
 }
 #game{
     width: 100vw;
@@ -218,9 +232,6 @@ nav a:hover{
     padding-left: 2vw;
     padding-right: 2vw;
 }
-#actionscontainer button{
-    /* margin: 2vw; */    
-}
 #eventmessage{ 
     font-size: 1.3vmax;
     
@@ -248,7 +259,7 @@ nav a:hover{
     max-height:50vh;
     aspect-ratio: 100/44.1;
 }
-#gamecontainer button{
+#gamecontainer button, #gamecontainerlvl5 button{
     width: 15vw;
     max-height:25vh;
     aspect-ratio: 1;
@@ -256,6 +267,9 @@ nav a:hover{
     margin-right: 0.1vmax;
     font-size: 1.2vmax;
 }
+/* levelcompletion */
+
+
 /* leveloverview */
 #level-overview-container{
     background-image: url("./images/factory2.1.png");
@@ -379,7 +393,7 @@ input {
 
 /* Win */
 #win-container{
-    background-image: url("./images/background.png");
+    background-image: url("./images/Leveloverviewblurred.png");
     background-position: center center;
 }
 
