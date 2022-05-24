@@ -14,6 +14,7 @@ const cardsPlayed = [];
 const nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
 
 let isScanned = false;
+let isIsolatedChecked = false;
 
 function Level4(props) { //external devices
     let navigate = useNavigate();
@@ -40,6 +41,8 @@ function Level4(props) { //external devices
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))); //don't show already used cards
         else if (!isolatedNetwork)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card10" || "card21"))); // two events have one card less
+        else if (isIsolatedChecked)
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card13"))); //event11
         else
             setCurrentCards(level.level.events[currentEvent - 1].cards);
 
@@ -100,8 +103,7 @@ function Level4(props) { //external devices
             physicalLocks = true;
         } else if (cardOption.name === "card4") {
             isolatedNetwork = true;
-        } else //card5
-            ;
+        }
 
         cardsPlayed.push(cardOption.name);
         console.log("cardsPlayed: " + cardsPlayed);
@@ -136,6 +138,11 @@ function Level4(props) { //external devices
             } else {
                 dynEventText = 2;
             }
+        } else if (cardOption.name === "card21"){
+            isIsolatedChecked = true;
+        } else if (cardOption.name === "card22"){
+            if (isIsolatedChecked)
+                dynEventText = 1;
         }
 
     };
