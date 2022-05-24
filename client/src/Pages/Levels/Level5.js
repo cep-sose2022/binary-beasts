@@ -1,18 +1,38 @@
 import React, {useEffect, useRef, useState} from "react";
-import mail from './../../images/level1/mail.jpg';
-import login from './../../images/level1/login.jpg';
-import download from './../../images/level1/download.jpg';
+
+import kanye from './../../images/level5/kanye-west-stare.gif';
+import angryboss from './../../images/level5/angryboss.PNG';
+import maschine from './../../images/level5/maschine.PNG';
+import router from './../../images/level5/router.PNG';
+import schreibtisch from './../../images/level5/schreibtisch.PNG';
+import serverroom from './../../images/level5/serverroom.PNG';
+import start from './../../images/level5/start.PNG';
+import sus from './../../images/level5/sus.PNG';
+import bossoffice from './../../images/level5/bossoffice.PNG';
+import produktion from './../../images/level5/produktion.PNG';
+import tower from './../../images/level5/overheat.PNG';
+import officedesk from './../../images/level5/officedesk.PNG';
+import communityroom from './../../images/level5/gemeinschaftsraum.PNG';
+
+
 import service from './../../service';
 import { useNavigate } from 'react-router-dom';
 import lib from '../../library/bib.js';
 //const level = service.getLevel('level5');
 
 const cardsPlayed = [];
-let rooms=0;
+let roomcount=0;
 let fail=0;
 let level;
-function Level5(props) {
 
+let rooms=[4,3,2,1];//ranking
+let cp=[];//cards played
+let score=0;
+let rightcount=0;
+let penalty=0;
+let c=0;
+
+function Level5(props) {
     // set score back to zero
     //lib.setLevelStartScore('level5');
     // save start score
@@ -33,7 +53,8 @@ function Level5(props) {
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
     const [eventTextNumber, setEventTextNumber] = useState(0);
-    const [currentImage, setCurrentImage] = useState(mail);
+    const [currentImage, setCurrentImage] = useState(null);
+    const [currentBG, setCurrentBG] = useState(start);
 
     //refreshes Evettext and Currentcards
     React.useEffect(() => {
@@ -44,20 +65,43 @@ function Level5(props) {
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        function calc(){ 
+            cp.push([c]);
+            let rightroom=rooms[rightcount];
+            let difference=rightroom-c;
+            difference=Math.abs(difference);
+            score=rightroom-difference-penalty;
+            if(c==rightroom){
+                rightcount++;
+                penalty=0;
+            }
+            else{
+                penalty++;
+            }
+        }
+
         if(cardOption.name=="card2"){
             cardsPlayed.push('card2');
+            c=4;
+            calc();
         }
         if(cardOption.name=="card3"){
             cardsPlayed.push('card3');
+            c=3;
+            calc();
         }
         if(cardOption.name=="card4"){
             cardsPlayed.push('card4');
+            c=2;
+            calc();
         }
         if(cardOption.name=="card5"){
             cardsPlayed.push('card5');
+            c=1;
+            calc();
         }
         if(cardOption.name=="card56"){
-            rooms++;
+            roomcount++;
         }
         if(cardOption.name=="card1"){
             fail++;
@@ -67,32 +111,52 @@ function Level5(props) {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
-        lib.updateScore(cardOption.points);
-        
-        /* if (cardOption.nextImage === 'mail') {
-            setCurrentImage(mail);
-        } else if (cardOption.nextImage === 'login') {
-            setCurrentImage(login);
-        } else if (cardOption.nextImage === 'download') {
-            setCurrentImage(download);
-        } else  */
-        if (cardOption.nextEvent === 0 || rooms==4) {
-            const dif = lib.getScore() - startScore;
-            service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
-            // save level number and feedback in local storage and navigate to win page
-            localStorage.setItem('levelNumber', '1');
-            localStorage.setItem('feedback', level.level.events[5].text[1]);
-            navigate('../win');
+        props.passPreviousScore(lib.getScore());
+        lib.updateScore(cardOption.points+score);
+        props.passCurrentScore(lib.getScore());
+
+        if (cardOption.name === 'card56') {
+            setCurrentBG(start);
+            setCurrentImage(null);
+        }
+        else if (cardOption.nextImage === 'angryboss') {
+            setCurrentImage(angryboss);
+            setCurrentBG(bossoffice);
+        } else if (cardOption.nextImage === 'maschine') {
+            setCurrentImage(maschine);
+            setCurrentBG(produktion);
+        } else if (cardOption.nextImage === 'router') {
+            setCurrentImage(router);
+            setCurrentBG(communityroom);
+        }else if (cardOption.nextImage === 'schreibtisch') {
+            setCurrentImage(schreibtisch);
+            setCurrentBG(officedesk);
+        }else if (cardOption.nextImage === 'serverroom') {
+            setCurrentImage(tower);
+            setCurrentBG(serverroom);
+        }else if (cardOption.nextImage === 'sus') {
+            setCurrentImage(sus);
+        }
+
+        if (cardOption.nextEvent === 0 || roomcount==4) {
+            service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
+            localStorage.setItem('levelNumber', '5');
+            localStorage.setItem('feedback', 'Sie haben das level erfolgreich Beendet!');
+            navigate('../levelcompletion');
         }
         if(fail==2){
-            navigate('../win');
+            service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
+            localStorage.setItem('levelNumber', '5');
+            localStorage.setItem('feedback', 'Sie haben leider verloren!');
+            navigate('../levelcompletion');
         }
     }
 
     return (
         <div className='app'>
             <>
-                <div id="gamecontainer" className="container">
+                <div id="backgroundlvl5container"><img id="backgroundlvl5" src={currentBG}></img></div>
+                <div id="gamecontainerlvl5" className="container">
                     <div id="game">
                         <div id="event">
                             <div id="eventmessagecontainer">
