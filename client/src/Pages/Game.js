@@ -7,6 +7,7 @@ import Level3 from "./Levels/Level3";
 import Level4 from "./Levels/Level4";
 import Level5 from "./Levels/Level5";
 import Level6 from "./Levels/Level6";
+import Level7 from "./Levels/Level7";
 import service from '../service';
 
 function Game(){
@@ -46,6 +47,7 @@ function Game(){
         {location.state.levelid === 4 && <Level4 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 5 && <Level5 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 7 && <Level7 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         </>
     );
 }
