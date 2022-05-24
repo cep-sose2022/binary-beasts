@@ -2,6 +2,7 @@ import React from "react";
 import service from '../../service';
 import { useNavigate } from "react-router-dom";
 import lib from '../../library/bib.js';
+import Navbar from "../../Navbar";
 
 function Win() {
     let navigate = useNavigate();
@@ -15,9 +16,11 @@ function Win() {
         level = levels.allLevels.filter(level => level.token === "level" + levelNumber);
     }
     return(
+        <>
+        <Navbar />
         <div id="win-container" className="container">
             <div id="win-title">
-                <h1>{!localStorage.getItem('levelNumber') ? ' ' : level[0].name}</h1>
+                {/* <h1>{!localStorage.getItem('levelNumber') ? ' ' : level[0].name}</h1> */}
             </div>
             <div id="win-description" className="box">
                 <div id="win-score">
@@ -34,6 +37,7 @@ function Win() {
             }}>Level Overview</button>
         </div>
         </div>
+        </>
     );
 }
 
