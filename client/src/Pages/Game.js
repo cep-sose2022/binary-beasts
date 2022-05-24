@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Level1 from "./Levels/Level1";
 import Level2 from "./Levels/Level2"
 import Level3 from "./Levels/Level3";
+import Level4 from "./Levels/Level4";
 import Level5 from "./Levels/Level5";
 import Level6 from "./Levels/Level6";
 import service from '../service';
@@ -18,24 +19,7 @@ function Game(){
     
     let level;
     React.useEffect(() => {
-        switch(location.state.levelid){
-            case 1:
-                console.log('stop');
-                level = service.getLevel("level1");
-                break;
-           case 2:
-               level = service.getLevel("level2");
-               break;
-           case 3:
-               level = service.getLevel("level3");
-               break;
-            case 5:
-                level = service.getLevel("level5");
-                break;
-            case 6:
-                level = service.getLevel("level6");
-            break;
-        }
+        level = service.getLevel("level" + location.state.levelid);
     }, []);
 
     return(
@@ -59,6 +43,7 @@ function Game(){
         {location.state.levelid === 1 && <Level1 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 2 && <Level2 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 3 && <Level3 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 4 && <Level4 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 5 && <Level5 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         </>
