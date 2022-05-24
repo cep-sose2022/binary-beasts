@@ -71,7 +71,7 @@ function Level2(props) {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
-
+    
         props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
         props.passCurrentScore(lib.getScore());
@@ -136,7 +136,7 @@ function Level2(props) {
             setEventTextNumber(0);
         } else if (currentEvent === 2 && (softwareWhitelisted && signaturesChecked) || (softwareWhitelisted && antivirusInstalled) || (antivirusInstalled && signaturesChecked)) {
             lost = true;
-        } else if (currentEvent === 2 && (softwareWhitelisted && seperatedNotPatchedICS) || (seperatedNotPatchedICS && signaturesChecked)) {
+        } else if (currentEvent === 2 && ((softwareWhitelisted && seperatedNotPatchedICS) || (seperatedNotPatchedICS && signaturesChecked))) {
             antivirusInstalled = false;
             hacked = true;
             setCurrentEvent(3);
