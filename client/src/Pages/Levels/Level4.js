@@ -39,9 +39,9 @@ function Level4(props) { //external devices
         //set cards 
         if (currentEvent === 1)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))); //don't show already used cards
-        else if (!isolatedNetwork)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card10" || "card21"))); // two events have one card less
-        else if (isIsolatedChecked)
+        else if (!isolatedNetwork) {
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name != "card10" && card.name != "card21"))); // two events have one card less
+        }    else if (isIsolatedChecked)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card13"))); //event11
         else
             setCurrentCards(level.level.events[currentEvent - 1].cards);
@@ -100,17 +100,26 @@ function Level4(props) { //external devices
     }
 
     const handleBaseEvent = (cardOption) => {
-        if (cardOption.name === "card1") {
-            encryptDrive = true;
-        } else if (cardOption.name === "card2") {
-            whitelisting = true;
-        } else if (cardOption.name === "card3") {
-            physicalLocks = true;
-        } else if (cardOption.name === "card4") {
-            isolatedNetwork = true;
+        switch (cardOption.name) {
+            case "card1":
+                encryptDrive = true;
+                break;
+            case "card2":
+                whitelisting = true;
+                break;
+            case "card3":
+                physicalLocks = true;
+                break;
+            case "card4":
+                isolatedNetwork = true;
+                break;
+            default:
+                break;
         }
 
-        cardsPlayed.push(cardOption.name);
+        if(cardOption.name != "card5")
+            cardsPlayed.push(cardOption.name);
+
         console.log("cardsPlayed: " + cardsPlayed);
         determineNextEvent(cardOption);
     }
@@ -133,7 +142,8 @@ function Level4(props) { //external devices
                         dynEventText = 5;
                     else
                         dynEventText = 4;
-                }
+                } else
+                    dynEventText = 0;
                 break;
             case "card18":
                 if (isScanned) {
@@ -180,7 +190,7 @@ function Level4(props) { //external devices
         const dif = lib.getScore() - startScore;
         service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
         localStorage.setItem('levelNumber', '4');
-        localStorage.setItem('feedback', '- Noch zu erledigen - ');
+        localStorage.setItem('feedback', 'Wie sie bemerkt haben kann so ein einfacher USB-Stick schnell zum Verhängnis für die ganze Anlage sein. Deswegen sollte man immer auf den richtigen Umgang achten, sodass man es Angreifern möglichst schwer macht in das System einzudringen.');
         navigate('../win');
     }
 
