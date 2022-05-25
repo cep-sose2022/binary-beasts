@@ -58,7 +58,7 @@ function Home(props) {
         <label for="pin">Pin:</label>
         {console.log(loggedIn)}
 
-        <input id="pin" type="text" ref={pinInputField} /><br />
+        <input id="pin" type="password" ref={pinInputField} /><br />
       </div>
 }
 
