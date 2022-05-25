@@ -191,7 +191,7 @@ function Level4(props) { //external devices
         service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
         localStorage.setItem('levelNumber', '4');
         localStorage.setItem('feedback', 'Wie sie bemerkt haben kann so ein einfacher USB-Stick schnell zum Verhängnis für die ganze Anlage sein. Deswegen sollte man immer auf den richtigen Umgang achten, sodass man es Angreifern möglichst schwer macht in das System einzudringen.');
-        navigate('../win');
+        navigate('../levelcompletion');
     }
 
     return (
