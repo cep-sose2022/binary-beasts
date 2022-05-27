@@ -91,7 +91,8 @@ function Home(props) {
             </div>
           </div>
 
-          <div id="play"><button id="playbutton" onClick={() => { checkInput() }}>
+          <div id="play">
+            <button id="playbutton" onClick={() => { checkInput() }}>
             <>Spielen</>
           </button>
           </div>

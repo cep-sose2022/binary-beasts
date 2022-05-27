@@ -7,11 +7,7 @@
 }
 
 body {
-    background-image: url("./images/factory2.1.png");
     /* background-color: #4effe4; */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 -10vh;
 }
 
 #home-container,
@@ -25,7 +21,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 93vh;
+    height: 100vh;
 
     display: grid;
     justify-items: center;
@@ -33,7 +29,7 @@ body {
 }
 
 .box,
-button {
+button,#pdfdownload{
     background-image: url("./images/background.png");
     background-size: cover;
     background-position: center;
@@ -72,6 +68,7 @@ button {
 nav .navlinks {
     display: flex;
     justify-content: space-between;
+    padding-right: 0.5vw;
 }
 
 nav a {
@@ -110,46 +107,57 @@ nav a:hover {
 }
 
 /* Home */
-
+#home-container{
+    background-image: url("./images/factory2.1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
 #blog {
-    /* height: 90vh; */
+    /* background-color: #00000091; */
     display: grid;
-    grid-template-columns: 33vw 33vw 33vw;
-    grid-template-rows: 32rem 12rem 10rem;
+    grid-template-columns: 32vw 32vw 32vw;
+    grid-template-rows: 50vh 22vh 20vh;
     grid-template-areas: 
     "one one two"
     "three three three"
     "four four four";
+    height: 91vh;
 }
 
 #home-info {
-    /* background-color: #00000037; */
+    /* background-color: rgba(255, 0, 0, 0.715); */
     grid-area: one;
     display: grid;
     align-content: center;
-    padding: 2vh;
     font-size: clamp(0.1rem,2vw,2rem);
+    padding: 1rem;
+    /* height: 40vh; */
 }
 
 #home-info h1,
 #home-info p
 {
+    /* background-color: #000000; */
     color: #ededed;
     /* font-size: clamp(0.1rem,2vw,2rem); */
     /* font-size: clamp(0.1rem,2vw,2rem); */
 }
 
 #accountgrid{
-    /* border-color: #000000;
-    border-style: solid; */
+    /* background-color: rgba(137, 43, 226, 0.787); */
+    /* height: 40vh; */
+    padding: 1vh;
     grid-area: two; 
-    padding: 2vw;
     display: flex;
     justify-content: right;
 }
 #account{
     background-color: #edededbc;
-    height: 20rem;
+    height: min-content;
     /* border-color: #48ffd5;
     border-style: solid;
     border-width: 1px; */
@@ -170,7 +178,8 @@ input {
     border-color: #48ffd5;
     border-style: solid;
     border-radius: 15px;
-    height: 2rem;
+    border-width: 1px;
+    height: 1.5vh;
     margin: 0.5rem;
     font-size: clamp(0.1rem,1.3rem,1.03vw);
     padding: 4px;
@@ -189,21 +198,20 @@ input {
     align-items: center;
 }
 
-#play {
-    /* border-color: #000000;
-    border-style: solid; */
+#play{
+    /* background-color: rgba(255, 255, 0, 0.655); */
     grid-area: four;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#playbutton {
+#playbutton{
     text-transform: uppercase;
     background-size: cover;
     color: #48ffd5;
-    padding: 2rem;
-    font-size: 2rem;
+    padding: 1vw;
+    font-size: clamp(0.1rem,2vw,2rem);
     border-radius: 5rem;
     border: 0.1rem;
     border-width: thin;
@@ -220,13 +228,12 @@ input {
 }
 
 #how-to-play-grid {
-    /* border-color: #000000;
-    border-style: solid; */
+    /* background-color: rgba(0, 128, 0, 0.751); */
     grid-area: three;
     padding: 2vw;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 #how-to-play{
     background-color: #edededcd;
@@ -482,12 +489,12 @@ span{
     background-attachment: fixed;
     background-position: 0 top;
     height: auto;
-    min-height: 90vh;
+    min-height: 100vh;
 }
 
-#board-container table,
-#board-container td,
-#board-container th {
+table,
+td,
+th {
     background-color: #e7e7e764;
     margin: 20px;
     border: solid 1px;
@@ -499,11 +506,11 @@ span{
     padding: 1vh;
 }
 
-#board-container tr:nth-of-type(even) {
+#board tr:nth-of-type(even) {
     background-color: #48ffd471;
 }
 
-#board-container th {
+#board th {
     border: solid 1px;
     font-weight: 900;
     border-bottom: solid 1px;
@@ -518,6 +525,9 @@ span{
     justify-content: left;
 }
 
+#progress-container h1, #progress-container h2, #progress-container td, #progress-container th{
+font-size: clamp(0.1rem,1.3rem,1.03vw);
+}
 /* Win */
 #win-container {
     background-image: url("./images/Leveloverviewblurred.png");
@@ -566,6 +576,11 @@ span{
     border-radius: 0.5vh;
 }
 
+#pdfdownload{
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
 /* footer */
 footer {
     /*     width: 99.1vw; */
@@ -574,7 +589,8 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    font-size: 2.4vh;
+    height: 11vh;
+    font-size: clamp(0.1rem,1.3rem,1.03vw);
 }
 
 a:hover {

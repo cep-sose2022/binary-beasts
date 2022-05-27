@@ -22,12 +22,12 @@ function Progress(props) {
             <br />
             <div id="overview">
                 <h2>Gesamtfortschritt aller Levels</h2>
-                {calcProgress()}
+                <h2>{calcProgress()}</h2>
             </div>
             <br />
             <div id="level-scores">
                 <h2>Level-Überblick</h2>
-                <table>
+                <table id="board">
                     <thead>
                     <tr>
                         <th>Level</th>
