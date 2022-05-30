@@ -14,6 +14,7 @@ const cardsPlayed = [];
 const nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
 
 let isScanned = false;
+let isIsolatedChecked = false;
 
 function Level4(props) { //external devices
     let navigate = useNavigate();
@@ -38,12 +39,14 @@ function Level4(props) { //external devices
         //set cards 
         if (currentEvent === 1)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))); //don't show already used cards
-        else if (!isolatedNetwork)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card10" || "card21"))); // two events have one card less
+        else if (!isolatedNetwork) {
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name != "card10" && card.name != "card21"))); // two events have one card less
+        }    else if (isIsolatedChecked)
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card13"))); //event11
         else
             setCurrentCards(level.level.events[currentEvent - 1].cards);
 
-        console.log("history (useEffect): " + nextEventHistory + " - currenEvent: " + currentEvent);
+        console.log("history (useEffect): " + nextEventHistory + " - currenEvent: " + currentEvent + " - currentEventText: " + eventTextNumber);
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
@@ -51,10 +54,15 @@ function Level4(props) { //external devices
             handleBaseEvent(cardOption);
         } else if (cardOption.name === "card0") {
             determineNextEvent(cardOption);
-        }  else {
+        } else {
             nextEventHistory.push(cardOption.nextEvent); //add nextEvent to history
-            checkExceptions(cardOption);
-            setEventTextNumber(cardOption.nextEventText);
+
+            console.log(checkExceptions(cardOption));
+            if (!checkExceptions(cardOption)) { // if there are no exceptions
+                setEventTextNumber(cardOption.nextEventText);
+            } else {
+                setEventTextNumber(dynEventText);
+            }
             setCurrentEvent(cardOption.nextEvent);
         }
 
@@ -78,7 +86,7 @@ function Level4(props) { //external devices
             return;
         } else if (currentEvent === 1) { //basic event with security meassures 
             dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
-        } else if (currentEvent === dynEvent) { 
+        } else if (currentEvent === dynEvent) {
             dynEvent = 1;
         }
         else {
@@ -88,64 +96,103 @@ function Level4(props) { //external devices
         setEventTextNumber(dynEventText);
         setCurrentEvent(dynEvent);
 
-        console.log("dynEvent (after): " + dynEvent);
+        console.log("dynEvent (after): " + dynEvent + " / dynEventText: " + dynEventText);
     }
 
     const handleBaseEvent = (cardOption) => {
-        if (cardOption.name === "card1") {
-            encryptDrive = true;
-        } else if (cardOption.name === "card2") {
-            whitelisting = true;
-        } else if (cardOption.name === "card3") {
-            physicalLocks = true;
-        } else if (cardOption.name === "card4") {
-            isolatedNetwork = true;
-        } else //card5
-            ;
+        switch (cardOption.name) {
+            case "card1":
+                encryptDrive = true;
+                break;
+            case "card2":
+                whitelisting = true;
+                break;
+            case "card3":
+                physicalLocks = true;
+                break;
+            case "card4":
+                isolatedNetwork = true;
+                break;
+            default:
+                break;
+        }
 
-        cardsPlayed.push(cardOption.name);
+        if(cardOption.name != "card5")
+            cardsPlayed.push(cardOption.name);
+
         console.log("cardsPlayed: " + cardsPlayed);
         determineNextEvent(cardOption);
     }
 
+    /**
+    *    sets the next event text if an exception occurs
+    *  when a case applies the dynEventText has to be set, either to the alternative eventText -> if(true)
+    *       or to the eventText in Database otherwise it won't show any text because the function returns true eitherway
+    */
     const checkExceptions = (cardOption) => {
-        if (cardOption.name === "card17") {
-            isScanned = true;
-        } else if (cardOption.name === "card16") {
-            if (isScanned) {
-                if (whitelisting)
-                    dynEventText = 5;
-                else
-                    dynEventText = 4;
-            }
-        } else if (cardOption.name === "card18") {
-            if (isScanned) {
-                if (whitelisting)
-                    dynEventText = 5;
-            }
-        } else if (cardOption.name === "card13") {
-            //if encrypted show eventText0 else show eventText1
-            if (encryptDrive)
+        let isException = true;
+        switch (cardOption.name) {
+            case "card17":
+                isScanned = true;
                 dynEventText = 0;
-            else
-                dynEventText = 1;
-        } else if (cardOption.name === "card14") {
-            //if !physicalLock show eventText2 else show eventText3
-            if (physicalLocks) {
-                dynEventText = 3;
-            } else {
-                dynEventText = 2;
-            }
+                break;
+            case "card16":
+                if (isScanned) {
+                    if (whitelisting)
+                        dynEventText = 5;
+                    else
+                        dynEventText = 4;
+                } else
+                    dynEventText = 0;
+                break;
+            case "card18":
+                if (isScanned) {
+                    // if (whitelisting)
+                    dynEventText = 5;
+                } else
+                    dynEventText = 1;
+                break;
+            case "card13":
+                if (encryptDrive)
+                    dynEventText = 0;
+                else
+                    dynEventText = 1;
+                break;
+            case "card14":
+                if (physicalLocks)
+                    dynEventText = 3;
+                else
+                    dynEventText = 2;
+                break;
+            case "card21":
+                isIsolatedChecked = true;
+                break;
+            case "card22":
+                if (isIsolatedChecked)
+                    dynEventText = 1;
+                else
+                    dynEventText = 0;
+                break;
+            case "card6":
+                if (whitelisting)
+                    dynEventText = 4;
+                else
+                    dynEventText = 0;
+                break;
+            default:
+                isException = false;
+                break;
         }
-
+        return isException; //if no exception occurs it returns false
     };
 
     const endGame = () => {
         const dif = lib.getScore() - startScore;
         service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
         localStorage.setItem('levelNumber', '4');
-        localStorage.setItem('feedback', '- Noch zu erledigen - ');
-        navigate('../win');
+        localStorage.setItem('feedback', 'Wie Sie bemerkt haben kann so ein einfacher USB-Stick schnell zum Verhängnis für die ganze Anlage sein. Deswegen sollte man immer auf den richtigen Umgang achten, sodass man es Angreifern möglichst schwer macht in das System einzudringen.');
+        navigate('../levelcompletion');
+
     }
 
     return (
