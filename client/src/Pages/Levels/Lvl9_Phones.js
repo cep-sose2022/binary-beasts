@@ -34,9 +34,8 @@ function Lvl9_Phones(props) {
 
 
     React.useEffect(() => {
-        let thisEvent = level.level.events[currentEvent -1]
-        setEventText(thisEvent.text[eventTextNumber]);
-        setCurrentCards(thisEvent.cards.filter(card => !cardsPlayed.includes(card.name)));
+        setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
@@ -79,14 +78,6 @@ function Lvl9_Phones(props) {
             navigate('../levelcompletion');
         }
     }
-
-
-
-    const eventTextSplit = () => {
-        //Bei jedem '<' im eventText wird ein br-Tag eingebaut
-        const wrapped = eventText.split('<').reduce((prev, cur) => [...prev, cur, <br />], [])
-        return wrapped;
-    };
 
     return (
         <div className='app'>
