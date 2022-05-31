@@ -45,12 +45,14 @@ function Home(props) {
           <div id="home-info">
             <h1>Be-Aware</h1>
             <p>Willkommen zum OT-Security-Awareness Training von Binary Beasts!<br />
-              Hier lernen Sie auf eine spannende und spielerische Weise die Wichtigkeit<br />
-              von OT-Security und wie man diese sicherstellt. Wir wünschen Ihnen viel Spaß!</p>
+              Hier lernen Sie auf eine spannende und spielerische Weise die Wichtigkeit
+              von OT-Security und wie man diese sicherstellt. <br />
+              Wir wünschen Ihnen viel Spaß!</p>
           </div>
 
           <div id="accountgrid">
             <div id="account" className="box2">
+            {!loggedIn ? <p>Wenn Sie noch nicht registriert sind, können Sid ihren gewünschten Nicknamen und ein Pin in die Login-Maske eingeben</p> : <p></p>}
               {
                 localStorage.getItem("username") === null && // hide login-form when logged in
                 <div id="user-login">

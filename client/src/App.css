@@ -229,6 +229,11 @@ input {
     background-color: #48ffd5;
 }
 
+#account p {
+    margin: 0.5vw;
+    color: black;
+}
+
 #how-to-play-grid {
     /* background-color: rgba(0, 128, 0, 0.751); */
     grid-area: three;
