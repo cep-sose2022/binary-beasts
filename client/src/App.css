@@ -21,28 +21,30 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 95vh;
 
     display: grid;
     justify-items: center;
     align-items: center;
 }
 
-.box,
 button,#pdfdownload{
-    background-image: url("./images/background.png");
-    background-size: cover;
+    border:0;
+    color: #000000;
+    background-color: #6dffdd;
+    background-image: none;
+    background-repeat: no-repeat;
     background-position: center;
-
-    font-size: 2rem;
-    color: #ffffffce;
-    margin: auto;
-    padding: 5px;
-    border: 0.1rem;
-    border-color: #48ffd5;
-    border-radius: 10px;
-    border-style: solid;
-    background-image: url("./images/background.png");
+    font-size: clamp(0.1rem,2vw,2rem);
+    text-decoration: none;
+    margin: 0.5vw;
+    text-decoration: none;
+    border-radius: 0.2vw;
+    padding: 0.1vw;
+}
+button:hover, #pdfdownload:hover{
+    color: #0b2037;
+    background-color: #ededed;
 }
 
 /* Nav */
@@ -84,7 +86,6 @@ nav a {
 }
 
 .logo {
-    /* width: 50vw; */
     display: flex;
     justify-items: center;
     align-items: center;
@@ -158,9 +159,6 @@ nav a:hover {
 #account{
     background-color: #edededbc;
     height: min-content;
-    /* border-color: #48ffd5;
-    border-style: solid;
-    border-width: 1px; */
     width: 20rem;
 }
 #login-message p,label{
@@ -184,15 +182,6 @@ input {
     font-size: clamp(0.1rem,1.3rem,1.03vw);
     padding: 4px;
 }
-#loginbutton,#logoutbutton, #description-container button, #pdfdownload{
-    border:0;
-    color: #000000;
-    background-color: #6dffdd;
-    background-image: none;
-    font-size: clamp(0.1rem,2vw,2rem);
-    text-decoration: none;
-    margin: 0.5vw;
-}
 #user-login,
 #login-message{
     font-size: clamp(0.1rem,2vw,2rem);
@@ -209,6 +198,7 @@ input {
 }
 
 #playbutton{
+    background-image: url(images/background.png);
     text-transform: uppercase;
     background-size: cover;
     color: #48ffd5;
@@ -220,7 +210,11 @@ input {
     border-style: solid;
 }
 
-#playbutton:hover,
+#playbutton:hover{
+    background-image: none;
+    color: #000000;
+    background-color: #f2f2f2;
+}
 #gamecontainer button:hover,
 .levelOverview-button:hover,
 #gamecontainerlvl5 button:hover {
@@ -318,9 +312,16 @@ margin-top: 1vh;
     object-fit: cover;
     filter: blur(3px);
 }
-
+#gamecontainer button{
+    background-image: url(images/background.png);
+    color: #ededed;
+    border-color: #48ffd5;
+    border-style: solid;
+    border-width: 1px;
+    background-repeat: no;
+}
 #game {
-    width: 100vw;
+    width: 98vw;
     max-height: 90vh;
     aspect-ratio: 100/44.1;
 }
@@ -426,6 +427,8 @@ margin-top: 1vh;
     align-items: center;
 }
 .levelButton {
+    background-image: url(images/background.png);
+    color: #bebebe;
     font-size: clamp(1vw,1rem,2.5vw);
     border: 0.2vmin;
     border-style: solid;
@@ -530,27 +533,6 @@ margin-top: 1vh;
     grid-column: 58;
 }
 
-/* #hoverarea{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 0%;
-    width: 0%;
-    background-color: rgba(255, 0, 0, 0.525);
-} */
-/*.boxDescriptionButtonArea{
-    opacity: 0;
-    padding-bottom:500%;
-    background-color: #0000001f;
-}
-.boxDescriptionButtonArea:hover {
-    opacity: 1;
-}
-.levelButton:hover span{
-    color: #0e2a47;
-} */
-
 
 /* Leaderboard */
 
@@ -574,7 +556,7 @@ th {
     color: #0b2037;
     border-color: #ededed;
     text-align: left;
-    padding: 0rem;
+    padding: .2vw;
 }
 
 #board tr:nth-of-type(even) {
@@ -598,32 +580,33 @@ th {
     background-position: 0 top;
     height: auto;
     min-height: 100vh;
-    
 }
 #info{
     margin: 2rem;
     background-image: none;
     background-color: #081728a3;
+    border-color: #48ffd5;
+    border-style: solid;
+    border-radius: .5vw;
+    border-width: 1px;
 }
 #progress-container h2, #progress-container td, #progress-container th{
-font-size: clamp(0.1rem,3rem,4vw);
+font-size: clamp(0.1rem,2rem,3vw);
 }
 #progress-container h1{
-    font-size:clamp(0.1rem,4rem,5vw);
+    font-size:clamp(0.1rem,3rem,4vw);
     text-decoration: underline;
 }
 /* Win */
 #win-container {
-    background-image: url("./images/Leveloverviewblurred.png");
+    background-image: url("./images/serverroom.jpg");
     background-position: center center;
-}
-
-#win-description {
-    font-size: 1vmax;
 }
 
 .levelOverview-button {
     font-size: 1vmax;
+    background-image: url(images/background.png);
+    background-color: none;
 }
 
 /* Score */
@@ -636,21 +619,24 @@ font-size: clamp(0.1rem,3rem,4vw);
 }
 
 /* Leveldescription */
-#description-container {
+#description-container,#win-container {
     background-image: url("./images/serverroom.jpg");
     background-position: center center;
 }
 
-#description-container h1{
+#description-container h1,#win-container p{
     font-size: clamp(0.1rem,2rem,3vw);
 }
 #description-container p{
     font-size: clamp(0.1rem,1.5rem,2vw);
 }
 
-#description-container .box {
-    
+#description-container .box,#win-description{
+    background-image: url(images/background.png);
+    border-width: 1px;
     border-color: #48ffd5;
+    border-radius: 0.5vw;
+    border-style: solid;
     width: 70vw;
     display: grid;
     justify-items: center;
