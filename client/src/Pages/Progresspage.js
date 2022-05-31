@@ -37,7 +37,7 @@ function Progress(props) {
                             return(
                                 <tr key={element}>
                                     <td>{service.getLevelName(element.levelId).levelName}</td>
-                                    <td>{element.score}</td>
+                                    <td>{element.score + " / " + allLevels.filter(level => level._id === element.levelId)[0].maxScore}</td>
                                 </tr>
                             )
                         })
