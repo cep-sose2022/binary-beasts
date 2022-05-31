@@ -19,23 +19,20 @@ function Win() {
         <>
         <Navbar />
         <div id="win-container" className="container">
-            <div id="win-title">
-                {/* <h1>{!localStorage.getItem('levelNumber') ? ' ' : level[0].name}</h1> */}
-            </div>
             <div id="win-description" className="box">
                 <div id="win-score">
                     <p>{!localStorage.getItem('levelNumber') ? 'Sie haben das Level noch nicht abgeschlossen' : `Sie haben das Level ${level[0].name} abgeschlossen und ${lib.getScore()} extra Punkte erhalten.`}</p>
                 </div><br/>
                 <p>{!localStorage.getItem('feedback') ? ' '  : localStorage.getItem('feedback')}</p>
-            </div><div id="win-button">
+            
             <button id="levelOverview-button" onClick={() => {
                 localStorage.removeItem('levelNumber');
                 localStorage.removeItem('feedback');
                 localStorage.removeItem('level');
                 lib.setLevelStartScore('zero');
                 navigate("/leveloverview");
-            }}>Level Overview</button>
-        </div>
+            }}>Zu Levels</button>
+            </div>
         </div>
         </>
     );
