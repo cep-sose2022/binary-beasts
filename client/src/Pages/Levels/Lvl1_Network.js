@@ -16,15 +16,15 @@ let gameOver = false;
 const cardsPlayed = ['card15'];
 
 let level;
-function Level8(props) {
+function Lvl1_Network(props) {
     let navigate = useNavigate();
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
     if (currentRound === 1) {
-        lib.setLevelStartScore('level8');
-        level = service.getLevel('level8');
+        lib.setLevelStartScore('level1');
+        level = service.getLevel('level1');
         props.passLevelName(level.level.name);
         playedCard2 = false;
         playedCard3 = false;
@@ -90,7 +90,7 @@ function Level8(props) {
 
         if(gameOver) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
-            localStorage.setItem('levelNumber', '8');
+            localStorage.setItem('levelNumber', '1');
             localStorage.setItem('feedback', 'Gratulation! Sie haben nun zusammen mit dem Netzwerktechniker alle nötigen Maßnahmen für eine sichere Netzwerksegmentierung vorgenommen! Achten Sie darauf, dass diese Maßnahmen auch in Ihrem Unternehmen umgesetzt werden, da dies ein wichtiger Teil der OT-Security ist. Auch wenn die Netzwerksegmentierung ein langer und teurer Prozess ist, lohnt sich dieser auf lange Sicht!');
             navigate('../levelcompletion');
         }
@@ -135,4 +135,4 @@ function Level8(props) {
     );
 }
 
-export default Level8;
+export default Lvl1_Network;

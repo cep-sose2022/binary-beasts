@@ -7,15 +7,15 @@ import cardImages from '../../library/cardImages.js';
 
 
 let level;
-function Level3(props) {
+function Lvl5_Patchmanagement(props) {
 
   let navigate = useNavigate();
   const [currentEvent, setCurrentEvent] = useState(1);
   const [currentRound, setCurrentRound] = useState(1);
 
   if (currentRound === 1) {
-    lib.setLevelStartScore('level3');
-    level = service.getLevel('level3');
+    lib.setLevelStartScore('level5');
+    level = service.getLevel('level5');
     props.passLevelName(level.level.name);
   }
 
@@ -75,7 +75,7 @@ function Level3(props) {
     if (gameOver) {
       setCurrentCards(currentCards.filter(card => false));
       service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
-      localStorage.setItem('levelNumber', '3');
+      localStorage.setItem('levelNumber', '5');
       if(card13Played) localStorage.setItem('feedback', "Schade! Sie hätten nicht auf den Sicherheitspatch warten sollen, sondern andere Maßnahmen ergreifen sollen. Da Sie dies nicht getan haben, haben Hacker in der Zwischenzeit die Schwachstelle des Patches ausgenutzt und haben nun die Kontrolle über das ICS-System!");
       else localStorage.setItem('feedback', "Gratulation! Sie haben nun den Vorgang der Installation von Patches erfolgreich gemeistert! Behalten Sie im Hinterkopf, regelmäßig nach Sicherheitspatches Ausschau zu halten. Beachten Sie ebenfalls, dass nicht immer Sicherheitspatches für ICS-Geräte verfügbar sind oder eine Installation oft nicht möglich ist. In solchen Fällen sollte immer eine Risikoanalyse mit alternativen Ausgleichsmaßnahmen wie die im Beispiel erfolgte Netzsegmentierung erfolgen. Machen Sie es Hackern nicht durch veraltete Systeme einfach!");
       navigate('../levelcompletion');
@@ -164,4 +164,4 @@ function Level3(props) {
   );
 }
 
-export default Level3;
+export default Lvl5_Patchmanagement;

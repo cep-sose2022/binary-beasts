@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Level1 from "./Levels/Level1";
-import Level2 from "./Levels/Level2"
-import Level3 from "./Levels/Level3";
-import Level4 from "./Levels/Level4";
-import Level5 from "./Levels/Level5";
-import Level6 from "./Levels/Level6";
-import Level7 from "./Levels/Level7";
-import Level8 from "./Levels/Level8";
+import Lvl1_Network from "./Levels/Lvl1_Network";
+import Lvl2_Malware from "./Levels/Lvl2_Malware"
+import Lvl3_Devices from "./Levels/Lvl3_Devices";
+import Lvl4_RAccess from "./Levels/Lvl4_RAccess";
+import Lvl5_Patchmanagement from "./Levels/Lvl5_Patchmanagement";
+//import Level6 from "./Levels/Lvl6_";
+import Lvl7_Incident from "./Levels/Lvl7_Incident";
+import Lvl8_UserControl from "./Levels/Lvl8_UserControl";
+import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
 import service from '../service';
 
 function Game(){
@@ -42,14 +43,15 @@ function Game(){
             </div>   
         </nav>
 
-        {location.state.levelid === 1 && <Level1 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 2 && <Level2 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 3 && <Level3 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 4 && <Level4 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 5 && <Level5 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 7 && <Level7 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 8 && <Level8 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 1 && <Lvl1_Network passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 2 && <Lvl2_Malware passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 3 && <Lvl3_Devices passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 4 && <Lvl4_RAccess passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 5 && <Lvl5_Patchmanagement passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {/* {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>} */}
+        {location.state.levelid === 7 && <Lvl7_Incident passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 8 && <Lvl8_UserControl passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 10 && <Lvl10_Phishing passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
         </>
     );
 }

@@ -21,15 +21,15 @@ let gameOver = false;
 //const level = service.getLevel('level6');
 
 let level;
-function Level2(props) {
+function Lvl4_RAccess(props) {
     let navigate = useNavigate();
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
 
     if (currentRound === 1) {
-        lib.setLevelStartScore('level6');
-        level = service.getLevel('level6');
+        lib.setLevelStartScore('level4');
+        level = service.getLevel('level4');
         props.passLevelName(level.level.name);
     }
 
@@ -86,7 +86,7 @@ function Level2(props) {
         
         if(playedCard15 && playedCard16) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
-            localStorage.setItem('levelNumber', '6');
+            localStorage.setItem('levelNumber', '4');
             localStorage.setItem('feedback', 'Gratulation! Sie haben nun zusammen mit dem IT-Administrator die wichtigsten Schritte für die Einrichtung eines sicheren Remote Access erarbeitet. Vergessen Sie nicht, dass die Verwendung eines Remote Access im Industrieumfeld trotz ihres praktischen Nutzens sicherheitstechnisch nicht zu empfehlen ist. Lässt es sich aber dennoch nicht verhindern, wissen Sie nun worauf Sie achten sollen. Ein kleiner Hinweis: In den meisten Industrieanlagen sind solche Konzepte für Remote Access bereits umgesetzt und in Nutzung, es schadet aber nicht, diese noch einmal auf die eben gelernten Kriterien zu überprüfen. Gerade Standardpasswörter sind keine Seltenheit in einer solchen Umgebung, da solche Anlagen zum Teil vor langer Zeit aufgebaut und konfiguriert wurden, als Remote Access noch überhaupt kein Thema war.');
             navigate('../levelcompletion');
         }
@@ -131,4 +131,4 @@ function Level2(props) {
     );
 }
 
-export default Level2;
+export default Lvl4_RAccess;

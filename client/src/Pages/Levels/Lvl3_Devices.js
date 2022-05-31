@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import lib, { getScore } from "../../library/bib";
 
 
-const level = service.getLevel('level4');
+const level = service.getLevel('level3');
 
 let encryptDrive = false;
 let isolatedNetwork = false;
@@ -16,7 +16,7 @@ const nextEventHistory = [1]; //initially with 1 because event0 does not have "n
 let isScanned = false;
 let isIsolatedChecked = false;
 
-function Level4(props) { //external devices
+function Lvl3_Devices(props) { //external devices
     let navigate = useNavigate();
     const [currentEvent, setCurrentEvent] = useState(1);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
@@ -189,7 +189,7 @@ function Level4(props) { //external devices
     const endGame = () => {
         const dif = lib.getScore() - startScore;
         service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
-        localStorage.setItem('levelNumber', '4');
+        localStorage.setItem('levelNumber', '3');
         localStorage.setItem('feedback', 'Wie Sie bemerkt haben kann so ein einfacher USB-Stick schnell zum Verhängnis für die ganze Anlage sein. Deswegen sollte man immer auf den richtigen Umgang achten, sodass man es Angreifern möglichst schwer macht in das System einzudringen.');
         navigate('../levelcompletion');
 
@@ -220,4 +220,4 @@ function Level4(props) { //external devices
     );
 }
 
-export default Level4;
+export default Lvl3_Devices;

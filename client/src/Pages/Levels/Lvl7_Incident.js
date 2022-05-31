@@ -32,7 +32,7 @@ let rightcount=0;
 let penalty=0;
 let c=0;
 
-function Level5(props) {
+function Lvl7_Incident(props) {
     // set score back to zero
     //lib.setLevelStartScore('level5');
     // save start score
@@ -45,8 +45,8 @@ function Level5(props) {
     const [currentRound, setCurrentRound] = useState(1);
 
     if (currentRound === 1) {
-        lib.setLevelStartScore('level5');
-        level = service.getLevel('level5');
+        lib.setLevelStartScore('level7');
+        level = service.getLevel('level7');
         props.passLevelName(level.level.name);
     }
 
@@ -140,13 +140,13 @@ function Level5(props) {
 
         if (cardOption.nextEvent === 0 || roomcount==4) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
-            localStorage.setItem('levelNumber', '5');
+            localStorage.setItem('levelNumber', '7');
             localStorage.setItem('feedback', 'Sie haben das level erfolgreich Beendet!');
             navigate('../levelcompletion');
         }
         if(fail==2){
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
-            localStorage.setItem('levelNumber', '5');
+            localStorage.setItem('levelNumber', '7');
             localStorage.setItem('feedback', 'Sie haben leider verloren!');
             navigate('../levelcompletion');
         }
@@ -182,4 +182,4 @@ function Level5(props) {
     );
 }
 
-export default Level5;
+export default Lvl7_Incident;

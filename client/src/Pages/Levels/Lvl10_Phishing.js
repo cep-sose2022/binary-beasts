@@ -14,7 +14,7 @@ let level;
 // get level data from backend
 
 
-function Level1(props) {
+function Lvl10_Phishing(props) {
 
     let navigate = useNavigate();
 
@@ -23,8 +23,8 @@ function Level1(props) {
 
     
     if (currentRound === 1) {
-        lib.setLevelStartScore('level1');
-        level = service.getLevel('level1');
+        lib.setLevelStartScore('level10');
+        level = service.getLevel('level10');
         props.passLevelName(level.level.name);
     }
 
@@ -70,7 +70,7 @@ function Level1(props) {
                 localStorage.setItem('feedback', level.level.events[5].text[2]);
             }
             // save level number and feedback in local storage and navigate to win page
-            localStorage.setItem('levelNumber', '1');
+            localStorage.setItem('levelNumber', '10');
             navigate('../levelcompletion');
         }
     }
@@ -108,4 +108,4 @@ function Level1(props) {
     );
 }
 
-export default Level1;
+export default Lvl10_Phishing;

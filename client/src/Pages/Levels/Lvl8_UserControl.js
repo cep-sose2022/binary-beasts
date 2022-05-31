@@ -9,7 +9,7 @@ lib.setLevelStartScore('level7');
 
 let level;
 
-function Level7(props) {
+function Lvl8_UserControl(props) {
 
     let navigate = useNavigate();
 
@@ -17,8 +17,8 @@ function Level7(props) {
     const [currentRound, setCurrentRound] = useState(1);
 
     if (currentRound === 1) {
-        lib.setLevelStartScore('level7');
-        level = service.getLevel('level7');
+        lib.setLevelStartScore('level8');
+        level = service.getLevel('level8');
         props.passLevelName(level.level.name);
     }
 
@@ -53,7 +53,7 @@ function Level7(props) {
                 console.log('card34');
             }
             // save level number and feedback in local storage and navigate to win page
-            localStorage.setItem('levelNumber', '7');
+            localStorage.setItem('levelNumber', '8');
             navigate('../levelcompletion');
         }
     }
@@ -86,4 +86,4 @@ function Level7(props) {
     );
 }
 
-export default Level7;
+export default Lvl8_UserControl;
