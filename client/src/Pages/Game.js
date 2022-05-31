@@ -9,6 +9,7 @@ import Lvl5_Patchmanagement from "./Levels/Lvl5_Patchmanagement";
 //import Level6 from "./Levels/Lvl6_";
 import Lvl7_Incident from "./Levels/Lvl7_Incident";
 import Lvl8_UserControl from "./Levels/Lvl8_UserControl";
+import Lvl9_Phones from "./Levels/Lvl9_Phones";
 import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
 import service from '../service';
 
@@ -53,6 +54,7 @@ function Game(){
         {/* {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>} */}
         {location.state.levelid === 7 && <Lvl7_Incident passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 8 && <Lvl8_UserControl passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 9 && <Lvl9_Phones passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 10 && <Lvl10_Phishing passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         </>
     );
