@@ -22,8 +22,8 @@ function LevelOverview() {
             });
           }}>
             1
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 1)[0].name}</span></div>
           </button>
+          <div id="buttonText1" className="buttonText">{levels.filter(level => level.token === "level" + 1)[0].name}</div>
 
           <button id="levelButton2" className="levelButton" onClick={() => {
             navigate("/description", {
@@ -31,9 +31,21 @@ function LevelOverview() {
                 levelid: 2
               }
             });
-          }}>2
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 2)[0].name}</span></div>
+          }}>
+            2
           </button>
+          <div id="buttonText2" className="buttonText">{levels.filter(level => level.token === "level" + 2)[0].name}</div>
+          
+          <button id="levelButton3" className="levelButton" onClick={() => {
+            navigate("/description", {
+              state: {
+                levelid: 3
+              }
+            });
+          }}>
+            3
+          </button>
+          <div id="buttonText3" className="buttonText">{levels.filter(level => level.token === "level" + 3)[0].name}</div>
 
           <button id="levelButton3" className="levelButton" onClick={() => {
             navigate("/description", {
@@ -41,19 +53,21 @@ function LevelOverview() {
                 levelid: 3
               }
             });
-          }}>3
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 3)[0].name}</span></div>
+          }}>
+            3
           </button>
+          <div id="buttonText3" className="buttonText">{levels.filter(level => level.token === "level" + 3)[0].name}</div>
 
-          <button id="levelButton4" className="levelButton" onClick={() => {
+           <button id="levelButton4" className="levelButton" onClick={() => {
             navigate("/description", {
               state: {
                 levelid: 4
               }
             });
-          }}>4
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 4)[0].name}</span></div>
+          }}>
+            4
           </button>
+          <div id="buttonText4" className="buttonText">{levels.filter(level => level.token === "level" + 4)[0].name}</div>
 
           <button id="levelButton5" className="levelButton" onClick={() => {
             navigate("/description", {
@@ -61,29 +75,32 @@ function LevelOverview() {
                 levelid: 5
               }
             });
-          }}>5
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 5)[0].name}</span></div>
+          }}>
+            5
           </button>
+          <div id="buttonText5" className="buttonText">{levels.filter(level => level.token === "level" + 5)[0].name}</div>
 
-           <button id="levelButton6" className="levelButton" onClick={() => {
+          <button id="levelButton6" className="levelButton" onClick={() => {
             navigate("/description", {
               state: {
                 levelid: 6
               }
             });
-          }}>6
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 6)[0].name}</span></div>
+          }}>
+            6
           </button>
-          
+          <div id="buttonText6" className="buttonText">{levels.filter(level => level.token === "level" + 6)[0].name}</div>
+
           <button id="levelButton7" className="levelButton" onClick={() => {
             navigate("/description", {
               state: {
                 levelid: 7
               }
             });
-          }}>7
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 7)[0].name}</span></div>
+          }}>
+            7
           </button>
+          <div id="buttonText7" className="buttonText">{levels.filter(level => level.token === "level" + 7)[0].name}</div>
 
           <button id="levelButton8" className="levelButton" onClick={() => {
             navigate("/description", {
@@ -91,19 +108,21 @@ function LevelOverview() {
                 levelid: 8
               }
             });
-          }}>8
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 8)[0].name}</span></div>
+          }}>
+            8
           </button>
-
-          {/*<button id="levelButton9" className="levelButton" onClick={() => {
+          <div id="buttonText8" className="buttonText">{levels.filter(level => level.token === "level" + 8)[0].name}</div>
+{/*
+          <button id="levelButton9" className="levelButton" onClick={() => {
             navigate("/description", {
               state: {
                 levelid: 9
               }
             });
-          }}>9
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 9)[0].name}</span></div>
+          }}>
+            9
           </button>
+          <div id="buttonText9" className="buttonText">{levels.filter(level => level.token === "level" + 9)[0].name}</div>
 
           <button id="levelButton10" className="levelButton" onClick={() => {
             navigate("/description", {
@@ -111,10 +130,11 @@ function LevelOverview() {
                 levelid: 10
               }
             });
-          }}>10
-            <div className="boxDescriptionButton"><span>{levels.filter(level => level.token === "level" + 10)[0].name}</span></div>
-          </button> */}
-
+          }}>
+            10
+          </button>
+          <div id="buttonText10" className="buttonText">{levels.filter(level => level.token === "level" + 10)[0].name}</div>
+ */}
         </div>
       </div>
     </>

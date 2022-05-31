@@ -19,14 +19,11 @@ function Progress(props) {
         <div id="progress-container" className="container">
             <div id="info" className="box">
                 <h1>Fortschritt - {lib.getNickname()}</h1>
-            <br />
             <div id="overview">
-                <h2>Gesamtfortschritt aller Levels</h2>
-                <h2>{calcProgress()}</h2>
+                <h2>Gesamtfortschritt aller Levels: {calcProgress()}</h2>
             </div>
-            <br />
             <div id="level-scores">
-                <h2>Level-Überblick</h2>
+                <h2>Level-Überblick:</h2>
                 <table id="board">
                     <thead>
                     <tr>
