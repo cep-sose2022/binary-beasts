@@ -58,7 +58,7 @@ function Home(props) {
                     {console.log(loggedIn)}
                   <input id="pin" placeholder="Pin" type="password" ref={pinInputField} />
                     
-                  <button id="loginbutton">Login</button>
+                  <button id="loginbutton" onClick={() => {checkInput()}}>Login</button>
                 </div>
               }
 
@@ -66,7 +66,7 @@ function Home(props) {
                 {inputMessage === 1 ? <p>Neuer User mit dem Nicknamen "{lib.getNickname()}" wurde erstellt.</p> : //return the fitting feedback for inputField
                   (inputMessage === 2 ? <p>Bitte füllen Sie beide Felder aus</p> :
                     (inputMessage === 3 ? <p>Es existiert bereits ein User mit diesem Nicknamen</p> : 
-                    <p>Willkommen {lib.getNickname()}</p>))
+                    (loggedIn ? <p>Willkommen {lib.getNickname()}</p> : <p></p>)))
                 }
               </div>
               {loggedIn &&
