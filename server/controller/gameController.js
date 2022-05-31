@@ -84,7 +84,8 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
                     nextEvent: Number,
                     nextImage: String,
                     nextEventText: Number,
-                    image: String
+                    image: String,
+                    maxScore: Number
                 };
 
                 cards._id  = card._id;
@@ -95,6 +96,7 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
                 cards.nextImage  = card.nextImage;
                 cards.nextEventText = card.nextEventText;
                 cards.image = card.image;
+                cards.maxScore = card.maxScore;
                 cards1.push(cards);
             }
             tempLevel1.events[i].cards = cards1;
