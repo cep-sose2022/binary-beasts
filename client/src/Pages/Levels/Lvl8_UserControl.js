@@ -20,6 +20,7 @@ function Lvl8_UserControl(props) {
         lib.setLevelStartScore('level8');
         level = service.getLevel('level8');
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);

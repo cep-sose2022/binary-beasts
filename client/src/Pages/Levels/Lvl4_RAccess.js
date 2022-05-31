@@ -31,6 +31,7 @@ function Lvl4_RAccess(props) {
         lib.setLevelStartScore('level4');
         level = service.getLevel('level4');
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);

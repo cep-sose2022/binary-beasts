@@ -26,6 +26,7 @@ function Lvl1_Network(props) {
         lib.setLevelStartScore('level1');
         level = service.getLevel('level1');
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
         playedCard2 = false;
         playedCard3 = false;
         playedCard11 = false;

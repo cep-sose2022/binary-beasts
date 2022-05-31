@@ -29,8 +29,11 @@ function Lvl3_Devices(props) { //external devices
     let dynEventText;
 
     //passing on levelName to game 
-    if (currentRound === 1)
+    if (currentRound === 1) {
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
+    }
+        
 
 
     React.useEffect(() => {

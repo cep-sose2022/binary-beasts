@@ -48,6 +48,7 @@ function Lvl7_Incident(props) {
         lib.setLevelStartScore('level7');
         level = service.getLevel('level7');
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);

@@ -26,6 +26,7 @@ function Lvl10_Phishing(props) {
         lib.setLevelStartScore('level10');
         level = service.getLevel('level10');
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);

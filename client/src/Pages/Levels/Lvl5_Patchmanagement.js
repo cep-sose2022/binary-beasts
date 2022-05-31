@@ -17,6 +17,7 @@ function Lvl5_Patchmanagement(props) {
     lib.setLevelStartScore('level5');
     level = service.getLevel('level5');
     props.passLevelName(level.level.name);
+    props.passMaxScore(level.level.maxScore);
   }
 
   const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);

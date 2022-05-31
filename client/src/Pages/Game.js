@@ -17,6 +17,7 @@ function Game(){
     let navigate = useNavigate();
 
     const [levelName, setLevelName] = useState("");
+    const [maxScore, setMaxScore] = useState(0);
     const [previousScore, setPreviousScore] = useState(0);
     const [currentScore, setCurrentScore] = useState(0);
     
@@ -35,23 +36,24 @@ function Game(){
                 {/* <p>Time: {<span className="gameNavbar-blue">{mins}:{secs < 10 ? `0${secs}` : secs}</span>} </p> */}
             </div>
             <div id="score" className="navgamecontent">
-                <p>Score:  
-                    {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore}</span>}
-                    {currentScore > previousScore && <span className="score-green"> {currentScore}</span>}
-                    {currentScore < previousScore && <span className="score-red"> {currentScore}</span>}
+                <p>Score:   
+                    {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore + " "}</span>}
+                    {currentScore > previousScore && <span className="score-green"> {currentScore + " "}</span>}
+                    {currentScore < previousScore && <span className="score-red"> {currentScore + " "}</span>}
+                    / <span className="gameNavbar-blue">{maxScore}</span>
                 </p>
             </div>   
         </nav>
 
-        {location.state.levelid === 1 && <Lvl1_Network passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 2 && <Lvl2_Malware passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 3 && <Lvl3_Devices passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 4 && <Lvl4_RAccess passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 5 && <Lvl5_Patchmanagement passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {/* {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>} */}
-        {location.state.levelid === 7 && <Lvl7_Incident passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 8 && <Lvl8_UserControl passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
-        {location.state.levelid === 10 && <Lvl10_Phishing passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName}/>}
+        {location.state.levelid === 1 && <Lvl1_Network passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 2 && <Lvl2_Malware passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 3 && <Lvl3_Devices passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 4 && <Lvl4_RAccess passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 5 && <Lvl5_Patchmanagement passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {/* {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>} */}
+        {location.state.levelid === 7 && <Lvl7_Incident passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 8 && <Lvl8_UserControl passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
+        {location.state.levelid === 10 && <Lvl10_Phishing passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         </>
     );
 }
