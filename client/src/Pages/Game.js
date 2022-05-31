@@ -6,7 +6,7 @@ import Lvl2_Malware from "./Levels/Lvl2_Malware"
 import Lvl3_Devices from "./Levels/Lvl3_Devices";
 import Lvl4_RAccess from "./Levels/Lvl4_RAccess";
 import Lvl5_Patchmanagement from "./Levels/Lvl5_Patchmanagement";
-//import Level6 from "./Levels/Lvl6_";
+import Lvl6_Monitoring from "./Levels/Lvl6_Monitoring";
 import Lvl7_Incident from "./Levels/Lvl7_Incident";
 import Lvl8_UserControl from "./Levels/Lvl8_UserControl";
 import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
@@ -50,7 +50,7 @@ function Game(){
         {location.state.levelid === 3 && <Lvl3_Devices passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 4 && <Lvl4_RAccess passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 5 && <Lvl5_Patchmanagement passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
-        {/* {location.state.levelid === 6 && <Level6 passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>} */}
+        {location.state.levelid === 6 && <Lvl6_Monitoring passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 7 && <Lvl7_Incident passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 8 && <Lvl8_UserControl passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
         {location.state.levelid === 10 && <Lvl10_Phishing passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
