@@ -43,13 +43,15 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
             name: String,
             token: String,
             description: String,
-            events: {type: Object}
+            events: {type: Object},
+            maxScore: Number
         };
         const tempLevel2 = await Level.find({token: req.params.token});
         tempLevel1._id = tempLevel2[0].id;
         tempLevel1.name = tempLevel2[0].name;
         tempLevel1.token = tempLevel2[0].token;
         tempLevel1.description = tempLevel2[0].description;
+        tempLevel1.maxScore = tempLevel2[0].maxScore;
         const levelId = tempLevel1._id;
         const events = await Event.find({levelId: levelId});
         for (let i = 0; i < events.length; i++) {
@@ -85,7 +87,6 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
                     nextImage: String,
                     nextEventText: Number,
                     image: String,
-                    maxScore: Number
                 };
 
                 cards._id  = card._id;
@@ -96,7 +97,6 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
                 cards.nextImage  = card.nextImage;
                 cards.nextEventText = card.nextEventText;
                 cards.image = card.image;
-                cards.maxScore = card.maxScore;
 
                 cards1.push(cards);
             }

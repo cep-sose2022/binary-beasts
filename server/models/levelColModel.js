@@ -39,7 +39,8 @@ const levelSchema = mongoose.Schema(
             required: [true, 'Please add events '],
         },
         maxScore: {
-            type: Number
+            type: Number,
+            required: [true, 'Please add a maxScore ']
         }
     },
     {

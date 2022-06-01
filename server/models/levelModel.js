@@ -14,6 +14,10 @@ const levelSchema = mongoose.Schema(
             type: String,
             required: [true, 'Please add a description '],
         },
+        maxScore: {
+            type: Number,
+            required: [true, 'Please add a maxScore '],
+        },
     },
     {
         versionKey: false
