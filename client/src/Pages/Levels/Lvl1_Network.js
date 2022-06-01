@@ -13,7 +13,7 @@ let playedCard14 = false;
 
 let gameOver = false;
 
-const cardsPlayed = ['card15'];
+let cardsPlayed;
 
 let level;
 function Lvl1_Network(props) {
@@ -33,6 +33,7 @@ function Lvl1_Network(props) {
         playedCard12 = false;
         playedCard14 = false;
         gameOver = false;
+        cardsPlayed = ['card15'];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);

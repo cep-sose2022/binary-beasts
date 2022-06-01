@@ -18,7 +18,7 @@ let playedCard16 = false;
 
 let gameOver = false;
 
-//const level = service.getLevel('level6');
+let cardsPlayed;
 
 let level;
 function Lvl4_RAccess(props) {
@@ -32,6 +32,15 @@ function Lvl4_RAccess(props) {
         level = service.getLevel('level4');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        playedCard8 = false;
+        playedCard9 = false;
+        playedCard10 = false;
+        playedCard11 = false;
+        playedCard12 = false;
+        playedCard15 = false;
+        playedCard16 = false;
+        gameOver = false;
+        cardsPlayed = ['card17'];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -42,19 +51,11 @@ function Lvl4_RAccess(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards);
-
-        
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
-        
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        
-        if (gameOver) {
-            setCurrentCards(currentCards.filter(card => false));
-        }
-        
     }, [eventTextNumber, currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
@@ -62,17 +63,17 @@ function Lvl4_RAccess(props) {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
-        
+
         if (cardOption.name === 'card8') playedCard8 = true;
         if (cardOption.name === 'card9') playedCard9 = true;
         if (cardOption.name === 'card10') playedCard10 = true;
         if (cardOption.name === 'card11') playedCard11 = true;
         if (cardOption.name === 'card12') playedCard12 = true;
-
         if (cardOption.name === 'card15') playedCard15 = true;
         if (cardOption.name === 'card16') playedCard16 = true;
+        if (cardOption.name === 'card17') gameOver = true;
 
-        if(playedCard8 && playedCard9 && playedCard10 && playedCard11 && playedCard12) {
+        if (playedCard8 && playedCard9 && playedCard10 && playedCard11 && playedCard12) {
             playedCard8 = false;
             setCurrentEvent(5);
             setEventTextNumber(0);
@@ -83,9 +84,11 @@ function Lvl4_RAccess(props) {
         lib.updateScore(cardOption.points);
         props.passCurrentScore(lib.getScore());
 
+        if (playedCard15 && playedCard16) {
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name === 'card17'));
+        }
 
-        
-        if(playedCard15 && playedCard16) {
+        if (gameOver) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '4');
             localStorage.setItem('feedback', 'Gratulation! Sie haben nun zusammen mit dem IT-Administrator die wichtigsten Schritte für die Einrichtung eines sicheren Remote Access erarbeitet. Vergessen Sie nicht, dass die Verwendung eines Remote Access im Industrieumfeld trotz ihres praktischen Nutzens sicherheitstechnisch nicht zu empfehlen ist. Lässt es sich aber dennoch nicht verhindern, wissen Sie nun worauf Sie achten sollen. Ein kleiner Hinweis: In den meisten Industrieanlagen sind solche Konzepte für Remote Access bereits umgesetzt und in Nutzung, es schadet aber nicht, diese noch einmal auf die eben gelernten Kriterien zu überprüfen. Gerade Standardpasswörter sind keine Seltenheit in einer solchen Umgebung, da solche Anlagen zum Teil vor langer Zeit aufgebaut und konfiguriert wurden, als Remote Access noch überhaupt kein Thema war.');
@@ -119,7 +122,7 @@ function Lvl4_RAccess(props) {
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
                                 <button onClick={() => handleAnswerButtonClick(cardOption)}>
-                                    <img src={cardImages.getCardImage(cardOption.image)}/>
+                                    <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
                                 </button>

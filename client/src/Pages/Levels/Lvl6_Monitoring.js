@@ -20,6 +20,7 @@ function Lvl6_Monitoring(props) {
         lib.setLevelStartScore('level6');
         level = service.getLevel('level6');
         props.passLevelName(level.level.name);
+        props.passMaxScore(level.level.maxScore);
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
