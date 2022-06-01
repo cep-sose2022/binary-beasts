@@ -20,7 +20,7 @@ function Progress(props) {
             <div id="info" className="box">
                 <h1>Fortschritt - {lib.getNickname()}</h1>
             <div id="overview">
-                <h2>Gesamtfortschritt aller Levels: {calcProgress()}</h2>
+                <h2>Abgeschlossene Levels: {calcProgress()}</h2>
             </div>
             <div id="level-scores">
                 <h2>Level-Überblick:</h2>
