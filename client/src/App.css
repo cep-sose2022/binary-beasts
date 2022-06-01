@@ -319,6 +319,7 @@ margin-top: 1vh;
 }
 #gamecontainer button{
     background-image: url(images/background.png);
+    background-size: cover;
     color: #ededed;
     border-color: #48ffd5;
     border-style: solid;
