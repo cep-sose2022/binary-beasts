@@ -28,6 +28,11 @@ body {
     align-items: center;
 }
 
+.box{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 button,#pdfdownload{
     border:0;
     color: #000000;
@@ -58,7 +63,7 @@ button:hover, #pdfdownload:hover{
     border: 0px;
     border-bottom: 0.15rem;
     border-style: solid;
-    border-color: #ffffffce;
+    border-color: #ffffff;
 }
 
 #navmain {
@@ -70,7 +75,7 @@ button:hover, #pdfdownload:hover{
 nav .navlinks {
     display: flex;
     justify-content: space-between;
-    padding-right: 0.5vw;
+    padding-right: 0.7vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
@@ -184,7 +189,7 @@ input {
 }
 #user-login,
 #login-message{
-    font-size: clamp(0.1rem,2vw,2rem);
+    font-size: clamp(0.1rem,1.3rem,1.03vw);
     display: grid;
     align-items: center;
 }
@@ -226,6 +231,7 @@ input {
 #account p {
     margin: 0.5vw;
     color: black;
+    font-size: clamp(0.1rem,1.3rem,1.03vw);
 }
 
 #how-to-play-grid {
@@ -239,6 +245,7 @@ input {
 #how-to-play{
     background-color: #edededcd;
     border-radius: 2px;
+    padding: 0.25vw;
 }
 
 #how-to-play p,
@@ -266,17 +273,13 @@ input {
     flex-wrap: nowrap;
 }
 .navgamecontent p, .navgamecontent span{
-font-size: clamp(0.5rem,2.5rem,4vw);
-margin-top: 1vh;
+    font-size: clamp(0.5rem,2.5rem,4vw);
+    margin-top: 1vh;
     margin-bottom: 1vh;
 }
 #navlevelround {
-    width: 80vw;
+    width: 90vw;
     justify-content: left;
-}
-
-#navtimer {
-    width: 10vw;
 }
 
 .navgamecontent p {
@@ -285,7 +288,7 @@ margin-top: 1vh;
 }
 
 #score {
-    width: 45vw;
+    /* width: 30vw; */
     justify-content: right;
 }
 
@@ -302,22 +305,20 @@ margin-top: 1vh;
 
 #gamecontainerlvl5 {
     position: absolute;
-    top: 10vh;
-}
-
-#backgroundlvl5container {
-    height: 90vh;
-    background-color: #ededed;
+    top: 7vh;
 }
 
 #backgroundlvl5 {
-    display: block;
-    width: 100vw;
-    height: 90vh;
-    object-fit: cover;
+    /* margin-top: 1px; */
     filter: blur(3px);
+    display: block;
+    width: 99vw;
+    height: 95vh;
+    object-fit: cover;
+    
 }
-#gamecontainer button{
+
+#gamecontainer button, #gamecontainerlvl5 button{
     background-image: url(images/background.png);
     background-size: cover;
     color: #ededed;
@@ -365,8 +366,8 @@ margin-top: 1vh;
     aspect-ratio: 100/14;
     display: flex;
     justify-content: center;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    /* padding-left: 2vw;
+    padding-right: 2vw; */
 }
 
 #eventmessage {
@@ -413,7 +414,6 @@ margin-top: 1vh;
  margin-top: 1vw;
 }
 /* levelcompletion */
-
 
 /* leveloverview */
 #level-overview-container {
@@ -656,6 +656,8 @@ font-size: clamp(0.1rem,2rem,3vw);
     width: 70vw;
     display: grid;
     justify-items: center;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
 }
 
 .box2 {
