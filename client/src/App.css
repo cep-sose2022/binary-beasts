@@ -325,6 +325,13 @@ margin-top: 1vh;
     border-style: solid;
     border-width: 1px;
     background-repeat: no;
+    display: grid;
+    align-items: flex-start;
+    justify-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+
 }
 #game {
     width: 98vw;
@@ -401,7 +408,10 @@ margin-top: 1vh;
     margin-right: 0.1vmax;
     font-size: 1.2vmax;
 }
-
+#actionscontainer img{
+ width: 40px;
+ margin-top: 1vw;
+}
 /* levelcompletion */
 
 
