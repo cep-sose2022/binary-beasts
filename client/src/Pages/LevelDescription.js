@@ -24,7 +24,7 @@ function Leveldescription() {
             <p>{level[0].description}</p>
           </div>
           <div id="levelDescriptionButtons">
-          <a id="pdfdownload" download={"Lerninhalt-" + level[0].name + ".pdf"} href={pdfDocs.getPdfDoc(level[0].token)}>PDF-Download</a>  
+          <a id="pdfdownload" download={"Lerninhalt-" + level[0].name + ".pdf"} href={pdfDocs.getPdfDoc(level[0].token)}>Inhalt herunterladen</a>  
           <button onClick={() => {
             navigate("../game", {
               state: {
