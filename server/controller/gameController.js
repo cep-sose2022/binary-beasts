@@ -138,7 +138,7 @@ gameController.getAllLevels = asyncHandler(async (req, res) => {
  */
 gameController.getLevelName = asyncHandler(async (req, res) =>{
     try {
-        const level = await Level.findById(req.params.levelId);
+        const level = await LevelCol.findById(req.params.levelId);
         const levelName = level.name;
         res.status(200).json({ levelName });
     } catch (err) {
