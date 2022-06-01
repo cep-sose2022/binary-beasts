@@ -41,6 +41,35 @@
        ]
      }
    },
+    "/game/post-level-data/{token}": {
+      "post": {
+        "tags":["game"],
+        "description": "add all level data LevelCol collection",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST"
+          },
+          "401": {
+            "description": "UNAUTHORIZED"
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "description": "level token",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
     "/game/get-all-levels": {
       "get": {
         "tags":["game"],

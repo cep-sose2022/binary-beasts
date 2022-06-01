@@ -3,6 +3,7 @@ const Level = require('../models/levelModel');
 const Event = require('../models/eventModel');
 const EventCard = require('../models/cardEventModel');
 const Card = require('../models/cardModel');
+const LevelCol = require('../models/levelColModel');
 
 const gameController = {};
 
@@ -13,6 +14,29 @@ const gameController = {};
  */
 gameController.getLevel = asyncHandler(async (req, res) => {
     try {
+        const level1 = await LevelCol.find({token: req.params.token});
+        const level = level1[0];
+        res.status(200).json( {level} );
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+/**
+ * @desc add all level data LevelCol collection
+ * @route POST /game/post-level-data/${name}
+ * @access public
+ */
+gameController.postLevelData = asyncHandler(async (req, res) => {
+    try {
+        // delete old entries with the same token (only if exist)
+        const levelToDelete = await LevelCol.find({token: req.params.token});
+        if(levelToDelete.length > 0) {
+            for (let i = 0; i < levelToDelete.length; i++) {
+                await LevelCol.deleteOne({token: req.params.token});
+            }
+        }
+
         // levelSchema to return
         let tempLevel1 = {
             _id: String,
@@ -60,7 +84,8 @@ gameController.getLevel = asyncHandler(async (req, res) => {
                     nextEvent: Number,
                     nextImage: String,
                     nextEventText: Number,
-                    image: String
+                    image: String,
+                    maxScore: Number
                 };
 
                 cards._id  = card._id;
@@ -71,14 +96,22 @@ gameController.getLevel = asyncHandler(async (req, res) => {
                 cards.nextImage  = card.nextImage;
                 cards.nextEventText = card.nextEventText;
                 cards.image = card.image;
+                cards.maxScore = card.maxScore;
+
                 cards1.push(cards);
             }
             tempLevel1.events[i].cards = cards1;
         }
 
-        const level = tempLevel1;
+        let level = {
+            type: Object
+        }
+        level = tempLevel1;
 
-        res.status(200).json({ level });
+        await LevelCol.insertMany(level);
+
+
+        res.status(200).json(level);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -121,7 +154,6 @@ gameController.getLevelName = asyncHandler(async (req, res) =>{
 gameController.getEvents =  asyncHandler(async (req, res) => {
     try {
         const event = await Event.find({ levelId: req.params.levelId });
-        console.log(event);
         res.status(200).json({ event });
     } catch (err) {
         res.status(400).json({ message: err.message });
@@ -136,7 +168,6 @@ gameController.getEvents =  asyncHandler(async (req, res) => {
 gameController.getEventCards =  asyncHandler(async (req, res) => {
     try {
         const eventCard = await EventCard.find({ eventId: req.params.eventId });
-        console.log(eventCard);
         res.status(200).json({ eventCard });
     } catch (err) {
         res.status(400).json({ message: err.message });
@@ -151,7 +182,6 @@ gameController.getEventCards =  asyncHandler(async (req, res) => {
 gameController.getCard =  asyncHandler(async (req, res) => {
     try {
         const card = await Card.findById(req.params.cardId);
-        console.log(card);
         res.status(200).json({ card });
     } catch (err) {
         res.status(400).json({ message: err.message });
