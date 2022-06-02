@@ -14,6 +14,7 @@ let playedCard14 = false;
 let gameOver = false;
 
 let cardsPlayed;
+let duplicates;
 
 let level;
 function Lvl1_Network(props) {
@@ -33,7 +34,8 @@ function Lvl1_Network(props) {
         playedCard12 = false;
         playedCard14 = false;
         gameOver = false;
-        cardsPlayed = ['card15'];
+        cardsPlayed = [];
+        duplicates = ['card15'];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -44,7 +46,7 @@ function Lvl1_Network(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
@@ -52,17 +54,19 @@ function Lvl1_Network(props) {
     }, [eventTextNumber, currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
+        console.log(cardsPlayed);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
 
         if (cardOption.name === 'card2') {
-            cardsPlayed.push('card2');
+            duplicates.push('card2');
             playedCard2 = true;
         }
         if (cardOption.name === 'card3') {
-            cardsPlayed.push('card3');
+            duplicates.push('card3');
             playedCard3 = true;
         }
 
@@ -94,7 +98,11 @@ function Lvl1_Network(props) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '1');
             localStorage.setItem('feedback', 'Gratulation! Sie haben nun zusammen mit dem Netzwerktechniker alle nötigen Maßnahmen für eine sichere Netzwerksegmentierung vorgenommen! Achten Sie darauf, dass diese Maßnahmen auch in Ihrem Unternehmen umgesetzt werden, da dies ein wichtiger Teil der OT-Security ist. Auch wenn die Netzwerksegmentierung ein langer und teurer Prozess ist, lohnt sich dieser auf lange Sicht!');
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed
+                }
+            });
         }
     }
 
