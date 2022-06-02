@@ -36,22 +36,28 @@ function Win() {
                     }}>Zu Levels</button>
                     <button onClick={() => setFeedbackVisible(!feedbackVisible)}>Feedback</button>
                 </div>
-                {feedbackVisible && <div>
-                    <table>
+                
+                <div id="levelcompletiontablegrid">
+                {feedbackVisible && <div id="levelcompletiontable">
+                            
+                        <table id="tablehead">
                         <th>Gespielte Karte</th>
                         <th>Feedback</th>
+                        </table>
+                        
+                        <div id="tds"><table>
                         {
                             location.state.cardsPlayed.map(card => {
                                 if (card[2]) {
                                     return (
-                                        <tr style={{ backgroundColor: "green" }}>
+                                        <tr style={{ backgroundColor: "#2ec300c2"}}>
                                             <td>{card[0]}</td>
                                             <td>{card[1]}</td>
                                         </tr>
                                     )
                                 } else {
                                     return (
-                                        <tr style={{ backgroundColor: "red" }}>
+                                        <tr style={{ backgroundColor: "#ff0000ca" }}>
                                             <td>{card[0]}</td>
                                             <td>{card[1]}</td>
                                         </tr>
@@ -59,9 +65,10 @@ function Win() {
                                 }
 
                             })
-                        }
-                    </table>
+                        }</table></div>
+                    
                 </div>}
+                </div>
             </div>
         </>
     );

@@ -4,10 +4,14 @@
     padding: 0px;
     color: #ededed;
 }
-
-body {
-    overflow-y: auto;
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    }
+::-webkit-scrollbar {
+width: 0px;
 }
+
 #home-container,
 #gamecontainer,
 #level-overview-container,
@@ -396,7 +400,6 @@ input {
  width: 40px;
  margin-top: 1vw;
 }
-/* levelcompletion */
 
 /* leveloverview */
 #level-overview-container {
@@ -603,7 +606,9 @@ th {
     border-radius: .5vw;
     border-width: 1px;
 }
-#progress-container h2, #progress-container td, #progress-container th{
+#progress-container h2, #progress-container td, #progress-container th,
+#levelcompletiontable h2, #levelcompletiontable td, #levelcompletiontable th
+{
 font-size: clamp(0.1rem,2rem,3vw);
 }
 #progress-container h1{
@@ -614,12 +619,31 @@ font-size: clamp(0.1rem,2rem,3vw);
 #win-container {
     background-image: url("./images/serverroom.jpg");
     background-position: center center;
+    display: grid;
+    flex-direction: column;
+    min-height: 95vh;
+    height: auto;
 }
-
+#levelcompletiontablegrid{
+    height: 60vh;
+}
+#tds{
+    overflow-y: scroll;
+    height: 30vh;
+}
+#tablehead th:first-child{
+    padding-right: 12.2vw; 
+}
+#tablehead th:nth-child(2){
+    padding-right: 64.1vw;
+}
 .levelOverview-button {
     font-size: 1vmax;
     background-image: url(images/background.png);
     background-color: none;
+}
+#win-description,#levelcompletiontablegrid{
+    margin: 2vw;
 }
 
 /* Score */
