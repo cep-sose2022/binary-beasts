@@ -1,8 +1,13 @@
 import React from "react";
+import Navbar from "../../Navbar";
+import Footer from "./../subpages/Footer";
 
 function AboutUs(){
     return(
+        <>
+        <Navbar />
         <div id="about-us-container" name="about-us-container">
+            <div className="subpagescontent">
             <h1>Über uns</h1>
             <h2>Wer wir sind</h2>
             <p>
@@ -15,6 +20,9 @@ function AboutUs(){
             <h3>Kontakt</h3>
             <p>binarybeasts100@gmail.com</p>
         </div>
+        </div>
+        <Footer />
+        </>
     );
 }
 

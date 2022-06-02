@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import kanye from './../../images/level5/kanye-west-stare.gif';
 import angryboss from './../../images/level5/angryboss.PNG';
@@ -21,16 +21,16 @@ import lib from '../../library/bib.js';
 //const level = service.getLevel('level5');
 
 const cardsPlayed = [];
-let roomcount=0;
-let fail=0;
+let roomcount = 0;
+let fail = 0;
 let level;
 
-let rooms=[4,3,2,1];//ranking
-let cp=[];//cards played
-let score=0;
-let rightcount=0;
-let penalty=0;
-let c=0;
+let rooms = [4, 3, 2, 1];//ranking
+let cp = [];//cards played
+let score = 0;
+let rightcount = 0;
+let penalty = 0;
+let c = 0;
 
 function Lvl7_Incident(props) {
     // set score back to zero
@@ -60,60 +60,60 @@ function Lvl7_Incident(props) {
     //refreshes Evettext and Currentcards
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        
+
         console.log(cardsPlayed);
         setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
-        function calc(){ 
+        function calc() {
             cp.push([c]);
-            let rightroom=rooms[rightcount];
-            let difference=rightroom-c;
-            difference=Math.abs(difference);
-            score=rightroom-difference-penalty;
-            if(c==rightroom){
+            let rightroom = rooms[rightcount];
+            let difference = rightroom - c;
+            difference = Math.abs(difference);
+            score = rightroom - difference - penalty;
+            if (c == rightroom) {
                 rightcount++;
-                penalty=0;
+                penalty = 0;
             }
-            else{
+            else {
                 penalty++;
             }
         }
 
-        if(cardOption.name=="card2"){
+        if (cardOption.name == "card2") {
             cardsPlayed.push('card2');
-            c=4;
+            c = 4;
             calc();
         }
-        if(cardOption.name=="card3"){
+        if (cardOption.name == "card3") {
             cardsPlayed.push('card3');
-            c=3;
+            c = 3;
             calc();
         }
-        if(cardOption.name=="card4"){
+        if (cardOption.name == "card4") {
             cardsPlayed.push('card4');
-            c=2;
+            c = 2;
             calc();
         }
-        if(cardOption.name=="card5"){
+        if (cardOption.name == "card5") {
             cardsPlayed.push('card5');
-            c=1;
+            c = 1;
             calc();
         }
-        if(cardOption.name=="card56"){
+        if (cardOption.name == "card56") {
             roomcount++;
         }
-        if(cardOption.name=="card1"){
+        if (cardOption.name == "card1") {
             fail++;
         }
-        
+
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
         props.passPreviousScore(lib.getScore());
-        lib.updateScore(cardOption.points+score);
+        lib.updateScore(cardOption.points + score);
         props.passCurrentScore(lib.getScore());
 
         if (cardOption.name === 'card56') {
@@ -129,23 +129,23 @@ function Lvl7_Incident(props) {
         } else if (cardOption.nextImage === 'router') {
             setCurrentImage(router);
             setCurrentBG(communityroom);
-        }else if (cardOption.nextImage === 'schreibtisch') {
+        } else if (cardOption.nextImage === 'schreibtisch') {
             setCurrentImage(schreibtisch);
             setCurrentBG(officedesk);
-        }else if (cardOption.nextImage === 'serverroom') {
+        } else if (cardOption.nextImage === 'serverroom') {
             setCurrentImage(tower);
             setCurrentBG(serverroom);
-        }else if (cardOption.nextImage === 'sus') {
+        } else if (cardOption.nextImage === 'sus') {
             setCurrentImage(sus);
         }
 
-        if (cardOption.nextEvent === 0 || roomcount==4) {
+        if (cardOption.nextEvent === 0 || roomcount == 4) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '7');
             localStorage.setItem('feedback', 'Sie haben das level erfolgreich Beendet!');
             navigate('../levelcompletion');
         }
-        if(fail==2){
+        if (fail == 2) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '7');
             localStorage.setItem('feedback', 'Sie haben leider verloren!');

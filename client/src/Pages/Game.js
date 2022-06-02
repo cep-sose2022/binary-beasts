@@ -32,9 +32,6 @@ function Game(){
             <div id="navlevelround"className="navgamecontent">
                 <p>Level: <span className="gameNavbar-blue">{levelName}</span></p>
             </div>
-            <div id="navtimer" className="navgamecontent">
-                {/* <p>Time: {<span className="gameNavbar-blue">{mins}:{secs < 10 ? `0${secs}` : secs}</span>} </p> */}
-            </div>
             <div id="score" className="navgamecontent">
                 <p>Score:   
                     {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore + " "}</span>}

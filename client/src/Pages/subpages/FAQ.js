@@ -1,8 +1,13 @@
 import React from 'react';
+import Navbar from "../../Navbar";
+import Footer from "./../subpages/Footer";
 
 function FAQ(){
     return(
+        <>
+        <Navbar />
         <div id="help-container" name="help-container">
+        <div className="subpagescontent">
             <h1>FAQ</h1>
             <h2>Spiel</h2>
             <h3>Wie funktioniert es?</h3>
@@ -26,6 +31,9 @@ function FAQ(){
             <h3>Wer sieht meine Punkte?</h3>
                 <p>Jeder. Auf dem Leaderboard.</p>
         </div>
+        </div>
+        <Footer />
+        </>
     );
 }
 

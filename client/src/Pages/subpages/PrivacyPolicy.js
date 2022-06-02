@@ -1,8 +1,13 @@
 import React from "react";
+import Navbar from "../../Navbar";
+import Footer from "./../subpages/Footer";
 
 function PrivacyPolicy() {
     return (
+        <>
+        <Navbar />
         <div id="policy-container" name="policy-container">
+        <div className="subpagescontent">
             <h1>Impressum</h1>
             <p>
                 Binary Beasts <br />
@@ -53,6 +58,9 @@ function PrivacyPolicy() {
                 Alle Inhalte dieser Website sind geistiges Eigentum und dürfen nicht vervielfältigt oder kopiert werden.
             </p>
         </div>
+        </div>
+        <Footer />
+        </>
     );
 }
 

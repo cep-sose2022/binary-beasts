@@ -112,7 +112,7 @@ function LevelOverview() {
             8
           </button>
           <div id="buttonText8" className="buttonText">{levels.filter(level => level.token === "level" + 8)[0].name}</div>
-{/*
+
           <button id="levelButton9" className="levelButton" onClick={() => {
             navigate("/description", {
               state: {
@@ -134,7 +134,7 @@ function LevelOverview() {
             10
           </button>
           <div id="buttonText10" className="buttonText">{levels.filter(level => level.token === "level" + 10)[0].name}</div>
- */}
+
         </div>
       </div>
     </>
