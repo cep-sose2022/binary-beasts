@@ -255,6 +255,8 @@ input {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
+    padding-left: .25vw;
+    padding-right: .25vw;
 }
 .navgamecontent p, .navgamecontent span{
     font-size: clamp(0.5rem,2.5rem,4vw);
@@ -262,17 +264,18 @@ input {
     margin-bottom: 1vh;
 }
 #navlevelround {
-    width: 90vw;
+    width: auto;
     justify-content: left;
 }
 
 .navgamecontent p {
-    margin-right: 2vmax;
+    /* margin-right: 2vmax; */
     color: #0b2037;
 }
 
 #score {
     justify-content: right;
+    width: auto;
 }
 
 .gameNavbar-blue {
@@ -284,7 +287,7 @@ input {
     background-image: url(images/serverroom.jpg);
     background-position: center, center;
     background-size: cover;
-    align-items: flex-start;
+    align-items: ;
 }
 
 #gamecontainerlvl5 {
