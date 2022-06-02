@@ -124,7 +124,7 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
  */
 gameController.getAllLevels = asyncHandler(async (req, res) => {
     try {
-        const allLevels = await Level.find();
+        const allLevels = await LevelCol.find();
         res.status(200).json({ allLevels });
     } catch (err) {
         res.status(400).json({ message: err.message });
@@ -153,36 +153,9 @@ gameController.getLevelName = asyncHandler(async (req, res) =>{
  */
 gameController.getEvents =  asyncHandler(async (req, res) => {
     try {
-        const event = await Event.find({ levelId: req.params.levelId });
+        const level = await LevelCol.find({ _Id: req.params.levelId });
+        const event = level[0].events;
         res.status(200).json({ event });
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
-})
-
-/**
- * @desc get all cards for one event
- * @route GET /game/get-event-cards/${eventId}
- * @access public
- */
-gameController.getEventCards =  asyncHandler(async (req, res) => {
-    try {
-        const eventCard = await EventCard.find({ eventId: req.params.eventId });
-        res.status(200).json({ eventCard });
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
-})
-
-/**
- * @desc get one card
- * @route GET /game/get-card/${cardId}
- * @access public
- */
-gameController.getCard =  asyncHandler(async (req, res) => {
-    try {
-        const card = await Card.findById(req.params.cardId);
-        res.status(200).json({ card });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
