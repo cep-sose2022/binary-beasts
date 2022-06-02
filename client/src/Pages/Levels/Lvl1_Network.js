@@ -55,7 +55,6 @@ function Lvl1_Network(props) {
 
     const handleAnswerButtonClick = (cardOption) => {
         cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
-        console.log(cardsPlayed);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
