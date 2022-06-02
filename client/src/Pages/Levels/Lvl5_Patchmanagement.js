@@ -8,6 +8,7 @@ import cardImages from '../../library/cardImages.js';
 
 let level;
 let cardsPlayed;
+let duplicates;
 function Lvl5_Patchmanagement(props) {
 
   let navigate = useNavigate();
@@ -19,7 +20,8 @@ function Lvl5_Patchmanagement(props) {
     level = service.getLevel('level5');
     props.passLevelName(level.level.name);
     props.passMaxScore(level.level.maxScore);
-    cardsPlayed = ['card14'];
+    cardsPlayed = [];
+    duplicates = ['card14'];
   }
 
   const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -41,7 +43,7 @@ function Lvl5_Patchmanagement(props) {
     if (currentEvent == 3 && patchDocumented) {
       setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != 'card10').filter(card => !cardsPlayed.includes(card.name)));
     } else {
-      setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+      setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
     }
   }, [currentEvent]);
 
@@ -77,6 +79,7 @@ function Lvl5_Patchmanagement(props) {
   }, [eventTextNumber, currentEvent]);
 
   const handleAnswerButtonClick = (cardOption) => {
+    if(cardOption.feedback !== undefined) cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
     setCurrentEvent(cardOption.nextEvent);
     setEventTextNumber(cardOption.nextEventText);
     setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
@@ -123,7 +126,11 @@ function Lvl5_Patchmanagement(props) {
       localStorage.setItem('levelNumber', '5');
       if(card13Played) localStorage.setItem('feedback', "Schade! Sie hätten nicht auf den Sicherheitspatch warten sollen, sondern andere Maßnahmen ergreifen sollen. Da Sie dies nicht getan haben, haben Hacker in der Zwischenzeit die Schwachstelle des Patches ausgenutzt und haben nun die Kontrolle über das ICS-System!");
       else localStorage.setItem('feedback', "Gratulation! Sie haben nun den Vorgang der Installation von Patches erfolgreich gemeistert! Behalten Sie im Hinterkopf, regelmäßig nach Sicherheitspatches Ausschau zu halten. Beachten Sie ebenfalls, dass nicht immer Sicherheitspatches für ICS-Geräte verfügbar sind oder eine Installation oft nicht möglich ist. In solchen Fällen sollte immer eine Risikoanalyse mit alternativen Ausgleichsmaßnahmen wie die im Beispiel erfolgte Netzsegmentierung erfolgen. Machen Sie es Hackern nicht durch veraltete Systeme einfach!");
-      navigate('../levelcompletion');
+      navigate('../levelcompletion', {
+        state: {
+            cardsPlayed: cardsPlayed
+        }
+    });
     }
 
   }
