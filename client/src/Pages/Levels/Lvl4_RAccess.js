@@ -19,6 +19,7 @@ let playedCard16 = false;
 let gameOver = false;
 
 let cardsPlayed;
+let duplicates;
 
 let level;
 function Lvl4_RAccess(props) {
@@ -40,7 +41,8 @@ function Lvl4_RAccess(props) {
         playedCard15 = false;
         playedCard16 = false;
         gameOver = false;
-        cardsPlayed = ['card17'];
+        cardsPlayed = [];
+        duplicates = ['card17'];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -51,7 +53,7 @@ function Lvl4_RAccess(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
@@ -59,6 +61,7 @@ function Lvl4_RAccess(props) {
     }, [eventTextNumber, currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
@@ -92,7 +95,11 @@ function Lvl4_RAccess(props) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '4');
             localStorage.setItem('feedback', 'Gratulation! Sie haben nun zusammen mit dem IT-Administrator die wichtigsten Schritte für die Einrichtung eines sicheren Remote Access erarbeitet. Vergessen Sie nicht, dass die Verwendung eines Remote Access im Industrieumfeld trotz ihres praktischen Nutzens sicherheitstechnisch nicht zu empfehlen ist. Lässt es sich aber dennoch nicht verhindern, wissen Sie nun worauf Sie achten sollen. Ein kleiner Hinweis: In den meisten Industrieanlagen sind solche Konzepte für Remote Access bereits umgesetzt und in Nutzung, es schadet aber nicht, diese noch einmal auf die eben gelernten Kriterien zu überprüfen. Gerade Standardpasswörter sind keine Seltenheit in einer solchen Umgebung, da solche Anlagen zum Teil vor langer Zeit aufgebaut und konfiguriert wurden, als Remote Access noch überhaupt kein Thema war.');
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed
+                }
+            });
         }
     }
 
