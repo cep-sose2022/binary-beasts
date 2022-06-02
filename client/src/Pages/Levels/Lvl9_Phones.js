@@ -5,8 +5,6 @@ import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 
-
-
 let gameOver = false;
 let money = 16000; //startmoney
 
@@ -15,6 +13,7 @@ const cardsPlayed = [];
 let level;
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
+    let feedback = "Herzlichen Glückwunsch! Sie haben das Level abgeschlossen. Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
@@ -81,16 +80,7 @@ function Lvl9_Phones(props) {
         }
     }
 
-    const feedback = () =>{
-        if(money < 0){
-            return "Ihnen ist das Geld ausgegangen."
-        }
-        if(lib.getScore <= 30){
-            return "Leider waren die Entscheidungen, die Sie getroffen haben, nicht immer die besten. Ein Angreifer hätte es nicht allzu schwer bei Ihnen über die Smartphones Zugriff auf die Anlage zu erhalten. Sie müssen bedenken, dass Smartphones, besonders wenn sie zur Anlagensteuerung verwendet werden, nur die nötigsten Apps und Zugriffserlaubnis haben sollte. Hier gilt die Regel: Weniger ist mehr.";
-        } else {
-            return "Nicht schlecht. Sie haben kluge Entscheidungen getroffen und somit ist das ICS gut vor Angriffen, die Smartphones ausnutzen, geschütz.";
-        } 
-    };
+
 
     const eventTextSplit = () => {
         //Bei jedem '<' im eventText wird ein br-Tag eingebaut
