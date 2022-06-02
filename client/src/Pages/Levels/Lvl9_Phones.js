@@ -5,7 +5,8 @@ import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 
-let feedback = "Feeeeeedddddddddbbbbbbbbbbaaaacccccccckkkkkkkkkkk";
+
+
 let gameOver = false;
 let money = 16000; //startmoney
 
@@ -60,7 +61,7 @@ function Lvl9_Phones(props) {
         console.log("Geld: " + money);
         
         //check events that contain cards with loopback 
-        if (currentEvent === 2 || currentEvent === 4){
+        if (currentEvent === 3 || currentEvent === 4){
             cardsPlayed.push(cardOption.name);
         }
         
@@ -68,7 +69,7 @@ function Lvl9_Phones(props) {
         if(cardOption.nextEvent === 0){ //event5 card24 is the last card
             gameOver = true;
         } else if (money <= 0){
-            feedback = "Geld ausgegangen";
+            console.log("Geld ausgegangen. " + money + "€" );
             gameOver = true;
         }
        
@@ -79,6 +80,17 @@ function Lvl9_Phones(props) {
             navigate('../levelcompletion');
         }
     }
+
+    const feedback = () =>{
+        if(money < 0){
+            return "Ihnen ist das Geld ausgegangen."
+        }
+        if(lib.getScore <= 30){
+            return "Leider waren die Entscheidungen, die Sie getroffen haben, nicht immer die besten. Ein Angreifer hätte es nicht allzu schwer bei Ihnen über die Smartphones Zugriff auf die Anlage zu erhalten. Sie müssen bedenken, dass Smartphones, besonders wenn sie zur Anlagensteuerung verwendet werden, nur die nötigsten Apps und Zugriffserlaubnis haben sollte. Hier gilt die Regel: Weniger ist mehr.";
+        } else {
+            return "Nicht schlecht. Sie haben kluge Entscheidungen getroffen und somit ist das ICS gut vor Angriffen, die Smartphones ausnutzen, geschütz.";
+        } 
+    };
 
     const eventTextSplit = () => {
         //Bei jedem '<' im eventText wird ein br-Tag eingebaut
