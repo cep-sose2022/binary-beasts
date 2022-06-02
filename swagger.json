@@ -149,64 +149,6 @@
         ]
       }
     },
-    "/game/get-event-cards/{eventId}": {
-      "get": {
-        "tags":["game"],
-        "description": "get all cards for one event",
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "BAD REQUEST"
-          },
-          "401": {
-            "description": "UNAUTHORIZED"
-          }
-        },
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "path",
-            "description": "event id",
-            "type": "string",
-            "required": true
-          }
-        ]
-      }
-    },
-    "/game/get-card/{cardId}": {
-      "get": {
-        "tags":["game"],
-        "description": "get one card",
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "BAD REQUEST"
-          },
-          "401": {
-            "description": "UNAUTHORIZED"
-          }
-        },
-        "parameters": [
-          {
-            "name": "cardId",
-            "in": "path",
-            "description": "card id",
-            "type": "string",
-            "required": true
-          }
-        ]
-      }
-    },
     "/leaderboard/get-leaderboard": {
       "get": {
         "tags":["leaderboard"],

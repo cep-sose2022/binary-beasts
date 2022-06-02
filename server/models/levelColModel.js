@@ -40,7 +40,7 @@ const levelSchema = mongoose.Schema(
         },
         maxScore: {
             type: Number,
-            required: [true, 'Please add a description ']
+            required: [true, 'Please add a maxScore ']
         }
     },
     {
