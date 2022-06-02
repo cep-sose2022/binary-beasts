@@ -6,7 +6,7 @@
 }
 
 body {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 #home-container,
 #gamecontainer,
@@ -282,12 +282,12 @@ input {
     color: #1c62ad;
 }
 
-/* Gamecontainer */
 #gamecontainer {
     background-image: url(images/serverroom.jpg);
     background-position: center, center;
     background-size: cover;
-    align-items: ;
+    position: fixed;
+    width: 100vw;
 }
 
 #gamecontainerlvl5 {
