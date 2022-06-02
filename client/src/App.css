@@ -6,7 +6,7 @@
 }
 
 body {
-    /* background-color: #4effe4; */
+    overflow-y: scroll;
 }
 #home-container,
 #gamecontainer,
@@ -284,6 +284,7 @@ input {
     background-image: url(images/serverroom.jpg);
     background-position: center, center;
     background-size: cover;
+    align-items: flex-start;
 }
 
 #gamecontainerlvl5 {
@@ -478,19 +479,19 @@ input {
     grid-row: 46;
     grid-column: 22;
 }
-#levelButton3{
+#levelButton4{
     grid-row: 70;
     grid-column: 40;
 }
-#buttonText3{
+#buttonText4{
     grid-row: 66;
     grid-column: 40;
 }
-#levelButton4{
+#levelButton3{
     grid-row: 55;
     grid-column: 36;
 }
-#buttonText4{
+#buttonText3{
     grid-row: 51;
     grid-column: 36;
 }
