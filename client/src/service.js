@@ -54,32 +54,6 @@ service.getEvents = (levelId) => {
 }
 
 /**
- * returns all cards for one event
- * @param eventId
- * @returns {any}
- */
-service.getEventCards = (eventId) => {
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/get-event-cards/${eventId}`, false );
-    xmlHttp.send( null );
-    jsonResponse = JSON.parse(xmlHttp.responseText);
-    return jsonResponse;
-}
-
-/**
- * returns a card by cardId
- * @param cardId
- * @returns {any}
- */
-service.getCard = (cardId) => {
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `${backendUrl}/game/get-card/${cardId}`, false );
-    xmlHttp.send( null );
-    jsonResponse = JSON.parse(xmlHttp.responseText);
-    return jsonResponse;
-}
-
-/**
  * get leaderboard from backend
  * @returns {any}
  */
@@ -161,6 +135,5 @@ service.checkUser = (nickname, pin) => {
     jsonResponse = JSON.parse(xmlHttp.responseText);
     return jsonResponse.exists;
 }
-
 
 module.exports = service;
