@@ -5,8 +5,9 @@ import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 
-
+let feedback = "Feeeeeedddddddddbbbbbbbbbbaaaacccccccckkkkkkkkkkk";
 let gameOver = false;
+let money = 16000; //startmoney
 
 const cardsPlayed = [];
 
@@ -23,6 +24,7 @@ function Lvl9_Phones(props) {
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
         gameOver = false;
+        money = 16000;
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -32,30 +34,48 @@ function Lvl9_Phones(props) {
 
 
     React.useEffect(() => {
-        setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+        let thisEvent = level.level.events[currentEvent -1]
+        setEventText(thisEvent.text[eventTextNumber]);
+        setCurrentCards(thisEvent.cards.filter(card => !cardsPlayed.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
     }, [eventTextNumber, currentEvent]);
 
+
     const handleAnswerButtonClick = (cardOption) => {
+        
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
-        setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
+        setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
         setCurrentRound(currentRound + 1);
-
+        
         props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
         props.passCurrentScore(lib.getScore());
-
-
+        
+        //reduce money by card costs
+        money = money - cardOption.costs;
+        console.log("Geld: " + money);
+        
+        //check events that contain cards with loopback 
+        if (currentEvent === 2 || currentEvent === 4){
+            cardsPlayed.push(cardOption.name);
+        }
+        
+        //check end-conditions
+        if(cardOption.nextEvent === 0){ //event5 card24 is the last card
+            gameOver = true;
+        } else if (money <= 0){
+            feedback = "Geld ausgegangen";
+            gameOver = true;
+        }
        
         if(gameOver) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '9');
-            localStorage.setItem('feedback', 'Gratulation! Auch wenn die Konfiguration von Smartphones im Produktionsumfeld ein langer und teurer Prozess ist, lohnt sich dieser auf lange Sicht!');
+            localStorage.setItem('feedback', feedback);
             navigate('../levelcompletion');
         }
     }
@@ -89,6 +109,8 @@ function Lvl9_Phones(props) {
                                     <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
+                                    <br/>
+                                    {cardOption.name != "card25" ? cardOption.costs + "€" : ""}
                                 </button>
                             ))}
                         </div>

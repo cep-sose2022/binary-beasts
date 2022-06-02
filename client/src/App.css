@@ -548,6 +548,10 @@ margin-top: 1vh;
     grid-row: 54;
     grid-column: 58;
 }
+#levelButton9{
+    grid-row: 20;
+    grid-column: 58;
+}
 
 
 /* Leaderboard */
