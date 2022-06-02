@@ -87,7 +87,7 @@ function Lvl9_Phones(props) {
                         <div id="event">
                             <div id="eventmessagecontainer">
                                 <div id="eventmessage">
-                                    <div id='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
+                                    <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
                                 </div>
                             </div>
                             <div id="eventimagecontainer">
