@@ -13,7 +13,7 @@ import produktion from './../../images/level5/produktion.PNG';
 import tower from './../../images/level5/overheat.PNG';
 import officedesk from './../../images/level5/officedesk.PNG';
 import communityroom from './../../images/level5/gemeinschaftsraum.PNG';
-
+import cardImages from '../../library/cardImages.js';
 
 import service from './../../service';
 import { useNavigate } from 'react-router-dom';
@@ -173,7 +173,11 @@ function Lvl7_Incident(props) {
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                    <img src={cardImages.getCardImage(cardOption.image)} />
+                                    <br />
+                                    {cardOption.text}
+                                </button>
                             ))}
                         </div>
                     </div>
