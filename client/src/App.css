@@ -102,8 +102,15 @@ nav a {
 .logo img {
     width: 3rem;
     height: 3rem;
+    
 }
-
+.logo img:hover{
+    animation: spin 0.2s linear infinite;
+    animation-play-state: running;
+}
+@keyframes spin{
+    100%{transform: rotate(1turn); }
+}
 .active {
     color: #48ffd5;
 }
