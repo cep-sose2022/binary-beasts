@@ -30,7 +30,11 @@ const cardSchema = mongoose.Schema(
         image: {
             type: String,
             required: [true, 'Please add next event text'],
-        }
+        },
+        feedback: {
+            type: String,
+            required: [false, 'Please add a feedback'],
+        },
     },
     {
         versionKey: false
