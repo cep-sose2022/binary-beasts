@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import kanye from './../../images/level5/kanye-west-stare.gif';
 import angryboss from './../../images/level5/angryboss.PNG';
 import maschine from './../../images/level5/maschine.PNG';
 import router from './../../images/level5/router.PNG';
@@ -14,6 +13,7 @@ import tower from './../../images/level5/overheat.PNG';
 import officedesk from './../../images/level5/officedesk.PNG';
 import communityroom from './../../images/level5/gemeinschaftsraum.PNG';
 import cardImages from '../../library/cardImages.js';
+
 
 import service from './../../service';
 import { useNavigate } from 'react-router-dom';
@@ -31,6 +31,7 @@ let score = 0;
 let rightcount = 0;
 let penalty = 0;
 let c = 0;
+let cardFeedback;
 
 function Lvl7_Incident(props) {
     // set score back to zero
@@ -49,6 +50,7 @@ function Lvl7_Incident(props) {
         level = service.getLevel('level7');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        cardFeedback = [];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -62,10 +64,11 @@ function Lvl7_Incident(props) {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
 
         console.log(cardsPlayed);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+        setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))));
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        if(cardOption.feedback !== undefined) cardFeedback.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
         function calc() {
             cp.push([c]);
             let rightroom = rooms[rightcount];
@@ -142,14 +145,22 @@ function Lvl7_Incident(props) {
         if (cardOption.nextEvent === 0 || roomcount == 4) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '7');
-            localStorage.setItem('feedback', 'Sie haben das level erfolgreich Beendet!');
-            navigate('../levelcompletion');
+            localStorage.setItem('feedback', 'Sie haben das Level erfolgreich beendet!');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardFeedback
+                }
+            });
         }
         if (fail == 2) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '7');
             localStorage.setItem('feedback', 'Sie haben leider verloren!');
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardFeedback
+                }
+            });
         }
     }
 
