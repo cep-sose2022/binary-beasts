@@ -8,6 +8,7 @@ import cardImages from '../../library/cardImages.js';
 lib.setLevelStartScore('level7');
 
 let level;
+let cardsPlayed;
 
 function Lvl8_UserControl(props) {
 
@@ -21,6 +22,7 @@ function Lvl8_UserControl(props) {
         level = service.getLevel('level8');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        cardsPlayed = [];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -33,6 +35,7 @@ function Lvl8_UserControl(props) {
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        if(cardOption.feedback !== undefined) cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentRound(currentRound + 1);
@@ -55,7 +58,11 @@ function Lvl8_UserControl(props) {
             }
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '8');
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed
+                }
+            });
         }
     }
 
