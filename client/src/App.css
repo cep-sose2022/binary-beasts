@@ -612,7 +612,7 @@ th {
 font-size: clamp(0.1rem,2rem,3vw);
 }
 #tds table{
-    width: 96vw;
+    width: 95vw;
 }
 #tds td:first-child{
     width: 25vw;
@@ -638,7 +638,7 @@ font-size: clamp(0.1rem,2rem,3vw);
     height: 30vh;
 }
 #tablehead{
-    width: 96vw;
+    width: 95vw;
 }
 #tablehead th:first-child{
     /* padding-right: 12.2vw;  */
