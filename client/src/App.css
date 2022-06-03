@@ -611,6 +611,12 @@ th {
 {
 font-size: clamp(0.1rem,2rem,3vw);
 }
+#tds table{
+    width: 96vw;
+}
+#tds td:first-child{
+    width: 25vw;
+}
 #progress-container h1{
     font-size:clamp(0.1rem,3rem,4vw);
     text-decoration: underline;
@@ -631,11 +637,15 @@ font-size: clamp(0.1rem,2rem,3vw);
     overflow-y: scroll;
     height: 30vh;
 }
+#tablehead{
+    width: 96vw;
+}
 #tablehead th:first-child{
-    padding-right: 12.2vw; 
+    /* padding-right: 12.2vw;  */
+    width: 25vw;
 }
 #tablehead th:nth-child(2){
-    padding-right: 64.1vw;
+    /* padding-right: 64.1vw; */
 }
 .levelOverview-button {
     font-size: 1vmax;
