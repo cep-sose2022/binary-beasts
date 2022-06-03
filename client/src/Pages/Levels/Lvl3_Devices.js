@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import service from "../../service";
 import { useNavigate } from "react-router-dom";
 import lib, { getScore } from "../../library/bib";
+import cardImages from '../../library/cardImages.js';
 
 
 const level = service.getLevel('level3');
@@ -227,7 +228,11 @@ function Lvl3_Devices(props) { //external devices
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>{cardOption.text}</button>
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                    <img src={cardImages.getCardImage(cardOption.image)} />
+                                    <br />
+                                    {cardOption.text}
+                                </button>
                             ))}
                         </div>
                     </div>
