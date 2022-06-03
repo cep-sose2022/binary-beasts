@@ -8,7 +8,8 @@ import cardImages from '../../library/cardImages.js';
 let gameOver = false;
 let money = 16000; //startmoney
 
-const cardsPlayed = [];
+let duplicates;
+let cardsPlayed;
 
 let level;
 function Lvl9_Phones(props) {
@@ -23,6 +24,8 @@ function Lvl9_Phones(props) {
         level = service.getLevel('level9');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        duplicates = [];
+        cardsPlayed = [];
         gameOver = false;
         money = 16000;
     }
@@ -35,7 +38,7 @@ function Lvl9_Phones(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name)));
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
@@ -44,7 +47,7 @@ function Lvl9_Phones(props) {
 
 
     const handleAnswerButtonClick = (cardOption) => {
-        
+        cardsPlayed.push([cardOption.text, cardOption.feedback, cardOption.points >= 0]);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
@@ -60,7 +63,7 @@ function Lvl9_Phones(props) {
         
         //check events that contain cards with loopback 
         if (currentEvent === 3 || currentEvent === 4){
-            cardsPlayed.push(cardOption.name);
+            duplicates.push(cardOption.name);
         }
         
         //check end-conditions
@@ -75,7 +78,11 @@ function Lvl9_Phones(props) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '9');
             localStorage.setItem('feedback', feedback);
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed
+                }
+            });
         }
     }
 
