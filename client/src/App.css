@@ -7,7 +7,6 @@
 html {
     overflow: scroll;
     overflow-x: hidden;
-    background-color: red;
     }
 ::-webkit-scrollbar {
 width: 0px;
@@ -196,6 +195,7 @@ input {
     align-items: center;
 }
 #playbutton{
+    margin-top: 5vh;
     background-image: url(images/background.png);
     text-transform: uppercase;
     background-size: cover;
@@ -291,7 +291,7 @@ input {
     background-image: url(images/serverroom.jpg);
     background-position: center, center;
     background-size: cover;
-    /* position: fixed; */
+    position: fixed;
     width: 100vw;
 }
 
@@ -301,12 +301,12 @@ input {
 }
 
 #backgroundlvl5 {
-    filter: blur(3px);
-    display: block;
-    width: 99vw;
-    height: 95vh;
-    object-fit: cover;
     
+    display: block;
+    width: 100vw;
+    height: 96.4vh;
+    object-fit: cover;
+    /* filter: blur(3px); */
 }
 
 #gamecontainer button, #gamecontainerlvl5 button{
