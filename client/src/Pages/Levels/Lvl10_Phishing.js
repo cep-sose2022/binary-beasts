@@ -11,6 +11,7 @@ import cardImages from '../../library/cardImages.js';
 // set score back to zero
 lib.setLevelStartScore('level1');
 let level;
+let cardsPlayed;
 // get level data from backend
 
 
@@ -27,6 +28,7 @@ function Lvl10_Phishing(props) {
         level = service.getLevel('level10');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        cardsPlayed = [];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -43,6 +45,7 @@ function Lvl10_Phishing(props) {
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentRound(currentRound + 1);
@@ -72,7 +75,11 @@ function Lvl10_Phishing(props) {
             }
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '10');
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed
+                }
+            });
         }
     }
 
