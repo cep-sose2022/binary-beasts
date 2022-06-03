@@ -3,6 +3,7 @@ import service from './../service';
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import pdfDocs from '../library/pdfDocs';
+import downloadIcon from '../images/download.png';
 
 const levels = service.getAllLevels();
 
@@ -24,7 +25,10 @@ function Leveldescription() {
             <p>{level[0].description}</p>
           </div>
           <div id="levelDescriptionButtons">
-          <a id="pdfdownload" download={"Lerninhalt-" + level[0].name + ".pdf"} href={pdfDocs.getPdfDoc(level[0].token)}>Inhalt herunterladen</a>  
+          <button onClick={() => {
+            navigate("../leveloverview");
+          }}>Zurück</button>
+          <a id="pdfdownload" download={"Lerninhalt-" + level[0].name + ".pdf"} href={pdfDocs.getPdfDoc(level[0].token)}>Lerninhalt <img src={downloadIcon} /> </a>  
           <button onClick={() => {
             navigate("../game", {
               state: {
@@ -32,9 +36,7 @@ function Leveldescription() {
               }
             });
           }}>Starten</button>
-          <button onClick={() => {
-            navigate("../leveloverview");
-          }}>Zurück</button>
+          
       </div>
       </div>
       </div>
