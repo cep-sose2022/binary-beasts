@@ -7,6 +7,7 @@
 html {
     overflow: scroll;
     overflow-x: hidden;
+    background-color: red;
     }
 ::-webkit-scrollbar {
 width: 0px;
@@ -23,7 +24,7 @@ width: 0px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 95vh;
+    height: 96.5vh;
 
     display: grid;
     justify-items: center;
@@ -61,11 +62,11 @@ button:hover, #pdfdownload:hover{
     background-position: center;
     display: flex;
     align-items: center;
-
     border: 0px;
     border-bottom: 0.15rem;
     border-style: solid;
     border-color: #ffffff;
+    height: clamp(2vw,4rem, 13vw);
 }
 
 #navmain {
@@ -128,7 +129,6 @@ nav a:hover {
     font-size: clamp(0.1rem,1.3rem,1.03vw);
 }
 #blog {
-    /* background-color: #00000091; */
     display: grid;
     grid-template-columns: 32vw 32vw 32vw;
     grid-template-rows: 50vh 22vh 20vh;
@@ -247,6 +247,8 @@ input {
 #gameNavbar {
     justify-content: space-between;
     background-image: url(images/background2.jpg);
+    /* padding-top: .3rem;
+    padding-bottom: .3rem; */
 }
 
 .navgamecontent {
@@ -263,7 +265,7 @@ input {
     padding-right: .25vw;
 }
 .navgamecontent p, .navgamecontent span{
-    font-size: clamp(0.5rem,2.5rem,4vw);
+    font-size: clamp(1vw, 2rem,2vw);
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
@@ -273,7 +275,6 @@ input {
 }
 
 .navgamecontent p {
-    /* margin-right: 2vmax; */
     color: #0b2037;
 }
 
@@ -290,7 +291,7 @@ input {
     background-image: url(images/serverroom.jpg);
     background-position: center, center;
     background-size: cover;
-    position: fixed;
+    /* position: fixed; */
     width: 100vw;
 }
 
@@ -394,16 +395,17 @@ input {
     aspect-ratio: 1;
     margin-left: 0.1vmax;
     margin-right: 0.1vmax;
-    font-size: 1.2vmax;
+    font-size: 1vw;
 }
 #actionscontainer img{
- width: 40px;
+ width: clamp(2vw,5rem,3vw);
  margin-top: 1vw;
 }
 
 /* leveloverview */
 #level-overview-container {
     background-image: url("./images/factory2.1.png");
+
 }
 
 #playfield {
