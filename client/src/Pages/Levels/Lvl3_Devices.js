@@ -10,7 +10,10 @@ let encryptDrive = false;
 let isolatedNetwork = false;
 let whitelisting = false;
 let physicalLocks = false;
-const cardsPlayed = [];
+
+let duplicates;
+let cardsPlayed;
+
 const nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
 
 let isScanned = false;
@@ -32,16 +35,22 @@ function Lvl3_Devices(props) { //external devices
     if (currentRound === 1) {
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        encryptDrive = false;
+        isolatedNetwork = false;
+        whitelisting = false;
+        physicalLocks = false;
+        isScanned = false;
+        isIsolatedChecked = false;
+        duplicates = [];
+        cardsPlayed = [];
     }
         
-
-
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]); //-1 because eventName and eventNumber differ by 1
 
         //set cards 
         if (currentEvent === 1)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !cardsPlayed.includes(card.name))); //don't show already used cards
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name))); //don't show already used cards
         else if (!isolatedNetwork) {
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name != "card10" && card.name != "card21"))); // two events have one card less
         }    else if (isIsolatedChecked)
@@ -53,6 +62,7 @@ function Lvl3_Devices(props) { //external devices
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
         if (currentEvent === 1) {
             handleBaseEvent(cardOption);
         } else if (cardOption.name === "card0") {
@@ -121,9 +131,9 @@ function Lvl3_Devices(props) { //external devices
         }
 
         if(cardOption.name != "card5")
-            cardsPlayed.push(cardOption.name);
+            duplicates.push(cardOption.name);
 
-        console.log("cardsPlayed: " + cardsPlayed);
+        console.log("cardsPlayed: " + duplicates);
         determineNextEvent(cardOption);
     }
 
@@ -194,7 +204,11 @@ function Lvl3_Devices(props) { //external devices
         service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
         localStorage.setItem('levelNumber', '3');
         localStorage.setItem('feedback', 'Wie Sie bemerkt haben kann so ein einfacher USB-Stick schnell zum Verhängnis für die ganze Anlage sein. Deswegen sollte man immer auf den richtigen Umgang achten, sodass man es Angreifern möglichst schwer macht in das System einzudringen.');
-        navigate('../levelcompletion');
+        navigate('../levelcompletion', {
+            state: {
+                cardsPlayed: cardsPlayed
+            }
+        });
 
     }
 
