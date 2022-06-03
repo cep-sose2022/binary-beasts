@@ -8,6 +8,7 @@ import cardImages from '../../library/cardImages.js';
 lib.setLevelStartScore('level6');
 
 let level;
+let cardsPlayed;
 
 function Lvl6_Monitoring(props) {
 
@@ -21,6 +22,7 @@ function Lvl6_Monitoring(props) {
         level = service.getLevel('level6');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
+        cardsPlayed = [];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -33,6 +35,7 @@ function Lvl6_Monitoring(props) {
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
         setCurrentEvent(cardOption.nextEvent);
         setEventTextNumber(cardOption.nextEventText);
         setCurrentRound(currentRound + 1);
@@ -54,7 +57,11 @@ function Lvl6_Monitoring(props) {
             }
             // save level number and feedback in local storage and navigate to win page
             localStorage.setItem('levelNumber', '6');
-            navigate('../levelcompletion');
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed
+                }
+            });
         }
     }
 
