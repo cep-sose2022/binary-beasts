@@ -34,7 +34,7 @@ function Win() {
                         lib.setLevelStartScore('zero');
                         navigate("/leveloverview");
                     }}>Zu Levels</button>
-                    <button onClick={() => setFeedbackVisible(!feedbackVisible)}>Feedback</button>
+                    <button onClick={() => setFeedbackVisible(!feedbackVisible)}>Gespielte Karten</button>
                 </div>
                 
                 <div id="levelcompletiontablegrid">
