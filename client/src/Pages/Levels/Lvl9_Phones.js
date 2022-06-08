@@ -6,13 +6,12 @@ import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 
 let gameOver = false;
-let money = 16000; //startmoney
-
-let duplicates;
+let money = 16000; //start money that is needed for perfect path 
 let cardsPlayed;
+let duplicate;
 let notEnoughMoney = false;
-
 let level;
+
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
     let feedback = "Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
@@ -25,10 +24,10 @@ function Lvl9_Phones(props) {
         level = service.getLevel('level9');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
-        duplicates = [];
         cardsPlayed = [];
+        duplicate = []; //avoids strange lines in played cards table in levelcompletion
         gameOver = false;
-        money = 16000;
+        money = 16000; // start money 
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -39,7 +38,7 @@ function Lvl9_Phones(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicate.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
@@ -73,7 +72,7 @@ function Lvl9_Phones(props) {
 
         //check events that contain cards with loopback 
         if (currentEvent === 3 || currentEvent === 4) {
-            duplicates.push(cardOption.name);
+            duplicate.push(cardOption.name);
         }
 
         //check end-conditions
@@ -89,7 +88,7 @@ function Lvl9_Phones(props) {
             localStorage.setItem('feedback', feedback);
             navigate('../levelcompletion', {
                 state: {
-                    cardsPlayed: cardsPlayed
+                    cardsPlayed: cardsPlayed //for showing played cards in levelcompletion
                 }
             });
         }
