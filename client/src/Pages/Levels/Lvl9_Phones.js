@@ -29,7 +29,6 @@ function Lvl9_Phones(props) {
         cardsPlayed = [];
         gameOver = false;
         money = 16000;
-        notEnoughMoney = false;
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -45,6 +44,7 @@ function Lvl9_Phones(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
+        notEnoughMoney = false; //every new card selection removes error-text
     }, [eventTextNumber, currentEvent]);
 
 
@@ -52,7 +52,7 @@ function Lvl9_Phones(props) {
         //"buy" a card
         if (money >= cardOption.costs){
             money -= cardOption.costs;
-            //when private devices selected it logically switches to buying new devices so the money needs to be subtracted
+            //private devices are ignored -> have to buy new devices
             if(cardOption.name==="card1") {
                 money -= 5000;
             }
@@ -62,8 +62,7 @@ function Lvl9_Phones(props) {
             setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
             setCurrentRound(currentRound + 1);
         }
-        else { 
-            console.log("not enough money"); 
+        else {  
             notEnoughMoney = true;
         }
 
