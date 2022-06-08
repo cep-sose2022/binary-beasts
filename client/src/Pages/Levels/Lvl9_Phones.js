@@ -10,11 +10,12 @@ let money = 16000; //startmoney
 
 let duplicates;
 let cardsPlayed;
+let notEnoughMoney = false;
 
 let level;
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
-    let feedback = "Herzlichen Glückwunsch! Sie haben das Level abgeschlossen. Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
+    let feedback = "Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
@@ -28,6 +29,7 @@ function Lvl9_Phones(props) {
         cardsPlayed = [];
         gameOver = false;
         money = 16000;
+        notEnoughMoney = false;
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -47,34 +49,39 @@ function Lvl9_Phones(props) {
 
 
     const handleAnswerButtonClick = (cardOption) => {
-        cardsPlayed.push([cardOption.text, cardOption.feedback, cardOption.points >= 0]);
-        setCurrentEvent(cardOption.nextEvent);
-        setEventTextNumber(cardOption.nextEventText);
-        setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
-        setCurrentRound(currentRound + 1);
-        
+        //"buy" a card
+        if (money >= cardOption.costs){
+            money = money - cardOption.costs;
+            cardsPlayed.push([cardOption.text, cardOption.feedback, cardOption.points >= 0]);
+            setCurrentEvent(cardOption.nextEvent);
+            setEventTextNumber(cardOption.nextEventText);
+            setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
+            setCurrentRound(currentRound + 1);
+        }
+        else { 
+            console.log("not enough money"); 
+            notEnoughMoney = true;
+        }
+
         props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
         props.passCurrentScore(lib.getScore());
-        
-        //reduce money by card costs
-        money = money - cardOption.costs;
-        console.log("Geld: " + money);
-        
+
+
         //check events that contain cards with loopback 
-        if (currentEvent === 3 || currentEvent === 4){
+        if (currentEvent === 3 || currentEvent === 4) {
             duplicates.push(cardOption.name);
         }
-        
+
         //check end-conditions
-        if(cardOption.nextEvent === 0){ //event5 card24 is the last card
+        if (cardOption.nextEvent === 0) { //event5 card24 is the last card
             gameOver = true;
-        } else if (money <= 0){
-            console.log("Geld ausgegangen. " + money + "€" );
+        } else if (money === 0) {
+            console.log("Geld ausgegangen. " + money + "€");
             gameOver = true;
         }
-       
-        if(gameOver) {
+
+        if (gameOver) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '9');
             localStorage.setItem('feedback', feedback);
@@ -101,6 +108,12 @@ function Lvl9_Phones(props) {
                                 <div id="eventimage">
                                     <img src={currentImage} className='img' />
                                 </div>
+                                <div id="money-container">
+                                    <p id="money" name="money">Geld: {money}</p>
+                                    {notEnoughMoney && 
+                                        <p id="money-error" name="money-error">Das Geld reicht nicht mehr</p>
+                                    }
+                                </div>
                             </div>
                         </div>
                         <div id="actionscontainer">
@@ -109,7 +122,7 @@ function Lvl9_Phones(props) {
                                     <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
-                                    <br/>
+                                    <br />
                                     {cardOption.name != "card25" ? cardOption.costs + "€" : ""}
                                 </button>
                             ))}
