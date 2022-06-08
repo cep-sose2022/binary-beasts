@@ -51,7 +51,11 @@ function Lvl9_Phones(props) {
     const handleAnswerButtonClick = (cardOption) => {
         //"buy" a card
         if (money >= cardOption.costs){
-            money = money - cardOption.costs;
+            money -= cardOption.costs;
+            //when private devices selected it logically switches to buying new devices so the money needs to be subtracted
+            if(cardOption.name==="card1") {
+                money -= 5000;
+            }
             cardsPlayed.push([cardOption.text, cardOption.feedback, cardOption.points >= 0]);
             setCurrentEvent(cardOption.nextEvent);
             setEventTextNumber(cardOption.nextEventText);
@@ -77,7 +81,6 @@ function Lvl9_Phones(props) {
         if (cardOption.nextEvent === 0) { //event5 card24 is the last card
             gameOver = true;
         } else if (money === 0) {
-            console.log("Geld ausgegangen. " + money + "€");
             gameOver = true;
         }
 
