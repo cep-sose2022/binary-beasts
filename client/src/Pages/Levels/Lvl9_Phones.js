@@ -11,10 +11,11 @@ let cardsPlayed;
 let duplicate;
 let notEnoughMoney = false;
 let level;
+const lastCard = "card24";
 
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
-    let feedback = "Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
+    let feedback = "Sie haben noch "+ money + "€ übrig. '>' Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
@@ -46,7 +47,6 @@ function Lvl9_Phones(props) {
         notEnoughMoney = false; //every new card selection removes error-text
     }, [eventTextNumber, currentEvent]);
 
-
     const handleAnswerButtonClick = (cardOption) => {
         //"buy" a card
         if (money >= cardOption.costs){
@@ -76,7 +76,7 @@ function Lvl9_Phones(props) {
         }
 
         //check end-conditions
-        if (cardOption.nextEvent === 0) { //event5 card24 is the last card
+        if (cardOption.name === lastCard) {
             gameOver = true;
         } else if (money === 0) {
             gameOver = true;
