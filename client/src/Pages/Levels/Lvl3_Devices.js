@@ -15,7 +15,7 @@ let physicalLocks = false;
 let duplicates;
 let cardsPlayed;
 
-const nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
+let nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
 
 let isScanned = false;
 let isIsolatedChecked = false;
@@ -33,6 +33,7 @@ function Lvl3_Devices(props) { //external devices
 
     //passing on levelName to game and reset all devices
     if (currentRound === 1) {
+        console.log("history (beginning): " + nextEventHistory);
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
         encryptDrive = false;
@@ -43,6 +44,7 @@ function Lvl3_Devices(props) { //external devices
         isIsolatedChecked = false;
         duplicates = [];
         cardsPlayed = [];
+        nextEventHistory = [1];
     }
         
     React.useEffect(() => {
@@ -54,7 +56,7 @@ function Lvl3_Devices(props) { //external devices
         else if (!isolatedNetwork) {
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name != "card10" && card.name != "card21"))); // two events have one card less
         }    else if (isIsolatedChecked)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card13"))); //event11
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card23"))); //event11
         else
             setCurrentCards(level.level.events[currentEvent - 1].cards);
 
@@ -94,7 +96,7 @@ function Lvl3_Devices(props) { //external devices
         dynEvent = nextEventHistory[nextEventHistory.length - 1]; //get the next event from history
         dynEventText = 0; //all events that follow card0 only have one text
         console.log("dynEvent (before): " + dynEvent);
-        if (currentEvent === 14) {
+        if (currentEvent === 14) { // TODO create variable lastCard
             endGame();
             return;
         } else if (currentEvent === 1) { //basic event with security meassures 
@@ -172,13 +174,14 @@ function Lvl3_Devices(props) { //external devices
                     dynEventText = 1;
                 break;
             case "card14":
-                if (physicalLocks)
+                if (physicalLocks || encryptDrive)
                     dynEventText = 3;
                 else
                     dynEventText = 2;
                 break;
             case "card21":
                 isIsolatedChecked = true;
+                dynEventText = 1;
                 break;
             case "card22":
                 if (isIsolatedChecked)
