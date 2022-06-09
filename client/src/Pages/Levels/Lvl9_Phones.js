@@ -15,7 +15,7 @@ const lastCard = "card24";
 
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
-    let feedback = "Sie haben noch "+ money + "€ übrig. '>' Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
+    let feedback = "Sie haben noch "+ money + "€ übrig. Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
