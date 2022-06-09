@@ -11,7 +11,7 @@ let cardsPlayed;
 let duplicate;
 let notEnoughMoney = false;
 let level;
-const lastCard = "card40";
+const lastCard = "card43";
 
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
