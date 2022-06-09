@@ -130,7 +130,7 @@ function Lvl9_Phones(props) {
                                     <br />
                                     {cardOption.text}
                                     <br />
-                                    {cardOption.name != "card40"  ? cardOption.costs + "€" : ""}
+                                    {cardOption.name != "card43"  ? cardOption.costs + "€" : ""}
                                 </button>
                             ))}
                         </div>
