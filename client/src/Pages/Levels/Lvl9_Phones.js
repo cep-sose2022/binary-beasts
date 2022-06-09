@@ -6,15 +6,16 @@ import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 
 let gameOver = false;
-let money = 16000; //startmoney
-
-let duplicates;
+let money = 16000; //start money that is needed for perfect path 
 let cardsPlayed;
-
+let duplicate;
+let notEnoughMoney = false;
 let level;
+const lastCard = "card24";
+
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
-    let feedback = "Herzlichen Glückwunsch! Sie haben das Level abgeschlossen. Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
+    let feedback = "Sie haben noch "+ money + "€ übrig. '>' Wichtig ist, dass Smartphones im Produktionsumfeld nur die wirklich nötigen Apps und Zugriffsrechte haben und nach außen hin abgesichert sind, sodass sich kein Hacker Zugang zum ICS schaffen kann.";
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
@@ -24,10 +25,10 @@ function Lvl9_Phones(props) {
         level = service.getLevel('level9');
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
-        duplicates = [];
         cardsPlayed = [];
+        duplicate = []; //avoids strange lines in played cards table in levelcompletion
         gameOver = false;
-        money = 16000;
+        money = 16000; // start money 
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
@@ -38,49 +39,56 @@ function Lvl9_Phones(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
+        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicate.includes(card.name)));
     }, [currentEvent]);
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
+        notEnoughMoney = false; //every new card selection removes error-text
     }, [eventTextNumber, currentEvent]);
 
-
     const handleAnswerButtonClick = (cardOption) => {
-        cardsPlayed.push([cardOption.text, cardOption.feedback, cardOption.points >= 0]);
-        setCurrentEvent(cardOption.nextEvent);
-        setEventTextNumber(cardOption.nextEventText);
-        setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
-        setCurrentRound(currentRound + 1);
-        
+        //"buy" a card
+        if (money >= cardOption.costs){
+            money -= cardOption.costs;
+            //private devices are ignored -> have to buy new devices
+            if(cardOption.name==="card1") {
+                money -= 5000;
+            }
+            cardsPlayed.push([cardOption.text, cardOption.feedback, cardOption.points >= 0]);
+            setCurrentEvent(cardOption.nextEvent);
+            setEventTextNumber(cardOption.nextEventText);
+            setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
+            setCurrentRound(currentRound + 1);
+        }
+        else {  
+            notEnoughMoney = true;
+        }
+
         props.passPreviousScore(lib.getScore());
         lib.updateScore(cardOption.points);
         props.passCurrentScore(lib.getScore());
-        
-        //reduce money by card costs
-        money = money - cardOption.costs;
-        console.log("Geld: " + money);
-        
+
+
         //check events that contain cards with loopback 
-        if (currentEvent === 3 || currentEvent === 4){
-            duplicates.push(cardOption.name);
+        if (currentEvent === 3 || currentEvent === 4) {
+            duplicate.push(cardOption.name);
         }
-        
+
         //check end-conditions
-        if(cardOption.nextEvent === 0){ //event5 card24 is the last card
+        if (cardOption.name === lastCard) {
             gameOver = true;
-        } else if (money <= 0){
-            console.log("Geld ausgegangen. " + money + "€" );
+        } else if (money === 0) {
             gameOver = true;
         }
-       
-        if(gameOver) {
+
+        if (gameOver) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
             localStorage.setItem('levelNumber', '9');
             localStorage.setItem('feedback', feedback);
             navigate('../levelcompletion', {
                 state: {
-                    cardsPlayed: cardsPlayed
+                    cardsPlayed: cardsPlayed //for showing played cards in levelcompletion
                 }
             });
         }
@@ -101,6 +109,12 @@ function Lvl9_Phones(props) {
                                 <div id="eventimage">
                                     <img src={currentImage} className='img' />
                                 </div>
+                                <div id="money-container">
+                                    <p id="money" name="money">Geld: {money}</p>
+                                    {notEnoughMoney && 
+                                        <p id="money-error" name="money-error">Das Geld reicht nicht mehr</p>
+                                    }
+                                </div>
                             </div>
                         </div>
                         <div id="actionscontainer">
@@ -109,7 +123,7 @@ function Lvl9_Phones(props) {
                                     <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
-                                    <br/>
+                                    <br />
                                     {cardOption.name != "card25" ? cardOption.costs + "€" : ""}
                                 </button>
                             ))}
