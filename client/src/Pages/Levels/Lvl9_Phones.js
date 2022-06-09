@@ -11,7 +11,7 @@ let cardsPlayed;
 let duplicate;
 let notEnoughMoney = false;
 let level;
-const lastCard = "card24";
+const lastCard = "card40";
 
 function Lvl9_Phones(props) {
     let navigate = useNavigate();
@@ -76,11 +76,17 @@ function Lvl9_Phones(props) {
         }
 
         //check end-conditions
-        if (cardOption.name === lastCard) {
-            gameOver = true;
-        } else if (money === 0) {
+        if (money === 0) {
+            var lastEvent = 8;
+            var eventTextOutOfMoney = 0;
+            setCurrentEvent(lastEvent);
+            setEventTextNumber(eventTextOutOfMoney);
+            setCurrentCards(level.level.events[lastEvent].cards);
+        }
+        if(cardOption.name === lastCard){
             gameOver = true;
         }
+
 
         if (gameOver) {
             service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
@@ -124,7 +130,7 @@ function Lvl9_Phones(props) {
                                     <br />
                                     {cardOption.text}
                                     <br />
-                                    {cardOption.name != "card25" ? cardOption.costs + "€" : ""}
+                                    {cardOption.name != "card40"  ? cardOption.costs + "€" : ""}
                                 </button>
                             ))}
                         </div>
