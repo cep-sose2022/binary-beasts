@@ -27,12 +27,11 @@ function Lvl3_Devices(props) { //external devices
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
     const [currentRound, setCurrentRound] = useState(1);
     const [eventTextNumber, setEventTextNumber] = useState(0);
-    let startScore = lib.getScore();
 
     let dynEvent;
     let dynEventText;
 
-    //passing on levelName to game 
+    //passing on levelName to game and reset all devices
     if (currentRound === 1) {
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
@@ -201,8 +200,7 @@ function Lvl3_Devices(props) { //external devices
     };
 
     const endGame = () => {
-        const dif = lib.getScore() - startScore;
-        service.postUserLeaderboard(lib.getNickname(), level.level._id, dif);
+        service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
         localStorage.setItem('levelNumber', '3');
         localStorage.setItem('feedback', 'Wie Sie bemerkt haben kann so ein einfacher USB-Stick schnell zum Verhängnis für die ganze Anlage sein. Deswegen sollte man immer auf den richtigen Umgang achten, sodass man es Angreifern möglichst schwer macht in das System einzudringen.');
         navigate('../levelcompletion', {
