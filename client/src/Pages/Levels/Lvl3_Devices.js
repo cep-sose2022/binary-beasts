@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState} from "react";
 import service from "../../service";
 import { useNavigate } from "react-router-dom";
-import lib, { getScore } from "../../library/bib";
+import lib from "../../library/bib";
 import cardImages from '../../library/cardImages.js';
 
 
 const level = service.getLevel('level3');
+const baseEvent = 1; //event1 is basic event with security meassures 
+const lastCard = "card28";
 
+//baseEvent cards
 let encryptDrive = false;
 let isolatedNetwork = false;
 let whitelisting = false;
@@ -14,13 +17,12 @@ let physicalLocks = false;
 
 let duplicates;
 let cardsPlayed;
-
-let nextEventHistory = [1]; //initially with 1 because event0 does not have "nextEvent"
+let nextEventHistory = [baseEvent]; //initialized because baseEvent does not have "nextEvent"
 
 let isScanned = false;
 let isIsolatedChecked = false;
 
-function Lvl3_Devices(props) { //external devices
+function Lvl3_Devices(props) {
     let navigate = useNavigate();
     const [currentEvent, setCurrentEvent] = useState(1);
     const [eventText, setEventText] = useState(level.level.events[0].text[0]);
@@ -31,9 +33,8 @@ function Lvl3_Devices(props) { //external devices
     let dynEvent;
     let dynEventText;
 
-    //passing on levelName to game and reset all devices
+    //passing on levelName to game and reset all variables
     if (currentRound === 1) {
-        console.log("history (beginning): " + nextEventHistory);
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
         encryptDrive = false;
@@ -46,7 +47,7 @@ function Lvl3_Devices(props) { //external devices
         cardsPlayed = [];
         nextEventHistory = [1];
     }
-        
+
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]); //-1 because eventName and eventNumber differ by 1
 
@@ -54,26 +55,27 @@ function Lvl3_Devices(props) { //external devices
         if (currentEvent === 1)
             setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name))); //don't show already used cards
         else if (!isolatedNetwork) {
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name != "card10" && card.name != "card21"))); // two events have one card less
-        }    else if (isIsolatedChecked)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != ("card23"))); //event11
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name !== "card10" && card.name !== "card21"))); // two events have one card less
+        } else if (isIsolatedChecked)
+            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name !== ("card23"))); //event11
         else
             setCurrentCards(level.level.events[currentEvent - 1].cards);
-
-        console.log("history (useEffect): " + nextEventHistory + " - currenEvent: " + currentEvent + " - currentEventText: " + eventTextNumber);
-    }, [currentEvent]);
+    }, [currentEvent, eventTextNumber]);
 
     const handleAnswerButtonClick = (cardOption) => {
+        if (cardOption.name === lastCard) {
+            endGame();
+        }
         cardsPlayed.push([cardOption.text[0], cardOption.feedback, cardOption.points >= 0]);
-        if (currentEvent === 1) {
+
+        //decide how to handle click
+        if (currentEvent === baseEvent) {
             handleBaseEvent(cardOption);
         } else if (cardOption.name === "card0") {
             determineNextEvent(cardOption);
-        } else {
-            nextEventHistory.push(cardOption.nextEvent); //add nextEvent to history
-
-            console.log(checkExceptions(cardOption));
-            if (!checkExceptions(cardOption)) { // if there are no exceptions
+        } else { //normal card
+            nextEventHistory.push(cardOption.nextEvent);
+            if (!checkExceptions(cardOption)) {
                 setEventTextNumber(cardOption.nextEventText);
             } else {
                 setEventTextNumber(dynEventText);
@@ -93,16 +95,17 @@ function Lvl3_Devices(props) { //external devices
      * when card0 is clicked a different event is rendered depeding on the previous events
      */
     const determineNextEvent = (cardOption) => {
-        dynEvent = nextEventHistory[nextEventHistory.length - 1]; //get the next event from history
+        dynEvent = nextEventHistory[nextEventHistory.length - 1];
         dynEventText = 0; //all events that follow card0 only have one text
-        console.log("dynEvent (before): " + dynEvent);
-        if (currentEvent === 14) { // TODO create variable lastCard
-            endGame();
-            return;
-        } else if (currentEvent === 1) { //basic event with security meassures 
-            dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
+        if (currentEvent === baseEvent) {
+            if (nextEventHistory[nextEventHistory.length - 1] === 4) { //avoid loop between event4 and event5
+                dynEvent = 6;
+                dynEventText = 0;
+            } else {
+                dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
+            }
         } else if (currentEvent === dynEvent) {
-            dynEvent = 1;
+            dynEvent = baseEvent;
         }
         else {
             console.log("something went wrong");
@@ -110,8 +113,6 @@ function Lvl3_Devices(props) { //external devices
         checkExceptions(cardOption);
         setEventTextNumber(dynEventText);
         setCurrentEvent(dynEvent);
-
-        console.log("dynEvent (after): " + dynEvent + " / dynEventText: " + dynEventText);
     }
 
     const handleBaseEvent = (cardOption) => {
@@ -132,10 +133,8 @@ function Lvl3_Devices(props) { //external devices
                 break;
         }
 
-        if(cardOption.name != "card5")
+        if (cardOption.name !== "card5")
             duplicates.push(cardOption.name);
-
-        console.log("cardsPlayed: " + duplicates);
         determineNextEvent(cardOption);
     }
 
@@ -196,10 +195,10 @@ function Lvl3_Devices(props) { //external devices
                     dynEventText = 0;
                 break;
             default:
-                isException = false;
+                isException = false; //if no exception occurs
                 break;
         }
-        return isException; //if no exception occurs it returns false
+        return isException;
     };
 
     const endGame = () => {
@@ -230,7 +229,7 @@ function Lvl3_Devices(props) { //external devices
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
                                 <button onClick={() => handleAnswerButtonClick(cardOption)}>
-                                    <img src={cardImages.getCardImage(cardOption.image)} />
+                                    { cardOption.image && <img alt="Kartenbild" src={cardImages.getCardImage(cardOption.image)} />}
                                     <br />
                                     {cardOption.text}
                                 </button>
