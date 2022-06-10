@@ -35,7 +35,7 @@ function Progress(props) {
                     {
                         userBoard.map(element => {
                             return(
-                                <tr key={element}>
+                                <tr key={element._id}>
                                     <td>{service.getLevelName(element.levelId).levelName}</td>
                                     <td>{element.score + " / " + allLevels.filter(level => level._id === element.levelId)[0].maxScore}</td>
                                 </tr>

@@ -7,13 +7,13 @@ function Navbar() {
     return(
         <nav id="navmain">
         <div className="logo">
-          <img src={logo} alt="not found"></img>
+          <img src={logo} alt="not found"/>
         </div>
-        <div class ="navlinks">
-          <NavLink activeClassName="active" to="/"> Home </NavLink>
-          {loggedIn && <NavLink activeClassName="active" to="/leveloverview"> Levels </NavLink>}
-          {loggedIn && <NavLink activeClassName="active" to="/progress"> Fortschritt </NavLink>}
-          <NavLink activeClassName="active" to="/leaderboard"> Leaderboard </NavLink>
+        <div className ="navlinks">
+          <NavLink activeclassname="active" to="/"> Home </NavLink>
+          {loggedIn && <NavLink activeclassname="active" to="/leveloverview"> Levels </NavLink>}
+          {loggedIn && <NavLink activeclassname="active" to="/progress"> Fortschritt </NavLink>}
+          <NavLink activeclassname="active" to="/leaderboard"> Leaderboard </NavLink>
         </div>
       </nav>
     );

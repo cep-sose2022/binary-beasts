@@ -25,7 +25,7 @@ function Leaderboard(props) {
                 {
                     boardScores.sortedUsers.map(key => {
                         return  (
-                            <tr key={key}>
+                            <tr key={key.username}>
                                 <td>{key.rank}</td>
                                 <td>
                                     {key.username} 
