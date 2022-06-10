@@ -1,0 +1,294 @@
+{
+  "level": {
+    "_id": "62833fc249fbc35f01f7ecfd",
+    "name": "Remote Access",
+    "token": "level4",
+    "description": "Externe Zugänge zum ICS sind für Wartungszwecke weit verbreitet und genutzt, obwohl diese sicherheitstechnisch sehr bedenklich sind. Ein solches Remote Access zum industriellen Netzwerk sollte wohl überlegt sein und nur eingesetzt werden, wenn es absolut nötig ist. Häufig sind diese Zugänge mit Default-Einstellungen wie Standardpasswörtern oder fest kodierten Passwörtern konfiguriert. Zudem sind externe Zugänge über VPN oft nicht in ihrer Reichweite beschränkt, d. h. man kann über einen Wartungszugang für ein bestimmtes System weitere Systeme erreichen. Die zentralen Ursachen für diese Schwachstellen liegen in der mangelnden Autorisierung und Authentifizierung sowie flache Netzwerkhierarchien. Wie man diese Schwachstellen verhindert und für einen sicheren Fernzugriff bzw. eine sichere Fernwartung sorgt, erfahren Sie in diesem Level.",
+    "events": {
+      "0": {
+        "_id": "6285fafe5b49dd4f79b82129",
+        "name": "prolog",
+        "text": [
+          "In Ihrem Unternehmen besteht die Notwendigkeit, zu bestimmten Systemen im ICS-Netzwerk einen Fernzugriff für die Wartung einzurichten. Dies wurde in einer Konferenz mit Fachleuten aus der IT und OT sowie dem Management entschieden, da es absolut notwendig ist. Da aber die Sicherheit des OT-Netzwerks trotzdem eine hohe Priorität hat, müssen Sie sich zusammen mit einem IT-Administrator über die sichere Einrichtung eines Remote Access beraten."
+        ],
+        "levelId": "62833fc249fbc35f01f7ecfd",
+        "cards": [
+          {
+            "_id": "6285fcb25b49dd4f79b82293",
+            "name": "card1",
+            "text": [
+              "IT-Administrator aufsuchen"
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "feedback": "Levelstart"
+          }
+        ]
+      },
+      "1": {
+        "_id": "6285ff475b49dd4f79b82553",
+        "name": "event1",
+        "text": [
+          "IT-Admin: „Hallo! Lass uns keine Zeit verlieren und direkt mit der Einrichtung beginnen. Zuerst müssen wir uns Gedanken machen, wie der Remote Access ablaufen soll und unsere Netzwerkhierarchie daran anpassen. Haben Sie Vorschläge?“",
+          "IT-Admin: „Ich denke nicht, dass das eine gute Idee ist. Das wäre zwar sehr simpel und wir könnten zwischen IT- und OT-Netz eine Firewall setzen, aber das bietet trotzdem noch genug Angriffsfläche.“",
+          "IT-Admin: „Auf gar keinen Fall! Wenn unsere ICS-Geräte über das Internet erreichbar sind, können ihre IP-Adressen später auf Suchmaschinen wie z.B. Shodan gefunden werden. Wir könnten es den Hackern dadurch nicht leichter machen, unser OT-Netz anzugreifen!“"
+        ],
+        "levelId": "62833fc249fbc35f01f7ecfd",
+        "cards": [
+          {
+            "_id": "628600a85b49dd4f79b8260a",
+            "name": "card2",
+            "text": [
+              "IT- und OT-Netz direkt miteinander verbinden"
+            ],
+            "points": -2,
+            "nextEvent": 2,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "network",
+            "feedback": "Eine direkte Verbindung zwischen IT- und OT-Netz würde selbst mit einer Firewall nicht ausreichend Schutz bringen"
+          },
+          {
+            "_id": "6286016e5b49dd4f79b8260c",
+            "name": "card3",
+            "text": [
+              "ICS-Netzwerk direkt aus dem Internet erreichbar"
+            ],
+            "points": -5,
+            "nextEvent": 2,
+            "nextImage": " ",
+            "nextEventText": 2,
+            "image": "network",
+            "feedback": "ICS-Netze sollten auf keinen Fall direkt aus dem Internet erreichbar sein, da es dadurch für Hacker besonders einfach ist, in das ICS einzudringen"
+          },
+          {
+            "_id": "628602d45b49dd4f79b8260e",
+            "name": "card4",
+            "text": [
+              "Einrichtung eines Jump Hosts"
+            ],
+            "points": 5,
+            "nextEvent": 3,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Die Einrichtung eines Jump-Hosts bietet maximalen Schutz für eine Remote-Verbindung"
+          }
+        ]
+      },
+      "2": {
+        "_id": "62860b065b49dd4f79b82a61",
+        "name": "event2",
+        "text": [
+          "IT-Admin: „Eine gute Idee! Wir können die Verbindung folgendermaßen gestalten: Man muss sich zuerst über VPN in die ICS-DMZ verbinden, über welche man dan mithilfe eines gesicherten Remote Desktops via Jump Server Zugriff auf die OT-Systeme erhält. Jetzt müssen wir uns noch kurz überlegen, wie wir die Netzwerkhierarchie im OT-Netz gestalten“",
+          "IT-Admin: „Das sollten wir lieber nicht so lassen. Durch die flache Netzwerkstruktur können wir den Scope des Remote Access nicht kontrollieren. Das bedeutet, das man mit einem Remote Access Zugriff auf alle Prozesse hat, was eine große Angriffsfläche bietet.“"
+        ],
+        "levelId": "62833fc249fbc35f01f7ecfd",
+        "cards": [
+          {
+            "_id": "62860b945b49dd4f79b82bf2",
+            "name": "card5",
+            "text": [
+              "Bisherige flache Netzwerkstruktur weiterverwenden"
+            ],
+            "points": -2,
+            "nextEvent": 3,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "network",
+            "feedback": "Eine flache Netzwerkstruktur bietet keine Kontrolle über die Reichweite des Remote-Zugriffs "
+          },
+          {
+            "_id": "62860c005b49dd4f79b82bf4",
+            "name": "card6",
+            "text": [
+              "Netzwerk segmentieren"
+            ],
+            "points": 5,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Durch die Netzwerksegmentierung kann kontrolliert werden, wie groß die Reichweite eines Remote-Zugangs ist bzw. auf welche Systeme man Zugriff"
+          }
+        ]
+      },
+      "3": {
+        "_id": "62860eb15b49dd4f79b82f82",
+        "name": "event3",
+        "text": [
+          "IT-Admin: „Klingt gut! Durch die Segmentierung können wir den Remote Access für bestimmte Prozesse konfigurieren, sodass man nur bestimmte vorgesehene Aufgaben erledigen kann. Das minimiert die Angriffsfläche, da man durch einen Remote Access keinen Einfluss auf andere Netzwerksegmente hat. Nun können wir uns weitere Maßnahmen für die Sicherheit überlegen“",
+          "IT-Admin: „Hm, ich denke, dass wir mit diesem Ansatz den Überblick darüber verlieren, wer genau sich mit dem OT-Netz verbunden hat. Es gibt dafür bestimmt einen besseren Weg“",
+          "IT-Admin: „Gute Idee. Dadurch können wir immer sehen, wer zu welchem Zeitpunkt sich mit welchen Systemen verbunden hat. Außerdem haben wir volle Kontrolle über die Zuweisung der Zugangsberechtigung zu den OT-Systemen und können diese je nach Personen anpassen.“",
+          "IT-Admin: „Absolutes Muss. So können alle Aktivitäten und Verbindungen ins OT-Netz überwachen und nachvollziehen. Das ist sehr wertvoll, wenn trotz unserer Sicherheitsmaßnahmen ein Angriff vorgefallen ist. Außerdem können wir dadurch mehrfach fehlgeschlagene Verbindungsversuche durch z.B. Brute-Force erkennen und sperren.“",
+          "IT-Admin: „Auf jeden Fall. Ich habe schon oft gehört, dass viele Industrieanlagen für ihr OT-Netz Standardpasswörter verwenden, und dass diese Netzwerke aus dem Internet erreichbar sind. Das ist natürlich ein absolutes Horror-Szenario.“",
+          "IT-Admin: „Klar. Ein sicheres Passwort reicht nicht aus, wenn es abgefangen oder anderweitig herausgefunden wird. Wir können beispielsweise zusätzlich einen Hardware-Token oder ein Zertifikat für die Authentifizierung verwenden.“",
+          "IT-Admin: „Natürlich. Jede Kommunikation mit dem OT-Netz muss verschlüsselt werden, insbesondere die Authentifizierung, damit Hacker die Kommunikation nicht mitlesen können“",
+          "IT-Admin: „Lieber nicht. Wir haben uns intern darauf geeinigt, dass wir im gesamten Remote-Access-Ablauf keine Dritten miteinbeziehen, da wir dadurch viel Kontrolle abgeben und die Sicherheitskonzepte dieser Dritten mit unseren übereinstimmen müssen.“"
+        ],
+        "levelId": "62833fc249fbc35f01f7ecfd",
+        "cards": [
+          {
+            "_id": "6286105d5b49dd4f79b8306b",
+            "name": "card7",
+            "text": [
+              "Einrichtung von Shared Accounts für bestimmte Aufgaben"
+            ],
+            "points": -2,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "humanInterface",
+            "feedback": "Shared Accounts sollten vermieden werden. Dadurch lässt sich nicht nachvollziehen, welche Person genau den Remote-Zugriff verwendet hat"
+          },
+          {
+            "_id": "6286108b5b49dd4f79b8306d",
+            "name": "card8",
+            "text": [
+              "Einrichtung von Named Accounts für Zugänge"
+            ],
+            "points": 1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 2,
+            "image": "orga",
+            "feedback": "Dadurch lässt sich immer nachvollziehen, welche Person welche Aktivitäten durchgeführt hat"
+          },
+          {
+            "_id": "628610be5b49dd4f79b8306f",
+            "name": "card9",
+            "text": [
+              "Logging-Software für Remote-Verbindungen einrichten"
+            ],
+            "points": 1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 3,
+            "image": "technical",
+            "feedback": "Falls ein Sicherheitsvorfall durch Remote-Zugriff vorgefallen ist, lassen sich durch Log-Daten die Beweise sichern"
+          },
+          {
+            "_id": "628610e75b49dd4f79b83071",
+            "name": "card10",
+            "text": [
+              "Standardpasswörter durch starke Passwörter ersetzen"
+            ],
+            "points": 1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 4,
+            "image": "encryption",
+            "feedback": "Sind die Standardpasswörter noch eingesetzt, braucht ein Hacker nicht viel Mühe, um in das System einzudringen"
+          },
+          {
+            "_id": "628611135b49dd4f79b83073",
+            "name": "card11",
+            "text": [
+              "Verwendung von Multi-Faktor-Authentifizierung"
+            ],
+            "points": 1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 5,
+            "image": "encryption",
+            "feedback": "Die Remote-Verbindung sollte sich nicht allein auf ein Passwort verlassen, da dieses gestohlen werden kann. Ein zweiter Faktor zur Authentifizierung bietet mehr Sicherheit"
+          },
+          {
+            "_id": "628611495b49dd4f79b83075",
+            "name": "card12",
+            "text": [
+              "Verschlüsselung der Kommunikation"
+            ],
+            "points": 1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 6,
+            "image": "encryption",
+            "feedback": "Jegliche Aktivität über die Remote-Verbindung läuft über das Internet und sollte verschlüsselt werden, da die Kommunikation sonst abgehört werden könnte"
+          },
+          {
+            "_id": "628611725b49dd4f79b83077",
+            "name": "card13",
+            "text": [
+              "Verwendung einer Third-Party Remote-Access-Software"
+            ],
+            "points": -1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 7,
+            "image": "technical",
+            "feedback": "Bei einer Verwendung einer Third-Party Software verlieren Sie einen Teil der Kontrolle über die Sicherheit"
+          }
+        ]
+      },
+      "4": {
+        "_id": "628612d05b49dd4f79b835f4",
+        "name": "event4",
+        "text": [
+          "IT-Admin: „Super. Jetzt haben wir die wichtigsten Maßnahmen für eine sichere Verbindung festgelegt. Wir sollten uns aber noch um den Verbindungsabbau kümmern.“",
+          "IT-Admin: „Vielleicht sollten wir uns noch andere Mechanismen für den Verbindungsabbau überlegen. Wenn die Verbindung ausschließlich durch den Nutzer beendet wird, kann es sein dass der Nutzer die Verbindung offen lässt, während er etwas anderes macht. Das birgt ein Sicherheitsrisiko.“",
+          "IT-Admin: „Nicht schlecht. Es kann zwar nervig für den Nutzer sein, nach einer bestimmter Zeit rausgeworfen zu werden, aber das erhöht die Sicherheit.“",
+          "IT-Admin: „Sehr gut. Das müssen wir auf jeden Fall umsetzen, da sich bei Inaktivität jemand anderes in den Prozess einschleichen kann, ohne dass es jemanden auffällt.“"
+        ],
+        "levelId": "62833fc249fbc35f01f7ecfd",
+        "cards": [
+          {
+            "_id": "628614c05b49dd4f79b835f6",
+            "name": "card14",
+            "text": [
+              "Verbindung wird nur durch Client beendet"
+            ],
+            "points": -2,
+            "nextEvent": 5,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "mouseAction",
+            "feedback": "Wird das Beenden des Remote-Zugriffs nur durch den Client durchgeführt, kann die Verbindung bei Inaktivität von einem Hacker ausgenutzt werden "
+          },
+          {
+            "_id": "628614f45b49dd4f79b835f8",
+            "name": "card15",
+            "text": [
+              "Verbindung in bestimmten Zeitraum zulassen"
+            ],
+            "points": 3,
+            "nextEvent": 5,
+            "nextImage": " ",
+            "nextEventText": 2,
+            "image": "orga",
+            "feedback": "Ist die Verbindung nur in einem bestimmten Zeitraum zugelassen, können Hacker eine Verbindung nicht ewig ausnutzen"
+          },
+          {
+            "_id": "628615335b49dd4f79b835fa",
+            "name": "card16",
+            "text": [
+              "Bei Inaktivität wird Verbindung automatisch abgebrochen"
+            ],
+            "points": 2,
+            "nextEvent": 5,
+            "nextImage": " ",
+            "nextEventText": 3,
+            "image": "devices",
+            "feedback": "Dadurch wird das Risiko minimiert, dass Hacker eine Remote-Verbindung mit inaktivem Client ausnutzen"
+          },
+          {
+            "_id": "62971a4ae3772913debc1db7",
+            "name": "card17",
+            "text": [
+              "Level abschließen  "
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Levelabschluss"
+          }
+        ]
+      }
+    },
+    "maxScore": 20
+  }
+}

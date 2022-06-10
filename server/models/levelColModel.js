@@ -33,7 +33,8 @@ const levelSchema = mongoose.Schema(
                         nextEvent: Number,
                         nextImage: String,
                         nextEventText: Number,
-                        image: String
+                        image: String,
+                        feedback: String
                     }}
             },
             required: [true, 'Please add events '],

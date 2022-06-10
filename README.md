@@ -14,16 +14,24 @@
 
 ### `npm install`
 
-4. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
+4. Datenbank (Database) in MongoDB anlegen
+
+Nachdem Sie eine Datenbank angelegt haben, erstellen Sie dort eine Sammlung (Collection) mit dem Namen LevelCol und impotieren Sie dort alle json-Dateien, die sich in dem Ordner levels befinden.  
+Bei Bedarf finden Sie [hier](./helper/Beschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
+
+5. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
 
 ### `cd server`
 ### `touch .env`
 ### `nano .env`
 
 In dieser Datei dann die Zugangsdaten für die MongoDB ablegen
-Alternativ bei einem Hosting-Service diese Zugangsdaten als Environmentvariable setzen
+###### `DB_CONNECTION=<Zugangslink>`
+![alt text](./helper/env.png)
 
-5. Server starten
+6. Server starten
 
 Im Root-Directory lässt sich dann server wie folgt hochfahren:
 ### `npm start`
+
+

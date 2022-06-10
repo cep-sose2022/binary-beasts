@@ -1,0 +1,276 @@
+{
+  "level": {
+    "_id": "628dccdbe094c701eef4ccd5",
+    "name": "Netzwerksegmentierung",
+    "token": "level1",
+    "description": "Die Segmentierung von Netzwerken im OT-Umfeld bildet einen wichtigen Bestandteil der Sicherheit. Sind diese nämlich nicht richtig eingerichtet, bieten diese eine große Angriffsfläche für bösartige Hacker. Leider gibt es gibt es keine perfekte Lösung, die alle Sicherheitsprobleme löst. So war z.B. der OT-Angriff Stuxnet erfolgreich, obwohl das OT-Netzwerk air-gapped war. Jedoch gibt es trotzdem einiges auf das man achten sollte, um die Sicherheit so gut wie möglich sicherzustellen.",
+    "events": {
+      "0": {
+        "_id": "628dd90c87d6e910c78326b3",
+        "name": "prolog",
+        "text": [
+          "Sie arbeiten in einer Produktionsstätte als Automatisierungsingenieur. Da sich Angriffe auf OT-Anlagen immer mehr häufen, haben Sie schon oft die Firma auf die Risiken hingewiesen. Daher hat nun Ihre Firma einen Netzwerktechniker mit dem Schwerpunkt Sicherheit eingestellt. Mit diesem Netzwerktechniker können Sie nun zusammen eine Lösung für eine Umstrukturierung des OT-Netzwerkes entwickeln, um dieses so gut wie möglich abzusichern."
+        ],
+        "levelId": "628dccdbe094c701eef4ccd5",
+        "cards": [
+          {
+            "_id": "628dd8c187d6e910c78326b1",
+            "name": "card1",
+            "text": [
+              "Netzwerktechniker aufsuchen"
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "feedback": "Levelstart"
+          }
+        ]
+      },
+      "1": {
+        "_id": "628de2fce094c701eef4ccec",
+        "name": "event1",
+        "text": [
+          "Netzwerktechniker: „Hallo! Lass uns direkt beginnen, wir haben viel Arbeit vor uns. Wie ich festgestellt habe, ist die Netzwerkhierarchie zurzeit flach, das heißt IT- und OT-Netz sind miteinander verbunden und es gibt keine Segmentierung. Das müssen wir auf jeden Fall ändern! Falls es nämlich ein Angreifer in das IT-Netz schafft, kann er sehr leicht auch in das OT-Netz vordringen. Teilen Sie gerne Ihre Lösungsvorschläge, dann können wir diese zusammen diskutieren.“",
+          "Netzwerktechniker: „Ja, das ist zwar schon etwas besser, aber eine einfache Firewall reicht nicht aus. Falls eine Workstation, für die die Kommunikation mit dem OT-Netz erlaubt ist, infiziert ist, kann der Hacker ebenfalls problemlos auf das OT-Netz zugreifen.“",
+          "Netzwerktechniker: „Ist schonmal ein guter Ansatz. Das einzige Problem das wir aber hier noch hätten, ist, dass die Geräte innerhalb eines VLANs uneingeschränkt miteinander kommunizieren können, ohne dass diese Kommunikation überprüft wird. Vielleicht gibt es einen Ansatz, der dieses Problem löst.“"
+        ],
+        "levelId": "628dccdbe094c701eef4ccd5",
+        "cards": [
+          {
+            "_id": "629069d35da97e7a5a53fe64",
+            "name": "card2",
+            "text": [
+              "IT- und OT-Netz mit Firewall trennen"
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Diese Karte hat verursacht, dass Sie bei den anderen Möglichkeiten weniger Punkte bekommen haben, da dies kein guter Vorschlag war. Eine einfache Firewall reicht zur Absicherung von IT- und OT-Netz nicht aus"
+          },
+          {
+            "_id": "62906a1a5da97e7a5a53fe66",
+            "name": "card3",
+            "text": [
+              "VLANs implementieren"
+            ],
+            "points": 3,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Diese Karte hat verursacht, dass Sie bei den anderen Möglichkeiten weniger Punkte bekommen haben, da es einen besseren Vorschlag gab. VLANs sorgen zwar schon für mehr Sicherheit als eine einfache Firewall, jedoch wird die Kommunikation innerhalb des VLANs nicht überprüft"
+          },
+          {
+            "_id": "62906a395da97e7a5a53fe68",
+            "name": "card4",
+            "text": [
+              "Mikro-Segmentierung"
+            ],
+            "points": 5,
+            "nextEvent": 5,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Das war die richtige Karte in diesem Ereignis. Mithilfe der Mikro-Segmentierung ist auch innerhalb eines VLANs die Kommunikation überprüfbar und bietet somit die beste Sicherheit"
+          }
+        ]
+      },
+      "2": {
+        "_id": "628de38787d6e910c7832708",
+        "name": "event2.1",
+        "text": [
+          "Netzwerktechniker: „Hm, ok, ist schonmal besser als ein flaches Netzwerk. Wie würden Sie die Firewall dann einrichten?“",
+          "Netzwerktechniker: „Naja, wenn alle IT-Workstations Zugang zum OT-Netzwerk haben, ist die Firewall eigentlich nutzlos.“"
+        ],
+        "levelId": "628dccdbe094c701eef4ccd5",
+        "cards": [
+          {
+            "_id": "62906b3d5da97e7a5a53fe9f",
+            "name": "card5",
+            "text": [
+              "Nur Workstations aus dem IT-Netz haben Zugang"
+            ],
+            "points": -1,
+            "nextEvent": 3,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "devices",
+            "feedback": "Erlaubt man allen Workstations aus dem IT-Netz Zugang zum ICS, kann ein Hacker ein beliebiges Gerät im IT-Netz übernehmen und dadurch Zugriff auf das ICS erhalten"
+          },
+          {
+            "_id": "62906b6e5da97e7a5a53fea1",
+            "name": "card6",
+            "text": [
+              "Nur bestimmte Workstations haben Zugang"
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "devices",
+            "feedback": "Auch wenn nur bestimmte Workstations Zugang zum ICS haben, kann ein motivierter Hacker diese Geräte identifizieren und übernehmen"
+          }
+        ]
+      },
+      "3": {
+        "_id": "628de3a187d6e910c783270a",
+        "name": "event2.2",
+        "text": [
+          "Netzwerktechniker: „Das klingt nach einem interessanten Ansatz. Wie würden Sie diese VLANs aufteilen?“",
+          "Netzwerktechniker: „Könnte problematisch sein. Vielleicht müssen ICS-Komponenten aus einem VLAN auf Funktionen anderer VLANs zugreifen. Diese Kommunikation zwischen den VLANs müsste abgesichert werden und bietet eine potenzielle Angriffsfläche.“"
+        ],
+        "levelId": "628dccdbe094c701eef4ccd5",
+        "cards": [
+          {
+            "_id": "62906bcc5da97e7a5a53fea7",
+            "name": "card7",
+            "text": [
+              "Logische Gruppierung von ICS-Komponenten"
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextImage": " ",
+            "nextEventText": 2,
+            "image": "network",
+            "feedback": "Logisch zusammenhängende ICS-Komponenten sollten gruppiert werden, das trifft ebenfalls für die Mikro-Segmentierung zu"
+          },
+          {
+            "_id": "62906c075da97e7a5a53fea9",
+            "name": "card8",
+            "text": [
+              "Funktionale Gruppierung von ICS-Komponenten"
+            ],
+            "points": -1,
+            "nextEvent": 4,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "network",
+            "feedback": "Gruppiert man ICS-Komponenten nur nach ihren Funktionen, entsteht möglicherweise mehr Kommunikationsaustausch zwischen den VLANs, was das Monitoring erschwert"
+          }
+        ]
+      },
+      "4": {
+        "_id": "628de3ba87d6e910c783270c",
+        "name": "event2.3",
+        "text": [
+          "Netzwerktechniker: „Ja, davon habe ich schon gehört. Die Mikro-Segmentierung erweitert die klassische VLAN-Segmentierung und ermöglicht eine präzisere Kontrolle über den Netzwerk-Verkehr. Wir können dadurch eine Zero-Trust-Security implementieren, sodass eine bestimmte SPS innerhalb des gleichen VLANS nicht mit einer anderen SPS kommunizieren kann, es sei denn, die Sicherheitsrichtlinie erlaubt dies. Haben Sie eine Idee wie wir das umsetzen wollen?“",
+          "Netzwerktechniker: „Ich denke nicht, dass sich das mit einer herkömmlichen Firewall umsetzen lässt.“"
+        ],
+        "levelId": "628dccdbe094c701eef4ccd5",
+        "cards": [
+          {
+            "_id": "62906c485da97e7a5a53feaf",
+            "name": "card9",
+            "text": [
+              "Mit einer Firewall"
+            ],
+            "points": -2,
+            "nextEvent": 5,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "technical",
+            "feedback": "Eine einfache Firewall kann eine Mikro-Segmentierung nicht umsetzen"
+          },
+          {
+            "_id": "62906c6b5da97e7a5a53feb1",
+            "name": "card10",
+            "text": [
+              "Mit einer Next-Generation-Firewall"
+            ],
+            "points": 5,
+            "nextEvent": 6,
+            "nextImage": " ",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "Eine Next-Generation-Firewall kann die Mikro-Segmentierung hervorragend umsetzen"
+          }
+        ]
+      },
+      "5": {
+        "_id": "628de3ce87d6e910c783270e",
+        "name": "event3",
+        "text": [
+          "Netzwerktechniker: „Das sollte klappen. Es gibt von Fortinet einige Produkte, wie z.B. das FortiGate oder FortiSwitch, mit denen sich das umsetzen lässt. Ich denke, dass das der sicherste Ansatz für die Segmentierung ist. Aber vielleicht gibt es ja noch einige Faktoren, mit denen wir die Sicherheit erhöhen können, fällt dir da was ein?“",
+          "Netzwerktechniker: „Macht Sinn. Nachrichten, die im ICS-Netz übertragen werden, sollten keine Nutzlasten wie z.B. Anhänge enthalten, da diese potenziell Schadsoftware in das ICS-Netz einschleusen könnte.“",
+          "Netzwerktechniker: „Klar. Wir sollten beim konkreten Entwurf darauf achten, dass Ausfälle in den externen Netzwerken keine Auswirkungen aus das ICS-Netz haben und diese nicht beeinträchtigt.“",
+          "Netzwerktechniker: „Das sollten wir lieber nicht machen. Diesen Backup-Zugriffspfad können dann auch Angreifer ausnutzen, um ins ICS-Netz zu gelangen.“",
+          "Netzwerktechniker: „Eine gute Idee! Wir brauchen unbedingt eine systemweite Zeit für die Zeitstempelung von Ereignissen, die vor Manipulation geschützt ist. Bei der Auswahl des Zeitverteilungsprotokolls sollten wir darauf achten, dass das Protokoll für industrielle Anwendung allgemein akzeptiert ist.“"
+        ],
+        "levelId": "628dccdbe094c701eef4ccd5",
+        "cards": [
+          {
+            "_id": "62906cf15da97e7a5a53fed1",
+            "name": "card11",
+            "text": [
+              "Benutzer-Nachrichtenaustausch im ICS-Netz überwachen"
+            ],
+            "points": 2,
+            "nextEvent": 6,
+            "nextImage": " ",
+            "nextEventText": 1,
+            "image": "network",
+            "feedback": "Die Nachrichten, die im ICS-Netz ausgetauscht werden, müssen unbedingt auf gefährliche Datenpakete überwacht werden"
+          },
+          {
+            "_id": "62906d2f5da97e7a5a53fed3",
+            "name": "card12",
+            "text": [
+              "Beachtung der Netzwerkautonomie"
+            ],
+            "points": 2,
+            "nextEvent": 6,
+            "nextImage": " ",
+            "nextEventText": 2,
+            "image": "network",
+            "feedback": "Es muss sichergestellt werden, dass ein Ausfall im IT-Netz nicht zu einem Ausfall im ICS-Netz führt"
+          },
+          {
+            "_id": "62906d805da97e7a5a53fed5",
+            "name": "card13",
+            "text": [
+              "Backup Zugriffspfad vom IT-Netz einrichten"
+            ],
+            "points": -2,
+            "nextEvent": 6,
+            "nextImage": " ",
+            "nextEventText": 3,
+            "image": "technical",
+            "feedback": "Den Backup Zugriffspfad kann ein Hacker entdecken und für sich ausnutzen"
+          },
+          {
+            "_id": "62906eb25da97e7a5a53fed7",
+            "name": "card14",
+            "text": [
+              "Netzwerkzeitverteilung synchronisieren"
+            ],
+            "points": 1,
+            "nextEvent": 6,
+            "nextImage": " ",
+            "nextEventText": 4,
+            "image": "technical",
+            "feedback": "Die Zeitverteilung im Netzwerk sollte synchronisiert werden, da dies die Nachvollziehbarkeit bei Sicherheitsvorfällen erleichtert"
+          },
+          {
+            "_id": "62907c30809c5dcadd888afc",
+            "name": "card15",
+            "text": [
+              "Level abschließen"
+            ],
+            "points": 0,
+            "nextEvent": 6,
+            "nextImage": " ",
+            "nextEventText": 4,
+            "image": "orga",
+            "feedback": "Levelabschluss"
+          }
+        ]
+      },
+      "maxScore": 15
+    },
+    "maxScore": 15
+  }
+}

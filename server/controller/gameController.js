@@ -87,6 +87,8 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
                     nextImage: String,
                     nextEventText: Number,
                     image: String,
+                    costs: Number,
+                    feedback: String
                 };
 
                 cards._id  = card._id;
@@ -97,6 +99,8 @@ gameController.postLevelData = asyncHandler(async (req, res) => {
                 cards.nextImage  = card.nextImage;
                 cards.nextEventText = card.nextEventText;
                 cards.image = card.image;
+                cards.costs = card.costs;
+                cards.feedback = card.feedback;
 
                 cards1.push(cards);
             }

@@ -1,0 +1,485 @@
+{
+  "level": {
+    "_id": "62965f4267f78a63df07564d",
+    "name": "Smartphones in der Produktion",
+    "token": "level9",
+    "description": "Mit der Industrie 4.0 werden immer mehr Feldgeräte mit Netzwerkverbindungen ausgestattet. Dadurch gibt es die Möglichkeit diese mit dem Smartphone oder Tablet einfach zu steuern. So praktisch das auch zu sein scheint, es gibt nicht irrelevante Punkte aus sicherheitstechnischer Perspektive, die man bedenken sollte. Anmerkung: Die genannten Geldbeträge sind weniger eine Darstellung der Realität als ein grober Anhaltspunkt zur Aufwands- und Kostenschätzung.",
+    "events": {
+      "0": {
+        "name": "event1",
+        "text": [
+          "Sie kommen von einer Konferenz zu dem Thema Industrie 4.0. Dort haben Sie gehört, dass man relativ simpel die Anlage von einem Smartphone aus steuern kann. Weil Sie so begeistert davon sind, können Sie ihren Chef dazu überreden das ebenfalls bei Ihnen in der Firma umzusetzen. Dafür gibt er Ihnen ein Budget von 500 000 Euro, welches Sie nutzen dürfen. Welche Geräte wollen Sie dafür verwenden?"
+        ],
+        "cards": [
+          {
+            "name": "card1",
+            "text": "Private Geräte nutzen",
+            "points": -5,
+            "nextEvent": 2,
+            "nextEventText": 0,
+            "image": "devices",
+            "costs": 0,
+            "feedback": "Es spart vielleicht Kosten die privaten Geräte der Mitarbeiter zu nutzen, jedoch ist es viel schwieriger die Sicherheit der Anlage zu gewährleisten."
+          },
+          {
+            "name": "card2",
+            "text": "Extra Geräte anschaffen",
+            "points": 5,
+            "nextEvent": 2,
+            "nextEventText": 1,
+            "image": "devices",
+            "costs": 5000,
+            "feedback": "Die strikte Trennung von privaten und geschäftlichen Smartphones ist deutlich sicherer."
+          }
+        ]
+      },
+      "1": {
+        "name": "event2",
+        "text": [
+          "Es spart vielleicht Kosten die privaten Geräte der Mitarbeiter zu nutzen, jedoch ist es viel schwieriger die Sicherheit der Anlage zu gewährleisten. Daher fordert ihr Chef extra Firmen-Smartphones zu kaufen, die nur im Unternehmen verwendet werden dürfen. Wie wollen Sie weiter vorgehen?",
+          "Auch wenn es teurer ist, ist die strikte Trennung von privaten und geschäftlichen Smartphones deutlich sicherer. Wie möchten Sie die neuen Geräte ausstatten?",
+          "Gute stabile Hüllen gekauft. Jetzt besteht nicht mehr die Gefahr, dass die Geräte beim Runterfallen Schaden erleiden. Möchten Sie noch etwas?",
+          "Sie achten darauf, dass die Geräte nur die beste Kamera haben. Das kann durchaus nützlich werden. Was brauchen Sie noch?",
+          "Jetzt haben Sie die Möglichkeit jedes Smartphone mit einem Alarm auszustatten, sodass Sie direkt informiert werden, sollten die Geräte unerlaubt bewegt werden.",
+          "Die Sensoren in den Handys werden im Produktionsumfeld nicht verwendet und von daher muss man nicht darauf achten.",
+          "Jedes Gerät hat die Möglichkeit über biometrische Authentifizierung entsperrt zu werden."
+        ],
+        "cards": [
+          {
+            "name": "card6",
+            "text": "Stoßfeste Schutzhüllen",
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 2,
+            "image": "devices",
+            "costs": 100,
+            "feedback": "Wichtiger sind sicherheitsrelevante Maßnahmen."
+          },
+          {
+            "name": "card7",
+            "text": "gute Smartphone-Kamera",
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 3,
+            "image": "devices",
+            "costs": 1000,
+            "feedback": "Wichtiger sind sicherheitsrelevante Maßnahmen."
+          },
+          {
+            "name": "card8",
+            "text": "Alarm-Gadget",
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 4,
+            "image": "devices",
+            "costs": 600,
+            "feedback": "Alarmsicherung ist gut, aber nicht zwingend nötig, besonders für Security."
+          },
+          {
+            "name": "card9",
+            "text": "Exakte im Smartphone verbaute Sensoren",
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 5,
+            "image": "devices",
+            "costs": 1200,
+            "feedback": "Wichtiger sind sicherheitsrelevante Maßnahmen."
+          },
+          {
+            "name": "card10",
+            "text": "biometrische Authentifizierung",
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 6,
+            "image": "devices",
+            "costs": 100,
+            "feedback": "Ist nicht schlecht, aber nur bedingt hilfreich wegen fehlernafälligkeit"
+          },
+          {
+            "name": "card11",
+            "text": "Keine weiteren Funktionen und Eigenschaften auswählen",
+            "points": 0,
+            "nextEvent": 3,
+            "nextEventText": 0,
+            "costs": 0
+          }
+        ]
+      },
+      "2": {
+        "name": "event3",
+        "text": [
+          "Es ist wichtig, dass die Geräte richtig verwaltet werden, damit man den Überblick behalten kann. Welche Maßnahme möchten Sie bezüglich des Gerätemanagements ergreifen?",
+          "Firewalls erhöhen die Sicherheit erheblich, sofern sie richtig konfiguriert sind. Leider haben Sie den Nachteil, dass sie die Kommunikation verlangsamen.",
+          "Mit der nun eingerichteten Black-Channel-Kommunikation ist die drahtlose Kommunikation zwischen Smartphone und Anlage deutlich sicherer.",
+          "Bluetooth ist keine gute Wahl, weil auch andere Geräte die Anlage und Smartphones sehen können.",
+          "Welche weiteren Management Entscheidungen möchten Sie treffen?",
+          "Der Proxy-Server ermöglicht es die Netzwerkverbindung besser zu kontrollieren. Besonders der Zugang zum Internet."
+        ],
+        "cards": [
+          {
+            "name": "card12",
+            "text": "Firewall für Smartphones einrichten",
+            "points": 3,
+            "nextEvent": 3,
+            "nextEventText": 1,
+            "image": "network",
+            "costs": 500,
+            "feedback": "Firewalls erhöhen die Sicherheit erheblich, sofern sie richtig konfiguriert sind. Leider haben Sie den Nachteil, dass sie die Kommunikation verlangsamen."
+          },
+          {
+            "name": "card13",
+            "text": "Verschlüsselte Kommunikation zwischen Smartphones und ICS aufbauen.",
+            "points": 4,
+            "nextEvent": 3,
+            "nextEventText": 2,
+            "image": "encryption",
+            "costs": 1000,
+            "feedback": "Absicherung gegen Hacker, die \"mithören\" und die Kommunikation abfangen"
+          },
+          {
+            "name": "card14",
+            "text": "Bluetooth-Verbindung zur Anlage etablieren.",
+            "points": -5,
+            "nextEvent": 3,
+            "nextEventText": 3,
+            "image": "network",
+            "costs": 900,
+            "feedback": "Bluetooth ist keine gute Wahl, weil auch andere Geräte die Anlage und Smartphones sehen können. Hacker könnten sich mit der Anlage verbinden."
+          },
+          {
+            "name": "card15",
+            "text": "Mobile Device Management einrichten",
+            "points": 5,
+            "nextEvent": 6,
+            "nextEventText": 0,
+            "image": "technical",
+            "costs": 3000,
+            "feedback": "Eine sehr gute Lösung zur Kontrolle wie Smartphones genutzt werden. Man kann unsichere und unnötige Features und Apps einschränken."
+          },
+          {
+            "name": "card16",
+            "text": "Proxy-Server aufstellen.",
+            "points": 1,
+            "nextEvent": 3,
+            "nextEventText": 5,
+            "image": "network",
+            "costs": 500,
+            "feedback": "Sichert die Netzwerknutzung, aber nur in Bezug aufs Internet."
+          },
+          {
+            "name": "card17",
+            "text": "Keine weiteren Management Umsetzungen tätigen.",
+            "points": 0,
+            "nextEvent": 4,
+            "nextEventText": 0,
+            "costs": 0
+          }
+        ]
+      },
+      "3": {
+        "name": "event4",
+        "text": [
+          "Sie sollten die Smartphones vor der Nutzung konfigurieren. Wie möchten Sie diese einstellen?",
+          "Mit der automatischen Bildschirmsperre werden unberechtigte Zugriffe vermieden. Eine durchaus sinnvolle Einstellung.",
+          "Eine kluge Entscheidung. Wenn Updates automatisiert sind, kann man sie nicht vergessen, sodass es gar nicht erst zu veralteter Software kommt.",
+          "Ist der Internetzugang blockiert, bedeutet das erheblich weniger kritische Punkte die man beachten muss. Daher ist es klug diese Maßnahme umzusetzen, denn für die Steuerung der Anlage braucht man kein Internet.",
+          "Grundsätzlich ist biometrische Authentifizierung gut, da sie genau einer Person zugeordnet wird. Jedoch eignet sie sich aufgrund der Fehleranfälligkeit nicht als alleinige Authentifizierung. Eine Kombination wäre optimal.",
+          "Es ist eine sehr gute Idee alle möglichen Schnittstellen zu deaktivieren, da man das Risiko von Angriffen minimiert. Allerdings merken Sie, dass man sich übers WLAN mit der Anlage verbinden muss. Daher aktivieren Sie es wieder.",
+          "Es ist durchaus praktisch von einem Smartphone aus die Anlage beeinflussen zu können und bei Notfällen schnell einschreiten zu können. Will man dieses Feature haben, muss man auch die Sicherheitslücken in Kauf nehmen. Welche weiteren Konfigurationen wollen Sie umsetzen?",
+          "Sicherheitstechnisch gesehen sind ausschließlich Leserechte zu vergeben am besten, da so Angreifer, sollten Sie sich in das Smartphone gehackt haben, die Anlage darüber nicht manipulieren können.",
+          "Ohne jegliche Zugriffsrechte haben die Smartphones keine Interaktionsmöglichkeit mit der Anlage. Theoretisch ist es das Beste was Sie tun können, allerdings sind die Smartphones im Produktionsumfeld nutzlos."
+        ],
+        "cards": [
+          {
+            "name": "card25",
+            "text": "Zugriffsrechte einstellen",
+            "points": 0,
+            "nextEvent": 7,
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "costs": 0,
+            "feedback": "Sollte auf alle Fälle gemacht werden"
+          },
+          {
+            "name": "card26",
+            "text": "automatische Bildschirmsperre einrichten",
+            "points": 5,
+            "nextEvent": 4,
+            "nextEventText": 1,
+            "image": "devices",
+            "costs": 100,
+            "feedback": "Verhindert unbefugten physischen Zugriff"
+          },
+          {
+            "name": "card27",
+            "text": "Updates automatisieren",
+            "points": 3,
+            "nextEvent": 4,
+            "nextEventText": 2,
+            "image": "technical",
+            "costs": 300,
+            "feedback": "Software bleibt aktuell und Sicherheitslücken werden immer schnell behoben."
+          },
+          {
+            "name": "card28",
+            "text": "Internetzugang blockieren",
+            "points": 5,
+            "nextEvent": 4,
+            "nextEventText": 3,
+            "image": "browse",
+            "costs": 600,
+            "feedback": "Ein Angreifer hat erheblich weniger Angriffsfläche und Wege sich ins ICS zu hacken"
+          },
+          {
+            "name": "card29",
+            "text": "biometrische Authentifizierung statt Passwörtern verwenden",
+            "points": -5,
+            "nextEvent": 4,
+            "nextEventText": 4,
+            "image": "encryption",
+            "costs": 100,
+            "feedback": "Grundsätzlich ist biometrische Authentifizierung gut, da sie genau einer Person zugeordnet wird. Jedoch eignet sie sich aufgrund der Fehleranfälligkeit nicht als alleinige Authentifizierung. Eine Kombination wäre optimal."
+          },
+          {
+            "name": "card30",
+            "text": "WLAN deaktivieren",
+            "points": 0,
+            "nextEvent": 4,
+            "nextEventText": 5,
+            "image": "network",
+            "costs": 300,
+            "feedback": "Es ist eine sehr gute Idee alle möglichen Schnittstellen zu deaktivieren, da man das Risiko von Angriffen minimiert. Aber WLAN wird für die Verbindung zur Anlage benötigt."
+          },
+          {
+            "name": "card31",
+            "text": "Keine weitern Änderungen der Konfiguration vornehmen",
+            "points": 0,
+            "nextEvent": 5,
+            "nextEventText": 0,
+            "costs": 0
+          }
+        ]
+      },
+      "4": {
+        "name": "event5",
+        "text": [
+          "Sie haben die Möglichkeit neben der App zur Steuerung des ICS weitere vorzuinstallieren. Welche wählen Sie?",
+          "Ein Passwortmanager ist grundsätzlich nicht schlecht, aber weniger relevant für den Einsatz in der Produktion.",
+          "Eine gute Entscheidung!",
+          "Für die Steuerung der Anlage ist ein Ad-Blocker nicht nötig und sollte somit nicht auf dem Smartphone installiert werden, da jede zusätzliche App eine Sicherheitslücke darstellen kann.",
+          "Eine Übersetzer-App ist nicht sinnvoll, da jede zusätzliche App eine Sicherheitslücke darstellen kann.",
+          "Mit einem Virenscanner kann Schadcode erkannt werden, was durchaus sinnvoll ist.",
+          "Eine App zum finden verlorener Geräte kann hilfreich sein, aber man sollte sie nur installieren, wenn die Geräte nicht ausschließlich auf dem Unternehmensgelände benutzt werden. Selbst dann sollte man überlegen, ob man diese App wirklich benötigt, da jede zusätzliche App einen weiteren Angriffsweg für Hacker bietet."
+        ],
+        "cards": [
+          {
+            "name": "card18",
+            "text": "Passwortmanager",
+            "points": -1,
+            "nextEvent": 5,
+            "nextEventText": 1,
+            "image": "encryption",
+            "costs": 700,
+            "feedback": "Ein Passwortmanager ist grundsätzlich nicht schlecht, aber weniger relevant für den Einsatz in der Produktion."
+          },
+          {
+            "name": "card19",
+            "text": "VPN-App",
+            "points": 5,
+            "nextEvent": 5,
+            "nextEventText": 2,
+            "image": "encryption",
+            "costs": 1000,
+            "feedback": "Eine gute Entscheidung, denn es wird gewährleistet, dass die Verbindung zusätzlich verschlüsselt wird"
+          },
+          {
+            "name": "card20",
+            "text": "Ad-Blocker",
+            "points": -5,
+            "nextEvent": 5,
+            "nextEventText": 3,
+            "image": "alert",
+            "costs": 300,
+            "feedback": "Besser wirklich nur für Anlage relevante Apps, da jede zusätzliche App eine Sicherheitslücke darstellen kann."
+          },
+          {
+            "name": "card21",
+            "text": "Übersetzer-App",
+            "points": -5,
+            "nextEvent": 5,
+            "nextEventText": 4,
+            "image": "devices",
+            "costs": 100,
+            "feedback": "Besser wirklich nur für Anlage relevante Apps, da jede zusätzliche App eine Sicherheitslücke darstellen kann."
+          },
+          {
+            "name": "card22",
+            "text": "Virenscanner",
+            "points": 3,
+            "nextEvent": 5,
+            "nextEventText": 5,
+            "image": "alert",
+            "costs": 600,
+            "feedback": "Sollte drauf sein, weil Schadcode schneller erkannt wird und so weitere Ausbreitung verhindert werden kann"
+          },
+          {
+            "name": "card23",
+            "text": "Mein-Gerät-finden-App",
+            "points": -5,
+            "nextEvent": 5,
+            "nextEventText": 6,
+            "image": "browse",
+            "costs": 500,
+            "feedback": "Besser wirklich nur für Anlage relevante Apps, da jede zusätzliche App eine Sicherheitslücke darstellen kann."
+          },
+          {
+            "name": "card24",
+            "text": "Keine weiteren Apps vorinstallieren",
+            "points": 0,
+            "nextEvent": 8,
+            "nextEventText": 1,
+            "costs": 0
+          }
+        ]
+      },
+      "5": {
+        "name": "event6",
+        "text": [
+          "Mobile Device Management (MDM) ist sehr aufwendig, aber eine deutliche Verbesserung was die Sicherheit anbelangt. Welche MDM-Maßnahmen möchten Sie umsetzen?",
+          "Whitelisting ist sehr empfehlenswert, weil dadurch vermieden werden kann, dass nicht verifizierte oder unsichere Apps heruntergeladen werden.",
+          "Benutzerrollen anlegen ist eine sinnvolle Investition, da Nutzer nicht mehr Berechtigungen als nötig haben und dadurch auch nicht ausversehen Schaden anrichten.",
+          "An für sich ist es nicht schlecht, wenn man Grenzen definiert in dem ein Smartphone verwendet werden darf. Aber es ist mehr ein besonderes Feature und weniger eine Notwendigkeit.",
+          "Es ist klug den Datenverkehr zu überwachen, um so schneller Angriffe übers Smartphone auf die Anlage zu erkennen.",
+          "Die Bandbreite zu begrenzen könnte sich negativ auf die Leistung der App auswirken. Dann kann es sein, dass die Daten nur verzögert angezeigt werden.",
+          "Eine gute Wahl, besonders wenn die Geräte auch außerhalb des Unternehmens verwendet werden. Es ist nicht zwingend erforderlich für das Anwendungsszenario, aber es schadet auch nicht."
+        ],
+        "cards": [
+          {
+            "name": "card32",
+            "text": "Whitelisting von Apps (nur bestimmte Apps erlauben)",
+            "points": 5,
+            "nextEvent": 6,
+            "nextEventText": 1,
+            "image": "devices",
+            "costs": 1100,
+            "feedback": "Whitelisting ist sehr empfehlenswert, weil dadurch vermieden werden kann, dass nicht verifizierte oder unsichere Apps heruntergeladen werden."
+          },
+          {
+            "name": "card33",
+            "text": "Benutzerrollen anlegen",
+            "points": 4,
+            "nextEvent": 6,
+            "nextEventText": 2,
+            "image": "humanInterface",
+            "costs": 600,
+            "feedback": "Benutzerrollen anlegen ist eine sinnvolle Investition, da Nutzer nicht mehr Berechtigungen als nötig haben und dadurch auch nicht ausversehen Schaden anrichten."
+          },
+          {
+            "name": "card34",
+            "text": "Nutzungsgebiet festlegen",
+            "points": 2,
+            "nextEvent": 6,
+            "nextEventText": 3,
+            "image": "alert",
+            "costs": 700,
+            "feedback": "An für sich ist es nicht schlecht, wenn man Grenzen definiert in dem ein Smartphone verwendet werden darf. Aber es ist mehr ein besonderes Feature und weniger eine Notwendigkeit."
+          },
+          {
+            "name": "card35",
+            "text": "Datenverkehr überwachen",
+            "points": 4,
+            "nextEvent": 6,
+            "nextEventText": 4,
+            "image": "devices",
+            "costs": 900,
+            "feedback": "Es ist klug den Datenverkehr zu überwachen, um so schneller Angriffe übers Smartphone auf die Anlage zu erkennen."
+          },
+          {
+            "name": "card36",
+            "text": "Bandbreite begrenzen",
+            "points": -2,
+            "nextEvent": 6,
+            "nextEventText": 5,
+            "image": "network",
+            "costs": 400,
+            "feedback": "Die Bandbreite zu begrenzen könnte sich negativ auf die Leistung der App auswirken. Dann kann es sein, dass die Daten nur verzögert angezeigt werden."
+          },
+          {
+            "name": "card37",
+            "text": "Fernzugriff auf Smartphones einrichten (Löschen und Sperren möglich)",
+            "points": 3,
+            "nextEvent": 6,
+            "nextEventText": 6,
+            "image": "technical",
+            "costs": 800,
+            "feedback": "Eine gute Wahl, besonders wenn die Geräte auch außerhalb des Unternehmens verwendet werden. Es ist nicht zwingend erforderlich für das Anwendungsszenario, aber es schadet auch nicht."
+          },
+          {
+            "name": "card38",
+            "text": "Keine weiteren Konfigurationen vornehmen",
+            "points": 0,
+            "nextEvent": 3,
+            "nextEventText": 4,
+            "costs": 0
+          }
+        ]
+      },
+      "6": {
+        "name": "event7",
+        "text": [
+          "Welche Rechte sollen die Smartphones bezüglich des ICS haben?"
+        ],
+        "cards": [
+          {
+            "name": "card39",
+            "text": "Lese- und Schreibrechte",
+            "points": -3,
+            "nextEvent": 4,
+            "nextEventText": 6,
+            "image": "devices",
+            "costs": 500,
+            "feedback": "Es ist durchaus praktisch von einem Smartphone aus die Anlage beeinflussen zu können und bei Notfällen schnell einschreiten zu können. Will man dieses Feature haben, muss man auch die Sicherheitslücken in Kauf nehmen."
+          },
+          {
+            "name": "card40",
+            "text": "Nur Leserechte",
+            "points": 5,
+            "nextEvent": 4,
+            "nextEventText": 7,
+            "image": "devices",
+            "costs": 500,
+            "feedback": "Sicherheitstechnisch gesehen sind ausschließlich Leserechte zu vergeben am besten, da so Angreifer, sollten Sie sich in das Smartphone gehackt haben, die Anlage darüber nicht manipulieren können."
+          },
+          {
+            "name": "card42",
+            "text": "Keine Zugriffsrechte",
+            "points": 0,
+            "nextEvent": 4,
+            "nextEventText": 8,
+            "image": "devices",
+            "costs": 0,
+            "feedback": "Ohne jegliche Zugriffsrechte haben die Smartphones keine Interaktionsmöglichkeit mit der Anlage. Theoretisch ist es das beste was Sie tun können, allerdings sind die Smartphones im Produktionsumfeld nutzlos."
+          }
+        ]
+      },
+      "7": {
+        "name": "event8",
+        "text": [
+          "Sie haben nun das gesamte Geld, das Ihnen zur Verfügung stand ausgegeben.",
+          "Sie haben nun alle nötigen Entscheidungen zur Konfiguration und zum Management von Smartphones getroffen."
+        ],
+        "cards": [
+          {
+            "name": "card43",
+            "text": "Level abschließen",
+            "points": 0,
+            "nextEvent": 0,
+            "nextEventText": 0,
+            "image": "orga"
+          }
+        ]
+      }
+    },
+    "maxScore": 60
+  }
+}
