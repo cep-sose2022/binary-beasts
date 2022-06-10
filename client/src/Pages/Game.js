@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import Lvl1_Network from "./Levels/Lvl1_Network";
 import Lvl2_Malware from "./Levels/Lvl2_Malware"
 import Lvl3_Devices from "./Levels/Lvl3_Devices";
@@ -12,10 +11,11 @@ import Lvl8_UserControl from "./Levels/Lvl8_UserControl";
 import Lvl9_Phones from "./Levels/Lvl9_Phones";
 import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
 import service from '../service';
+import {motion} from "framer-motion";
+
 
 function Game(){
     const location = useLocation();
-    let navigate = useNavigate();
 
     const [levelName, setLevelName] = useState("");
     const [maxScore, setMaxScore] = useState(0);
@@ -36,8 +36,14 @@ function Game(){
             <div id="score" className="navgamecontent">
                 <p>Score:   
                     {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore + " "}</span>}
-                    {currentScore > previousScore && <span className="score-green"> {currentScore + " "}</span>}
-                    {currentScore < previousScore && <span className="score-red"> {currentScore + " "}</span>}
+                    {currentScore > previousScore && <motion.span className="score-green"
+                                                                  initial={{ opacity: 0, translateX: -50, translateY: 50,  }}
+                                                                  animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                                                                  transition={{ duration: 1 }}> {currentScore + " "}</motion.span>}
+                    {currentScore < previousScore && <motion.span className="score-red"
+                                                                  initial={{ opacity: 0, translateX: -50, translateY: 50 }}
+                                                                  animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                                                                  transition={{ duration: 1 }}> {currentScore + " "}</motion.span>}
                     / <span className="gameNavbar-blue">{maxScore}</span>
                 </p>
             </div>   
