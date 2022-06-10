@@ -1,0 +1,354 @@
+{
+  "level": {
+    "_id": "6292703e1a129e2bced1c03a",
+    "name": "Logging & Monitoring",
+    "token": "level6",
+    "description": "Logging bzw. Monitoring dient dem frühen Erkennen von Fehlern und sicherheitsrelevanten Vorfällen wie beispielsweise Identifikation von Ressourcenengpässen oder unbefugte Zugriffsversuche, aber auch zur Erfüllung von Beweissicherung bei Vorfällen",
+    "events": {
+      "0": {
+        "_id": "6295b3441a129e2bced1dc1f",
+        "name": "event1",
+        "text": [
+          "Sie arbeiten als Automatisierungsingenieur und Ihr Unternehmen verwendet ein regelbasiertes Alarmsystem für die wichtigen Instrumente des Unternehmens, das Systembeeinträchtigungen frühzeitig erkennt. Die zu überwachenden Funktionen und Systemeigenschaften sind vordefiniert. Auf Grundlage der definierten Grenzüberschreitungen bzw. der Ereignissen wird ein Alarm ausgelöst, der die zuständige Abteilung darüber informiert. "
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "6295b3d21a129e2bced1dc28",
+            "name": "card1",
+            "text": [
+              "Weiter.."
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "mouseAction",
+            "feedback": "Levelstart"
+          }
+        ]
+      },
+      "1": {
+        "_id": "6295b5af1a129e2bced1dc3c",
+        "name": "event2",
+        "text": [
+          "Aufgrund des schnellen Wachstums des Unternehmens steigt die Anzahl der Systeme, die sich in Betrieb und Entwicklung befinden und somit auch die Kosten durch Systemausfälle sowie Fehlerbehebung. Diese verursacht hohe Komplexität für Monitoring. Deshalb und auch um die Sicherheitsniveau zu erhöhen, möchte Ihr Unternehmen die Möglichkeit prüfen, ein KI-unterstütztes Monitoring zu verwenden. Dabei wird Ihr Wissen benötigt, um die Vor- und Nachteile von dem bisher verwendeten Monitoring sowie das KI-unterstütztes Monitoring zu vergleichen und auch mehr zu erfahren, wie dieser Prozess umgesetzt werden kann. Am Ende können Sie uns mitteilen, welches Monitoringsystem Ihrem Unternehmen mehr Sicherheit und Vorteile anbieten würde."
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "6295b62a1a129e2bced1dc42",
+            "name": "card2",
+            "text": [
+              "Am Gespräch teilnehmen"
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "feedback": "Gesprächsstart"
+          }
+        ]
+      },
+      "2": {
+        "_id": "6295ce4b052f384a56aa43e6",
+        "name": "event3",
+        "text": [
+          "Wie wird der Prozess für das regelbasiertes Monitoringsystem verbessert?"
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "6295cedf052f384a56aa43ed",
+            "name": "card3",
+            "text": [
+              "Manuell (Neue Regeln werden durch das Unternehmen definiert)"
+            ],
+            "points": 4,
+            "nextEvent": 4,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "Neue Regeln werden manuell definiert"
+          },
+          {
+            "_id": "6295cf17052f384a56aa43f1",
+            "name": "card4",
+            "text": [
+              "Automatisiert (Neue Regeln werden automatisch angepasst)"
+            ],
+            "points": -1,
+            "nextEvent": 4,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "network",
+            "feedback": "Neue Regeln werden manuell definiert"
+          }
+        ]
+      },
+      "3": {
+        "_id": "6295cfe8052f384a56aa43fe",
+        "name": "event4",
+        "text": [
+          "Richtig! Für die Verbesserung des Prozesses müssen meistens Regeln manuell definiert werden, was auch viel Zeit kostet. Außerdem gibt es fast täglich neue Bedrohungen für OT-Systeme, die den Betrieb gefährden. Für das Monitoring allgemein werden viele Daten produziert, was ein Problem für Speicherplatz darstellt. Wie würden Sie damit umgehen?",
+          "Das stimmt leider nicht so ganz! Für die Verbesserung des Prozesses müssen meistens Regeln manuell definiert werden, was auch viel Zeit kostet. Außerdem gibt es fast täglich neue Bedrohungen für OT-Systeme, die den Betrieb gefährden. Für das Monitoring allgemein werden viele Daten produziert, was ein Problem für Speicherplatz darstellt. Wie würden Sie damit umgehen?"
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "6295d042052f384a56aa4403",
+            "name": "card5",
+            "text": [
+              "Logdaten nur für eine kurze Zeit speichern"
+            ],
+            "points": -1,
+            "nextEvent": 5,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Logdaten könnten bei einem Vorfall eine wichtige Rolle bei der Beweissicherung spielen"
+          },
+          {
+            "_id": "6295d06e052f384a56aa4406",
+            "name": "card6",
+            "text": [
+              "Logdaten über eine Big Data Pipeline streamen"
+            ],
+            "points": 4,
+            "nextEvent": 5,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "browse",
+            "feedback": "Logdaten könnten bei einem Vorfall eine wichtige Rolle bei der Beweissicherung spielen"
+          }
+        ]
+      },
+      "4": {
+        "_id": "629655b3052f384a56aa48f7",
+        "name": "event5",
+        "text": [
+          "Das spart zwar Speicherplatz aber für den Fall, dass ein Angriff erst nach einer langen Zeit entdeckt wird, könnten die Logdaten eine wichtige Rolle bei der Beweissicherung spielen. Ein wichtiger Schritt für die Filterung der Logdaten bei einem KI-unterstütztes Monitoring besteht darin, die Logs zu harmonisieren. Was würden Sie dafür von den Logs entfernen, um dieses Ziel zu erreichen?",
+          "Sehr gut! Für den Fall, dass ein Angriff erst nach einer langen Zeit entdeckt wird, könnten die Logdaten eine wichtige Rolle bei der Beweissicherung spielen. Ein wichtiger Schritt für die Filterung der Logdaten bei einem KI-unterstütztes Monitoring besteht darin, die Inhalte von den Logs zu filtern. Was würden Sie dafür von den Logs entfernen, um dieses Ziel zu erreichen?"
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "62965706052f384a56aa4904",
+            "name": "card7",
+            "text": [
+              "Sonderzeichen"
+            ],
+            "points": 1,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "deleted",
+            "feedback": "Zwar richtig, aber auch Pfade, Hashes und Zeitstempel sollten entfernt werden"
+          },
+          {
+            "_id": "629657d5052f384a56aa490d",
+            "name": "card8",
+            "text": [
+              "Pfade "
+            ],
+            "points": 1,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "deleted",
+            "feedback": "Zwar richtig, aber auch Sonderzeichen, Hashes und Zeitstempel sollten entfernt werden"
+          },
+          {
+            "_id": "629657f5052f384a56aa4910",
+            "name": "card9",
+            "text": [
+              "Hashes"
+            ],
+            "points": 1,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "deleted",
+            "feedback": "Zwar richtig, aber auch Sonderzeichen, Pfade und Zeitstempel sollten entfernt werden"
+          },
+          {
+            "_id": "62965852052f384a56aa4917",
+            "name": "card10",
+            "text": [
+              "Zeitstempel"
+            ],
+            "points": 1,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "deleted",
+            "feedback": "Zwar richtig, aber auch Sonderzeichen, Pfade und Hashes sollten entfernt werden"
+          },
+          {
+            "_id": "6296589c052f384a56aa491b",
+            "name": "card11",
+            "text": [
+              "Alle genannten"
+            ],
+            "points": 4,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "orga",
+            "feedback": "Sonderzeichen, Pfade, Hashes und Zeitstempel sollten entfernt werden"
+          },
+          {
+            "_id": "629658c2052f384a56aa491f",
+            "name": "card12",
+            "text": [
+              "gar nichts"
+            ],
+            "points": -1,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 2,
+            "image": "alert",
+            "feedback": "Sonderzeichen, Pfade, Hashes und Zeitstempel sollten entfernt werden"
+          }
+        ]
+      },
+      "5": {
+        "_id": "6296836e052f384a56aa4ab1",
+        "name": "event6",
+        "text": [
+          "Leider war Ihre Antwort bei der vorherigen Frage nicht ganz richtig! Es wäre sinnvoll, wenn alle Sonderzeichen, Pfade, Hashes und Zeitstempel von den Logs entfernt werden, um effektiv mit den Daten das Monitoring zu unterstützen. Nachdem wir mit dem Filtern der Logs fertig sind, wollen wir nun eine präzise Zustandsbewertung verwirklichen, was schlagen Sie dafür vor?",
+          "Sehr gut! Es war sinnvoll, dass alle Sonderzeichen, Pfade, Hashes und Zeitstempel von den Logs entfernt werden, um effektiv mit den Daten das Monitoring zu unterstützen. Nachdem wir mit dem Filtern der Logs fertig sind, wollen wir nun eine präzise Zustandsbewertung verwirklichen, was schlagen Sie dafür vor?",
+          "Leider nicht richtig! Es wäre sinnvoll, wenn alle Sonderzeichen, Pfade, Hashes und Zeitstempel von den Logs entfernt werden, um effektiv mit den Daten das Monitoring zu unterstützen. Nachdem wir mit dem Filtern der Logs fertig sind, wollen wir nun eine präzise Zustandsbewertung verwirklichen, was schlagen Sie dafür vor?"
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "629683d9052f384a56aa4ab6",
+            "name": "card13",
+            "text": [
+              "Logs für mehrere Zeitabständen speichern, zählen und bewerten"
+            ],
+            "points": 4,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Dadurch kann die relative Veränderung berechnet werden, die das Monitoring unterstützt"
+          },
+          {
+            "_id": "6296840b052f384a56aa4aba",
+            "name": "card14",
+            "text": [
+              "Statische Höchstgrenzen definieren"
+            ],
+            "points": -1,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "devices",
+            "feedback": "Das wird für ein regelbasiertes Monitoring gemacht"
+          }
+        ]
+      },
+      "6": {
+        "_id": "6296844e052f384a56aa4ac2",
+        "name": "event7",
+        "text": [
+          "Dadurch können wir verschiedene Parameter messen und nach Muster durch die gewonnenen Daten suchen, um Fehler frühzeitig zu erkennen und ggf. zu behandeln. In der Regel gibt es drei Arten von Ereignissen, die auftreten können. Für welche diese Ereignisse macht es sinn, Aktionen durch das KI-Monitoring automatisiert ausführen zu lassen",
+          "Das funktioniert leider nicht effizient! In der Regel gibt es drei Arten von Ereignissen, die auftreten können. Für welche diese Ereignisse macht es sinn, Aktionen durch das KI-Monitoring automatisiert ausführen zu lassen"
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "62968496052f384a56aa4ac7",
+            "name": "card15",
+            "text": [
+              "Komplexe Vorfälle"
+            ],
+            "points": -1,
+            "nextEvent": 8,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "Komplexe Vorfälle benötigen individuelle Betreuung"
+          },
+          {
+            "_id": "629684e0052f384a56aa4acb",
+            "name": "card16",
+            "text": [
+              "Vorfälle, die ab und an auftreten"
+            ],
+            "points": -1,
+            "nextEvent": 8,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "Für diese Fälle können mehrere Aktionen möglich sein"
+          },
+          {
+            "_id": "62968515052f384a56aa4acf",
+            "name": "card17",
+            "text": [
+              "Vorfälle, die immer wieder auftreten"
+            ],
+            "points": 4,
+            "nextEvent": 8,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "technical",
+            "feedback": "Diese Vorfälle lassen sich automatisiert behandeln"
+          }
+        ]
+      },
+      "7": {
+        "_id": "62968647052f384a56aa4ae5",
+        "name": "event8",
+        "text": [
+          "Vorfälle die immer wieder auftreten eigenen sich gut für automatisierte Aktionen. Wir haben jetzt einen Überblick über das regelbasierte Monitoring sowie das KI-gestütztes Monitoring erhalten. Was würden Sie Ihrem Unternehmen empfehlen?",
+          "Sehr gut! Vorfälle die immer wieder auftreten eigenen sich gut für automatisierte Aktionen. Wir haben jetzt einen Überblick über das regelbasierte Monitoring sowie das KI-gestütztes Monitoring erhalten. Was würden Sie Ihrem Unternehmen empfehlen?"
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": [
+          {
+            "_id": "62968573052f384a56aa4ada",
+            "name": "card18",
+            "text": [
+              "Regelbasiertes Monitoring weiterverwenden"
+            ],
+            "points": -1,
+            "nextEvent": 0,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Regelbasiertes Monitoring kann Angriffe nicht gut erkennen"
+          },
+          {
+            "_id": "62968594052f384a56aa4add",
+            "name": "card19",
+            "text": [
+              "Zusätzlich zu dem regelbasierten Monitoring das KI-gestütztes Monitoring verwenden"
+            ],
+            "points": 2,
+            "nextEvent": 0,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "KI-gestütztes Monitoring kann Angriffe gut erkennen"
+          }
+        ]
+      },
+      "8": {
+        "_id": "62968669052f384a56aa4aec",
+        "name": "event9",
+        "text": [
+          "Überlegen Sie vielleicht noch einmal in der Zukunft, wie viel Zeit das KI-unterstützes Mointoring Zeit sparrt und wie viele Anomalien präsize erkennt, die für die Security verwendet werden kann. In der OT-Welt sind Betribe mit genügend Sensoren ausgestattet, die viele Daten über die Zustände generieren. Mit diesen Daten können durch den Einsatz vom KI-unterstütztes Monitoring eine zuverlässige Erkennung von Abweichungen ermöglicht werden, das u. a. zur frühzeitigen Erkennung von Angriffen führt. ",
+          "Sehr gut! In der OT-Welt sind Betribe mit genügend Sensoren ausgestattet, die viele Daten über die Zustände generieren. Mit diesen Daten können durch den Einsatz vom KI-unterstütztes Monitoring eine zuverlässige Erkennung von Abweichungen ermöglicht werden, das u. a. zur frühzeitigen Erkennung von Angriffen führt. "
+        ],
+        "levelId": "6292703e1a129e2bced1c03a",
+        "cards": []
+      }
+    },
+    "maxScore": 23
+  }
+}

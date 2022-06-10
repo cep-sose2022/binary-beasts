@@ -1,0 +1,228 @@
+{
+  "level": {
+    "_id": "626a94f5e22367ce0d25e56a",
+    "name": "Patchmanagement",
+    "token": "level5",
+    "description": "Die Regelmäßige Prüfung auf neue Schwachstellenmeldungen bei den Herstellern der ICS-Komponenten oder Drittanbietersoftware ist ein wichtiger Bestandteil für die Beibehaltung der OT-Security. Daher wird in diesem Level der Umgang mit einem solchen Sicherheitspatch beleuchtet und aufgezeigt, auf was man bei der Installation achten muss.",
+    "events": {
+      "0": {
+        "_id": "626a9566e22367ce0d25e56d",
+        "name": "event1",
+        "text": [
+          "Für die ICS-Software Ihrer Infrastruktur wurde eine neue Schwachstelle festgestellt, für die es bereits einen Patch gibt. Daher hat das Management bereits die Freigabe des Sicherheitspatches mit den Herstellern abgesprochen. Der Hersteller hat Ihnen den Sicherheitspatch über das Internet übertragen. Achten Sie auf die Priorität Ihrer Aktionen!",
+          "Das Testsystem wurde mit Malware infiziert! Offensichtlich stimmt mit dem Patch etwas nicht.",
+          "Oh nein! Sie hätten den Patch überprüfen sollen bevor Sie diesen auf den Systemen installieren! Nun sind die ICS-Systeme mit Malware infiziert und funktionieren nicht mehr richtig. Der Schaden, der entstanden ist, ist enorm und es hat lange gedauert, bis alle Systeme wieder auf einen funktionstüchtigen Stand gebracht wurden. Seien Sie im weiteren Verlauf vorsichtiger mit der Wahl Ihrer Aktionen!"
+        ],
+        "levelId": "626a94f5e22367ce0d25e56a",
+        "cards": [
+          {
+            "_id": "626b7c080a114065863ef9d1",
+            "name": "card1",
+            "text": [
+              "Auf Kompatibilität mit dem ICS prüfen und testen"
+            ],
+            "points": -2,
+            "nextEvent": 1,
+            "nextEventText": 1,
+            "image": "technical",
+            "feedback": "Zuerst sollte geprüft werden, ob der Patch nicht von manipuliert wurde"
+          },
+          {
+            "_id": "626b7c3b0a114065863ef9d2",
+            "name": "card2",
+            "text": [
+              "Die digitale Signatur anfordern und überprüfen"
+            ],
+            "points": 5,
+            "nextEvent": 2,
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Die Authentizität und Integrität der Patches sollte immer überprüft werden"
+          },
+          {
+            "_id": "626b7c510a114065863ef9d3",
+            "name": "card3",
+            "text": [
+              "Den Patch auf dem ICS-Systemen installieren"
+            ],
+            "points": -5,
+            "nextEvent": 1,
+            "nextEventText": 2,
+            "image": "network",
+            "feedback": "Ein Patch sollte nie ohne Überprüfungen und Tests direkt auf dem System installiert werden"
+          }
+        ]
+      },
+      "1": {
+        "_id": "626a95a1e22367ce0d25e56e",
+        "name": "event2",
+        "text": [
+          "Es wurde festgestellt, dass die Signaturen nicht übereinstimmen und wurde daher der IT-Abteilung gemeldet. Dort wurde herausgefunden, dass der Patch von Hackern abgefangen und manipuliert wurde. Der Patch wurde daher als USB-Stick vom Hersteller angefragt und nachgeliefert.",
+          "Bei der Kompatibilitätsprüfung haben Sie festgestellt, das der Patch nicht mit Ihren ICS-Systemen kompatibel ist. Daher haben Sie beim Hersteller eine kompatible Version angefragt, welche eine weitere Kompatibilitätsprüfung bestanden hat.",
+          "Der USB-Stick scheint harmlos zu sein.",
+          "Der USB-Stick ist frei von Malware.",
+          "Es wurde auch beim USB-Stick eine Infizierung festgestellt. Anscheinend haben Hacker es auf sie abgesehen! Die IT-Abteilung hat einen neuen USB-Stick angefragt und nach der Lieferung geprüft, sodass dieser nun ohne jegliche Malware.",
+          "Die Datensicherung der ICS-Systeme wurde durchgeführt.",
+          "Der Sicherheitspatch inklusive seines Status wurde dokumentiert."
+        ],
+        "levelId": "626a94f5e22367ce0d25e56a",
+        "cards": [
+          {
+            "_id": "626b7c5f0a114065863ef9d4",
+            "name": "card4",
+            "text": [
+              "Auf Kompatibilität mit dem ICS prüfen und testen "
+            ],
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 1,
+            "image": "technical",
+            "feedback": "Ein Patch sollte immer nach der Integritätsprüfung auch auf Kompatibilität geprüft werden "
+          },
+          {
+            "_id": "62737cdf2b60dce56ee0b652",
+            "name": "card5",
+            "text": [
+              "Patch auf dem System installieren "
+            ],
+            "points": 3,
+            "nextEvent": 3,
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Der Patch sollte vor der Installation zuerst in Testsystemen auf die Kompatibilität geprüft werden"
+          },
+          {
+            "_id": "6273847a2b60dce56ee0b65c",
+            "name": "card6",
+            "text": [
+              "USB-Stick auf dem Office-PC überprüfen"
+            ],
+            "points": -2,
+            "nextEvent": 2,
+            "nextEventText": 2,
+            "image": "devices",
+            "feedback": "Der USB-Stick mit dem Patch sollte nicht in den Office-PC eingesteckt werden, da der Office-PC möglicherweise infiziert sein könnte und dadurch den Patch infizieren könnte"
+          },
+          {
+            "_id": "6273892f2b60dce56ee0b668",
+            "name": "card7",
+            "text": [
+              "USB-Stick durch die IT-Abteilung überprüfen lassen"
+            ],
+            "points": 1,
+            "nextEvent": 2,
+            "nextEventText": 3,
+            "image": "humanInterface",
+            "feedback": "Bevor Patches über USB-Sticks installiert werden, sollten diese immer von der IT-Abteilung geprüft werden"
+          },
+          {
+            "_id": "627392932b60dce56ee0b675",
+            "name": "card8",
+            "text": [
+              "Datensicherung des ICS durchführen"
+            ],
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 5,
+            "image": "technical",
+            "feedback": "Bevor ein Patch eingespielt wird, sollte immer eine Datensicherung des ICS durchgeführt werden, für den Fall dass etwas schief geht"
+          },
+          {
+            "_id": "6273943e2b60dce56ee0b681",
+            "name": "card9",
+            "text": [
+              "Sicherheitspatch inklusive Status dokumentieren"
+            ],
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 6,
+            "image": "orga",
+            "feedback": "Patches sollten immer dokumentiert werden, um bei neuen Sicherheitslücken immer überprüfen zu können, ob der zuletzt installierte Patch betroffen ist "
+          }
+        ]
+      },
+      "2": {
+        "_id": "626a95b4e22367ce0d25e56f",
+        "name": "event3",
+        "text": [
+          "Der Patch wurde installiert und die Sicherheitslücke wurde geschlossen. <Einige Wochen später hat die Sicherheitsabteilung gemeldet, dass das Office-Netz infiziert war, wodurch alle USB-Sticks, die in Office-PCs eingesteckt waren, ebenfalls infiziert wurden. Zum Glück haben Sie den USB-Stick nicht in deinen Office-PC eingesteckt! <Der Hersteller hat gemeldet, dass einige Ihrer letzten Patches unwissentlich bekannte Schwachstellen eingeführt haben. Leider steht noch kein Sicherheitspatch zur Verfügung und es wird vermutet, dass die Entwicklung diese Patches noch einige Zeit in Anspruch nehmen wird.",
+          "Der Patch wurde installiert, jedoch wurde das ICS-System dadurch mit Malware infiziert! Die IT-Abteilung hat herausgefunden, dass das Office-Netz infiziert war, und dadurch wurde jeder USB-Stick, der in einen Office-PC gesteckt wurde, infiziert. Sie sollten vor der Installation des Patches den USB-Stick durch die IT-Abteilung prüfen lassen! Es hat lange gedauert, bis die Malware entfernt wurde, und es ist ein großer Schaden entstanden.<Der Hersteller hat gemeldet, dass einige Ihrer letzten Patches unwissentlich bekannte Schwachstellen eingeführt haben. Leider steht noch kein Sicherheitspatch zur Verfügung und es wird vermutet, dass die Entwicklung diese Patches noch einige Zeit in Anspruch nehmen wird.",
+          "Leider war der Patch nicht mit dem ICS-System kompatibel und war daher in seiner Funktion beeinträchtigt. Es ist ein hoher Schaden entstanden und es hat einige Zeit gedauert, bis wieder alles wieder auf dem alten Stand gebracht wurde. <Einige Wochen später hat die Sicherheitsabteilung gemeldet, dass das Office-Netz infiziert war, wodurch alle USB-Sticks, die in Office-PCs eingesteckt waren, ebenfalls infiziert wurden. Zum Glück haben Sie den USB-Stick nicht in deinen Office-PC eingesteckt! <Der Hersteller hat gemeldet, dass einige Ihrer letzten Patches unwissentlich bekannte Schwachstellen eingeführt haben. Leider steht noch kein Sicherheitspatch zur Verfügung und es wird vermutet, dass die Entwicklung diese Patches noch einige Zeit in Anspruch nehmen wird.",
+          "Leider war der Patch nicht mit dem ICS-System kompatibel und war daher in seiner Funktion beeinträchtigt. Es ist ein hoher Schaden entstanden und es hat einige Zeit gedauert, bis wieder alles wieder auf dem alten Stand gebracht wurde. <Zudem wurde das ICS-System mit Malware infiziert! Die IT-Abteilung hat herausgefunden, dass das Office-Netz infiziert war, und dadurch wurde jeder USB-Stick, der in einen Office-PC gesteckt wurde, infiziert. Sie sollten vor der Installation des Patches den USB-Stick durch die IT-Abteilung prüfen lassen! <Der Hersteller hat gemeldet, dass einige Ihrer letzten Patches unwissentlich bekannte Schwachstellen eingeführt haben. Leider steht noch kein Sicherheitspatch zur Verfügung und es wird vermutet, dass die Entwicklung diese Patches noch einige Zeit in Anspruch nehmen wird.",
+          "Die Installation des Sicherheitspatches ist schon zu lange her, daher ist die Dokumentation nicht mehr möglich.",
+          "Sie haben festgestellt, dass der von Ihnen installierte Patch von der Schwachstelle betroffen ist.",
+          "Sie können leider nicht prüfen, ob der von Ihnen installierte Patch von der Schwachstelle betroffen ist, da Sie den Patch nicht dokumentiert haben.",
+          "Gratulation! Sie haben nun den Vorgang der Installation von Patches erfolgreich gemeistert! Behalten Sie im Hinterkopf, regelmäßig nach Sicherheitspatches Ausschau zu halten. Beachten Sie ebenfalls, dass nicht immer Sicherheitspatches für ICS-Geräte verfügbar sind oder eine Installation oft nicht möglich ist. In solchen Fällen sollte immer eine Risikoanalyse mit alternativen Ausgleichsmaßnahmen wie die im Beispiel erfolgte Netzsegmentierung erfolgen. Machen Sie es Hackern nicht durch veraltete Systeme einfach!",
+          "Schade! Sie hätten nicht auf den Sicherheitspatch warten sollen, sondern andere Maßnahmen ergreifen sollen. Da Sie dies nicht getan haben, haben Hacker in der Zwischenzeit die Schwachstelle des Patches ausgenutzt und haben nun die Kontrolle über das ICS-System!",
+          " Leider war der Patch nicht mit dem ICS-System kompatibel und war daher in seiner Funktion beeinträchtigt. Es ist glücklicherweise nur ein geringer Schaden entstanden, da Sie mithilfe der Datensicherung den alten Stand sehr leicht wiederherstellen konnten. <Zudem wurde das ICS-System mit Malware infiziert! Die IT-Abteilung hat herausgefunden, dass das Office-Netz infiziert war, und dadurch wurde jeder USB-Stick, der in einen Office-PC gesteckt wurde, infiziert. Sie sollten vor der Installation des Patches den USB-Stick durch die IT-Abteilung prüfen lassen! <Der Hersteller hat gemeldet, dass einige Ihrer letzten Patches unwissentlich bekannte Schwachstellen eingeführt haben. Leider steht noch kein Sicherheitspatch zur Verfügung und es wird vermutet, dass die Entwicklung diese Patches noch einige Zeit in Anspruch nehmen wird.",
+          "Leider war der Patch nicht mit dem ICS-System kompatibel und war daher in seiner Funktion beeinträchtigt. Es ist glücklicherweise nur ein geringer Schaden entstanden, da Sie mithilfe der Datensicherung den alten Stand sehr leicht wiederherstellen konnten. <Einige Wochen später hat die Sicherheitsabteilung gemeldet, dass das Office-Netz infiziert war, wodurch alle USB-Sticks, die in Office-PCs eingesteckt waren, ebenfalls infiziert wurden. Zum Glück haben Sie den USB-Stick nicht in deinen Office-PC eingesteckt! <Der Hersteller hat gemeldet, dass einige Ihrer letzten Patches unwissentlich bekannte Schwachstellen eingeführt haben. Leider steht noch kein Sicherheitspatch zur Verfügung und es wird vermutet, dass die Entwicklung diese Patches noch einige Zeit in Anspruch nehmen wird."
+        ],
+        "levelId": "626a94f5e22367ce0d25e56a",
+        "cards": [
+          {
+            "_id": "6273bb182b60dce56ee0b68f",
+            "name": "card10",
+            "text": [
+              "Sicherheitspatch inklusive Status dokumentieren "
+            ],
+            "points": 0,
+            "nextEvent": 3,
+            "nextEventText": 4,
+            "image": "orga",
+            "feedback": "Patches sollten immer dokumentiert werden, um bei neuen Sicherheitslücken immer überprüfen zu können, ob der zuletzt installierte Patch betroffen ist. Dies sollte aber während des Patch-Prozesses durchgeführt werden"
+          },
+          {
+            "_id": "6273c0ac2b60dce56ee0b6a0",
+            "name": "card11",
+            "text": [
+              "Überprüfung, ob der zuletzt eingespielte Patch betroffen ist"
+            ],
+            "points": 0,
+            "nextEvent": 3,
+            "nextEventText": 5,
+            "image": "orga",
+            "feedback": "Bei neuen Sicherheitslücken sollte man immer prüfen, ob des zuletzt eingespielte Patch betroffen ist. Dazu benötigt man jedoch die entsprechende Dokumentation des Patchstatus"
+          },
+          {
+            "_id": "6273c4122b60dce56ee0b6aa",
+            "name": "card12",
+            "text": [
+              "ICS mit einer Firewall in ein separates Netzsegment platzieren"
+            ],
+            "points": 5,
+            "nextEvent": 3,
+            "nextEventText": 7,
+            "image": "network",
+            "feedback": "Gibt es für eine Sicherheitslücke noch keinen Patch, sollten immer andere Ausgleichsmaßnahmen durchgesetzt werden"
+          },
+          {
+            "_id": "6273c4a92b60dce56ee0b6b0",
+            "name": "card13",
+            "text": [
+              "Auf Sicherheitspatch des Herstellers warten"
+            ],
+            "points": -5,
+            "nextEvent": 3,
+            "nextEventText": 8,
+            "image": "humanInterface",
+            "feedback": "Es sollte nie auf einen Sicherheitspatch gewartet werden, ohne Ausgleichsmaßnahmen durchzusetzen, die das betroffene Systeme absichern"
+          },
+          {
+            "_id": "629724e9e3772913debc1dfa",
+            "name": "card14",
+            "text": [
+              "Level abschließen   "
+            ],
+            "points": 0,
+            "nextEvent": 3,
+            "nextImage": " ",
+            "nextEventText": 8,
+            "image": "orga",
+            "feedback": "Levelabschluss"
+          }
+        ]
+      }
+    },
+    "maxScore": 20
+  }
+}

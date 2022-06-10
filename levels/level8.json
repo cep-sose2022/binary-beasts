@@ -1,0 +1,664 @@
+{
+  "level": {
+    "_id": "628b217f1a129e2bced17b75",
+    "name": "Benutzerzugriffskontrolle & menschliches Fehlverhalten",
+    "token": "level8",
+    "description": "Benutzerkonten sind digitale Repräsentationen der Benutzer. Identifikatoren verbinden Benutzer mit Konten und Authentifikatoren, wie z. B. Passwörter, geben menschlichen Benutzern, Softwareprozessen und Geräten die Erlaubnis, das zugehörige Konto zu benutzen.",
+    "events": {
+      "0": {
+        "_id": "628b22cd1a129e2bced17b82",
+        "name": "event1",
+        "text": [
+          "Um 10:15 Uhr ruft Sie ein Arbeitskollege an und möchte, dass Sie zu ihm gehen, um Ihnen etwas wichtiges ganz kurz zu zeigen"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b23b61a129e2bced17b8d",
+            "name": "card1",
+            "text": [
+              "Bildschirm sperren"
+            ],
+            "points": 4,
+            "nextEvent": 2,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "encryption",
+            "feedback": "Das schützt vor unberechtigtem Zugriff"
+          },
+          {
+            "_id": "628b240d1a129e2bced17b92",
+            "name": "card2",
+            "text": [
+              "Bildschirm nicht sperren"
+            ],
+            "points": -2,
+            "nextEvent": 2,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "devices",
+            "feedback": "während Ihrer Abwesenheit sollten Sie Ihren Bildschirm sperren. Das schützt vor unberechtigtem Zugriff"
+          }
+        ]
+      },
+      "1": {
+        "_id": "628b25801a129e2bced17ba4",
+        "name": "event2",
+        "text": [
+          "Als Sie nach 30 Minuten zurückkamen, war Ihr PC nicht gesperrt, obwohl Sie ihn gesperrt haben. Außerdem sperrt er sich normalerweise von selbst in 15 Minuten",
+          "Beim Arbeitskollegen haben Sie mehr Zeit als gedacht gebraucht und Sie sind dort genau eine halbe Stunde geblieben. Als Sie zurückkamen war Ihr PC noch nicht gesperrt, obwohl er sich normalerweise von selbst in 15 Minuten sperrt"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b39881a129e2bced17c51",
+            "name": "card3",
+            "text": [
+              "Es kann sein, dass der PC einen Fehler hat"
+            ],
+            "points": -2,
+            "nextEvent": 3,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "Das ist unwahrscheinlich"
+          },
+          {
+            "_id": "628b3a1e1a129e2bced17c58",
+            "name": "card4",
+            "text": [
+              "Kolleginnen und Kollegen fragen, ob sie das waren oder ob sie etwas gesehen haben"
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "humanInterface",
+            "feedback": "Als erster Schritt ist das eine gute Idee"
+          },
+          {
+            "_id": "628b3ae81a129e2bced17c63",
+            "name": "card6",
+            "text": [
+              "IT-Abteilung fragen, warum der PC sich nicht automatisch sperrt"
+            ],
+            "points": 2,
+            "nextEvent": 3,
+            "nextImage": "test",
+            "nextEventText": 3,
+            "image": "orga",
+            "feedback": "Als erster Schritt ist das eine gute Idee"
+          }
+        ]
+      },
+      "2": {
+        "_id": "628b45c61a129e2bced17cdb",
+        "name": "event3",
+        "text": [
+          "Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist",
+          "Ihre Kolleginnen und Kollegen haben leider nichts gesehen. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist",
+          "Die zuständige Sicherheitsabteilung hat anscheinend viel zu tun und der Mitarbeiter am Telefon meinte, dass er von keiner Gefahr ausgeht und er hat Sie darum gebeten, immer den PC zu sperren, wenn Sie weggehen. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist",
+          "Eine Mitarbeiterin von der IT-Abteilung hat Ihren PC geprüft und hat gesagt, dass Ihr PC sich von selbst innerhalb von 15 Minuten sperren sollte und weiß nicht, woran das liegen konnte. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b48a61a129e2bced17cf5",
+            "name": "card7",
+            "text": [
+              "Gemeinsam mit Kolleginnen und Kollegen suchen, warum das passiert ist"
+            ],
+            "points": 1,
+            "nextEvent": 4,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+          },
+          {
+            "_id": "628b49111a129e2bced17cfb",
+            "name": "card8",
+            "text": [
+              "Alleine versuchen, die Anlage wieder in Betrieb zu nehmen"
+            ],
+            "points": 1,
+            "nextEvent": 5,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "technical",
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+          },
+          {
+            "_id": "628b49e91a129e2bced17d04",
+            "name": "card9",
+            "text": [
+              "Nichts tun. Vielleicht liegt es nicht an Ihnen"
+            ],
+            "points": -2,
+            "nextEvent": 6,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Vielleicht liegt es doch an Ihnen?"
+          },
+          {
+            "_id": "628b71dd1a129e2bced17ead",
+            "name": "card10",
+            "text": [
+              "Mit der zuständigen Sicherheitsabteilung Kontakt aufnehmen"
+            ],
+            "points": 4,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 3,
+            "image": "email",
+            "feedback": "Guter Ansatz, um den Fall zu prüfen"
+          }
+        ]
+      },
+      "3": {
+        "_id": "628b72dd1a129e2bced17ebf",
+        "name": "event4",
+        "text": [
+          "Sie konnten die Anlage wieder in Betrieb nehmen, herzlichen Glückwunsch! Stunden später ist die Anlage wieder außer Betrieb, nicht nur sie, sondern auch einige anderen Anlagen auch"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b7fb51a129e2bced17fed",
+            "name": "card12",
+            "text": [
+              "Nichts tun. Vielleicht liegt es nicht an Ihnen."
+            ],
+            "points": -2,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "orga",
+            "feedback": "Vielleicht liegt es doch an Ihnen?"
+          },
+          {
+            "_id": "628b7feb1a129e2bced17ff1",
+            "name": "card13",
+            "text": [
+              "Alle Anlagen aus- und anschalten."
+            ],
+            "points": -1,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 2,
+            "image": "technical",
+            "feedback": "Das bringt leider nicht viel"
+          },
+          {
+            "_id": "628b80171a129e2bced17ff4",
+            "name": "card14",
+            "text": [
+              "Mit der zuständigen Sicherheitsabteilung Kontakt aufnehmen."
+            ],
+            "points": 2,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 3,
+            "image": "email",
+            "feedback": "Guter Ansatz, um den Fall zu prüfen"
+          }
+        ]
+      },
+      "4": {
+        "_id": "628b77831a129e2bced17f75",
+        "name": "event5",
+        "text": [
+          "Sie konnten die Anlage nicht in Betrieb nehmen."
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b7f611a129e2bced17fe8",
+            "name": "card11",
+            "text": [
+              "Gemeinsam mit Kolleginnen und Kollegen suchen, warum das passiert ist."
+            ],
+            "points": 1,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+          },
+          {
+            "_id": "628b7feb1a129e2bced17ff1",
+            "name": "card13",
+            "text": [
+              "Alle Anlagen aus- und anschalten."
+            ],
+            "points": -1,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 2,
+            "image": "technical",
+            "feedback": "Das bringt leider nicht viel"
+          },
+          {
+            "_id": "628b80171a129e2bced17ff4",
+            "name": "card14",
+            "text": [
+              "Mit der zuständigen Sicherheitsabteilung Kontakt aufnehmen."
+            ],
+            "points": 2,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 3,
+            "image": "email",
+            "feedback": "Guter Ansatz, um den Fall zu prüfen"
+          }
+        ]
+      },
+      "5": {
+        "_id": "628b78161a129e2bced17f82",
+        "name": "event6",
+        "text": [
+          "Mit der Zeit gehen immer mehr Anlagen außer Betrieb"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b7f611a129e2bced17fe8",
+            "name": "card11",
+            "text": [
+              "Gemeinsam mit Kolleginnen und Kollegen suchen, warum das passiert ist."
+            ],
+            "points": 1,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "humanInterface",
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+          },
+          {
+            "_id": "628c8b5e1a129e2bced18aad",
+            "name": "card35",
+            "text": [
+              "Alleine versuchen, die Anlage wieder in Betrieb zu nehmen."
+            ],
+            "points": 1,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+          },
+          {
+            "_id": "628b80171a129e2bced17ff4",
+            "name": "card14",
+            "text": [
+              "Mit der zuständigen Sicherheitsabteilung Kontakt aufnehmen."
+            ],
+            "points": 2,
+            "nextEvent": 7,
+            "nextImage": "test",
+            "nextEventText": 3,
+            "image": "email",
+            "feedback": "Guter Ansatz, um den Fall zu prüfen"
+          }
+        ]
+      },
+      "6": {
+        "_id": "628b82621a129e2bced18040",
+        "name": "event7",
+        "text": [
+          "Sie haben nichts auffälliges gefunden und haben dann Kontakt mit der zuständigen Sicherheitsabteilung aufgenommen. Der Fall wurde überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort",
+          "Da viele Anlagen außer Betrieb sind, hat die zuständige Sicherheitsabteilung den Fall überprüft und gefunden, dass der Fehler durch Ihren PC um 10:26 Uhr verursacht worden ist. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort",
+          "Dadurch konnte der Fehler leider nicht behoben werden. Sie haben dann Kontakt mit der zuständigen Sicherheitsabteilung aufgenommen. Der Fall wurde gründlich überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort",
+          "Die zuständige Sicherheitsabteilung hat den Fall überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b82b01a129e2bced18044",
+            "name": "card15",
+            "text": [
+              "123456789"
+            ],
+            "points": -2,
+            "nextEvent": 8,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "encryption",
+            "feedback": "ein Passwort sollte in keinem Wörterbuch zu finden sein, aus Klein- und Großbuchstaben sowie Sonderzeichen bestehen"
+          },
+          {
+            "_id": "628b83561a129e2bced1804c",
+            "name": "card16",
+            "text": [
+              "H_a10.J?e4sPmm28Z"
+            ],
+            "points": 4,
+            "nextEvent": 8,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "encryption",
+            "feedback": "Richtig, ein Passwort sollte in keinem Wörterbuch zu finden sein, aus Klein- und Großbuchstaben sowie Sonderzeichen bestehen"
+          },
+          {
+            "_id": "628b838a1a129e2bced18050",
+            "name": "card17",
+            "text": [
+              "DieSonneScheint"
+            ],
+            "points": -1,
+            "nextEvent": 8,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "encryption",
+            "feedback": "ein Passwort sollte in keinem Wörterbuch zu finden sein "
+          }
+        ]
+      },
+      "7": {
+        "_id": "628b852b1a129e2bced18066",
+        "name": "event8",
+        "text": [
+          "Einige Tage später hat Ihr Arbeitskollege Sie darum gebeten, ihm Ihre Zugangsdaten zu geben, weil er in der Anlage B etwas testen möchte und er dafür in seiner Rolle keine Rechte hat"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b89481a129e2bced1808b",
+            "name": "card18",
+            "text": [
+              "Zugangsdaten weitergeben"
+            ],
+            "points": -1,
+            "nextEvent": 9,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "encryption",
+            "feedback": "Zugangsdaten sollten niemals weitergegeben werden"
+          },
+          {
+            "_id": "628b89871a129e2bced1808f",
+            "name": "card19",
+            "text": [
+              "Zugangsdaten nicht weitergeben und an seinem PC sich eingeloggen und warten bis er fertig ist"
+            ],
+            "points": 0,
+            "nextEvent": 9,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "devices",
+            "feedback": "Zugangsdaten sollten niemals weitergegeben werden und Benutzerkonto darf nur von dem Benutzer selbst verwendet werden"
+          }
+        ]
+      },
+      "8": {
+        "_id": "628b8d6c1a129e2bced180db",
+        "name": "event9",
+        "text": [
+          "Einige Tage später haben Sie zufällig in den historischen Anmeldeinformationen bemerkt, dass von Ihrem Account außerhalb der Arbeitszeiten Anmeldungen duchgeführt wurden."
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b8ee81a129e2bced180ea",
+            "name": "card20",
+            "text": [
+              "Passwort ändern"
+            ],
+            "points": 1,
+            "nextEvent": 10,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "encryption",
+            "feedback": "Als erster Schritt ist das ein guter Ansatz, jedoch sind weitere Aktionen notwendig"
+          },
+          {
+            "_id": "628b8f171a129e2bced180ed",
+            "name": "card21",
+            "text": [
+              "Den Arbeitskollegen fragen, ob er das war"
+            ],
+            "points": 1,
+            "nextEvent": 10,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "humanInterface",
+            "feedback": "Als erster Schritt ist das ein guter Ansatz, jedoch sind weitere Aktionen notwendig"
+          },
+          {
+            "_id": "628b8f561a129e2bced180f1",
+            "name": "card22",
+            "text": [
+              "Kontakt mit dem Abteilungsleiter aufnehmen und die Situation schildern"
+            ],
+            "points": 4,
+            "nextEvent": 11,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "email",
+            "feedback": "Der Abteilungsleiter kann bei der Klärung des Vorfalles unterstützen"
+          }
+        ]
+      },
+      "9": {
+        "_id": "628b902f1a129e2bced18101",
+        "name": "event10",
+        "text": [
+          "Sie haben Ihr Passwort erfolgreich geändert, doch in den historischen Anmeldeinformationen sehen Sie, dass eine Anmeldesitzung außer Ihrer noch offen ist",
+          "Ihr Arbeitskollege hat Ihnen versprochen, dass er Ihren Account nicht mehr verwendet, doch in den historischen Anmeldeinformationen sehen Sie, dass eine Anmeldesitzung außer Ihrer noch offen ist"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b90ea1a129e2bced1810b",
+            "name": "card23",
+            "text": [
+              "Kontakt mit dem Abteilungsleiter aufnehmen und die Situation schildern."
+            ],
+            "points": 2,
+            "nextEvent": 11,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "email",
+            "feedback": "Der Abteilungsleiter kann bei der Klärung des Vorfalles unterstützen"
+          },
+          {
+            "_id": "628b91291a129e2bced1810f",
+            "name": "card24",
+            "text": [
+              "Nichts tun. Vielleicht war das ein Anzeigefehler."
+            ],
+            "points": -2,
+            "nextEvent": 11,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "technical",
+            "feedback": "Vielleicht auch nicht?"
+          }
+        ]
+      },
+      "10": {
+        "_id": "628b91941a129e2bced18118",
+        "name": "event11",
+        "text": [
+          "Der Abteilungsleiter hat sich nach dem Vorfall entschieden, dass alle Mitarbeiterinnen und Mitarbeiter, die Zugangsdaten zum System haben, zwei Faktor Authentifizierung durch TAN-Gernrator verwenden müssen. Außerdem müssen allen Geräten und Softwareprozessen Konten zugewiesen werden, die zur Kontrolle des Zugriffs auf das IACS und seine Ressourcen und Befehle dienen. Welche Rechte würden Sie solchen Geräten und Softwareprozessen zuweisen?",
+          "Der IT Abteilung wurde durch die IT-Abteilung informiert, dass sehr viele Anmeldungen aus unterschiedlichen Ländern durch Ihren Account getätigt wurden. Er hat sich nach dem Vorfall entschieden, dass alle Mitarbeiterinnen und Mitarbeiter, die Zugangsdaten zum System haben, zwei Faktor Authentifizierung durch TAN-Gernrator verwenden müssen. Außerdem müssen allen Geräten und Softwareprozessen Konten zugewiesen werden, die zur Kontrolle des Zugriffs auf das IACS und seine Ressourcen und Befehle dienen. Welche Rechte würden Sie solchen Geräten und Softwareprozessen zuweisen?"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b91d31a129e2bced1811d",
+            "name": "card25",
+            "text": [
+              "Unbegrenzt"
+            ],
+            "points": -2,
+            "nextEvent": 12,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Die Benutzer sollten nur so viel Rechte wie nötig haben"
+          },
+          {
+            "_id": "628b92281a129e2bced18121",
+            "name": "card26",
+            "text": [
+              "So viel wie nötig"
+            ],
+            "points": 4,
+            "nextEvent": 12,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Stimmt! Die Benutzer sollten nur so viel Rechte wie nötig haben"
+          }
+        ]
+      },
+      "11": {
+        "_id": "628b927e1a129e2bced1812a",
+        "name": "event12",
+        "text": [
+          "Welche Arten von Zugriffsrechen gibt's?"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b92cf1a129e2bced1812f",
+            "name": "card27",
+            "text": [
+              "Lesen"
+            ],
+            "points": 1,
+            "nextEvent": 13,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "devices",
+            "feedback": "Zusätzlich auch Schreiben und Ausführen"
+          },
+          {
+            "_id": "628b92fb1a129e2bced18132",
+            "name": "card28",
+            "text": [
+              "Schreiben"
+            ],
+            "points": 1,
+            "nextEvent": 13,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Zusätzlich auch Lesen und Ausführen"
+          },
+          {
+            "_id": "628b93221a129e2bced18136",
+            "name": "card29",
+            "text": [
+              "Ausführen"
+            ],
+            "points": 1,
+            "nextEvent": 13,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "mouseAction",
+            "feedback": "Zusätzlich auch Lesen und Schreiben"
+          },
+          {
+            "_id": "628b934c1a129e2bced18139",
+            "name": "card30",
+            "text": [
+              "Alle genannten und mehr auch möglich"
+            ],
+            "points": 4,
+            "nextEvent": 13,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "network",
+            "feedback": "Lesen, Schreiben, Ausführen und mehr auch möglich"
+          }
+        ]
+      },
+      "12": {
+        "_id": "628b93981a129e2bced18146",
+        "name": "event13",
+        "text": [
+          "Einer der Softwareprozesse, für den Sie verantwortlich sind, wird für die nächsten drei Monate keinen Zugriff auf Anlage C brauchen, was würden Sie tun?"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b94251a129e2bced1814c",
+            "name": "card31",
+            "text": [
+              "Die zuständige Abteilung für Zugriffsrechte informieren, damit sie die Zugriffsrechte für diesen Softwareprozess einschränken"
+            ],
+            "points": 4,
+            "nextEvent": 14,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "email",
+            "feedback": "Wenn der Benutzer nur für einen vorübergehenden Zeitraum einen Zugriff nicht mehr benötigt, sollte der Zugriff für diesen Zeitraum deaktiviert werden"
+          },
+          {
+            "_id": "628b94981a129e2bced18152",
+            "name": "card32",
+            "text": [
+              "Zugangsrechte für den Prozess nicht einschränken lassen, da dieser nach drei Monaten den Zugang wieder benötigen wird"
+            ],
+            "points": -2,
+            "nextEvent": 14,
+            "nextImage": "test",
+            "nextEventText": 1,
+            "image": "network",
+            "feedback": "Wenn der Benutzer nur für einen vorübergehenden Zeitraum einen Zugriff nicht mehr benötigt, sollte der Zugriff für diesen Zeitraum deaktiviert werden"
+          }
+        ]
+      },
+      "13": {
+        "_id": "628b95851a129e2bced18160",
+        "name": "event14",
+        "text": [
+          "Die zuständige Abteilung für Zugriffsrechte hat sich um Ihre Meldung nicht gekümmert und der Softwareprozess hat immer noch Zugriff auf Anlage C, was würden Sie tun?",
+          "Nachdem Ihre Arbeitskollegin Ihnen das empfohlen hat, haben Sie die zuständige Abteilung doch darüber informiert. Jedoch hat sich die zuständige Abteilung für Zugriffsrechte um Ihre Meldung nicht gekümmert und der Softwareprozess hat immer noch Zugriff auf Anlage C, was würden Sie tun?"
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": [
+          {
+            "_id": "628b95d81a129e2bced18165",
+            "name": "card33",
+            "text": [
+              "Die zuständige Abteilung für Zugriffsrechte nochmal daran erinnern"
+            ],
+            "points": 4,
+            "nextEvent": 0,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "email",
+            "feedback": "Sehr gut! Wenn etwas nicht stimmt, sollten Sie die zuständige Abteilung darüber informieren"
+          },
+          {
+            "_id": "628b95f91a129e2bced18168",
+            "name": "card34",
+            "text": [
+              "Nichts tun, da Sie von Ihrer Seite alles erledigt haben"
+            ],
+            "points": -1,
+            "nextEvent": 0,
+            "nextImage": "test",
+            "nextEventText": 0,
+            "image": "orga",
+            "feedback": "Auch Sie von Ihrer Seite alles erledigt haben, sollten Sie die zuständige Abteilung nochmal daran erinnern "
+          }
+        ]
+      },
+      "14": {
+        "_id": "628c7dc21a129e2bced189b5",
+        "name": "event15",
+        "text": [
+          "Einige Tage später wurde der Softwareprozess gehackt und dadurch, dass er nur minimale Zugriffsrechte hat, konnte der Schaden im Rahmen gehalten werden.",
+          "Einige Tage später wurde der Softwareprozess gehackt und dadurch, dass er mehr Zugriffsrechte hat, als er tatsächlich aktuell benötigt, war der Schaden zu groß."
+        ],
+        "levelId": "628b217f1a129e2bced17b75",
+        "cards": []
+      }
+    },
+    "maxScore": 34
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "level": {
+    "_id": "626a3dc4e22367ce0d25e4de",
+    "name": "Schadsoftware",
+    "token": "level2",
+    "description": "Es werden praktisch täglich neue Schwachstellen für die verschiedensten IT-Komponenten bekannt, durch welche Hacker in die Systeme von Unternehmen gelangen können. Die Sicherheit im ICS-Umfeld wird zudem durch die zunehmende Verbreitung Ethernet-basierter Netze und deren Verbindung im Unternehmensnetz erschwert. Dadurch ist es nach einem erfolgreichem Eindringen ins Office-Netz möglich, einen Folgeangriff auf das ICS-Netz auszuüben. Um eine solche Infektion zu verhindern, behandelt dieses Level gängige Maßnahmen für den Umgang und die Entdeckung von Schadsoftware. ",
+    "events": {
+      "0": {
+        "_id": "626a4570e22367ce0d25e4ee",
+        "name": "event1",
+        "text": [
+          "Sie haben mitbekommen, das zurzeit mehrere industrielle Anlagen Opfer von Schadsoftware wurden und machen sich daher Gedanken, wie Sie dies in Ihrer Anlage verhindern können. Da einige Ihrer ICS-Komponenten mit dem Internet verbunden sind, kann dies eine besonders große Gefahr darstellen. Achten Sie dabei also auf die Priorität ihrer Aktionen!",
+          "Aufpassen! Die Installation persönlicher Geräte ist sicherheitstechnisch sehr bedenklich, da es neue ungeschützte Angriffspfade liefert! Glücklicherweise hat ein Mitarbeite Sie darauf hinweisen können, bevor ein Schaden entstehen konnte",
+          "Sehr gut! Die im Unternehmen frei verfügbaren Informationen wurden auf das mindeste beschränkt, sodass ein potenzieller Eindringling es schwerer mit der Informationsbeschaffung hat!",
+          "Sie haben nichts verdächtiges gefunden.",
+          "Die Software zum Schutz gegen Schadsoftware wurde auf den meisten ICS-Geräten installiert.",
+          "Es gibt Aktionen, die zu diesem Zeitpunkt eine höhere Priorität haben. Versuchen Sie diese Aktion vielleicht später nochmal!",
+          "Das ICS-Netz wurde erfolgreich mit Firewalls abgesichert und der VPN segmentiert."
+        ],
+        "levelId": "626a3dc4e22367ce0d25e4de",
+        "cards": [
+          {
+            "_id": "626a6244e22367ce0d25e517",
+            "name": "card1",
+            "text": [
+              "Eigenen WLAN-Router fürs Smartphone einrichten"
+            ],
+            "points": -5,
+            "nextEvent": 1,
+            "nextEventText": 1,
+            "image": "devices",
+            "feedback": "Das sollten Sie auf keinen Fall machen! Die Installation privater Hardware bietet einen zusätzlichen Angriffspfad, da diese Hardware infiziert sein könnte oder eventuell keine Schutzmaßnahmen besitzt"
+          },
+          {
+            "_id": "626a626ae22367ce0d25e518",
+            "name": "card2",
+            "text": [
+              "Anordnung auf Beschränkung der im Unternehmen frei verfügbaren Informationen"
+            ],
+            "points": 2,
+            "nextEvent": 1,
+            "nextEventText": 2,
+            "image": "orga",
+            "feedback": "Durch die Anordnung auf Beschränkung der im Unternehmen frei verfügbaren Information hat ein potenzieller Hacker nach einem Angriff nicht Zugriff auf alle Informationen des Unternehmens. Durch dieses Prinzip von „Least Privilege“ werden kritische Informationen geschützt"
+          },
+          {
+            "_id": "626a62cee22367ce0d25e519",
+            "name": "card3",
+            "text": [
+              "Monitoring von Log-Files auf ungewöhnliche Verbindungen"
+            ],
+            "points": 0,
+            "nextEvent": 1,
+            "nextEventText": 3,
+            "image": "devices",
+            "feedback": "Regelmäßiges Monitoring ist immer wichtig "
+          },
+          {
+            "_id": "626a62dde22367ce0d25e51a",
+            "name": "card4",
+            "text": [
+              "Software zum Schutz gegen Schadsoftware auf ICS-Geräten installieren"
+            ],
+            "points": 3,
+            "nextEvent": 1,
+            "nextEventText": 4,
+            "image": "technical",
+            "feedback": "Diese Karte hatte eine hohe Priorität, da ohne diese Software das ICS ungeschützt ist"
+          },
+          {
+            "_id": "626a62efe22367ce0d25e51b",
+            "name": "card5",
+            "text": [
+              "Whitelisting von Software"
+            ],
+            "points": -1,
+            "nextEvent": 1,
+            "nextEventText": 5,
+            "image": "orga",
+            "feedback": "Zu diesem Zeitpunkt waren die anderen Karten wichtiger "
+          },
+          {
+            "_id": "626a6300e22367ce0d25e51c",
+            "name": "card6",
+            "text": [
+              "Antivirensoftware auf Office-PCs installieren"
+            ],
+            "points": -1,
+            "nextEvent": 1,
+            "nextEventText": 5,
+            "image": "devices",
+            "feedback": "Zu diesem Zeitpunkt waren die anderen Karten wichtiger"
+          },
+          {
+            "_id": "626a630ce22367ce0d25e51d",
+            "name": "card7",
+            "text": [
+              "ICS-Netz mit Firewalls und VPN segmentieren"
+            ],
+            "points": 2,
+            "nextEvent": 1,
+            "nextEventText": 6,
+            "image": "network",
+            "feedback": "Diese Karte hatte eine hohe Priorität, da es mehr Schutz für das ICS bietet"
+          },
+          {
+            "_id": "626a6318e22367ce0d25e51e",
+            "name": "card8",
+            "text": [
+              "Überprüfung digitaler Signaturen von Software"
+            ],
+            "points": -1,
+            "nextEvent": 1,
+            "nextEventText": 5,
+            "image": "orga",
+            "feedback": "Zu diesem Zeitpunkt waren die anderen Karten wichtiger"
+          }
+        ]
+      },
+      "1": {
+        "_id": "626a45f6e22367ce0d25e4ef",
+        "name": "event2",
+        "text": [
+          "Sie haben die Software zum Schutz gegen Schadsoftware auf den meisten ICS-Geräten installieren können und dadurch einen potentiellen Angriff verhindert. Zudem wurde durch die Segmentierung des ICS-Netzes mit VPN verhindert, dass bestimmte VPN-Zugänge Angriffspfade für weiter Netzwerke sind. <Hinweis! Das Office-Netz bietet ebenfalls einen Angriffspfad in das ICS-Netzwerk.",
+          "Aufpassen! Die Installation persönlicher Geräte ist sicherheitstechnisch sehr bedenklich, da es neue ungeschützte Angriffspfade liefert! Glücklicherweise hat ein Mitarbeite Sie darauf hinweisen können, bevor ein Schaden entstehen konnte.",
+          "Sehr gut! Die im Unternehmen frei verfügbaren Informationen wurden auf das mindeste beschränkt, sodass ein potenzieller Eindringling es schwerer mit der Informationsbeschaffung hat!",
+          "Sie haben nichts verdächtiges gefunden.",
+          "Sie haben nun eine Whitelist von Software erstellt, das heißt es kann nur noch autorisierte Software von dieser Liste auf Office-PCs installiert werden",
+          "Antivirensoftware wurde auf allen Office-PCs installiert.",
+          "Alle nicht-patchbaren ICS-Geräte wurden in ein separates Netzwerk abgeschottet, und sind somit nun nicht mehr aus dem Internet erreichbar.",
+          "Alle nicht-patchbaren ICS-Geräte wurden dokumentiert.",
+          "Es wurde keine Schadsoftware durch den Scan gefunden.",
+          "Die digitalen Signaturen jeder Software wurde überprüft, und glücklicherweise stimmen diese mit den Angaben des Herstellers überein. Wäre dem nicht so, bedeutet das, dass die Software manipuliert wurde."
+        ],
+        "levelId": "626a3dc4e22367ce0d25e4de",
+        "cards": [
+          {
+            "_id": "627e1f91dbcf1c1bfa9ab656",
+            "name": "card9",
+            "text": [
+              "Eigenen WLAN-Router fürs Smartphone einrichten "
+            ],
+            "points": -5,
+            "nextEvent": 2,
+            "nextEventText": 1,
+            "image": "devices",
+            "feedback": "Das sollten Sie auf keinen Fall machen! Die Installation privater Hardware bietet einen zusätzlichen Angriffspfad, da diese Hardware infiziert sein könnte oder eventuell keine Schutzmaßnahmen besitzt"
+          },
+          {
+            "_id": "627e2632dbcf1c1bfa9ab65c",
+            "name": "card10",
+            "text": [
+              "Anordnung auf Beschränkung der im Unternehmen frei verfügbaren Informationen "
+            ],
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 2,
+            "image": "orga",
+            "feedback": "Durch die Anordnung auf Beschränkung der im Unternehmen frei verfügbaren Information hat ein potenzieller Hacker nach einem Angriff nicht Zugriff auf alle Informationen des Unternehmens. Durch dieses Prinzip von „Least Privilege“ werden kritische Informationen geschützt"
+          },
+          {
+            "_id": "627e26f9dbcf1c1bfa9ab664",
+            "name": "card11",
+            "text": [
+              "Monitoring von Log-Files auf ungewöhnliche Verbindungen "
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 3,
+            "image": "devices",
+            "feedback": "Regelmäßiges Monitoring ist immer wichtig"
+          },
+          {
+            "_id": "627e2979dbcf1c1bfa9ab66e",
+            "name": "card12",
+            "text": [
+              "Whitelisting von Software "
+            ],
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 4,
+            "image": "orga",
+            "feedback": "Zu diesem Zeitpunkt waren die anderen Karten wichtiger. Wenn Sie noch eine Karte mit niedriger Priorität spielen würden, würden Sie verlieren"
+          },
+          {
+            "_id": "627e2a39dbcf1c1bfa9ab676",
+            "name": "card13",
+            "text": [
+              "Antivirensoftware auf Office-PCs installieren "
+            ],
+            "points": 3,
+            "nextEvent": 2,
+            "nextEventText": 5,
+            "image": "devices",
+            "feedback": "Diese Karte hat eine hohe Priorität, da durch die Vernetzung von IT- und OT-Netz beide Netzwerke vor Schadsoftware sicher sein müssen"
+          },
+          {
+            "_id": "627e2d41dbcf1c1bfa9ab67c",
+            "name": "card14",
+            "text": [
+              "Überprüfung digitaler Signaturen von Software "
+            ],
+            "points": 1,
+            "nextEvent": 2,
+            "nextEventText": 9,
+            "image": "orga",
+            "feedback": "Zu diesem Zeitpunkt waren die anderen Karten wichtiger. Wenn Sie noch eine Karte mit niedriger Priorität spielen würden, würden Sie verlieren"
+          },
+          {
+            "_id": "627e3c7fdbcf1c1bfa9ab686",
+            "name": "card15",
+            "text": [
+              "Abschottung von nicht-patchbaren ICS-Geräten"
+            ],
+            "points": 3,
+            "nextEvent": 2,
+            "nextEventText": 6,
+            "image": "network",
+            "feedback": "Diese Karte hat höchste Priorität, da eine große Gefahr von nicht-patchbaren Geräten ausgeht"
+          },
+          {
+            "_id": "627e3d1cdbcf1c1bfa9ab68e",
+            "name": "card16",
+            "text": [
+              "Nicht-patchbare Systeme dokumentieren"
+            ],
+            "points": 2,
+            "nextEvent": 2,
+            "nextEventText": 7,
+            "image": "orga",
+            "feedback": "Nicht-patchbare Systeme sollten immer dokumentiert werden, da diese eine Sonderbehandlung benötigen"
+          },
+          {
+            "_id": "627e3e15dbcf1c1bfa9ab69a",
+            "name": "card17",
+            "text": [
+              "Scannen auf Schadsoftware"
+            ],
+            "points": 0,
+            "nextEvent": 2,
+            "nextEventText": 8,
+            "image": "devices",
+            "feedback": "Regelmäßiges Scannen auf Schadsoftware ist immer wichtig"
+          }
+        ]
+      },
+      "2": {
+        "_id": "626a4644e22367ce0d25e4f0",
+        "name": "event3",
+        "text": [
+          "Sie haben nun sowohl das ICS- als auch das Office-Netzwerk so gut wie möglich gegen Schadsoftware abgesichert. Das bedeutet aber leider nicht, dass Ihr Netzwerk bombensicher ist! Es gibt auch Schadsoftware und Schwachstellen, die von Ihrer Schutz-Software nicht erkannt werden können, da diese nur bei Hackern bekannt sind und noch nicht öffentlich sind. Auf diese sogenannten Zero-Day-Exploits sollten Sie ebenfalls Acht geben!",
+          "Sie haben nun das ICS-Netzwerk so gut wie möglich gegen Schadsoftware abgesichert. Das bedeutet aber leider nicht, dass Ihr Netzwerk bombensicher ist! Es gibt auch Schadsoftware und Schwachstellen, die von Ihrer Schutz-Software nicht erkannt werden können, da diese nur bei Hackern bekannt sind und noch nicht öffentlich sind. Auf diese sogenannten Zero-Day-Exploits sollten Sie ebenfalls Acht geben! Hinweis! Vergessen Sie nicht das Office-Netz abzusichern, da dies ebenfalls ein möglicher Angriffspfad ist.",
+          "Sie haben leider verloren! Sie haben sich leider zuerst für Aktionen entschieden, die zu diesem Zeitpunkt eine geringere Priorität hatten. Somit hatten Hacker genug Zeit, sich in das ICS-System einzuhacken und die Kontrolle zu erlangen. Achten Sie das nächste Mal darauf!",
+          "Die im Unternehmen frei verfügbaren Informationen wurden auf das mindeste beschränkt, sodass ein potenzieller Eindringling es schwerer mit der Informationsbeschaffung hat! Dies sollten Sie aber so früh wie möglich machen.",
+          "Sie haben nichts verdächtiges gefunden.",
+          "Es wurden verdächtige Verbindungen auf das Office-Netz festgestellt. Sie sollten etwas dagegen unternehmen!",
+          "Aufpassen! Die Installation persönlicher Geräte ist sicherheitstechnisch sehr bedenklich, da es neue ungeschützte Angriffspfade liefert! Glücklicherweise hat ein Mitarbeite Sie darauf hinweisen können, bevor ein Schaden entstehen konnte.",
+          "Sie haben nun eine Whitelist von Software erstellt, das heißt es kann nur noch autorisierte Software von dieser Liste auf Office-PCs installiert werden",
+          "Sie hatten Glück! Die Schadsoftware, die Sie entdeckt haben, hat glücklicherweise noch keinen Schaden angerichtet, aber das läuft nicht immer so! Dies hätte man verhindern können, wenn Sie die Absicherung des Office-Netzwerks zu einem früheren Zeitpunkt angeordnet hätten. Jedoch haben Sie leider die im Unternehmen frei verfügbaren Informationen nicht beschränkt, wodurch die Hacker wahrscheinlich wertvolle Daten klauen konnten!",
+          "Die digitalen Signaturen jeder Software wurde überprüft, und glücklicherweise stimmen diese mit den Angaben des Herstellers überein. Wäre dem nicht so, bedeutet das, dass die Software manipuliert wurde.",
+          "Alle nicht-patchbaren ICS-Geräte wurden dokumentiert. Das hätten Sie aber früher machen sollen!",
+          "Es wurde keine Schadsoftware durch den Scan gefunden.",
+          "Bei Ihrem Scan haben Sie festgestellt, dass zahlreiche Office-PCs mit Schadsoftware infiziert sind. Sie müssen etwas unternehmen!",
+          "Sie hatten Glück! Die Schadsoftware, die Sie entdeckt haben, hat glücklicherweise noch keinen Schaden angerichtet, aber das läuft nicht immer so! Dies hätte man verhindern können, wenn Sie die Absicherung des Office-Netzwerks zu einem früheren Zeitpunkt angeordnet hätten. Zum Glück haben Sie aber die im Unternehmen frei verfügbaren Informationen beschränkt, sodass die Hacker durch den Angriff keine wertvollen Daten klauen konnten!"
+        ],
+        "levelId": "626a3dc4e22367ce0d25e4de",
+        "cards": [
+          {
+            "_id": "627e4176dbcf1c1bfa9ab6a2",
+            "name": "card18",
+            "text": [
+              "Eigenen WLAN-Router fürs Smartphone einrichten  "
+            ],
+            "points": -5,
+            "nextEvent": 3,
+            "nextEventText": 6,
+            "image": "devices",
+            "feedback": "Das sollten Sie auf keinen Fall machen! Die Installation privater Hardware bietet einen zusätzlichen Angriffspfad, da diese Hardware infiziert sein könnte oder eventuell keine Schutzmaßnahmen besitzt "
+          },
+          {
+            "_id": "627e4e8cdbcf1c1bfa9ab6bc",
+            "name": "card19",
+            "text": [
+              "Anordnung auf Beschränkung der im Unternehmen frei verfügbaren Informationen  "
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextEventText": 3,
+            "image": "orga",
+            "feedback": "Durch die Anordnung auf Beschränkung der im Unternehmen frei verfügbaren Information hat ein potenzieller Hacker nach einem Angriff nicht Zugriff auf alle Informationen des Unternehmens. Durch dieses Prinzip von „Least Privilege“ werden kritische Informationen geschützt"
+          },
+          {
+            "_id": "627e50c1dbcf1c1bfa9ab6c4",
+            "name": "card20",
+            "text": [
+              "Monitoring von Log-Files auf ungewöhnliche Verbindungen  "
+            ],
+            "points": 0,
+            "nextEvent": 3,
+            "nextEventText": 4,
+            "image": "devices",
+            "feedback": "Regelmäßiges Monitoring ist immer wichtig"
+          },
+          {
+            "_id": "627e5781dbcf1c1bfa9ab6d0",
+            "name": "card21",
+            "text": [
+              "Whitelisting von Software  "
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextEventText": 7,
+            "image": "orga",
+            "feedback": "Ein Whitelisting von Software sollte immer eingesetzt werden, um sicherzustellen, dass nur autorisierte Software auf Office-PCs läuft"
+          },
+          {
+            "_id": "6281eb85527fe3ca0317b9cd",
+            "name": "card22",
+            "text": [
+              "Antivirensoftware auf Office-PCs installieren  "
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextEventText": 8,
+            "image": "devices",
+            "feedback": "Diese Karte hätte schon im vorherigen Ereignis gespielt werden müssen, da das Office-Netz ein Angriffsvektor ins ICS darstellt. Durch diese Karte haben Sie verhindert, dass Sie verlieren!"
+          },
+          {
+            "_id": "6281f4f2527fe3ca0317b9d8",
+            "name": "card23",
+            "text": [
+              "Überprüfung digitaler Signaturen von Software  "
+            ],
+            "points": 2,
+            "nextEvent": 3,
+            "nextEventText": 9,
+            "image": "orga",
+            "feedback": "Durch die Überprüfung der digitalen Signaturen von Software stellen Sie sicher, dass keine manipulierte Software auf Office-PCs läuft "
+          },
+          {
+            "_id": "6281fa95527fe3ca0317b9e4",
+            "name": "card24",
+            "text": [
+              "Nicht-patchbare Systeme dokumentieren  "
+            ],
+            "points": 1,
+            "nextEvent": 3,
+            "nextEventText": 10,
+            "image": "orga",
+            "feedback": "Nicht-patchbare Systeme sollten immer dokumentiert werden, da diese eine Sonderbehandlung benötigen. Jedoch wurde diese Karte etwas spät gespielt"
+          },
+          {
+            "_id": "6281fba8527fe3ca0317b9ec",
+            "name": "card25",
+            "text": [
+              "Scannen auf Schadsoftware  "
+            ],
+            "points": 0,
+            "nextEvent": 3,
+            "nextEventText": 11,
+            "image": "devices",
+            "feedback": "Regelmäßiges Scannen auf Schadsoftware ist immer wichtig"
+          },
+          {
+            "_id": "62970f96848b51b8402347f7",
+            "name": "card26",
+            "text": [
+              "Level abschließen "
+            ],
+            "points": 0,
+            "nextEvent": 3,
+            "nextImage": " ",
+            "nextEventText": 11,
+            "image": "orga",
+            "feedback": "Levelabschluss"
+          }
+        ]
+      }
+    },
+    "maxScore": 20
+  }
+}
