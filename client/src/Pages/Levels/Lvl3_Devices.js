@@ -105,7 +105,11 @@ function Lvl3_Devices(props) {
                 dynEvent = nextEventHistory[nextEventHistory.length - 1] + 1;
             }
         } else if (currentEvent === dynEvent) {
-            dynEvent = baseEvent;
+            if(encryptDrive && physicalLocks && isolatedNetwork && whitelisting){ //all baseEvent-cards played -> skip baseEvent
+                dynEvent = nextEventHistory[nextEventHistory.length -1] +1;
+            } else {
+                dynEvent = baseEvent;
+            }
         }
         else {
             console.log("something went wrong");
