@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useNavigate from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import '../App.css';
 import lib from "../library/bib.js";
 import Navbar from "../Navbar";

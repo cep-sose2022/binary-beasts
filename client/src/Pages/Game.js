@@ -1,6 +1,6 @@
 import React from "react";
-import useState from "react";
-import useLocation from "react-router-dom";
+import {useState} from "react";
+import {useLocation} from "react-router-dom";
 import Lvl1_Network from "./Levels/Lvl1_Network";
 import Lvl2_Malware from "./Levels/Lvl2_Malware"
 import Lvl3_Devices from "./Levels/Lvl3_Devices";
@@ -12,7 +12,7 @@ import Lvl8_UserControl from "./Levels/Lvl8_UserControl";
 import Lvl9_Phones from "./Levels/Lvl9_Phones";
 import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
 import service from '../service';
-import motion from "framer-motion";
+import {motion} from "framer-motion";
 
 
 function Game(){

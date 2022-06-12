@@ -1,5 +1,5 @@
 import React from "react";
-import useState from "react";
+import {useState} from "react";
 
 import angryboss from './../../images/level5/angryboss.PNG';
 import maschine from './../../images/level5/maschine.PNG';
@@ -17,7 +17,7 @@ import cardImages from '../../library/cardImages.js';
 
 
 import service from './../../service';
-import useNavigate from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import lib from '../../library/bib.js';
 //const level = service.getLevel('level5');
 
