@@ -102,7 +102,8 @@ function Lvl10_Phishing(props) {
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                <button onClick={() => handleAnswerButtonClick(cardOption)}
+                                        key={cardOption.name}>
                                     <img src={cardImages.getCardImage(cardOption.image)}/>
                                     <br />
                                     {cardOption.text}
