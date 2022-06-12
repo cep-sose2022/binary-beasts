@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
+import useState from "react";
 import mail from './../../images/level1/mail.jpg';
 import login from './../../images/level1/login.jpg';
 import download from './../../images/level1/download.jpg';
 import ransomware from './../../images/level1/ransomware.jpg';
 import service from './../../service';
-import { useNavigate } from 'react-router-dom';
+import useNavigate from 'react-router-dom';
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 

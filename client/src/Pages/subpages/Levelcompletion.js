@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import useState from "react";
 import service from '../../service';
-import { useNavigate, useLocation } from "react-router-dom";
+import useNavigate from "react-router-dom";
+import useLocation from "react-router-dom";
 import lib from '../../library/bib.js';
 import Navbar from "../../Navbar";
 

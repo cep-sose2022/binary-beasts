@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import useState from "react";
 import service from './../../service';
-import { useNavigate } from 'react-router-dom';
+import useNavigate from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
