@@ -11,7 +11,7 @@ html {
 ::-webkit-scrollbar {
 width: 0px;
 }
-
+#money-container,
 #home-container,
 #gamecontainer,
 #level-overview-container,
@@ -189,6 +189,7 @@ input {
     font-size: clamp(0.1rem,1.3rem,1.03vw);
     padding: 4px;
 }
+
 #user-login,
 #login-message{
     font-size: clamp(0.1rem,2vw,2rem);
@@ -238,6 +239,7 @@ input {
     grid-area: three;
     padding: 2vw;
 }
+
 #how-to-play{
     background-color: #edededcd;
     border-radius: 2px;
@@ -364,7 +366,7 @@ input {
     display: flex;
     justify-content: center;
 }
-
+#money-container,
 #eventmessage {
     font-size: 1.3vmax;
 
@@ -381,7 +383,7 @@ input {
     overflow: scroll;
     overflow-x: hidden;
 }
-
+#money-container,
 #event-text {
     color: #0b2037;
 }
