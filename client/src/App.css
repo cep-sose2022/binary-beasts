@@ -725,6 +725,11 @@ a:hover {
     display: inherit;
     padding: 1vw;
 }
+#about-us-container img{
+    width: 70vh;
+    height: auto;
+    aspect-ratio: 1.3;
+}
 .subpagescontent{
     background-color: #bebebe;
     margin: 1vw;

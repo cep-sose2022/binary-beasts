@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../Navbar";
 import Footer from "./../subpages/Footer";
+import teamphoto from "../../images/teamphoto.png"
 
 function AboutUs(){
     return(
@@ -19,6 +20,7 @@ function AboutUs(){
             </p>
             <h3>Kontakt</h3>
             <p>binarybeasts100@gmail.com</p>
+            <img src={teamphoto}></img>
         </div>
         </div>
         <Footer />
