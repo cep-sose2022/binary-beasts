@@ -14,6 +14,8 @@ import tower from './../../images/level5/overheat.PNG';
 import officedesk from './../../images/level5/officedesk.PNG';
 import communityroom from './../../images/level5/gemeinschaftsraum.PNG';
 import cardImages from '../../library/cardImages.js';
+import {motion} from "framer-motion";
+
 
 
 import service from './../../service';
@@ -170,7 +172,10 @@ function Lvl7_Incident(props) {
             <>
                 <div id="backgroundlvl5container"><img id="backgroundlvl5" src={currentBG}></img></div>
                 <div id="gamecontainerlvl5" className="container">
-                    <div id="game">
+                    <motion.div id="game"
+                                initial={{ opacity: 0, translateX: 100, translateY: -100 }}
+                                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                                transition={{ duration: 1.1 }}>
                         <div id="event">
                             <div id="eventmessagecontainer">
                                 <div id="eventmessage">
@@ -185,14 +190,16 @@ function Lvl7_Incident(props) {
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                <motion.button onClick={() => handleAnswerButtonClick(cardOption)}
+                                               whileHover={{ scale: 1.1 }}
+                                               whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}>
                                     <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
-                                </button>
+                                </motion.button>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </>
         </div>
