@@ -23,7 +23,7 @@ function Win() {
             <div id="win-container" className="container">
                 <div id="win-description" className="box">
                     <div id="win-score">
-                        <p>{!localStorage.getItem('levelNumber') ? 'Sie haben das Level noch nicht abgeschlossen' : `Sie haben das Level ${level[0].name} abgeschlossen und ${lib.getScore()} Punkte erhalten.`}</p>
+                        <p>{!localStorage.getItem('levelNumber') ? 'Sie haben das Level noch nicht abgeschlossen' : `Sie haben das Level ${level[0].name} abgeschlossen und ${lib.getScore() >= 0? lib.getScore() : 0} Punkte erhalten.`}</p>
                     </div><br />
                     <p>{!localStorage.getItem('feedback') ? ' ' : localStorage.getItem('feedback')}</p>
 
