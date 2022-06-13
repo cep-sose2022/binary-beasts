@@ -41,16 +41,22 @@ leaderBoardController.getUserLeaderboard =  asyncHandler(async (req, res) => {
 leaderBoardController.postLeaderboard =  asyncHandler(async (req, res) => {
     try {
         let userLevel = req.body;
-        const newLevelLeaderboard = new Leaderboard(userLevel);
-        await newLevelLeaderboard.save();
-        const id = newLevelLeaderboard._id.toHexString();
-
-        // delete old entries with the same username & levelId (only if exist)
+        let newLevelLeaderboard;
         const userLeaderboard = await Leaderboard.find({ username: req.body.username, levelId: req.body.levelId } );
-        if(userLeaderboard.length > 0){
-            for ( let i = 0; i < userLeaderboard.length; i++){
-                if (userLeaderboard[i]._id.toHexString() !== id) {
+        if(!userLeaderboard) {
+            newLevelLeaderboard = new Leaderboard(userLevel);
+            await newLevelLeaderboard.save();
+        } else if (userLeaderboard.length > 0) {
+            for (let i = 0; i < userLeaderboard.length; i++){
+                if(userLeaderboard[i].score < req.body.score){
+                    // delete old entries with the same username & levelId
                     await Leaderboard.deleteOne({ _id: userLeaderboard[i]._id});
+
+                    // add the new entry
+                    newLevelLeaderboard = new Leaderboard(userLevel);
+                    await newLevelLeaderboard.save();
+                } else {
+                    newLevelLeaderboard = userLeaderboard[i];
                 }
             }
         }
