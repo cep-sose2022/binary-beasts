@@ -40,8 +40,19 @@ leaderBoardController.getUserLeaderboard =  asyncHandler(async (req, res) => {
  */
 leaderBoardController.postLeaderboard =  asyncHandler(async (req, res) => {
     try {
-        let userLevel = req.body;
-        let newLevelLeaderboard;
+        let userLevel;
+        // score should be at least 0
+        if(req.body.score < 0){
+            userLevel = ({
+                username: req.body.username,
+                levelId: req.body.levelId,
+                score: 0
+            });
+        } else if (req.body.score >= 0){
+            userLevel = req.body;
+        }
+
+            let newLevelLeaderboard;
         const userLeaderboard = await Leaderboard.find({ username: req.body.username, levelId: req.body.levelId } );
         if(!userLeaderboard) {
             newLevelLeaderboard = new Leaderboard(userLevel);
