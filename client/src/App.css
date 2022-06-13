@@ -105,7 +105,7 @@ nav a {
     
 }
 .logo img:hover{
-    animation: spin 0.2s linear infinite;
+    animation: spin 1s linear infinite;
     animation-play-state: running;
 }
 @keyframes spin{
