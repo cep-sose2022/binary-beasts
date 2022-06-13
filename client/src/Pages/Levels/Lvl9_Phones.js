@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
+import {motion} from "framer-motion";
 
 let gameOver = false;
 let money = 16000; //start money that is needed for perfect path 
@@ -105,7 +106,10 @@ function Lvl9_Phones(props) {
         <div className='app'>
             <>
                 <div id="gamecontainer" className="container">
-                    <div id="game">
+                    <motion.div id="game"
+                                initial={{ opacity: 0, translateX: 100, translateY: -100 }}
+                                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                                transition={{ duration: 1.1 }}>
                         <div id="event">
                             <div id="eventmessagecontainer">
                                 <div id="eventmessage">
@@ -126,16 +130,18 @@ function Lvl9_Phones(props) {
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                                <motion.button onClick={() => handleAnswerButtonClick(cardOption)}
+                                               whileHover={{ scale: 1.1 }}
+                                               whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}>
                                     <img src={cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
                                     <br />
                                     {cardOption.name != "card43"  ? cardOption.costs + "€" : ""}
-                                </button>
+                                </motion.button>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </>
         </div>

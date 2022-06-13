@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import "../../index.css";
 import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
+import {motion} from "framer-motion";
 
 
 let level;
@@ -42,7 +43,7 @@ function Lvl5_Patchmanagement(props) {
   React.useEffect(() => {
     //setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
     if (currentEvent == 3 && patchDocumented) {
-      setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != 'card10').filter(card => !cardsPlayed.includes(card.name)));
+      setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != 'card10').filter(card => !duplicates.includes(card.name)));
     } else {
       setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
     }
@@ -147,7 +148,10 @@ function Lvl5_Patchmanagement(props) {
       <>
 
         <div id="gamecontainer" className="container">
-          <div id="game">
+          <motion.div id="game"
+                      initial={{ opacity: 0, translateX: 100, translateY: -100 }}
+                      animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                      transition={{ duration: 1.1 }}>
             <div id="event">
               <div id="eventmessagecontainer">
                 <div id="eventmessage">
@@ -162,14 +166,16 @@ function Lvl5_Patchmanagement(props) {
             </div>
             <div id="actionscontainer">
               {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
-                <button onClick={() => handleAnswerButtonClick(cardOption)}>
+                <motion.button onClick={() => handleAnswerButtonClick(cardOption)}
+                               whileHover={{ scale: 1.1 }}
+                               whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}>
                   <img src={cardImages.getCardImage(cardOption.image)} />
                   <br />
                   {cardOption.text}
-                </button>
+                </motion.button>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </>
     </div>
