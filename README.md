@@ -29,7 +29,7 @@ Im Root-Directory lässt sich dann server wie folgt hochfahren:
 
 # Limitations
 
-1. Unsichere Login-Authentifikation:
+1. Unsichere Login-Authentifikation
 
 Sobald man sich auf der Webseite eingeloggt hat, wird der Username im Local-Storage gespeichert. Anhand dieses Eintrags wird entschieden, ob man eingeloggt ist oder nicht, und es werden die individuellen Daten zu diesem Nutzer angezeigt. Daher können Nutzer anhand des Leaderboards die Usernamen von den anderen Nutzern herausfinden und sich anhand dessen als diese Nutzer einloggen, indem man mit den Developer-Tools den Local-Storage manipuliert.
 
