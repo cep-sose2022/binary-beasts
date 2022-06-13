@@ -4,6 +4,7 @@ let browse =  require('./../images/cardImages/browse.png');
 let deleted =  require('./../images/cardImages/deleted.png');
 let devices =  require('./../images/cardImages/devices.png');
 let email =  require('./../images/cardImages/email.png');
+let empty = require('./../images/cardImages/empty.png');
 let encryption =  require('./../images/cardImages/encryption.png');
 let humanInterface =  require('./../images/cardImages/humanInterface.png');
 let mouseAction =  require('./../images/cardImages/mouseAction.png');
@@ -21,6 +22,7 @@ ci.getCardImage = (imageName) => {
     else if (imageName === 'deleted') return deleted;
     else if (imageName === 'devices') return devices;
     else if (imageName === 'email') return email;
+    else if (imageName === 'empty') return empty;
     else if (imageName === 'encryption') return encryption;
     else if (imageName === 'humanInterface') return humanInterface;
     else if (imageName === 'mouseAction') return mouseAction;

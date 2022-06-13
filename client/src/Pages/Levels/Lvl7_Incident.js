@@ -193,7 +193,8 @@ function Lvl7_Incident(props) {
                                 <motion.button onClick={() => handleAnswerButtonClick(cardOption)}
                                                whileHover={{ scale: 1.1 }}
                                                whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}>
-                                    <img src={cardImages.getCardImage(cardOption.image)} />
+
+                                    <img src={!cardOption.image ? cardImages.getCardImage('empty') : cardImages.getCardImage(cardOption.image)} />
                                     <br />
                                     {cardOption.text}
                                 </motion.button>
