@@ -42,7 +42,7 @@ function Lvl5_Patchmanagement(props) {
   React.useEffect(() => {
     //setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
     if (currentEvent == 3 && patchDocumented) {
-      setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != 'card10').filter(card => !cardsPlayed.includes(card.name)));
+      setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name != 'card10').filter(card => !duplicates.includes(card.name)));
     } else {
       setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
     }
