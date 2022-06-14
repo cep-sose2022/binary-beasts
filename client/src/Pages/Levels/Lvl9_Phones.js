@@ -117,9 +117,6 @@ function Lvl9_Phones(props) {
                                 </div>
                             </div>
                             <div id="eventimagecontainer">
-                                <div id="eventimage">
-                                    <img src={currentImage} className='img' />
-                                </div>
                                 <div id="money-container">
                                     <p id="money" name="money">Geld: {money}</p>
                                     {!isEnoughMoney && 
