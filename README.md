@@ -40,6 +40,9 @@ Im Root-Directory lässt sich dann server wie folgt hochfahren:
 - Node.js
 - MongoDB
 
+## Architektur
+Die Architektur der Software ist <a href="https://github.com/BBeasts100/BinaryBeastsFrontend/blob/dev/Be-Aware_Architektur.pdf">hier</a> hinterlegt.
+
 ## Limitations
 
 1. Unsichere Login-Authentifikation
