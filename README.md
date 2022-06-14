@@ -34,6 +34,12 @@ Im Root-Directory lässt sich dann server wie folgt hochfahren:
 
 `npm start`
 
+## Technologien
+- React
+- Express
+- Node.js
+- MongoDB
+
 ## Limitations
 
 1. Unsichere Login-Authentifikation
