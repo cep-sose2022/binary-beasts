@@ -342,6 +342,7 @@ input {
 #event {
     aspect-ratio: 100/30;
     display: flex;
+    justify-content: center;
 }
 
 #eventmessagecontainer,
