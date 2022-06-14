@@ -52,9 +52,9 @@ leaderBoardController.postLeaderboard =  asyncHandler(async (req, res) => {
             userLevel = req.body;
         }
 
-            let newLevelLeaderboard;
+        let newLevelLeaderboard;
         const userLeaderboard = await Leaderboard.find({ username: req.body.username, levelId: req.body.levelId } );
-        if(!userLeaderboard) {
+        if(userLeaderboard.length === 0) {
             newLevelLeaderboard = new Leaderboard(userLevel);
             await newLevelLeaderboard.save();
         } else if (userLeaderboard.length > 0) {
