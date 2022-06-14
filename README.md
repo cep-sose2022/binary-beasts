@@ -1,8 +1,9 @@
+# Binary Beasts
 <p align="center">
   <img src="https://user-images.githubusercontent.com/95911066/173536297-4a17831c-4e79-421b-943b-4a3b4c5fa704.png" width=30% height=30% />
 </p>
 
-# Binary Beasts - OT Security Awareness Training
+# OT Security Awareness Training: Be-Aware
 Diese Software ist im Rahmen eines Software-Entwicklungsprojekts von der Hochschule Mannheim im Studiengang CSB durch die Gruppe Binary Beasts entstanden. Die Anwendung hat den Zweck, Automatisierungsingeniuere im Feld der OT-Security-Awareness durch ein interaktives Schulungskonzept zu schulen. 
 
 ## Link zum Backend
@@ -41,3 +42,6 @@ Sobald man sich auf der Webseite eingeloggt hat, wird der Username im Local-Stor
 2. Keine Optimierung für Safari
 
 Benutzt man die Software im Safari-Browser, so wird man z.B. im Level "Social Engineering und Phishing" auf ein Problem stoßen: Die Ereignis-Bilder sind zu groß und überdecken die Karten und den Ereignis-Text. Dieses Problem tritt jedoch nur im Safari-Browser auf, auf den anderen bekannten Browsern existiert dieses Problem nicht
+
+## Lizenz
+Die Software ist lizenziert durch die <a href="https://github.com/BBeasts100/BinaryBeastsFrontend/blob/main/LICENSE">MIT-License</a>
