@@ -27,6 +27,7 @@ function App() {
         <Route path="/privacy_policy" element={<PrivacyPolicy/>}/>
         <Route path="/levelcompletion" element={<Win/>}/>
         <Route path="/description" element={<Leveldescription/>}/>
+        <Route path="*" element={<Homepage />} />
       </Routes>
     </BrowserRouter>
   );
