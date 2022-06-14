@@ -3,6 +3,7 @@ import service from '../../service';
 import { useNavigate, useLocation } from "react-router-dom";
 import lib from '../../library/bib.js';
 import Navbar from "../../Navbar";
+import {motion} from "framer-motion";
 
 function Win() {
     const location = useLocation();
@@ -21,7 +22,10 @@ function Win() {
         <>
             <Navbar />
             <div id="win-container" className="container">
-                <div id="win-description" className="box">
+                <motion.div id="win-description" className="box"
+                            initial={{ opacity: 0, translateX: 100, translateY: -100 }}
+                            animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                            transition={{ duration: 1.1 }}>
                     <div id="win-score">
                         <p>{!localStorage.getItem('levelNumber') ? 'Sie haben das Level noch nicht abgeschlossen' : `Sie haben das Level ${level[0].name} abgeschlossen und ${lib.getScore() >= 0? lib.getScore() : 0} Punkte erhalten.`}</p>
                     </div><br />
@@ -35,7 +39,7 @@ function Win() {
                         navigate("/leveloverview");
                     }}>Zu Levels</button>
                     <button onClick={() => setFeedbackVisible(!feedbackVisible)}>Gespielte Karten</button>
-                </div>
+                </motion.div>
                 
                 <div id="levelcompletiontablegrid">
                 {feedbackVisible && <div id="levelcompletiontable">

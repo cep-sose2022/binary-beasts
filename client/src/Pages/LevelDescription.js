@@ -4,6 +4,7 @@ import {Navigate, useLocation, useNavigate} from "react-router-dom";
 import Navbar from "../Navbar";
 import pdfDocs from '../library/pdfDocs';
 import downloadIcon from '../images/download.png';
+import {motion} from "framer-motion";
 
 const levels = service.getAllLevels();
 
@@ -29,7 +30,10 @@ function Leveldescription() {
       <>
       <Navbar />
       <div id="description-container" className="container">
-          <div className="box">
+          <motion.div className="box"
+               initial={{ opacity: 0, translateX: 100, translateY: -100 }}
+               animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+               transition={{ duration: 1.1 }}>
           <h1>{level[0].name}</h1>
           
           <div id="level-description">
@@ -49,7 +53,7 @@ function Leveldescription() {
           }}>Starten</button>
           
       </div>
-      </div>
+      </motion.div>
       </div>
       </>
     );
