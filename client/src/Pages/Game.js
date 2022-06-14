@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from "react";
-import {useLocation} from "react-router-dom";
+import {Navigate, useLocation, useNavigate} from "react-router-dom";
 import Lvl1_Network from "./Levels/Lvl1_Network";
 import Lvl2_Malware from "./Levels/Lvl2_Malware"
 import Lvl3_Devices from "./Levels/Lvl3_Devices";
@@ -17,16 +17,23 @@ import {motion} from "framer-motion";
 
 function Game(){
     const location = useLocation();
+    let navigate = useNavigate();
 
     const [levelName, setLevelName] = useState("");
     const [maxScore, setMaxScore] = useState(0);
     const [previousScore, setPreviousScore] = useState(0);
     const [currentScore, setCurrentScore] = useState(0);
-    
+
     let level;
     React.useEffect(() => {
-        level = service.getLevel("level" + location.state.levelid);
+        if (!location.state) {
+            navigate('../')
+        } else {
+            level = service.getLevel("level" + location.state.levelid);
+        }
     }, []);
+
+    if(!location.state) return <Navigate replace to="/" />
 
     return(
         <>
@@ -35,7 +42,7 @@ function Game(){
                 <p>Level: <span className="gameNavbar-blue">{levelName}</span></p>
             </div>
             <div id="score" className="navgamecontent">
-                <p>Score:   
+                <p>Score:
                     {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore + " "}</span>}
                     {currentScore > previousScore && <motion.span className="score-green"
                                                                   initial={{ opacity: 0, translateX: -50, translateY: 50,  }}
@@ -47,7 +54,7 @@ function Game(){
                                                                   transition={{ duration: 1 }}> {currentScore + " "}</motion.span>}
                     / <span className="gameNavbar-blue">{maxScore}</span>
                 </p>
-            </div>   
+            </div>
         </nav>
 
         {location.state.levelid === 1 && <Lvl1_Network passCurrentScore={setCurrentScore} passPreviousScore={setPreviousScore} passLevelName={setLevelName} passMaxScore={setMaxScore}/>}
@@ -63,7 +70,5 @@ function Game(){
         </>
     );
 }
-
-
 
 export default Game;

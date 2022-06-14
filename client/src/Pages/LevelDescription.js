@@ -1,7 +1,6 @@
 import React from "react";
 import service from './../service';
-import {useLocation} from "react-router-dom";
-import {useNavigate} from "react-router-dom";
+import {Navigate, useLocation, useNavigate} from "react-router-dom";
 import Navbar from "../Navbar";
 import pdfDocs from '../library/pdfDocs';
 import downloadIcon from '../images/download.png';
@@ -12,7 +11,18 @@ const levels = service.getAllLevels();
 function Leveldescription() {
     let navigate = useNavigate();
     let location = useLocation();
-  
+
+    let levelId;
+    React.useEffect(() => {
+        if (!location.state) {
+            navigate('../')
+        } else {
+            levelId = service.getLevel("level" + location.state.levelid);
+        }
+    }, []);
+
+    if(!location.state) return <Navigate replace to="/" />
+
     const levelNumber = location.state.levelid;
     const level = levels.allLevels.filter(level => level.token === "level" + levelNumber);
     return(
