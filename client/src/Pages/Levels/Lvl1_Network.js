@@ -7,6 +7,12 @@ import lib from '../../library/bib.js';
 import cardImages from '../../library/cardImages.js';
 import {motion} from "framer-motion";
 
+import firewall from './../../images/level1/firewall.png';
+import router from './../../images/level1/router.png';
+import segmentation from './../../images/level1/segmentation.jpg';
+import vlan from './../../images/level1/vlan.jpg';
+
+
 let playedCard2 = false;
 let playedCard3 = false;
 let playedCard11 = false;
@@ -61,6 +67,18 @@ function Lvl1_Network(props) {
         setEventTextNumber(cardOption.nextEventText);
         setCurrentCards(currentCards.filter(card => card.name != cardOption.name));
         setCurrentRound(currentRound + 1);
+
+        if(cardOption.nextImage == 'firewall')
+            setCurrentImage(firewall);
+        else if(cardOption.nextImage == 'router')
+            setCurrentImage(router);
+        else if(cardOption.nextImage == 'segmentation')
+            setCurrentImage(segmentation);
+        else if(cardOption.nextImage == 'vlan')
+            setCurrentImage(vlan);
+        else
+            setCurrentImage(null);
+
 
         if (cardOption.name === 'card2') {
             duplicates.push('card2');
