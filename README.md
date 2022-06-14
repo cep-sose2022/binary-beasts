@@ -1,10 +1,15 @@
-# Binary Beasts - OT Security Awareness Training: Frontend
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/95911066/173536297-4a17831c-4e79-421b-943b-4a3b4c5fa704.png" width=30% height=30% />
+</p>
+
+# Binary Beasts - OT Security Awareness Training
+Diese Software ist im Rahmen eines Software-Entwicklungsprojekts von der Hochschule Mannheim im Studiengang CSB durch die Gruppe Binary Beasts entstanden. Die Anwendung hat den Zweck, Automatisierungsingeniuere im Feld der OT-Security-Awareness durch ein interaktives Schulungskonzept zu schulen. 
 
 ## Link zum Backend
 Die Anwendung verwendet einen Backend-Server, der sich durch das folgende Repository einrichten lässt:
 https://github.com/BBeasts100/BinaryBeastsBackend.git
 
-# Installation und Konfiguration
+## Installation und Konfiguration
 
 1. Git Repo klonen
 
@@ -27,7 +32,7 @@ https://github.com/BBeasts100/BinaryBeastsBackend.git
 Im Root-Directory lässt sich dann server wie folgt hochfahren:
 ### `npm start`
 
-# Limitations
+## Limitations
 
 1. Unsichere Login-Authentifikation
 
