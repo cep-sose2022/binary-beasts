@@ -14,7 +14,7 @@ https://github.com/BBeasts100/BinaryBeastsBackend.git
 
 1. Git Repo klonen
 
-## `git clone https://github.com/BBeasts100/BinaryBeastsFrontend.git`
+`git clone https://github.com/BBeasts100/BinaryBeastsFrontend.git`
 
 2. Ins Repo navigieren
 
