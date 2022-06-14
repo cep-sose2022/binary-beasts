@@ -11,7 +11,6 @@ html {
 ::-webkit-scrollbar {
 width: 0px;
 }
-
 #home-container,
 #gamecontainer,
 #level-overview-container,
@@ -189,6 +188,7 @@ input {
     font-size: clamp(0.1rem,1.3rem,1.03vw);
     padding: 4px;
 }
+
 #user-login,
 #login-message{
     font-size: clamp(0.1rem,2vw,2rem);
@@ -238,6 +238,7 @@ input {
     grid-area: three;
     padding: 2vw;
 }
+
 #how-to-play{
     background-color: #edededcd;
     border-radius: 2px;
@@ -407,6 +408,21 @@ input {
 #actionscontainer img{
  width: clamp(2vw,5rem,3vw);
  margin-top: 1vw;
+}
+
+#money-container{
+    margin: auto;
+    width: 20%;
+    height:  20%;
+    border: 3px solid;
+    border-color: #48ffd5; 
+    background-color: #edededcf;
+}
+#money-container p{
+    color: #0b2037;
+    text-align: center;
+    padding: 35px;
+    font-size: 1.3vmax;
 }
 
 /* leveloverview */

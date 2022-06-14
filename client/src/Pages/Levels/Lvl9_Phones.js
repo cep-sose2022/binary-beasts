@@ -11,7 +11,6 @@ let gameOver = false;
 let money = 16000; //start money that is needed for perfect path 
 let cardsPlayed;
 let duplicate;
-let notEnoughMoney = false;
 let level;
 const lastCard = "card43";
 
@@ -21,6 +20,8 @@ function Lvl9_Phones(props) {
 
     const [currentEvent, setCurrentEvent] = useState(1);
     const [currentRound, setCurrentRound] = useState(1);
+
+    const [isEnoughMoney, setIsEnoughMoney] = useState(true);
 
     if (currentRound === 1) {
         lib.setLevelStartScore('level9');
@@ -46,10 +47,25 @@ function Lvl9_Phones(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        notEnoughMoney = false; //every new card selection removes error-text
+        setIsEnoughMoney(true); //every new card selection removes error-text
     }, [eventTextNumber, currentEvent]);
-
+    
     const handleAnswerButtonClick = (cardOption) => {
+        //check end-conditions
+        if(cardOption.name === lastCard){
+            gameOver = true;
+        }
+        if (gameOver) {
+            service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
+            localStorage.setItem('levelNumber', '9');
+            localStorage.setItem('feedback', feedback);
+            navigate('../levelcompletion', {
+                state: {
+                    cardsPlayed: cardsPlayed //for showing played cards in levelcompletion
+                }
+            });
+        }
+        
         //"buy" a card
         if (money >= cardOption.costs){
             money -= cardOption.costs;
@@ -62,22 +78,15 @@ function Lvl9_Phones(props) {
             setEventTextNumber(cardOption.nextEventText);
             setCurrentCards(currentCards.filter(card => card.name != cardOption.name)); //remove cards after played
             setCurrentRound(currentRound + 1);
+            //update score
+            props.passPreviousScore(lib.getScore());
+            lib.updateScore(cardOption.points);
+            props.passCurrentScore(lib.getScore());
         }
         else {  
-            notEnoughMoney = true;
+            setIsEnoughMoney(false);
         }
 
-        props.passPreviousScore(lib.getScore());
-        lib.updateScore(cardOption.points);
-        props.passCurrentScore(lib.getScore());
-
-
-        //check events that contain cards with loopback 
-        if (currentEvent === 3 || currentEvent === 4) {
-            duplicate.push(cardOption.name);
-        }
-
-        //check end-conditions
         if (money === 0) {
             var lastEvent = 8;
             var eventTextOutOfMoney = 0;
@@ -85,21 +94,12 @@ function Lvl9_Phones(props) {
             setEventTextNumber(eventTextOutOfMoney);
             setCurrentCards(level.level.events[lastEvent].cards);
         }
-        if(cardOption.name === lastCard){
-            gameOver = true;
+
+        //check events that contain cards with loopback 
+        if (currentEvent === 3 || currentEvent === 4) {
+            duplicate.push(cardOption.name);
         }
 
-
-        if (gameOver) {
-            service.postUserLeaderboard(lib.getNickname(), level.level._id, lib.getScore());
-            localStorage.setItem('levelNumber', '9');
-            localStorage.setItem('feedback', feedback);
-            navigate('../levelcompletion', {
-                state: {
-                    cardsPlayed: cardsPlayed //for showing played cards in levelcompletion
-                }
-            });
-        }
     }
 
     return (
@@ -117,12 +117,9 @@ function Lvl9_Phones(props) {
                                 </div>
                             </div>
                             <div id="eventimagecontainer">
-                                <div id="eventimage">
-                                    <img src={currentImage} className='img' />
-                                </div>
                                 <div id="money-container">
                                     <p id="money" name="money">Geld: {money}</p>
-                                    {notEnoughMoney && 
+                                    {!isEnoughMoney && 
                                         <p id="money-error" name="money-error">Das Geld reicht nicht mehr</p>
                                     }
                                 </div>
