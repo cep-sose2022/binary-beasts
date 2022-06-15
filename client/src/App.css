@@ -773,3 +773,19 @@ a:hover {
 .subpagescontent ul{
     padding-left: 2vw;
 }
+
+
+.barWrapper {
+    padding-left: 2vw;
+    padding-right: 2vw;
+
+}
+
+.barContainer {
+    background-color: #48ffd471;
+}
+
+.barLabel {
+    font-size: 22px;
+    color: white;
+}
