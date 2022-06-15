@@ -419,11 +419,24 @@ input {
     border-color: #48ffd5; 
     background-color: #edededcf;
 }
-#money-container p{
+#money{
     color: #0b2037;
     text-align: center;
     padding: 35px;
     font-size: 1.3vmax;
+}
+#money-error {
+    color: #0b2037;
+    margin: auto;
+    text-align: center;
+    padding: 5%;
+    font-size: 1.3vmax;
+    width: 50%;
+    height:  80%;
+    border: 3px solid;
+    border-color: red; 
+    background-color: #edededcf;
+    
 }
 
 /* leveloverview */
