@@ -414,16 +414,26 @@ input {
 #money-container{
     margin: auto;
     width: 20%;
-    height:  20%;
+    height:  10%;
     border: 3px solid;
     border-color: #48ffd5; 
     background-color: #edededcf;
 }
-#money-container p{
+#money-container p,
+#money-error-container p{
     color: #0b2037;
+    padding: 10px; 
     text-align: center;
-    padding: 35px;
     font-size: 1.3vmax;
+}
+#money-error-container {
+    margin: auto;
+    width: 20%;
+    height:  20%;
+    border: 3px solid;
+    background-color: #edededcf;
+    border-color: red; 
+    
 }
 
 /* leveloverview */
@@ -760,4 +770,20 @@ a:hover {
 }
 .subpagescontent ul{
     padding-left: 2vw;
+}
+
+
+.barWrapper {
+    padding-left: 2vw;
+    padding-right: 2vw;
+
+}
+
+.barContainer {
+    background-color: #48ffd471;
+}
+
+.barLabel {
+    font-size: 22px;
+    color: white;
 }

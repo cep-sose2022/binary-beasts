@@ -52,7 +52,6 @@ lib.wait = (delay) => {
 };
 
 lib.shuffle = (array) => {
-
     var shuffled = [...array];
     for (var i = shuffled.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -61,7 +60,6 @@ lib.shuffle = (array) => {
         shuffled[j] = temp;
     }
     return shuffled;
-
 }
 
-module.exports = lib;
+export default lib;

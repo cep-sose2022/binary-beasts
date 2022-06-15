@@ -2,6 +2,7 @@ import React from "react";
 import service from "../service";
 import lib from "../library/bib.js";
 import Navbar from "../Navbar";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function Progress(props) {
     const allLevels = service.getAllLevels().allLevels;
@@ -10,9 +11,10 @@ function Progress(props) {
     //determine the percentage of the finished levels
     function calcProgress(){
         return (
-            <p>{Math.round(userBoard.length/allLevels.length * 100)} %</p>
+            Math.round(userBoard.length/allLevels.length * 100)
         )
     }
+
     return(
         <>
         <Navbar />
@@ -20,7 +22,13 @@ function Progress(props) {
             <div id="info" className="box">
                 <h1>Fortschritt - {lib.getNickname()}</h1>
             <div id="overview">
-                <h2>Abgeschlossene Levels: {calcProgress()}</h2>
+                <h2>Abgeschlossene Levels: </h2>
+                <ProgressBar variant="success"
+                             className="barWrapper"
+                             barContainerClassName="barContainer"
+                             labelClassName="barLabel"
+                             completed={calcProgress()}
+                             maxCompleted={100}/>
             </div>
             <div id="level-scores">
                 <h2>Level-Überblick:</h2>
