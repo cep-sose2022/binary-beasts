@@ -123,11 +123,11 @@ function Lvl4_RAccess(props) {
                                     <div id='event-text'>{!eventText ? "Loading..." : eventTextSplit()}</div>
                                 </div>
                             </div>
-                            <div id="eventimagecontainer">
+                            {/* <div id="eventimagecontainer">
                                 <div id="eventimage">
                                     <img src={currentImage} className='img' />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
