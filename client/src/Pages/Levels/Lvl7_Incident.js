@@ -23,7 +23,7 @@ import {useNavigate} from 'react-router-dom';
 import lib from '../../library/bib.js';
 //const level = service.getLevel('level5');
 
-const cardsPlayed = [];
+let cardsPlayed = [];
 let roomcount = 0;
 let fail = 0;
 let level;
@@ -54,6 +54,8 @@ function Lvl7_Incident(props) {
         props.passLevelName(level.level.name);
         props.passMaxScore(level.level.maxScore);
         cardFeedback = [];
+        cp = [];
+        cardsPlayed = [];
     }
 
     const [currentCards, setCurrentCards] = useState(level.level.events[0].cards);
