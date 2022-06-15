@@ -116,14 +116,14 @@ function Lvl9_Phones(props) {
                                     <div id='event-text'>{!eventText ? "Loading..." : eventText}</div>
                                 </div>
                             </div>
-                            <div id="eventimagecontainer">
-                                <div id="money-container">
+                            
+                                <div id= {isEnoughMoney ? "money-container" : "money-error-container"}>
                                     <p id="money" name="money">Geld: {money}</p>
                                     {!isEnoughMoney && 
                                         <p id="money-error" name="money-error">Das Geld reicht nicht mehr</p>
                                     }
                                 </div>
-                            </div>
+                          
                         </div>
                         <div id="actionscontainer">
                             {!currentCards ? "Loading..." : currentCards.map((cardOption) => (
