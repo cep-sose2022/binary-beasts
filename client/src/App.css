@@ -369,6 +369,7 @@ input {
 
 #eventmessage {
     font-size: 1.3vmax;
+    padding: 0.4vw;
 
     background-color: #edededcf;
     color: #0b2037;
