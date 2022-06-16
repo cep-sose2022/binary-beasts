@@ -23,7 +23,7 @@ function Progress(props) {
                 <h1>Fortschritt - {lib.getNickname()}</h1>
             <div id="overview">
                 <h2>Abgeschlossene Levels: </h2>
-                <ProgressBar variant="success"
+                <ProgressBar id="progressbar" variant="success"
                              className="barWrapper"
                              barContainerClassName="barContainer"
                              labelClassName="barLabel"
