@@ -13,6 +13,9 @@ import Lvl9_Phones from "./Levels/Lvl9_Phones";
 import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
 import service from '../service';
 import {motion} from "framer-motion";
+import trueAnswer from './../images/accept.png';
+import falseAnswer from './../images/cancel.png';
+import neutralAnswer from './../images/sun.png';
 
 
 function Game(){
@@ -41,19 +44,44 @@ function Game(){
             <div id="navlevelround"className="navgamecontent">
                 <p>Level: <span className="gameNavbar-blue">{levelName}</span></p>
             </div>
+            {currentScore > previousScore && <motion.img alt="trueAnswer" src={trueAnswer} className='score-image'
+                                                         animate={{
+                                                             x: [0, -200, 200, 0, 0],
+                                                             y: [0, 0, 0, 0, 0],
+                                                             rotate: -360,
+                                                         }}
+                                                         transition={{ duration: 3, ease: "anticipate" }}/>}
+            {currentScore < previousScore && <motion.img alt="falseAnswer" src={falseAnswer} className='score-image'
+                                                         animate={{
+                                                             x: [0, -200, 200, 0, 0],
+                                                             y: [0, 0, 0, 0, 0],
+                                                             rotate: -360,
+                                                         }}
+                                                         transition={{ duration: 3, ease: "anticipate" }}/>}
+            {currentScore === previousScore && <motion.img alt="neutralAnswer" src={neutralAnswer} className='score-image'
+                                                           animate={{
+                                                               x: [0, -200, 200, 0, 0],
+                                                               y: [0, 0, 0, 0, 0],
+                                                               rotate: -360,
+                                                           }}
+                                                           transition={{ duration: 3, ease: "anticipate" }}/>}
             <div id="score" className="navgamecontent">
-                <p>Score:
+                <div id="scorecontent" className="score">
+                    <p>Score:
                     {currentScore === previousScore && <span className="gameNavbar-blue"> {currentScore + " "}</span>}
                     {currentScore > previousScore && <motion.span className="score-green"
-                                                                  initial={{ opacity: 0, translateX: -50, translateY: 50,  }}
-                                                                  animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-                                                                  transition={{ duration: 1 }}> {currentScore + " "}</motion.span>}
+                                                                  animate={{
+                                                                      backgroundColor: ["rgba(10,122,67,0.58)", "#0fda06", "#a3ff33", "#2EF57DFF"],
+                                                                  }}
+                                                                  transition={{ duration: 2, ease: "linear" }}> {currentScore + " "}</motion.span>}
                     {currentScore < previousScore && <motion.span className="score-red"
-                                                                  initial={{ opacity: 0, translateX: -50, translateY: 50 }}
-                                                                  animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-                                                                  transition={{ duration: 1 }}> {currentScore + " "}</motion.span>}
+                                                                  animate={{
+                                                                      backgroundColor: ["#ff33dd", "#ff0090", "#ff3333", "#E85151FF"],
+                                                                  }}
+                                                                  transition={{ duration: 2, ease: "linear" }}> {currentScore + " "}</motion.span>}
                     / <span className="gameNavbar-blue">{maxScore}</span>
                 </p>
+                </div>
             </div>
         </nav>
 

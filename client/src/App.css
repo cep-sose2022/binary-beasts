@@ -696,11 +696,13 @@ font-size: clamp(0.1rem,2rem,3vw);
 
 /* Score */
 .score-green {
-    color: green;
+    color: #1c62ad;
+    border-radius: 15px;
 }
 
 .score-red {
-    color: red;
+    color: #1c62ad;
+    border-radius: 15px;
 }
 
 /* Leveldescription */
@@ -795,5 +797,10 @@ a:hover {
     border-width: 2px;
     border-color: #48ffd5;
     border-radius: 15px;
+}
 
+.score-image{
+    padding-left: 0.2vm;
+    height: 2vw;
+    margin: 1.2vw;
 }
