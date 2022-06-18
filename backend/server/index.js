@@ -11,7 +11,7 @@ const backupRoute = require('./gateway/backup');
 const addDataRoute = require('./gateway/addData');
 
 const swaggerUi = require('swagger-ui-express'),
-    swaggerDocument = require('./../swagger.json');
+    swaggerDocument = require('../swagger.json');
 
 const frontend = 'http://localhost:3000';
 

@@ -17,7 +17,7 @@
 4. Datenbank (Database) in MongoDB anlegen
 
 Nachdem Sie eine Datenbank angelegt haben, erstellen Sie dort eine Sammlung (Collection) mit dem Namen LevelCol und importieren Sie dort alle json-Dateien, die sich in dem Ordner levels befinden.  
-Bei Bedarf finden Sie [hier](./helper/Beschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
+Bei Bedarf finden Sie [hier](helpereschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
 
 5. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
 
@@ -27,7 +27,7 @@ Bei Bedarf finden Sie [hier](./helper/Beschreibung.pdf) eine ausführliche Besch
 
 In dieser Datei dann die Zugangsdaten für die MongoDB ablegen
 ###### `DB_CONNECTION=<Zugangslink>`
-![alt text](./helper/env.png)
+![alt text](helpernv.png)
 
 6. Server starten
 
