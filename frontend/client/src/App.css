@@ -70,7 +70,7 @@ button:hover, #pdfdownload:hover{
 #navmain {
     justify-content: space-between;
     /* background-color: #0e2a47; */
-    background-image: url("./images/background.png");
+    background-image: url("images/background.png");
 }
 
 nav .navlinks {
@@ -122,7 +122,7 @@ nav a:hover {
 
 /* Home */
 #home-container{
-    background-image: url("./images/factory2.1.png");
+    background-image: url("images/factory2.1.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -439,12 +439,12 @@ input {
 
 /* leveloverview */
 #level-overview-container {
-    background-image: url("./images/factory2.1.png");
+    background-image: url("images/factory2.1.png");
 
 }
 
 #playfield {
-    background-image: url("./images/leveloverviewbackground1.png");
+    background-image: url("images/leveloverviewbackground1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -590,7 +590,7 @@ input {
 /* Leaderboard */
 
 #board-container {
-    background-image: url("./images/oilrig2.png");
+    background-image: url("images/oilrig2.png");
 
     background-attachment: fixed;
     background-position: 0 top;
@@ -627,7 +627,7 @@ th {
 
 /* Progress */
 #progress-container {
-    background-image: url("./images/factory1.png");
+    background-image: url("images/factory1.png");
     justify-content: center;
     background-attachment: fixed;
     background-position: 0 top;
@@ -661,7 +661,7 @@ font-size: clamp(0.1rem,2rem,3vw);
 }
 /* Win */
 #win-container {
-    background-image: url("./images/serverroom.jpg");
+    background-image: url("images/serverroom.jpg");
     background-position: center center;
     display: grid;
     flex-direction: column;
@@ -707,7 +707,7 @@ font-size: clamp(0.1rem,2rem,3vw);
 
 /* Leveldescription */
 #description-container,#win-container {
-    background-image: url("./images/serverroom.jpg");
+    background-image: url("images/serverroom.jpg");
     background-position: center center;
 }
 

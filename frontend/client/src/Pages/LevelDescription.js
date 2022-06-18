@@ -1,5 +1,5 @@
 import React from "react";
-import service from './../service';
+import service from '../service';
 import {Navigate, useLocation, useNavigate} from "react-router-dom";
 import Navbar from "../Navbar";
 import pdfDocs from '../library/pdfDocs';

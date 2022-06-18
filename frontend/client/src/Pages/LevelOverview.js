@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import Navbar from "../Navbar";
-import service from './../service';
+import service from '../service';
 
 function LevelOverview() {
 

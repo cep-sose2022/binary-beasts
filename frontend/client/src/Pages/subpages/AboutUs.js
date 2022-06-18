@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../Navbar";
-import Footer from "./../subpages/Footer";
+import Footer from "./Footer";
 import teamphoto from "../../images/teamphoto.png"
 
 function AboutUs(){

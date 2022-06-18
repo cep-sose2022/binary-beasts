@@ -1,24 +1,24 @@
 import React from "react";
 import {useState} from "react";
 
-import angryboss from './../../images/level7/angryboss.PNG';
-import maschine from './../../images/level7/maschine.PNG';
-import router from './../../images/level7/router.PNG';
-import schreibtisch from './../../images/level7/schreibtisch.PNG';
-import serverroom from './../../images/level7/serverroom.PNG';
-import start from './../../images/level7/start.PNG';
-import sus from './../../images/level7/sus.PNG';
-import bossoffice from './../../images/level7/bossoffice.PNG';
-import produktion from './../../images/level7/produktion.PNG';
-import tower from './../../images/level7/overheat.PNG';
-import officedesk from './../../images/level7/officedesk.PNG';
-import communityroom from './../../images/level7/gemeinschaftsraum.PNG';
+import angryboss from '../../images/level7/angryboss.PNG';
+import maschine from '../../images/level7/maschine.PNG';
+import router from '../../images/level7/router.PNG';
+import schreibtisch from '../../images/level7/schreibtisch.PNG';
+import serverroom from '../../images/level7/serverroom.PNG';
+import start from '../../images/level7/start.PNG';
+import sus from '../../images/level7/sus.PNG';
+import bossoffice from '../../images/level7/bossoffice.PNG';
+import produktion from '../../images/level7/produktion.PNG';
+import tower from '../../images/level7/overheat.PNG';
+import officedesk from '../../images/level7/officedesk.PNG';
+import communityroom from '../../images/level7/gemeinschaftsraum.PNG';
 import cardImages from '../../library/cardImages.js';
 import {motion} from "framer-motion";
 
 
 
-import service from './../../service';
+import service from '../../service';
 import {useNavigate} from 'react-router-dom';
 import lib from '../../library/bib.js';
 //const level = service.getLevel('level5');

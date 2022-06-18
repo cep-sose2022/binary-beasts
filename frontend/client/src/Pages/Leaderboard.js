@@ -1,5 +1,5 @@
 import React from "react";
-import service from "./../service";
+import service from "../service";
 import Navbar from "../Navbar";
 
 function Leaderboard(props) {

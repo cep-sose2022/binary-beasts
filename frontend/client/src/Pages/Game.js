@@ -13,9 +13,9 @@ import Lvl9_Phones from "./Levels/Lvl9_Phones";
 import Lvl10_Phishing from "./Levels/Lvl10_Phishing";
 import service from '../service';
 import {motion} from "framer-motion";
-import trueAnswer from './../images/accept.png';
-import falseAnswer from './../images/cancel.png';
-import neutralAnswer from './../images/sun.png';
+import trueAnswer from '../images/accept.png';
+import falseAnswer from '../images/cancel.png';
+import neutralAnswer from '../images/sun.png';
 
 
 function Game(){
