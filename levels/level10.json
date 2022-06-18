@@ -3,7 +3,7 @@
     "_id": "6268de6cb055e86ede854aed",
     "name": "Social Engineering und Phishing",
     "token": "level10",
-    "description": "Die Authentifizierung eines Nutzers anhand seines Nutzernamens und eines geheimen Passworts ist ein sehr geläufiges Verfahren. Viele Angriffe auf solche Verfahren konzentrieren sich darauf, das Passwort und auch ggf. der Nutzername zu erraten. \nPhishing basiert auf Social Engineering und nutzt das Vertrauen von Personen in die Sicherheit von als vertrauenswürdig geltenden Markennamen.",
+    "description": "Die Authentifizierung eines Nutzers anhand seines Nutzernamens und eines geheimen Passworts ist ein sehr geläufiges Verfahren. Viele Angriffe auf solche Verfahren konzentrieren sich darauf, das Passwort und auch ggf. den Nutzernamen zu erraten. \nPhishing basiert auf Social Engineering und nutzt das Vertrauen von Personen in die Sicherheit von als vertrauenswürdig geltenden Markennamen.",
     "events": {
       "0": {
         "_id": "6268dd8cb055e86ede854ae7",
@@ -62,7 +62,8 @@
             "nextEvent": 2,
             "nextImage": "login",
             "nextEventText": 1,
-            "image": "mouseAction"
+            "image": "mouseAction",
+            "feedback": "Verdächtige Links sollten nicht geöffnet werden"
           }
         ]
       },
@@ -122,7 +123,7 @@
         "name": "event3",
         "text": [
           "Nachdem Sie die Seite noch einmal geöffnet hatten, haben Sie im Browser gesehen, dass eine Datei automatisch heruntergeladen wurde ohne dass Sie dafür etwas tun.",
-          "Sie haben im Browser gesehen, dass eine Datei automatisch heruntergeladen wurde ohne dass Sie dafür etwas tun.",
+          "Sie haben im Browser gesehen, dass eine Datei automatisch heruntergeladen wurde, ohne dass Sie dafür etwas tun.",
           "Die IT-Abteilung hat Ihnen dringend davon abgeraten, sich anzumelden. Sie haben jedoch später im Browser gesehen, dass eine Datei automatisch heruntergeladen wurde ohne dass Sie dafür etwas tun.",
           "Die Sicherheitsabteilung überprüft aktuell den Fall. Währendessen hat Ihre Arbeitskollegin, die mit Ihnen im selben Büro arbeitet, den Link geöffnet und bittet Sie um Hilfe. Sie haben im Browser der Arbeitskollegin gesehen, dass eine Datei automatisch heruntergeladen wurde ohne dass sie dafür etwas tut.",
           "Nachdem Sie die E-mail gelöscht hatten, hat Ihre Arbeitskollegin, die mit Ihnen im selben Büro arbeitet, den Link geöffnet und bittet Sie um Hilfe. Sie haben im Browser der Arbeitskollegin gesehen, dass eine Datei automatisch heruntergeladen wurde ohne dass sie dafür etwas tut."
@@ -159,7 +160,7 @@
             "_id": "6268df2fb055e86ede854af9",
             "name": "card10",
             "text": [
-              "Programmiermodus von allen Schlüsselschalters der Sicherheitssteuerung beenden"
+              "Programmiermodus von allen Schlüsselschaltern der Sicherheitssteuerung beenden"
             ],
             "points": 4,
             "nextEvent": 6,
@@ -174,23 +175,10 @@
         "_id": "6268ddfdb055e86ede854aea",
         "name": "event4",
         "text": [
-          "Die Datei enthält eine Malware, die Stuxnet heißt und sich auf Angriffe auf Systeme zur Überwachung und Steuerung spezialisiert. Da das Sicherheitssteurungssystem währenddessen mittels eines Schlüsselschalters im Programmier-Modus belassen war, ist den Angreifern gelungen, Sicherheitsfunktionen des Systems zu deaktivieren"
+          "Die Datei enthält eine Malware, die Stuxnet heißt und sich auf Angriffe auf Systeme zur Überwachung und Steuerung spezialisiert. Da das Sicherheitssteuerungssystem währenddessen mittels eines Schlüsselschalters im Programmier-Modus belassen war, ist den Angreifern gelungen, Sicherheitsfunktionen des Systems zu deaktivieren."
         ],
         "levelId": "6268de6cb055e86ede854aed",
         "cards": [
-          {
-            "_id": "6268df1bb055e86ede854af8",
-            "name": "card9",
-            "text": [
-              "Datei löschen"
-            ],
-            "points": -1,
-            "nextEvent": 5,
-            "nextImage": "ransomware",
-            "nextEventText": 0,
-            "image": "deleted",
-            "feedback": "Heruntergeladene Dateien von unbekannten Webseiten können Schaden anrichten, auch wenn sie nicht geöffnet wurden"
-          },
           {
             "_id": "6268df2fb055e86ede854af9",
             "name": "card10",
@@ -233,9 +221,9 @@
         "_id": "6285efdcacfba4ccaa3aef77",
         "name": "event6",
         "text": [
-          "Da die Datei eine Stuxnet-Malware enthält, hat sie anscheined die Sicherheitsfunktionen des Systems deaktiviert und Sie konnten den Programmiermodus nicht wie gewohnt beenden. ",
-          "Sie haben es geschafft, den Angriff rechtzeitig zu stoppen. Auf den ersten Blick wurde die E-Mail von Ihrem Abteilungsleiter versendet. Überprüfen Sie jedeoch die vollständige E-Mail-Adresse, sitmmt die Domain?\nSind Sie doch dem Link gefolgt, seien Sie sehr vorsichtig, wenn Sie z. B. zur Eingabe von sensibeln Daten aufgefordert werden.\nFalls Sie den Eindruck bekommen, dass es sich um eine Phishing-Mail handelt, melden Sie den Vorfall bei der zuständigen Abteilung Ihres Unternehmens. \nAllein das Antworten auf solche Mails gibt den Angreifern das Signal, dass die Adresse in Benutzung ist.",
-          "Sie haben es nicht geschafft, den Programmiermodus zu beenden. Die Angreifer konnten schädliche Funktionen auszuführen. Auf den ersten Blick wurde die E-Mail von Ihrem Abteilungsleiter versendet. Überprüfen Sie jedeoch die vollständige E-Mail-Adresse, sitmmt die Domain?\nSind Sie doch dem Link gefolgt, seien Sie sehr vorsichtig, wenn Sie z. B. zur Eingabe von sensibeln Daten aufgefordert werden.\nFalls Sie den Eindruck bekommen, dass es sich um eine Phishing-Mail handelt, melden Sie den Vorfall bei der zuständigen Abteilung Ihres Unternehmens. \nAllein das Antworten auf solche Mails gibt den Angreifern das Signal, dass die Adresse in Benutzung ist."
+          "Da die Datei eine Stuxnet-Malware enthält, hat sie anscheinend die Sicherheitsfunktionen des Systems deaktiviert und Sie konnten den Programmiermodus nicht wie gewohnt beenden. ",
+          "Sie haben es geschafft, den Angriff rechtzeitig zu stoppen. Auf den ersten Blick wurde die E-Mail von Ihrem Abteilungsleiter versendet. Überprüfen Sie jedoch die vollständige E-Mail-Adresse, stimmt die Domain?\nSind Sie doch dem Link gefolgt, seien Sie sehr vorsichtig, wenn Sie z. B. zur Eingabe von sensiblen Daten aufgefordert werden.\nFalls Sie den Eindruck bekommen, dass es sich um eine Phishing-Mail handelt, melden Sie den Vorfall bei der zuständigen Abteilung Ihres Unternehmens. \nAllein das Antworten auf solche Mails gibt den Angreifern das Signal, dass die Adresse in Benutzung ist.",
+          "Sie haben es nicht geschafft, den Programmiermodus zu beenden. Die Angreifer konnten schädliche Funktionen auszuführen. Auf den ersten Blick wurde die E-Mail von Ihrem Abteilungsleiter versendet. Überprüfen Sie jedoch die vollständige E-Mail-Adresse, stimmt die Domain?\nSind Sie doch dem Link gefolgt, seien Sie sehr vorsichtig, wenn Sie z. B. zur Eingabe von sensiblen Daten aufgefordert werden.\nFalls Sie den Eindruck bekommen, dass es sich um eine Phishing-Mail handelt, melden Sie den Vorfall bei der zuständigen Abteilung Ihres Unternehmens. \nAllein das Antworten auf solche Mails gibt den Angreifern das Signal, dass die Adresse in Benutzung ist."
         ],
         "levelId": "6268de6cb055e86ede854aed",
         "cards": [
@@ -248,7 +236,7 @@
             "points": 4,
             "nextEvent": 0,
             "image": "encryption",
-            "feedback": "Da der Programmiermodus nicht beendbat war, war Shutdown der Anlage notwendig"
+            "feedback": "Da der Programmiermodus nicht beendbar war, war Shutdown der Anlage notwendig"
           },
           {
             "_id": "6285eee4acfba4ccaa3aef75",

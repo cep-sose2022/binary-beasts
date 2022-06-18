@@ -8,7 +8,7 @@
       "0": {
         "name": "event1",
         "text": [
-          "Sie kommen von einer Konferenz zu dem Thema Industrie 4.0. Dort haben Sie gehört, dass man relativ simpel die Anlage von einem Smartphone aus steuern kann. Weil Sie so begeistert davon sind, können Sie ihren Chef dazu überreden das ebenfalls bei Ihnen in der Firma umzusetzen. Dafür gibt er Ihnen ein Budget von 500 000 Euro, welches Sie nutzen dürfen. Welche Geräte wollen Sie dafür verwenden?"
+          "Sie kommen von einer Konferenz zu dem Thema Industrie 4.0. Dort haben Sie gehört, dass man relativ simpel die Anlage von einem Smartphone aus steuern kann. Weil Sie so begeistert davon sind, können Sie ihren Chef dazu überreden das ebenfalls bei Ihnen in der Firma umzusetzen. Dafür gibt er Ihnen ein Budget von 16 000 Euro, welches Sie nutzen dürfen. Welche Geräte wollen Sie dafür verwenden?"
         ],
         "cards": [
           {
@@ -101,6 +101,7 @@
             "points": 0,
             "nextEvent": 3,
             "nextEventText": 0,
+            "image": "empty",
             "costs": 0
           }
         ]
@@ -172,6 +173,7 @@
             "points": 0,
             "nextEvent": 4,
             "nextEventText": 0,
+            "image": "empty",
             "costs": 0
           }
         ]
@@ -256,6 +258,7 @@
             "points": 0,
             "nextEvent": 5,
             "nextEventText": 0,
+            "image": "empty",
             "costs": 0
           }
         ]
@@ -338,6 +341,7 @@
             "points": 0,
             "nextEvent": 8,
             "nextEventText": 1,
+            "image": "empty",
             "costs": 0
           }
         ]
@@ -420,6 +424,7 @@
             "points": 0,
             "nextEvent": 3,
             "nextEventText": 4,
+            "image": "empty",
             "costs": 0
           }
         ]

@@ -9,7 +9,7 @@
         "_id": "628b22cd1a129e2bced17b82",
         "name": "event1",
         "text": [
-          "Um 10:15 Uhr ruft Sie ein Arbeitskollege an und möchte, dass Sie zu ihm gehen, um Ihnen etwas wichtiges ganz kurz zu zeigen"
+          "Um 10:15 Uhr ruft Sie ein Arbeitskollege an und möchte, dass Sie zu ihm gehen, um Ihnen etwas Wichtiges ganz kurz zu zeigen."
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -24,7 +24,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "encryption",
-            "feedback": "Das schützt vor unberechtigtem Zugriff"
+            "feedback": "Das schützt vor unberechtigtem Zugriff."
           },
           {
             "_id": "628b240d1a129e2bced17b92",
@@ -37,7 +37,7 @@
             "nextImage": "test",
             "nextEventText": 1,
             "image": "devices",
-            "feedback": "während Ihrer Abwesenheit sollten Sie Ihren Bildschirm sperren. Das schützt vor unberechtigtem Zugriff"
+            "feedback": "während Ihrer Abwesenheit sollten Sie Ihren Bildschirm sperren. Das schützt vor unberechtigtem Zugriff."
           }
         ]
       },
@@ -45,8 +45,8 @@
         "_id": "628b25801a129e2bced17ba4",
         "name": "event2",
         "text": [
-          "Als Sie nach 30 Minuten zurückkamen, war Ihr PC nicht gesperrt, obwohl Sie ihn gesperrt haben. Außerdem sperrt er sich normalerweise von selbst in 15 Minuten",
-          "Beim Arbeitskollegen haben Sie mehr Zeit als gedacht gebraucht und Sie sind dort genau eine halbe Stunde geblieben. Als Sie zurückkamen war Ihr PC noch nicht gesperrt, obwohl er sich normalerweise von selbst in 15 Minuten sperrt"
+          "Als Sie nach 30 Minuten zurückkamen, war Ihr PC nicht gesperrt, obwohl Sie ihn gesperrt haben. Außerdem sperrt er sich normalerweise von selbst nach 15 Minuten.",
+          "Beim Arbeitskollegen haben Sie mehr Zeit als gedacht gebraucht und Sie sind dort genau eine halbe Stunde geblieben. Als Sie zurückkamen war Ihr PC noch nicht gesperrt, obwohl er sich normalerweise von selbst nach 15 Minuten sperrt."
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -61,7 +61,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "technical",
-            "feedback": "Das ist unwahrscheinlich"
+            "feedback": "Das ist unwahrscheinlich."
           },
           {
             "_id": "628b3a1e1a129e2bced17c58",
@@ -74,7 +74,7 @@
             "nextImage": "test",
             "nextEventText": 1,
             "image": "humanInterface",
-            "feedback": "Als erster Schritt ist das eine gute Idee"
+            "feedback": "Als erster Schritt ist das eine gute Idee."
           },
           {
             "_id": "628b3ae81a129e2bced17c63",
@@ -87,7 +87,7 @@
             "nextImage": "test",
             "nextEventText": 3,
             "image": "orga",
-            "feedback": "Als erster Schritt ist das eine gute Idee"
+            "feedback": "Als erster Schritt ist das eine gute Idee."
           }
         ]
       },
@@ -95,10 +95,10 @@
         "_id": "628b45c61a129e2bced17cdb",
         "name": "event3",
         "text": [
-          "Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist",
-          "Ihre Kolleginnen und Kollegen haben leider nichts gesehen. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist",
-          "Die zuständige Sicherheitsabteilung hat anscheinend viel zu tun und der Mitarbeiter am Telefon meinte, dass er von keiner Gefahr ausgeht und er hat Sie darum gebeten, immer den PC zu sperren, wenn Sie weggehen. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist",
-          "Eine Mitarbeiterin von der IT-Abteilung hat Ihren PC geprüft und hat gesagt, dass Ihr PC sich von selbst innerhalb von 15 Minuten sperren sollte und weiß nicht, woran das liegen konnte. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist"
+          "Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist.",
+          "Ihre Kolleginnen und Kollegen haben leider nichts gesehen. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist.",
+          "Die zuständige Sicherheitsabteilung hat anscheinend viel zu tun und der Mitarbeiter am Telefon meinte, dass er von keiner Gefahr ausgeht und er hat Sie darum gebeten, immer den PC zu sperren, wenn Sie weggehen. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist.",
+          "Eine Mitarbeiterin von der IT-Abteilung hat Ihren PC geprüft und hat gesagt, dass Ihr PC sich von selbst innerhalb von 15 Minuten sperren sollte und weiß nicht, woran das liegen konnte. Sie haben weitergearbeitet und haben nach ein paar Stunden bemerkt, dass die Anlage, für die Sie zuletzt die Prozesse optimiert haben, außer Betrieb ist."
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -113,7 +113,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "humanInterface",
-            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werde."
           },
           {
             "_id": "628b49111a129e2bced17cfb",
@@ -126,7 +126,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "technical",
-            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werde."
           },
           {
             "_id": "628b49e91a129e2bced17d04",
@@ -160,7 +160,7 @@
         "_id": "628b72dd1a129e2bced17ebf",
         "name": "event4",
         "text": [
-          "Sie konnten die Anlage wieder in Betrieb nehmen, herzlichen Glückwunsch! Stunden später ist die Anlage wieder außer Betrieb, nicht nur sie, sondern auch einige anderen Anlagen auch"
+          "Sie konnten die Anlage wieder in Betrieb nehmen, herzlichen Glückwunsch! Stunden später ist die Anlage wieder außer Betrieb, nicht nur sie, sondern auch einige anderen Anlagen auch."
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -188,7 +188,7 @@
             "nextImage": "test",
             "nextEventText": 2,
             "image": "technical",
-            "feedback": "Das bringt leider nicht viel"
+            "feedback": "Das bringt leider nicht viel."
           },
           {
             "_id": "628b80171a129e2bced17ff4",
@@ -224,7 +224,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "humanInterface",
-            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden."
           },
           {
             "_id": "628b7feb1a129e2bced17ff1",
@@ -237,7 +237,7 @@
             "nextImage": "test",
             "nextEventText": 2,
             "image": "technical",
-            "feedback": "Das bringt leider nicht viel"
+            "feedback": "Das bringt leider nicht viel."
           },
           {
             "_id": "628b80171a129e2bced17ff4",
@@ -273,7 +273,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "humanInterface",
-            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden."
           },
           {
             "_id": "628c8b5e1a129e2bced18aad",
@@ -285,7 +285,8 @@
             "nextEvent": 7,
             "nextImage": "test",
             "nextEventText": 0,
-            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden "
+            "feedback": "Zusätzlich sollte die Sicherheitsabteilung informiert werden.",
+            "image": "technical"
           },
           {
             "_id": "628b80171a129e2bced17ff4",
@@ -306,10 +307,10 @@
         "_id": "628b82621a129e2bced18040",
         "name": "event7",
         "text": [
-          "Sie haben nichts auffälliges gefunden und haben dann Kontakt mit der zuständigen Sicherheitsabteilung aufgenommen. Der Fall wurde überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort",
-          "Da viele Anlagen außer Betrieb sind, hat die zuständige Sicherheitsabteilung den Fall überprüft und gefunden, dass der Fehler durch Ihren PC um 10:26 Uhr verursacht worden ist. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort",
-          "Dadurch konnte der Fehler leider nicht behoben werden. Sie haben dann Kontakt mit der zuständigen Sicherheitsabteilung aufgenommen. Der Fall wurde gründlich überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort",
-          "Die zuständige Sicherheitsabteilung hat den Fall überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort"
+          "Sie haben nichts auffälliges gefunden und haben dann Kontakt mit der zuständigen Sicherheitsabteilung aufgenommen. Der Fall wurde überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort:",
+          "Da viele Anlagen außer Betrieb sind, hat die zuständige Sicherheitsabteilung den Fall überprüft und gefunden, dass der Fehler durch Ihren PC um 10:26 Uhr verursacht worden ist. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort:",
+          "Dadurch konnte der Fehler leider nicht behoben werden. Sie haben dann Kontakt mit der zuständigen Sicherheitsabteilung aufgenommen. Der Fall wurde gründlich überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort:",
+          "Die zuständige Sicherheitsabteilung hat den Fall überprüft. Dass viele Anlagen außer Betrieb sind, ist durch Ihren PC um 10:26 Uhr verursacht worden. Der Fehler wurde am späten Abend behoben und alle Anlagen funktionieren wieder. Ändern Sie sicherheitshalber Ihr Passwort:"
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -324,7 +325,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "encryption",
-            "feedback": "ein Passwort sollte in keinem Wörterbuch zu finden sein, aus Klein- und Großbuchstaben sowie Sonderzeichen bestehen"
+            "feedback": "Ein Passwort sollte in keinem Wörterbuch zu finden sein, aus Klein- und Großbuchstaben sowie Sonderzeichen bestehen."
           },
           {
             "_id": "628b83561a129e2bced1804c",
@@ -337,7 +338,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "encryption",
-            "feedback": "Richtig, ein Passwort sollte in keinem Wörterbuch zu finden sein, aus Klein- und Großbuchstaben sowie Sonderzeichen bestehen"
+            "feedback": "Richtig, ein Passwort sollte in keinem Wörterbuch zu finden sein, aus Klein- und Großbuchstaben sowie Sonderzeichen bestehen."
           },
           {
             "_id": "628b838a1a129e2bced18050",
@@ -350,7 +351,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "encryption",
-            "feedback": "ein Passwort sollte in keinem Wörterbuch zu finden sein "
+            "feedback": "Ein Passwort sollte in keinem Wörterbuch zu finden sein."
           }
         ]
       },
@@ -358,7 +359,7 @@
         "_id": "628b852b1a129e2bced18066",
         "name": "event8",
         "text": [
-          "Einige Tage später hat Ihr Arbeitskollege Sie darum gebeten, ihm Ihre Zugangsdaten zu geben, weil er in der Anlage B etwas testen möchte und er dafür in seiner Rolle keine Rechte hat"
+          "Einige Tage später hat Ihr Arbeitskollege Sie darum gebeten, ihm Ihre Zugangsdaten zu geben, weil er in der Anlage B etwas testen möchte und er dafür in seiner Rolle keine Rechte hat."
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -373,7 +374,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "encryption",
-            "feedback": "Zugangsdaten sollten niemals weitergegeben werden"
+            "feedback": "Zugangsdaten sollten niemals weitergegeben werden."
           },
           {
             "_id": "628b89871a129e2bced1808f",
@@ -386,7 +387,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "Zugangsdaten sollten niemals weitergegeben werden und Benutzerkonto darf nur von dem Benutzer selbst verwendet werden"
+            "feedback": "Zugangsdaten sollten niemals weitergegeben werden und Benutzerkonto darf nur von dem Benutzer selbst verwendet werden."
           }
         ]
       },
@@ -409,7 +410,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "encryption",
-            "feedback": "Als erster Schritt ist das ein guter Ansatz, jedoch sind weitere Aktionen notwendig"
+            "feedback": "Als erster Schritt ist das ein guter Ansatz, jedoch sind weitere Aktionen notwendig."
           },
           {
             "_id": "628b8f171a129e2bced180ed",
@@ -422,7 +423,7 @@
             "nextImage": "test",
             "nextEventText": 1,
             "image": "humanInterface",
-            "feedback": "Als erster Schritt ist das ein guter Ansatz, jedoch sind weitere Aktionen notwendig"
+            "feedback": "Als erster Schritt ist das ein guter Ansatz, jedoch sind weitere Aktionen notwendig."
           },
           {
             "_id": "628b8f561a129e2bced180f1",
@@ -435,7 +436,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "email",
-            "feedback": "Der Abteilungsleiter kann bei der Klärung des Vorfalles unterstützen"
+            "feedback": "Der Abteilungsleiter kann bei der Klärung des Vorfalles unterstützen."
           }
         ]
       },
@@ -443,8 +444,8 @@
         "_id": "628b902f1a129e2bced18101",
         "name": "event10",
         "text": [
-          "Sie haben Ihr Passwort erfolgreich geändert, doch in den historischen Anmeldeinformationen sehen Sie, dass eine Anmeldesitzung außer Ihrer noch offen ist",
-          "Ihr Arbeitskollege hat Ihnen versprochen, dass er Ihren Account nicht mehr verwendet, doch in den historischen Anmeldeinformationen sehen Sie, dass eine Anmeldesitzung außer Ihrer noch offen ist"
+          "Sie haben Ihr Passwort erfolgreich geändert, doch in den historischen Anmeldeinformationen sehen Sie, dass eine Anmeldesitzung außer Ihrer noch offen ist.",
+          "Ihr Arbeitskollege hat Ihnen versprochen, dass er Ihren Account nicht mehr verwendet, doch in den historischen Anmeldeinformationen sehen Sie, dass eine Anmeldesitzung außer Ihrer noch offen ist."
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -459,7 +460,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "email",
-            "feedback": "Der Abteilungsleiter kann bei der Klärung des Vorfalles unterstützen"
+            "feedback": "Der Abteilungsleiter kann bei der Klärung des Vorfalles unterstützen."
           },
           {
             "_id": "628b91291a129e2bced1810f",
@@ -480,8 +481,8 @@
         "_id": "628b91941a129e2bced18118",
         "name": "event11",
         "text": [
-          "Der Abteilungsleiter hat sich nach dem Vorfall entschieden, dass alle Mitarbeiterinnen und Mitarbeiter, die Zugangsdaten zum System haben, zwei Faktor Authentifizierung durch TAN-Gernrator verwenden müssen. Außerdem müssen allen Geräten und Softwareprozessen Konten zugewiesen werden, die zur Kontrolle des Zugriffs auf das IACS und seine Ressourcen und Befehle dienen. Welche Rechte würden Sie solchen Geräten und Softwareprozessen zuweisen?",
-          "Der IT Abteilung wurde durch die IT-Abteilung informiert, dass sehr viele Anmeldungen aus unterschiedlichen Ländern durch Ihren Account getätigt wurden. Er hat sich nach dem Vorfall entschieden, dass alle Mitarbeiterinnen und Mitarbeiter, die Zugangsdaten zum System haben, zwei Faktor Authentifizierung durch TAN-Gernrator verwenden müssen. Außerdem müssen allen Geräten und Softwareprozessen Konten zugewiesen werden, die zur Kontrolle des Zugriffs auf das IACS und seine Ressourcen und Befehle dienen. Welche Rechte würden Sie solchen Geräten und Softwareprozessen zuweisen?"
+          "Der Abteilungsleiter hat sich nach dem Vorfall entschieden, dass alle Mitarbeiterinnen und Mitarbeiter, die Zugangsdaten zum System haben, zwei Faktor Authentifizierung durch einen TAN-Generator verwenden müssen. Außerdem müssen allen Geräten und Softwareprozessen Konten zugewiesen werden, die zur Kontrolle des Zugriffs auf das IACS und seine Ressourcen und Befehle dienen. Welche Rechte würden Sie solchen Geräten und Softwareprozessen zuweisen?",
+          "Der Abteilungsleiter wurde durch die IT-Abteilung informiert, dass sehr viele Anmeldungen aus unterschiedlichen Ländern durch Ihren Account getätigt wurden. Er hat sich nach dem Vorfall entschieden, dass alle Mitarbeiterinnen und Mitarbeiter, die Zugangsdaten zum System haben, zwei Faktor Authentifizierung durch einen TAN-Generator verwenden müssen. Außerdem müssen allen Geräten und Softwareprozessen Konten zugewiesen werden, die zur Kontrolle des Zugriffs auf das IACS und seine Ressourcen und Befehle dienen. Welche Rechte würden Sie solchen Geräten und Softwareprozessen zuweisen?"
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -496,7 +497,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "network",
-            "feedback": "Die Benutzer sollten nur so viel Rechte wie nötig haben"
+            "feedback": "Die Benutzer sollten nur so viel Rechte wie nötig haben."
           },
           {
             "_id": "628b92281a129e2bced18121",
@@ -509,7 +510,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "orga",
-            "feedback": "Stimmt! Die Benutzer sollten nur so viel Rechte wie nötig haben"
+            "feedback": "Stimmt! Die Benutzer sollten nur so viel Rechte wie nötig haben."
           }
         ]
       },
@@ -517,7 +518,7 @@
         "_id": "628b927e1a129e2bced1812a",
         "name": "event12",
         "text": [
-          "Welche Arten von Zugriffsrechen gibt's?"
+          "Welche Arten von Zugriffsrechten gibt es?"
         ],
         "levelId": "628b217f1a129e2bced17b75",
         "cards": [
@@ -564,14 +565,14 @@
             "_id": "628b934c1a129e2bced18139",
             "name": "card30",
             "text": [
-              "Alle genannten und mehr auch möglich"
+              "Alle genannten"
             ],
             "points": 4,
             "nextEvent": 13,
             "nextImage": "test",
             "nextEventText": 0,
             "image": "network",
-            "feedback": "Lesen, Schreiben, Ausführen und mehr auch möglich"
+            "feedback": "Lesen, Schreiben, Ausführen"
           }
         ]
       },
@@ -594,7 +595,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "email",
-            "feedback": "Wenn der Benutzer nur für einen vorübergehenden Zeitraum einen Zugriff nicht mehr benötigt, sollte der Zugriff für diesen Zeitraum deaktiviert werden"
+            "feedback": "Wenn der Benutzer nur für einen vorübergehenden Zeitraum einen Zugriff nicht mehr benötigt, sollte der Zugriff für diesen Zeitraum deaktiviert werden."
           },
           {
             "_id": "628b94981a129e2bced18152",
@@ -607,7 +608,7 @@
             "nextImage": "test",
             "nextEventText": 1,
             "image": "network",
-            "feedback": "Wenn der Benutzer nur für einen vorübergehenden Zeitraum einen Zugriff nicht mehr benötigt, sollte der Zugriff für diesen Zeitraum deaktiviert werden"
+            "feedback": "Wenn der Benutzer nur für einen vorübergehenden Zeitraum einen Zugriff nicht mehr benötigt, sollte der Zugriff für diesen Zeitraum deaktiviert werden."
           }
         ]
       },
@@ -631,7 +632,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "email",
-            "feedback": "Sehr gut! Wenn etwas nicht stimmt, sollten Sie die zuständige Abteilung darüber informieren"
+            "feedback": "Sehr gut! Wenn etwas nicht stimmt, sollten Sie die zuständige Abteilung darüber informieren."
           },
           {
             "_id": "628b95f91a129e2bced18168",
@@ -644,7 +645,7 @@
             "nextImage": "test",
             "nextEventText": 0,
             "image": "orga",
-            "feedback": "Auch Sie von Ihrer Seite alles erledigt haben, sollten Sie die zuständige Abteilung nochmal daran erinnern "
+            "feedback": "Auch wenn Sie von Ihrer Seite alles erledigt haben, sollten Sie die zuständige Abteilung nochmal daran erinnern. "
           }
         ]
       },

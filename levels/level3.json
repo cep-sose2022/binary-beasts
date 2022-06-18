@@ -170,7 +170,7 @@
         "name": "event4",
         "text": [
           "Die IT-Abteilung prüft den Stick und entdeckt Malware. Leider haben Sie den infizierten Datenträger bereits in Ihren PC gesteckt und somit das gesamte Netz infiziert. Die Produktion wird leicht beeinträchtigt während die Malware entfert wird. Zum Glück wurde es noch frühzeitig erkannt, sodass keine weiteren Schäden entstehen.",
-          "Sie geben ihn bei der Fundstelle ab. Der Besitzer wird sich bestimmt freuen ihn wiederzubekommen. Eine Woche später erhalten Sie die Meldung, dass von Ihrem Arbeitsrechner aus Malware ins Netzwerk eingeschleust wurde. Die Produktion wurde lahmgelegt und erheblicher Schaden verursacht. Ihr Chef vermutet, dass es Absicht war und feuert Sie."
+          "Sie geben ihn bei der Fundstelle ab. Der Besitzer wird sich bestimmt freuen ihn wiederzubekommen. Eine Woche später erhalten Sie die Meldung, dass von Ihrem Arbeitsrechner aus Malware ins Netzwerk eingeschleust wurde. Die Produktion wurde lahmgelegt und erheblicher Schaden verursacht. Ihr Chef gibt Ihnen eine Abmahnung."
         ],
         "cards": [
           {
@@ -378,7 +378,7 @@
       "10": {
         "name": "event11",
         "text": [
-          "Das Update scheint fehlerfrei zu laufen und keinerlei Probleme zu verursachen.",
+          "Sie haben den Stick erfolgreich kopiert und verwahren den Originalen sicher auf.",
           "Der Stick weist keine Auffälligkeiten auf."
         ],
         "cards": [
@@ -467,7 +467,9 @@
           },
           {
             "name": "card27",
-            "text": "Die Firmendaten nicht löschen, falls Sie erneut gebraucht werden.",
+            "text": [
+              "Die Firmendaten nicht löschen, falls Sie erneut gebraucht werden."
+            ],
             "points": -5,
             "nextEvent": 14,
             "nextEventText": 3,

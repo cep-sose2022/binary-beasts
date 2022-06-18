@@ -3,7 +3,7 @@
     "_id": "628dccdbe094c701eef4ccd5",
     "name": "Netzwerksegmentierung",
     "token": "level1",
-    "description": "Die Segmentierung von Netzwerken im OT-Umfeld bildet einen wichtigen Bestandteil der Sicherheit. Sind diese nämlich nicht richtig eingerichtet, bieten diese eine große Angriffsfläche für bösartige Hacker. Leider gibt es gibt es keine perfekte Lösung, die alle Sicherheitsprobleme löst. So war z.B. der OT-Angriff Stuxnet erfolgreich, obwohl das OT-Netzwerk air-gapped war. Jedoch gibt es trotzdem einiges auf das man achten sollte, um die Sicherheit so gut wie möglich sicherzustellen.",
+    "description": "Die Segmentierung von Netzwerken im OT-Umfeld bildet einen wichtigen Bestandteil der Sicherheit. Sind diese nämlich nicht richtig eingerichtet, bieten diese eine große Angriffsfläche für bösartige Hacker. Leider gibt es keine perfekte Lösung, die alle Sicherheitsprobleme löst. So war z.B. der OT-Angriff Stuxnet erfolgreich, obwohl das OT-Netzwerk air-gapped war. Jedoch gibt es trotzdem einiges auf das man achten sollte, um die Sicherheit so gut wie möglich sicherzustellen.",
     "events": {
       "0": {
         "_id": "628dd90c87d6e910c78326b3",
@@ -46,7 +46,7 @@
             ],
             "points": 1,
             "nextEvent": 3,
-            "nextImage": " ",
+            "nextImage": "firewall",
             "nextEventText": 0,
             "image": "network",
             "feedback": "Diese Karte hat verursacht, dass Sie bei den anderen Möglichkeiten weniger Punkte bekommen haben, da dies kein guter Vorschlag war. Eine einfache Firewall reicht zur Absicherung von IT- und OT-Netz nicht aus"
@@ -59,7 +59,7 @@
             ],
             "points": 3,
             "nextEvent": 4,
-            "nextImage": " ",
+            "nextImage": "vlan",
             "nextEventText": 0,
             "image": "network",
             "feedback": "Diese Karte hat verursacht, dass Sie bei den anderen Möglichkeiten weniger Punkte bekommen haben, da es einen besseren Vorschlag gab. VLANs sorgen zwar schon für mehr Sicherheit als eine einfache Firewall, jedoch wird die Kommunikation innerhalb des VLANs nicht überprüft"
@@ -72,7 +72,7 @@
             ],
             "points": 5,
             "nextEvent": 5,
-            "nextImage": " ",
+            "nextImage": "router",
             "nextEventText": 0,
             "image": "network",
             "feedback": "Das war die richtige Karte in diesem Ereignis. Mithilfe der Mikro-Segmentierung ist auch innerhalb eines VLANs die Kommunikation überprüfbar und bietet somit die beste Sicherheit"
@@ -96,7 +96,7 @@
             ],
             "points": -1,
             "nextEvent": 3,
-            "nextImage": " ",
+            "nextImage": "firewall",
             "nextEventText": 1,
             "image": "devices",
             "feedback": "Erlaubt man allen Workstations aus dem IT-Netz Zugang zum ICS, kann ein Hacker ein beliebiges Gerät im IT-Netz übernehmen und dadurch Zugriff auf das ICS erhalten"
@@ -146,7 +146,7 @@
             ],
             "points": -1,
             "nextEvent": 4,
-            "nextImage": " ",
+            "nextImage": "vlan",
             "nextEventText": 1,
             "image": "network",
             "feedback": "Gruppiert man ICS-Komponenten nur nach ihren Funktionen, entsteht möglicherweise mehr Kommunikationsaustausch zwischen den VLANs, was das Monitoring erschwert"
@@ -170,7 +170,7 @@
             ],
             "points": -2,
             "nextEvent": 5,
-            "nextImage": " ",
+            "nextImage": "router",
             "nextEventText": 1,
             "image": "technical",
             "feedback": "Eine einfache Firewall kann eine Mikro-Segmentierung nicht umsetzen"
@@ -195,7 +195,7 @@
         "name": "event3",
         "text": [
           "Netzwerktechniker: „Das sollte klappen. Es gibt von Fortinet einige Produkte, wie z.B. das FortiGate oder FortiSwitch, mit denen sich das umsetzen lässt. Ich denke, dass das der sicherste Ansatz für die Segmentierung ist. Aber vielleicht gibt es ja noch einige Faktoren, mit denen wir die Sicherheit erhöhen können, fällt dir da was ein?“",
-          "Netzwerktechniker: „Macht Sinn. Nachrichten, die im ICS-Netz übertragen werden, sollten keine Nutzlasten wie z.B. Anhänge enthalten, da diese potenziell Schadsoftware in das ICS-Netz einschleusen könnte.“",
+          "Netzwerktechniker: „Macht Sinn. Nachrichten, die im ICS-Netz übertragen werden, sollten keine Nutzlasten wie z.B. Anhänge enthalten, da diese potenziell Schadsoftware in das ICS-Netz einschleusen könnten.“",
           "Netzwerktechniker: „Klar. Wir sollten beim konkreten Entwurf darauf achten, dass Ausfälle in den externen Netzwerken keine Auswirkungen aus das ICS-Netz haben und diese nicht beeinträchtigt.“",
           "Netzwerktechniker: „Das sollten wir lieber nicht machen. Diesen Backup-Zugriffspfad können dann auch Angreifer ausnutzen, um ins ICS-Netz zu gelangen.“",
           "Netzwerktechniker: „Eine gute Idee! Wir brauchen unbedingt eine systemweite Zeit für die Zeitstempelung von Ereignissen, die vor Manipulation geschützt ist. Bei der Auswahl des Zeitverteilungsprotokolls sollten wir darauf achten, dass das Protokoll für industrielle Anwendung allgemein akzeptiert ist.“"

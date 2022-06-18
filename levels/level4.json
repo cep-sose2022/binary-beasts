@@ -33,7 +33,7 @@
         "text": [
           "IT-Admin: „Hallo! Lass uns keine Zeit verlieren und direkt mit der Einrichtung beginnen. Zuerst müssen wir uns Gedanken machen, wie der Remote Access ablaufen soll und unsere Netzwerkhierarchie daran anpassen. Haben Sie Vorschläge?“",
           "IT-Admin: „Ich denke nicht, dass das eine gute Idee ist. Das wäre zwar sehr simpel und wir könnten zwischen IT- und OT-Netz eine Firewall setzen, aber das bietet trotzdem noch genug Angriffsfläche.“",
-          "IT-Admin: „Auf gar keinen Fall! Wenn unsere ICS-Geräte über das Internet erreichbar sind, können ihre IP-Adressen später auf Suchmaschinen wie z.B. Shodan gefunden werden. Wir könnten es den Hackern dadurch nicht leichter machen, unser OT-Netz anzugreifen!“"
+          "IT-Admin: „Auf gar keinen Fall! Wenn unsere ICS-Geräte über das Internet erreichbar sind, können ihre IP-Adressen später auf Suchmaschinen wie z.B. Shodan gefunden werden. Wir könnten es den Hackern dadurch nicht leichter machen unser OT-Netz anzugreifen!“"
         ],
         "levelId": "62833fc249fbc35f01f7ecfd",
         "cards": [
@@ -82,7 +82,7 @@
         "_id": "62860b065b49dd4f79b82a61",
         "name": "event2",
         "text": [
-          "IT-Admin: „Eine gute Idee! Wir können die Verbindung folgendermaßen gestalten: Man muss sich zuerst über VPN in die ICS-DMZ verbinden, über welche man dan mithilfe eines gesicherten Remote Desktops via Jump Server Zugriff auf die OT-Systeme erhält. Jetzt müssen wir uns noch kurz überlegen, wie wir die Netzwerkhierarchie im OT-Netz gestalten“",
+          "IT-Admin: „Eine gute Idee! Wir können die Verbindung folgendermaßen gestalten: Man muss sich zuerst über VPN in die ICS-DMZ verbinden, über welche man dann mithilfe eines gesicherten Remote Desktops via Jump Server Zugriff auf die OT-Systeme erhält. Jetzt müssen wir uns noch kurz überlegen, wie wir die Netzwerkhierarchie im OT-Netz gestalten.“",
           "IT-Admin: „Das sollten wir lieber nicht so lassen. Durch die flache Netzwerkstruktur können wir den Scope des Remote Access nicht kontrollieren. Das bedeutet, das man mit einem Remote Access Zugriff auf alle Prozesse hat, was eine große Angriffsfläche bietet.“"
         ],
         "levelId": "62833fc249fbc35f01f7ecfd",
@@ -119,10 +119,10 @@
         "_id": "62860eb15b49dd4f79b82f82",
         "name": "event3",
         "text": [
-          "IT-Admin: „Klingt gut! Durch die Segmentierung können wir den Remote Access für bestimmte Prozesse konfigurieren, sodass man nur bestimmte vorgesehene Aufgaben erledigen kann. Das minimiert die Angriffsfläche, da man durch einen Remote Access keinen Einfluss auf andere Netzwerksegmente hat. Nun können wir uns weitere Maßnahmen für die Sicherheit überlegen“",
+          "IT-Admin: „Klingt gut! Durch die Segmentierung können wir den Remote Access für bestimmte Prozesse konfigurieren, sodass man nur bestimmte vorgesehene Aufgaben erledigen kann. Das minimiert die Angriffsfläche, da man durch einen Remote Access keinen Einfluss auf andere Netzwerksegmente hat. Nun können wir uns weitere Maßnahmen für die Sicherheit überlegen.“",
           "IT-Admin: „Hm, ich denke, dass wir mit diesem Ansatz den Überblick darüber verlieren, wer genau sich mit dem OT-Netz verbunden hat. Es gibt dafür bestimmt einen besseren Weg“",
           "IT-Admin: „Gute Idee. Dadurch können wir immer sehen, wer zu welchem Zeitpunkt sich mit welchen Systemen verbunden hat. Außerdem haben wir volle Kontrolle über die Zuweisung der Zugangsberechtigung zu den OT-Systemen und können diese je nach Personen anpassen.“",
-          "IT-Admin: „Absolutes Muss. So können alle Aktivitäten und Verbindungen ins OT-Netz überwachen und nachvollziehen. Das ist sehr wertvoll, wenn trotz unserer Sicherheitsmaßnahmen ein Angriff vorgefallen ist. Außerdem können wir dadurch mehrfach fehlgeschlagene Verbindungsversuche durch z.B. Brute-Force erkennen und sperren.“",
+          "IT-Admin: „Absolutes Muss. So können alle Aktivitäten und Verbindungen ins OT-Netz überwacht und nachvollzogen werden. Das ist sehr wertvoll, wenn trotz unserer Sicherheitsmaßnahmen ein Angriff vorgefallen ist. Außerdem können wir dadurch mehrfach fehlgeschlagene Verbindungsversuche durch z.B. Brute-Force erkennen und sperren.“",
           "IT-Admin: „Auf jeden Fall. Ich habe schon oft gehört, dass viele Industrieanlagen für ihr OT-Netz Standardpasswörter verwenden, und dass diese Netzwerke aus dem Internet erreichbar sind. Das ist natürlich ein absolutes Horror-Szenario.“",
           "IT-Admin: „Klar. Ein sicheres Passwort reicht nicht aus, wenn es abgefangen oder anderweitig herausgefunden wird. Wir können beispielsweise zusätzlich einen Hardware-Token oder ein Zertifikat für die Authentifizierung verwenden.“",
           "IT-Admin: „Natürlich. Jede Kommunikation mit dem OT-Netz muss verschlüsselt werden, insbesondere die Authentifizierung, damit Hacker die Kommunikation nicht mitlesen können“",
@@ -229,8 +229,8 @@
         "text": [
           "IT-Admin: „Super. Jetzt haben wir die wichtigsten Maßnahmen für eine sichere Verbindung festgelegt. Wir sollten uns aber noch um den Verbindungsabbau kümmern.“",
           "IT-Admin: „Vielleicht sollten wir uns noch andere Mechanismen für den Verbindungsabbau überlegen. Wenn die Verbindung ausschließlich durch den Nutzer beendet wird, kann es sein dass der Nutzer die Verbindung offen lässt, während er etwas anderes macht. Das birgt ein Sicherheitsrisiko.“",
-          "IT-Admin: „Nicht schlecht. Es kann zwar nervig für den Nutzer sein, nach einer bestimmter Zeit rausgeworfen zu werden, aber das erhöht die Sicherheit.“",
-          "IT-Admin: „Sehr gut. Das müssen wir auf jeden Fall umsetzen, da sich bei Inaktivität jemand anderes in den Prozess einschleichen kann, ohne dass es jemanden auffällt.“"
+          "IT-Admin: „Nicht schlecht. Es kann zwar nervig für den Nutzer sein, nach einer bestimmten Zeit rausgeworfen zu werden, aber das erhöht die Sicherheit.“",
+          "IT-Admin: „Sehr gut. Das müssen wir auf jeden Fall umsetzen, da sich bei Inaktivität jemand anderes in den Prozess einschleichen kann, ohne dass es jemandem auffällt.“"
         ],
         "levelId": "62833fc249fbc35f01f7ecfd",
         "cards": [
@@ -251,7 +251,7 @@
             "_id": "628614f45b49dd4f79b835f8",
             "name": "card15",
             "text": [
-              "Verbindung in bestimmten Zeitraum zulassen"
+              "Verbindung in einem bestimmten Zeitraum zulassen"
             ],
             "points": 3,
             "nextEvent": 5,

@@ -3,7 +3,7 @@
     "_id": "6292703e1a129e2bced1c03a",
     "name": "Logging & Monitoring",
     "token": "level6",
-    "description": "Logging bzw. Monitoring dient dem frühen Erkennen von Fehlern und sicherheitsrelevanten Vorfällen wie beispielsweise Identifikation von Ressourcenengpässen oder unbefugte Zugriffsversuche, aber auch zur Erfüllung von Beweissicherung bei Vorfällen",
+    "description": "Logging bzw. Monitoring dient dem frühen Erkennen von Fehlern und sicherheitsrelevanten Vorfällen wie beispielsweise Identifikation von Ressourcenengpässen oder unbefugte Zugriffsversuche, aber auch zur Erfüllung von Beweissicherung bei Vorfällen.",
     "events": {
       "0": {
         "_id": "6295b3441a129e2bced1dc1f",
@@ -17,7 +17,7 @@
             "_id": "6295b3d21a129e2bced1dc28",
             "name": "card1",
             "text": [
-              "Weiter.."
+              "Weiter..."
             ],
             "points": 0,
             "nextEvent": 2,
@@ -32,7 +32,7 @@
         "_id": "6295b5af1a129e2bced1dc3c",
         "name": "event2",
         "text": [
-          "Aufgrund des schnellen Wachstums des Unternehmens steigt die Anzahl der Systeme, die sich in Betrieb und Entwicklung befinden und somit auch die Kosten durch Systemausfälle sowie Fehlerbehebung. Diese verursacht hohe Komplexität für Monitoring. Deshalb und auch um die Sicherheitsniveau zu erhöhen, möchte Ihr Unternehmen die Möglichkeit prüfen, ein KI-unterstütztes Monitoring zu verwenden. Dabei wird Ihr Wissen benötigt, um die Vor- und Nachteile von dem bisher verwendeten Monitoring sowie das KI-unterstütztes Monitoring zu vergleichen und auch mehr zu erfahren, wie dieser Prozess umgesetzt werden kann. Am Ende können Sie uns mitteilen, welches Monitoringsystem Ihrem Unternehmen mehr Sicherheit und Vorteile anbieten würde."
+          "Aufgrund des schnellen Wachstums des Unternehmens steigt die Anzahl der Systeme, die sich in Betrieb und Entwicklung befinden und somit auch die Kosten durch Systemausfälle sowie Fehlerbehebung. Diese verursacht hohe Komplexität für Monitoring. Deshalb und auch um die Sicherheitsniveaus zu erhöhen, möchte Ihr Unternehmen die Möglichkeit prüfen, ein KI-unterstütztes Monitoring zu verwenden. Dabei wird Ihr Wissen benötigt, um die Vor- und Nachteile von dem bisher verwendeten Monitoring sowie das KI-unterstütztes Monitoring zu vergleichen und auch mehr zu erfahren, wie dieser Prozess umgesetzt werden kann. Am Ende können Sie uns mitteilen, welches Monitoringsystem Ihrem Unternehmen mehr Sicherheit und Vorteile anbieten würde."
         ],
         "levelId": "6292703e1a129e2bced1c03a",
         "cards": [
@@ -55,7 +55,7 @@
         "_id": "6295ce4b052f384a56aa43e6",
         "name": "event3",
         "text": [
-          "Wie wird der Prozess für das regelbasiertes Monitoringsystem verbessert?"
+          "Wie wird der Prozess für das regelbasierte Monitoringsystem verbessert?"
         ],
         "levelId": "6292703e1a129e2bced1c03a",
         "cards": [
@@ -128,8 +128,8 @@
         "_id": "629655b3052f384a56aa48f7",
         "name": "event5",
         "text": [
-          "Das spart zwar Speicherplatz aber für den Fall, dass ein Angriff erst nach einer langen Zeit entdeckt wird, könnten die Logdaten eine wichtige Rolle bei der Beweissicherung spielen. Ein wichtiger Schritt für die Filterung der Logdaten bei einem KI-unterstütztes Monitoring besteht darin, die Logs zu harmonisieren. Was würden Sie dafür von den Logs entfernen, um dieses Ziel zu erreichen?",
-          "Sehr gut! Für den Fall, dass ein Angriff erst nach einer langen Zeit entdeckt wird, könnten die Logdaten eine wichtige Rolle bei der Beweissicherung spielen. Ein wichtiger Schritt für die Filterung der Logdaten bei einem KI-unterstütztes Monitoring besteht darin, die Inhalte von den Logs zu filtern. Was würden Sie dafür von den Logs entfernen, um dieses Ziel zu erreichen?"
+          "Das spart zwar Speicherplatz aber für den Fall, dass ein Angriff erst nach einer langen Zeit entdeckt wird, könnten die Logdaten eine wichtige Rolle bei der Beweissicherung spielen. Ein wichtiger Schritt für die Filterung der Logdaten bei einem KI-unterstützten Monitoring besteht darin, die Logs zu harmonisieren. Was würden Sie dafür von den Logs entfernen, um dieses Ziel zu erreichen?",
+          "Sehr gut! Für den Fall, dass ein Angriff erst nach einer langen Zeit entdeckt wird, könnten die Logdaten eine wichtige Rolle bei der Beweissicherung spielen. Ein wichtiger Schritt für die Filterung der Logdaten bei einem KI-unterstützten Monitoring besteht darin, die Inhalte von den Logs zu filtern. Was würden Sie dafür von den Logs entfernen, um dieses Ziel zu erreichen?"
         ],
         "levelId": "6292703e1a129e2bced1c03a",
         "cards": [
@@ -255,8 +255,8 @@
         "_id": "6296844e052f384a56aa4ac2",
         "name": "event7",
         "text": [
-          "Dadurch können wir verschiedene Parameter messen und nach Muster durch die gewonnenen Daten suchen, um Fehler frühzeitig zu erkennen und ggf. zu behandeln. In der Regel gibt es drei Arten von Ereignissen, die auftreten können. Für welche diese Ereignisse macht es sinn, Aktionen durch das KI-Monitoring automatisiert ausführen zu lassen",
-          "Das funktioniert leider nicht effizient! In der Regel gibt es drei Arten von Ereignissen, die auftreten können. Für welche diese Ereignisse macht es sinn, Aktionen durch das KI-Monitoring automatisiert ausführen zu lassen"
+          "Dadurch können wir verschiedene Parameter messen und nach Muster durch die gewonnenen Daten suchen, um Fehler frühzeitig zu erkennen und ggf. zu behandeln. In der Regel gibt es drei Arten von Ereignissen, die auftreten können. Für welche diese Ereignisse macht es Sinn, Aktionen durch das KI-Monitoring automatisiert ausführen zu lassen?",
+          "Das funktioniert leider nicht effizient! In der Regel gibt es drei Arten von Ereignissen, die auftreten können. Für welche diese Ereignisse macht es Sinn, Aktionen durch das KI-Monitoring automatisiert ausführen zu lassen?"
         ],
         "levelId": "6292703e1a129e2bced1c03a",
         "cards": [
@@ -305,8 +305,8 @@
         "_id": "62968647052f384a56aa4ae5",
         "name": "event8",
         "text": [
-          "Vorfälle die immer wieder auftreten eigenen sich gut für automatisierte Aktionen. Wir haben jetzt einen Überblick über das regelbasierte Monitoring sowie das KI-gestütztes Monitoring erhalten. Was würden Sie Ihrem Unternehmen empfehlen?",
-          "Sehr gut! Vorfälle die immer wieder auftreten eigenen sich gut für automatisierte Aktionen. Wir haben jetzt einen Überblick über das regelbasierte Monitoring sowie das KI-gestütztes Monitoring erhalten. Was würden Sie Ihrem Unternehmen empfehlen?"
+          "Vorfälle die immer wieder auftreten eigenen sich gut für automatisierte Aktionen. Wir haben jetzt einen Überblick über das regelbasierte Monitoring sowie das KI-gestützte Monitoring erhalten. Was würden Sie Ihrem Unternehmen empfehlen?",
+          "Sehr gut! Vorfälle die immer wieder auftreten eigenen sich gut für automatisierte Aktionen. Wir haben jetzt einen Überblick über das regelbasierte Monitoring sowie das KI-gestützte Monitoring erhalten. Was würden Sie Ihrem Unternehmen empfehlen?"
         ],
         "levelId": "6292703e1a129e2bced1c03a",
         "cards": [
@@ -342,8 +342,8 @@
         "_id": "62968669052f384a56aa4aec",
         "name": "event9",
         "text": [
-          "Überlegen Sie vielleicht noch einmal in der Zukunft, wie viel Zeit das KI-unterstützes Mointoring Zeit sparrt und wie viele Anomalien präsize erkennt, die für die Security verwendet werden kann. In der OT-Welt sind Betribe mit genügend Sensoren ausgestattet, die viele Daten über die Zustände generieren. Mit diesen Daten können durch den Einsatz vom KI-unterstütztes Monitoring eine zuverlässige Erkennung von Abweichungen ermöglicht werden, das u. a. zur frühzeitigen Erkennung von Angriffen führt. ",
-          "Sehr gut! In der OT-Welt sind Betribe mit genügend Sensoren ausgestattet, die viele Daten über die Zustände generieren. Mit diesen Daten können durch den Einsatz vom KI-unterstütztes Monitoring eine zuverlässige Erkennung von Abweichungen ermöglicht werden, das u. a. zur frühzeitigen Erkennung von Angriffen führt. "
+          "Überlegen Sie vielleicht noch einmal in der Zukunft, wie viel Zeit das KI-unterstütze Mointoring spart und wie viele Anomalien es präsize erkennt, die für die Security verwendet werden kann. In der OT-Welt sind Betribe mit genügend Sensoren ausgestattet, die viele Daten über die Zustände generieren. Mit diesen Daten können durch den Einsatz vom KI-unterstützten Monitoring eine zuverlässige Erkennung von Abweichungen ermöglicht werden, das u. a. zur frühzeitigen Erkennung von Angriffen führt. ",
+          "Sehr gut! In der OT-Welt sind Betriebe mit genügend Sensoren ausgestattet, die viele Daten über die Zustände generieren. Mit diesen Daten kann durch den Einsatz von KI-unterstütztem Monitoring eine zuverlässige Erkennung von Abweichungen ermöglicht werden, das u. a. zur frühzeitigen Erkennung von Angriffen führt. "
         ],
         "levelId": "6292703e1a129e2bced1c03a",
         "cards": []
