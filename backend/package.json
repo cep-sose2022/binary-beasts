@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BBeasts100/BinaryBeastsBackend.git"
+    "url": "https://github.com/cep-sose2022/binary-beasts.git"
   },
   "author": "BinaryBeasts",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BBeasts100/BinaryBeastsBackend/issues"
+    "url": "https://github.com/cep-sose2022/binary-beasts/issues"
   },
-  "homepage": "https://github.com/BBeasts100/BinaryBeastsBackend#readme",
+  "homepage": "https://github.com/cep-sose2022/binary-beasts#readme",
   "dependencies": {
     "express": "^4.18.0",
     "express-async-handler": "^1.2.0",
