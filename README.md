@@ -23,7 +23,7 @@ Diese Software ist im Rahmen eines Software-Entwicklungsprojekts von der Hochsch
 4. Datenbank (Database) in MongoDB anlegen
 
 Nachdem Sie eine Datenbank angelegt haben, erstellen Sie dort eine Sammlung (Collection) mit dem Namen LevelCol und importieren Sie dort alle json-Dateien, die sich in dem Ordner levels befinden.  
-Bei Bedarf finden Sie [hier](backend/helper/beschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
+Bei Bedarf finden Sie [hier](backend/helper/Beschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
 
 5. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
 
@@ -34,10 +34,11 @@ Bei Bedarf finden Sie [hier](backend/helper/beschreibung.pdf) eine ausführliche
 In dieser Datei dann die Zugangsdaten für die MongoDB ablegen
 ###### `DB_CONNECTION=<Zugangslink>`
 ![alt text](backend/helper/env.png)
+Hinweis: Achten Sie darauf, dass im Zugangslink der Pfad zur Datenbank enthalten ist, indem sie am Ende der URL '/BeAware' hinzufügen
 
 6. Server starten
 
-Im Root-Directory lässt sich dann server wie folgt hochfahren:
+Im backend-Directory lässt sich dann server wie folgt hochfahren:
 #### `npm start`
 
 7. In den frontend Ordner navigieren
@@ -54,7 +55,7 @@ Im Root-Directory lässt sich dann server wie folgt hochfahren:
 
 10. Server starten
 
-Im Root-Directory lässt sich dann server wie folgt hochfahren:
+Im client-Directory lässt sich dann server wie folgt hochfahren:
 
 #### `npm start`
 
