@@ -6,29 +6,63 @@
 # OT Security Awareness Training: Be-Aware
 Diese Software ist im Rahmen eines Software-Entwicklungsprojekts von der Hochschule Mannheim im Studiengang CSB durch die Gruppe Binary Beasts entstanden. Die Anwendung hat den Zweck, Automatisierungsingeniuere im Feld der OT-Security-Awareness durch ein interaktives Schulungskonzept zu schulen. 
 
-## Link zum Backend
-Die Anwendung verwendet einen Backend-Server, der sich durch das folgende Repository einrichten lässt:
-https://github.com/BBeasts100/BinaryBeastsBackend.git
-
 ## Installation und Konfiguration
 
 1. Git Repo klonen
 
-`git clone https://github.com/BBeasts100/BinaryBeastsFrontend.git`
+`git clone https://github.com/cep-sose2022/binary-beasts.git`
 
-2. Ins Repo navigieren
+2. In den backend Ordner navigieren
 
-`cd BinaryBeastsFrontend`
+### `cd backend`
 
-3. In den client Ordner navigieren
+3. Alle Module installieren
+
+### `npm install`
+
+4. Datenbank (Database) in MongoDB anlegen
+
+Nachdem Sie eine Datenbank angelegt haben, erstellen Sie dort eine Sammlung (Collection) mit dem Namen LevelCol und importieren Sie dort alle json-Dateien, die sich in dem Ordner levels befinden.  
+Bei Bedarf finden Sie [hier](backend/helper/beschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
+
+5. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
+
+### `cd server`
+### `touch .env`
+### `nano .env`
+
+In dieser Datei dann die Zugangsdaten für die MongoDB ablegen
+###### `DB_CONNECTION=<Zugangslink>`
+![alt text](backend/helper/env.png)
+
+6. Server starten
+
+Im Root-Directory lässt sich dann server wie folgt hochfahren:
+### `npm start`
+
+
+
+
+
+
+
+
+
+
+
+7. In den frontend Ordner navigieren
+
+`cd frontend`
+
+8. In den client Ordner navigieren
 
 `cd client`
 
-4. Alle Module installieren
+9. Alle Module installieren
 
 `npm install`
 
-5. Server starten
+10. Server starten
 
 Im Root-Directory lässt sich dann server wie folgt hochfahren:
 
@@ -41,7 +75,7 @@ Im Root-Directory lässt sich dann server wie folgt hochfahren:
 - MongoDB
 
 ## Architektur
-Die Architektur der Software ist <a href="https://github.com/BBeasts100/BinaryBeastsFrontend/blob/dev/Be-Aware_Architektur.pdf">hier</a> hinterlegt.
+Die Architektur der Software ist [hier](frontend/Be-Aware_Architektur.pdf) hinterlegt.
 
 ## Limitations
 
@@ -54,4 +88,4 @@ Sobald man sich auf der Webseite eingeloggt hat, wird der Username im Local-Stor
 Benutzt man die Software im Safari-Browser, so wird man z.B. im Level "Social Engineering und Phishing" auf ein Problem stoßen: Die Ereignis-Bilder sind zu groß und überdecken die Karten und den Ereignis-Text. Dieses Problem tritt jedoch nur im Safari-Browser auf, auf den anderen bekannten Browsern existiert dieses Problem nicht
 
 ## Lizenz
-Die Software ist lizenziert durch die <a href="https://github.com/BBeasts100/BinaryBeastsFrontend/blob/main/LICENSE">MIT-License</a>
+Die Software ist lizenziert durch die [MIT-License](frontend/LICENSE)
