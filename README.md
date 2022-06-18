@@ -10,15 +10,15 @@ Diese Software ist im Rahmen eines Software-Entwicklungsprojekts von der Hochsch
 
 1. Git Repo klonen
 
-`git clone https://github.com/cep-sose2022/binary-beasts.git`
+#### `git clone https://github.com/cep-sose2022/binary-beasts.git`
 
 2. In den backend Ordner navigieren
 
-### `cd backend`
+#### `cd backend`
 
 3. Alle Module installieren
 
-### `npm install`
+#### `npm install`
 
 4. Datenbank (Database) in MongoDB anlegen
 
@@ -27,9 +27,9 @@ Bei Bedarf finden Sie [hier](backend/helper/beschreibung.pdf) eine ausführliche
 
 5. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
 
-### `cd server`
-### `touch .env`
-### `nano .env`
+#### `cd server`
+#### `touch .env`
+#### `nano .env`
 
 In dieser Datei dann die Zugangsdaten für die MongoDB ablegen
 ###### `DB_CONNECTION=<Zugangslink>`
@@ -38,35 +38,25 @@ In dieser Datei dann die Zugangsdaten für die MongoDB ablegen
 6. Server starten
 
 Im Root-Directory lässt sich dann server wie folgt hochfahren:
-### `npm start`
-
-
-
-
-
-
-
-
-
-
+#### `npm start`
 
 7. In den frontend Ordner navigieren
 
-`cd frontend`
+#### `cd frontend`
 
 8. In den client Ordner navigieren
 
-`cd client`
+#### `cd client`
 
 9. Alle Module installieren
 
-`npm install`
+#### `npm install`
 
 10. Server starten
 
 Im Root-Directory lässt sich dann server wie folgt hochfahren:
 
-`npm start`
+#### `npm start`
 
 ## Technologien
 - React
