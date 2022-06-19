@@ -3,7 +3,7 @@
     "_id": "626a94f5e22367ce0d25e56a",
     "name": "Patchmanagement",
     "token": "level5",
-    "description": "Die Regelmäßige Prüfung auf neue Schwachstellenmeldungen bei den Herstellern der ICS-Komponenten oder Drittanbietersoftware ist ein wichtiger Bestandteil für die Beibehaltung der OT-Security. Daher wird in diesem Level der Umgang mit einem solchen Sicherheitspatch beleuchtet und aufgezeigt, auf was man bei der Installation achten muss.",
+    "description": "Die regelmäßige Prüfung auf neue Schwachstellenmeldungen bei den Herstellern der ICS-Komponenten oder Drittanbietersoftware ist ein wichtiger Bestandteil für die Beibehaltung der OT-Security. Daher wird in diesem Level der Umgang mit einem solchen Sicherheitspatch beleuchtet und aufgezeigt, auf was man bei der Installation achten muss.",
     "events": {
       "0": {
         "_id": "626a9566e22367ce0d25e56d",
