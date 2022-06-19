@@ -20,9 +20,9 @@ Diese Software ist im Rahmen eines Software-Entwicklungsprojekts von der Hochsch
 
 #### `npm install`
 
-4. Datenbank (Database) in MongoDB anlegen
+4. Datenbank (Database) in MongoDB mit dem Namen 'BeAware' anlegen
 
-Nachdem Sie eine Datenbank angelegt haben, erstellen Sie dort eine Sammlung (Collection) mit dem Namen LevelCol und importieren Sie dort alle json-Dateien, die sich in dem Ordner levels befinden.  
+Nachdem Sie eine Datenbank angelegt haben, erstellen Sie dort eine Sammlung (Collection) mit dem Namen 'LevelCol' und importieren Sie dort alle json-Dateien, die sich in dem Ordner levels befinden.  
 Bei Bedarf finden Sie [hier](backend/helper/Beschreibung.pdf) eine ausführliche Beschreibung mit Screenshots
 
 5. Im Directory 'server' eine .env Datei mit der Datenbankverbindung anlegen
