@@ -3,7 +3,7 @@
     "_id": "627e3c1ac455ed430c3f3941",
     "name": "Sicherheitsvorfallbehandlung",
     "token": "level7",
-    "description": "Vorfälle Erkennen, Melden, Behandeln",
+    "description": "Beim Auftreten von Sicherheitsvorfällen ist es wichtig zu wissen, wie mit diesen umgegangen werden muss. Dazu gehört das Erkennen, Melden und die Behandlung des Vorfalls.",
     "events": {
       "0": {
         "_id": "627e423ec455ed430c3f3964",
