@@ -40,7 +40,7 @@ Hinweis: Achten Sie darauf, dass im Zugangslink der Pfad zur Datenbank enthalten
 
 Im backend-Directory lässt sich dann server wie folgt hochfahren:
 #### `npm start`
-Der Server für Backend wird auf http://localhost:5000/ laufen
+Der Server für Backend wird auf http://localhost:5000 laufen
 
 7. In den frontend Ordner navigieren
 
@@ -59,7 +59,7 @@ Der Server für Backend wird auf http://localhost:5000/ laufen
 Im client-Directory lässt sich dann server wie folgt hochfahren:
 
 #### `npm start`
-Der Server für Frontend wird auf http://localhost:3000/ laufen
+Der Server für Frontend wird auf http://localhost:3000 laufen
 
 ## Technologien
 - React
