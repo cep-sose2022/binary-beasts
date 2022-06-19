@@ -75,7 +75,7 @@
             "nextImage": "schreibtisch",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "An Ihrem schreibtisch zu arbeiten hat in einem Ausnahmezustand nicht die höchste Priorität"
+            "feedback": "An Ihrem Schreibtisch zu arbeiten hat in einem Ausnahmezustand nicht die höchste Priorität"
           }
         ]
       },
@@ -103,7 +103,7 @@
             "_id": "627e79f7c455ed430c3f3a01",
             "name": "card2.2",
             "text": [
-              "Bei Ihrem Chef Melden"
+              "Bei Ihrem Chef melden"
             ],
             "points": 0,
             "nextEvent": 7,
@@ -123,20 +123,20 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "network",
-            "feedback": "Ist bei Ihrer Istitution eine zentrale Meldestelle zu finden, ist das meistens der richtige Ort um einen Vorfall zu melden"
+            "feedback": "Ist bei Ihrer Institution eine zentrale Meldestelle zu finden, ist das meistens der richtige Ort, um einen Vorfall zu melden"
           },
           {
             "_id": "627e7a6ec455ed430c3f3a03",
             "name": "card2.4",
             "text": [
-              "Bei der Zuständigen IT-Abteilung Melden"
+              "Bei der Zuständigen IT-Abteilung melden"
             ],
             "points": 0,
             "nextEvent": 9,
             "nextImage": "",
             "nextEventText": 0,
             "image": "humanInterface",
-            "feedback": "Ist die IT in einem OT-Vorfall nicht betroffen, ist das nicht der richtige Ansprechspartner"
+            "feedback": "Ist die IT in einem OT-Vorfall nicht betroffen, ist das nicht der richtige Ansprechpartner"
           }
         ]
       },
@@ -144,7 +144,7 @@
         "_id": "627e6280c455ed430c3f39b5",
         "name": "event3",
         "text": [
-          "Sie merken an der Hauptanzeige, dass sich eines der Türme anfängt zu erhitzen"
+          "Sie merken an der Hauptanzeige, dass sich einer der Türme anfängt zu erhitzen"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -152,19 +152,19 @@
             "_id": "6282253c691005049d02b2e4",
             "name": "card3.4",
             "text": [
-              "Bei der IT-Abteilung Melden"
+              "Bei der IT-Abteilung melden"
             ],
             "points": 3,
             "nextEvent": 13,
             "nextImage": "",
             "nextEventText": 0,
-            "feedback": "Da die Servergeräte Teil des Netzwerks sind, ist in diesem Fall die IT-Abteilung auch der richtige Ansprechspartner"
+            "feedback": "Da die Servergeräte Teil des Netzwerks sind, ist in diesem Fall die IT-Abteilung auch der richtige Ansprechpartner"
           },
           {
             "_id": "628224e8691005049d02b2e2",
             "name": "card3.3",
             "text": [
-              "Vorort Gerät inspizieren"
+              "Vor Ort Gerät inspizieren"
             ],
             "points": 0,
             "nextEvent": 12,
@@ -182,7 +182,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "alert",
-            "feedback": "Der Notfallstab ist in unmittelbaren Gefahrsituation neben dem Krisenstab der richtige Ansprechspartner"
+            "feedback": "Der Notfallstab ist in unmittelbaren Gefahrensituationen neben dem Krisenstab der richtige Ansprechpartner"
           },
           {
             "_id": "628224b7691005049d02b2e0",
@@ -203,7 +203,7 @@
         "_id": "627e62f6c455ed430c3f39b6",
         "name": "event4",
         "text": [
-          "Ein unbekannter Anlagefahrer schraubt an dem Router rum. Er platzierte ein verdächiges Gerät. Wie reagieren Sie darauf?"
+          "Ein unbekannter Anlagenfahrer schraubt an dem Router rum. Er platzierte ein verdächtiges Gerät. Wie reagieren Sie darauf?"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -211,7 +211,7 @@
             "_id": "6282344b691005049d02b2fc",
             "name": "card4.4",
             "text": [
-              "Nach Hilfe durch gleichgültigen Arbeitskollege fragen"
+              "Nach Hilfe durch gleichgültigen Arbeitskollegen suchen"
             ],
             "points": -1,
             "nextEvent": 17,
@@ -223,14 +223,14 @@
             "_id": "628233d8691005049d02b2fb",
             "name": "card4.3",
             "text": [
-              "Die Person Konfrontieren"
+              "Die Person konfrontieren"
             ],
             "points": 3,
             "nextEvent": 16,
             "nextImage": "",
             "nextEventText": 0,
             "image": "alert",
-            "feedback": "Verdächtig unbekannte Personen können auch eine Gefahr intern darstellen. Bevor diese Person Schaden anrichtet sollten Sie ihn Ansprechen."
+            "feedback": "Verdächtig unbekannte Personen können auch eine Gefahr intern darstellen. Bevor diese Person Schaden anrichtet sollten Sie sie ansprechen."
           },
           {
             "_id": "6282333d691005049d02b2fa",
@@ -243,20 +243,20 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "network",
-            "feedback": "Verdächtig unbekannte Personen können auch eine Gefahr intern darstellen. Bevor diese Person Schaden anrichtet sollten Sie ihn Ansprechen."
+            "feedback": "Verdächtig unbekannte Personen können auch eine Gefahr intern darstellen. Bevor diese Person Schaden anrichtet sollten Sie sie ansprechen."
           },
           {
             "_id": "62823237691005049d02b2f7",
             "name": "card4.1",
             "text": [
-              "Die Polizei beständigen"
+              "Die Polizei verständigen"
             ],
             "points": 0,
             "nextEvent": 14,
             "nextImage": "",
             "nextEventText": 0,
             "image": "phone",
-            "feedback": "Die Polizei hat in solchen Situationen wenig Kontrolle und betrifft sie meistens nicht direkt."
+            "feedback": "Die Polizei hat in solchen Situationen wenig Kontrolle und es betrifft sie meistens nicht direkt."
           }
         ]
       },
@@ -272,7 +272,7 @@
             "_id": "6282395f691005049d02b320",
             "name": "card5.1",
             "text": [
-              "Nach hilfe durch Customer support fragen"
+              "Nach Hilfe durch Customer Support suchen"
             ],
             "points": -2,
             "nextEvent": 19,
@@ -292,20 +292,20 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "network",
-            "feedback": "Die zentrale Meldestelle ist meisten immer der richtige Ansprechspartner für Sicherheitsvorfälle"
+            "feedback": "Die zentrale Meldestelle ist meistens immer der richtige Ansprechpartner für Sicherheitsvorfälle"
           },
           {
             "_id": "628239c6691005049d02b322",
             "name": "card5.2",
             "text": [
-              "Bei der Zuständigen IT-Abteilung Melden."
+              "Bei der zuständigen IT-Abteilung melden."
             ],
             "points": 2,
             "nextEvent": 21,
             "nextImage": "",
             "nextEventText": 0,
             "image": "humanInterface",
-            "feedback": "Die IT-Abteilung ist der richtige Ansprechspartner für Probleme mit dem internen E-Mail-Dienst"
+            "feedback": "Die IT-Abteilung ist der richtige Ansprechpartner für Probleme mit dem internen E-Mail-Dienst"
           },
           {
             "_id": "628239ed691005049d02b323",
@@ -324,7 +324,7 @@
             "_id": "628239fa691005049d02b324",
             "name": "card5.5",
             "text": [
-              "Nicht Melden und aus neugier öffnen"
+              "Nicht melden und aus Neugier öffnen"
             ],
             "points": -2,
             "nextEvent": 21,
@@ -338,7 +338,7 @@
         "_id": "627e639cc455ed430c3f39b8",
         "name": "event6",
         "text": [
-          "Sie werden ins Büro von Ihrem Vorgesetztem gerufen und bekommen Ärger. Er beschuldigt Sie,  nicht auf die Vorfälle reagiert zu haben",
+          "Sie werden ins Büro von Ihrem Vorgesetztem gerufen und bekommen Ärger. Er beschuldigt Sie,  nicht auf die Vorfälle reagiert zu haben.",
           "Sie kriegen Ärger von Ihrem Chef. Er beschuldigt, Sie nicht auf die Vorfälle reagiert zu haben. >Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig. "
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
@@ -360,7 +360,7 @@
         "_id": "627e7aefc455ed430c3f3a06",
         "name": "event7",
         "text": [
-          "Ihr Chef erinnert Sie, dass er nicht der richtige Ansprechspartner dafür ist und schickt sie grantig weg. Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig."
+          "Ihr Chef erinnert Sie, dass er nicht der richtige Ansprechpartner dafür ist und schickt Sie grantig weg. Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -368,7 +368,7 @@
             "_id": "628257d5691005049d02b382",
             "name": "card29",
             "text": [
-              "Problem Beseitigen"
+              "Problem beseitigen"
             ],
             "points": 0,
             "nextEvent": 24,
@@ -390,7 +390,7 @@
             "_id": "628257d5691005049d02b382",
             "name": "card29",
             "text": [
-              "Problem Beseitigen"
+              "Problem beseitigen"
             ],
             "points": 0,
             "nextEvent": 24,
@@ -404,7 +404,7 @@
         "_id": "627e7c62c455ed430c3f3a08",
         "name": "event9",
         "text": [
-          "Zur Behandlung dieses OT-Vorfalls ist die IT nicht Zuständig. Schauen Sie sich genauer die Meldewege an! Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig."
+          "Zur Behandlung dieses OT-Vorfalls ist die IT nicht zuständig. Schauen Sie sich genauer die Meldewege an! Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -412,7 +412,7 @@
             "_id": "628257d5691005049d02b382",
             "name": "card29",
             "text": [
-              "Problem Beseitigen"
+              "Problem beseitigen"
             ],
             "points": 0,
             "nextEvent": 24,
@@ -447,7 +447,7 @@
         "_id": "6282423f691005049d02b330",
         "name": "event11",
         "text": [
-          "Richtig, der Notfallstab kümmert sich um das Problem"
+          "Richtig, der Notfallstab kümmert sich um das Problem."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -489,7 +489,7 @@
         "_id": "62824296691005049d02b332",
         "name": "event13",
         "text": [
-          "Die IT Abteilung hat den PC vom Netz entkoppelt, gute Arbeit"
+          "Die IT Abteilung hat den PC vom Netz entkoppelt, gute Arbeit."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -510,7 +510,7 @@
         "_id": "62824789691005049d02b333",
         "name": "event14",
         "text": [
-          "Ihre Netzwerke sind komprommitiert worden und die Beweisaufnahmen vom Gemeinschaftsraum wurden gelöscht. Die Polizei kann in diesem Fall nichts unternehmen"
+          "Ihre Netzwerke sind komprommitiert worden und die Beweisaufnahmen vom Gemeinschaftsraum wurden gelöscht. Die Polizei kann in diesem Fall nichts unternehmen."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -552,7 +552,7 @@
         "_id": "628247fd691005049d02b335",
         "name": "event16",
         "text": [
-          "Die Person meinte Ihm wurde dieser Auftrag erteilt"
+          "Die Person meinte ihm wurde dieser Auftrag erteilt."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -571,14 +571,14 @@
             "_id": "6283a51c73c37063b251e7e9",
             "name": "card49",
             "text": [
-              "Die Polizei beständigen "
+              "Die Polizei verständigen "
             ],
             "points": 1,
             "nextEvent": 47,
             "nextImage": "",
             "nextEventText": 0,
             "image": "phone",
-            "feedback": "Bei unbefugtem Personal ist die Polizei der richtige Ansprechspartner. "
+            "feedback": "Bei unbefugtem Personal ist die Polizei der richtige Ansprechpartner. "
           },
           {
             "_id": "6283a57073c37063b251e7eb",
@@ -591,7 +591,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "network",
-            "feedback": "Bei unbefugtem Personal und ist die Polizei der richtige Ansprechspartner. "
+            "feedback": "Bei unbefugtem Personal und ist die Polizei der richtige Ansprechpartner. "
           }
         ]
       },
@@ -599,7 +599,7 @@
         "_id": "6282486f691005049d02b336",
         "name": "event17",
         "text": [
-          "Er meinte es ist nichts besonderes. Sie vertrauen auf die Vermutung Ihres Kollegen und glauben Ihn. Es hat sich herausgestellt, dass Ihre Firma Opfer eines Zero-Day-Vorfalls geworden ist. "
+          "Er meinte es ist nichts besonderes. Sie vertrauen auf die Vermutung Ihres Kollegen und glauben ihm. Es hat sich herausgestellt, dass Ihre Firma Opfer eines Zero-Day-Vorfalls geworden ist. "
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -641,7 +641,7 @@
         "_id": "6282495a691005049d02b338",
         "name": "event19",
         "text": [
-          "Das haben Sie richtig gemacht"
+          "Das haben Sie richtig gemacht."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -713,7 +713,7 @@
         "_id": "62825250691005049d02b366",
         "name": "event23",
         "text": [
-          "Sie haben Ihren Job verloren, weil Sie keinen Sicherheitsvorfall gemeldet haben"
+          "Sie haben Ihren Job verloren, weil Sie keinen Sicherheitsvorfall gemeldet haben."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": []
@@ -737,7 +737,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "mouseAction",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einzschalten können. \nEs wäre wichtig gewesen in die Logs zu schauen um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter neustart des Geräts hätte wichtige Beweisspuren zerstören können.\n"
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einschalten können. >Es wäre wichtig gewesen in die Logs zu schauen, um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter Neustart des Geräts hätte wichtige Beweisspuren zerstören können.\n"
           },
           {
             "_id": "6282569b691005049d02b37f",
@@ -793,7 +793,7 @@
         "_id": "628259e1691005049d02b38f",
         "name": "event25",
         "text": [
-          "Sie kriegen Ärger von Ihrem Chef. Er beschuldigt, Sie nicht auf die Vorfälle reagiert zu haben. Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig."
+          "Sie kriegen Ärger von Ihrem Chef. Er beschuldigt Sie nicht auf die Vorfälle reagiert zu haben. Ein Notfallstop wurde am Gerät erzwungen. Als Automatisierungsingenieur sind Sie für die Behandlung der Maschine zuständig."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -801,7 +801,7 @@
             "_id": "628257d5691005049d02b382",
             "name": "card29",
             "text": [
-              "Problem Beseitigen"
+              "Problem beseitigen"
             ],
             "points": 0,
             "nextEvent": 24,
@@ -836,7 +836,7 @@
         "_id": "6282616b691005049d02b3cf",
         "name": "event27",
         "text": [
-          "Die Produktion kann nun weitergeführt werden. Was Unternehmen Sie nun?"
+          "Die Produktion kann nun weitergeführt werden. Was unternehmen Sie nun?"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": []
@@ -845,7 +845,7 @@
         "_id": "628261d6691005049d02b3d0",
         "name": "event28",
         "text": [
-          "Die Logs wurden erfolgreich gesichert"
+          "Die Logs wurden erfolgreich gesichert."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -860,7 +860,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einzschalten können. \nEs wäre wichtig gewesen in die Logs zu schauen um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter neustart des Geräts hätte wichtige Beweisspuren zerstören können.\nDer Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. Dadurch können die Logs auch zu einem späterem Zeitpunkt überprüft werden. "
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einschalten können. >Es wäre wichtig gewesen in die Logs zu schauen, um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter Neustart des Geräts hätte wichtige Beweisspuren zerstören können. >Der Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. Dadurch können die Logs auch zu einem späterem Zeitpunkt überprüft werden. "
           },
           {
             "_id": "62836380f84ea921b4fd0734",
@@ -907,7 +907,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau die Ersatzsysteme einzuschalten. Sie hätten zuerst die Logs sichern und dann untersuchen sollen. Durch einen neustart wurden wichtige Beweisspuren gelöscht."
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau die Ersatzsysteme einzuschalten. Sie hätten zuerst die Logs sichern und dann untersuchen sollen. Durch einen Neustart wurden wichtige Beweisspuren gelöscht."
           }
         ]
       },
@@ -915,7 +915,7 @@
         "_id": "628262da691005049d02b3d3",
         "name": "event30",
         "text": [
-          "Anhand Ihrer Untersuchung haben sie einen unberechtigten Fernzugriff an die Maschine entdeckt"
+          "Anhand Ihrer Untersuchung haben Sie einen unberechtigten Fernzugriff auf die Maschine entdeckt"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -930,7 +930,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "device",
-            "feedback": "Die Logs enthalten wichtige forensische Information über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. \nSomit konnten Sie den unberechtigten Remote zugriff im Programm beheben. \n\nIn OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einzschalten können. "
+            "feedback": "Die Logs enthalten wichtige forensische Informationen über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. >Somit konnten Sie den unberechtigten Remote-Zugriff im Programm beheben. >In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einschalten können. "
           },
           {
             "_id": "6283708773c37063b251e7af",
@@ -965,13 +965,13 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau die Ersatzsysteme einzuschalten. \nEs wäre wichtig gewesen in die Logs zu schauen um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter neustart des Geräts hätte wichtige Beweisspuren zerstören können."
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau die Ersatzsysteme einzuschalten. >Es wäre wichtig gewesen in die Logs zu schauen, um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter Neustart des Geräts hätte wichtige Beweisspuren zerstören können."
           },
           {
             "_id": "62835df7f84ea921b4fd0730",
             "name": "card34",
             "text": [
-              "Logs Überprüfen. "
+              "Logs überprüfen. "
             ],
             "points": 2,
             "nextEvent": 32,
@@ -985,7 +985,7 @@
         "_id": "6283728f73c37063b251e7b1",
         "name": "event34",
         "text": [
-          "Anhand Ihrer Untersuchung haben sie einen unberechtigten Fernzugriff an die Maschine entdeckt.."
+          "Anhand Ihrer Untersuchung haben Sie einen unberechtigten Fernzugriff auf die Maschine entdeckt."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1000,7 +1000,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau die Ersatzsysteme einzuschalten. \nDie Logs enthalten wichtige forensische Information über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. \nSomit konnten Sie den unberechtigten Remote zugriff im Programm beheben. \n"
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau die Ersatzsysteme einzuschalten. >Die Logs enthalten wichtige forensische Informationen über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. >Somit konnten Sie den unberechtigten Remote-Zugriff im Programm beheben. \n"
           }
         ]
       },
@@ -1008,7 +1008,7 @@
         "_id": "628372e773c37063b251e7b2",
         "name": "event35",
         "text": [
-          "Aufgrund des Produktionsstillstands sind die Aktienwerte der Firma gesunken. Der Fehler wurde erfolgreich behoben. Die Log-Daten können später untersucht werden. Es wäre allerdings besser gewsen, wenn Sie vor der Fehlerbehebung sich die Log Daten anschauen"
+          "Aufgrund des Produktionsstillstands sind die Aktienwerte der Firma gesunken. Der Fehler wurde erfolgreich behoben. Die Log-Daten können später untersucht werden. Es wäre allerdings besser gewesen, wenn Sie vor der Fehlerbehebung sich die Log Daten angeschaut hätten."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1029,7 +1029,7 @@
         "_id": "6283731873c37063b251e7b3",
         "name": "event36",
         "text": [
-          "Die Produktion kann weitergeführt werden. Durch den vorherigen Backup sind die Log-Daten nicht verloren gegangen"
+          "Die Produktion kann weitergeführt werden. Durch das vorherige Backup sind die Log-Daten nicht verloren gegangen."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1037,14 +1037,14 @@
             "_id": "62839d4473c37063b251e7dc",
             "name": "card43",
             "text": [
-              "Schnell Fehler im Code auflösen   "
+              "Schnell Fehler im Code auflösen"
             ],
             "points": 1,
             "nextEvent": 40,
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einzschalten können. \nEs wäre wichtig gewesen in die Logs zu schauen um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter neustart des Geräts hätte wichtige Beweisspuren zerstören können.\n\nDer Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. Dadurch können die Logs auch zu einem späterem Zeitpunkt überprüft werden. \nIn OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau das Gerät zu rebooten. Sie hätten zuerst die Logs sichern und dann untersuchen sollen. Durch einen Neustart ohne einen Backup wären wichtige Beweisspuren gelöscht worden."
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einschalten können. >Es wäre wichtig gewesen in die Logs zu schauen, um diese Beweisspuren des Vorfalls zu analysieren. Ein direkter Neustart des Geräts hätte wichtige Beweisspuren zerstören können. >Das Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. Dadurch können die Logs auch zu einem späterem Zeitpunkt überprüft werden. >In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau das Gerät zu rebooten. Sie hätten zuerst die Logs sichern und dann untersuchen sollen. Durch einen Neustart ohne einen Backup wären wichtige Beweisspuren gelöscht worden."
           },
           {
             "_id": "62839e3073c37063b251e7de",
@@ -1057,7 +1057,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "orga",
-            "feedback": "Der Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. Dadurch können die Logs auch zu einem späterem Zeitpunkt überprüft werden. \nIn OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau das Gerät zu rebooten. Sie hätten zuerst die Logs sichern und dann untersuchen sollen. Durch einen Neustart ohne einen Backup wären wichtige Beweisspuren gelöscht worden. \nDie Logs enthalten wichtige forensische Information über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. \nSomit konnten Sie den unberechtigten Remote zugriff im Programm beheben. \n"
+            "feedback": "Das Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. Dadurch können die Logs auch zu einem späterem Zeitpunkt überprüft werden. >In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen war es schlau das Gerät zu rebooten. Sie hätten zuerst die Logs sichern und dann untersuchen sollen. Durch einen Neustart ohne einen Backup wären wichtige Beweisspuren gelöscht worden. \nDie Logs enthalten wichtige forensische Information über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. \nSomit konnten Sie den unberechtigten Remote zugriff im Programm beheben. \n"
           }
         ]
       },
@@ -1065,7 +1065,7 @@
         "_id": "628373c973c37063b251e7b4",
         "name": "event37",
         "text": [
-          "Anhand Ihrer Untersuchung haben sie einen unberechtigten Fernzugriff an die Maschine entdeckt. "
+          "Anhand Ihrer Untersuchung haben Sie einen unberechtigten Fernzugriff auf die Maschine entdeckt."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1080,7 +1080,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einzschalten können. \nDer Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. \nDie Logs enthalten wichtige forensische Information über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. \nSomit konnten Sie den unberechtigten Remote zugriff im Programm beheben. \n"
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einschalten können. >Das Backup versicherte Ihnen, dass die Log Daten vom Cache nicht gelöscht werden. >Die Logs enthalten wichtige forensische Informationen über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. >Somit konnten Sie den unberechtigten Remote-Zugriff im Programm beheben. \n"
           }
         ]
       },
@@ -1130,7 +1130,7 @@
         "_id": "6283750673c37063b251e7b7",
         "name": "event40",
         "text": [
-          "Die Maschine weist noch immer Fehlverhalten auf"
+          "Die Maschine weist noch immer Fehlverhalten auf."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1145,7 +1145,7 @@
             "nextImage": "",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einzschalten können. \nDie Logs enthalten wichtige forensische Information über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. \nSomit konnten Sie den unberechtigten Remote zugriff im Programm beheben. \nDurch den Neustart nach der Untersuchung sind die Beweisspuren gelöscht worden. Dies hätte man durch einen Backup verhindern können.\n"
+            "feedback": "In OT ist es wichtig, dass die Produktion nicht gestört wird, von daher gesehen hätten Sie die Ersatzsysteme einschalten können. >Die Logs enthalten wichtige forensische Informationen über Zugriffskontrolle und die Aktivität einer Maschine. Durch die Überprüfung kann man sich wichtige Schlussfolgerungen über den Vorfall herleiten. >Somit konnten Sie den unberechtigten Remote-Zugriff im Programm beheben. >Durch den Neustart nach der Untersuchung sind die Beweisspuren gelöscht worden. Dies hätte man durch einen Backup verhindern können.\n"
           }
         ]
       },
@@ -1153,7 +1153,7 @@
         "_id": "6283757473c37063b251e7b8",
         "name": "event31",
         "text": [
-          "Anhand Ihrer Untersuchung haben sie einen unberechtigten Fernzugriff an die Maschine entdeckt"
+          "Anhand Ihrer Untersuchung haben Sie einen unberechtigten Fernzugriff auf die Maschine entdeckt."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1208,7 +1208,7 @@
         "_id": "6283a8df73c37063b251e7ed",
         "name": "event45",
         "text": [
-          "Als sie vom pc weg gegangen sind, waren sie ausgeloggt, allerdings als sie zurückkamen waren sie wieder angemeldet"
+          "Als Sie vom PC weg gegangen sind, waren Sie ausgeloggt, allerdings als Sie zurückkamen waren Sie wieder angemeldet."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1216,7 +1216,7 @@
             "_id": "6283ad5b73c37063b251e7f8",
             "name": "card52",
             "text": [
-              "Sie Arbeiten weiter"
+              "Sie arbeiten weiter"
             ],
             "points": -2,
             "nextEvent": 49,
@@ -1227,7 +1227,7 @@
             "_id": "6283ae3273c37063b251e7fb",
             "name": "card53",
             "text": [
-              "Bei der Zuständigen IT-Abteilung Melden "
+              "Bei der zuständigen IT-Abteilung melden "
             ],
             "points": 2,
             "nextEvent": 51,
@@ -1239,14 +1239,14 @@
             "_id": "6283aebe73c37063b251e7fe",
             "name": "card54",
             "text": [
-              "Die Polizei beständigen  "
+              "Die Polizei verständigen  "
             ],
             "points": 0,
             "nextEvent": 50,
             "nextImage": "",
             "nextEventText": 0,
             "image": "phone",
-            "feedback": "Bei einem Broken-Access-Controll ist der richtige ansprechspartner die IT-Abteilung zuständig"
+            "feedback": "Bei einem Broken-Access-Controll ist der richtige Ansprechpartner die IT-Abteilung"
           }
         ]
       },
@@ -1254,7 +1254,7 @@
         "_id": "6283ad8573c37063b251e7f9",
         "name": "event46",
         "text": [
-          "Die Produktion wurde nicht unterbrochen und der unberechtigte Remote-Zugriff wurde lahmgelegt. Die gesicherten Log Daten werden für spätere Untersuchungen hilfreich sein "
+          "Die Produktion wurde nicht unterbrochen und der unberechtigte Remote-Zugriff wurde lahmgelegt. Die gesicherten Log Daten werden für spätere Untersuchungen hilfreich sein."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1275,7 +1275,7 @@
         "_id": "6283ae5f73c37063b251e7fd",
         "name": "event47",
         "text": [
-          "Das haben Sie richtig gemacht1"
+          "Das haben Sie richtig gemacht!"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": []
@@ -1326,7 +1326,7 @@
         "_id": "628631fc62339bc94dfbea8a",
         "name": "event46",
         "text": [
-          "Ihr Unternehmen ist Opfer eines Zero-Day-Angriffs geworden"
+          "Ihr Unternehmen ist Opfer eines Zero-Day-Angriffs geworden."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1347,7 +1347,7 @@
         "_id": "6286329a62339bc94dfbea8b",
         "name": "event47",
         "text": [
-          "Die Polizei hat Beamte zur Firma geschickt. Dennoch wäre es besser gewesen es zuerst im Unternehmen zu Melden"
+          "Die Polizei hat Beamte zur Firma geschickt. Dennoch wäre es besser gewesen es zuerst im Unternehmen zu melden."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1368,7 +1368,7 @@
         "_id": "628632cb62339bc94dfbea8c",
         "name": "event48",
         "text": [
-          "Der Angriff konnte gestoppt werden. Gute Arbeit"
+          "Der Angriff konnte gestoppt werden. Gute Arbeit!"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1389,7 +1389,7 @@
         "_id": "628635d662339bc94dfbea96",
         "name": "event49",
         "text": [
-          "Ihr Unternehmen ist Opfer eines Zero Days geworden"
+          "Ihr Unternehmen ist Opfer eines Zero-Days geworden."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1410,7 +1410,7 @@
         "_id": "6286365362339bc94dfbea97",
         "name": "event50",
         "text": [
-          "Ihr Unternehmen ist Opfer eines Zero Days geworden. In dem Fall kann die Polizei nicht viel Unternehmen"
+          "Ihr Unternehmen ist Opfer eines Zero-Days geworden. In dem Fall kann die Polizei nicht viel unternehmen."
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [
@@ -1431,7 +1431,7 @@
         "_id": "628636a762339bc94dfbea98",
         "name": "event51",
         "text": [
-          "Das haben Sie richtig gemacht"
+          "Das haben Sie richtig gemacht!"
         ],
         "levelId": "627e3c1ac455ed430c3f3941",
         "cards": [

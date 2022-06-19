@@ -166,10 +166,9 @@ function Lvl3_Devices(props) {
                 break;
             case "card18":
                 if (isScanned) {
-                    // if (whitelisting)
                     dynEventText = 5;
                 } else
-                    dynEventText = 1;
+                    dynEventText = 2;
                 break;
             case "card13":
                 if (encryptDrive)

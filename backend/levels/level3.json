@@ -62,7 +62,8 @@
             ],
             "points": 0,
             "nextImage": "string",
-            "nextEventText": 0
+            "nextEventText": 0,
+            "image": "empty"
           }
         ]
       },
@@ -180,7 +181,8 @@
             ],
             "points": 0,
             "nextEvent": 1,
-            "nextEventText": 0
+            "nextEventText": 0,
+            "image": "empty"
           }
         ]
       },
@@ -199,7 +201,8 @@
             "text": [
               "Weiter"
             ],
-            "points": 0
+            "points": 0,
+            "image": "empty"
           }
         ]
       },
@@ -262,7 +265,8 @@
             "text": [
               "Weiter"
             ],
-            "points": 0
+            "points": 0,
+            "image": "empty"
           }
         ]
       },
@@ -302,12 +306,12 @@
             "text": [
               "Zögernd willigen Sie ein, bestehen aber darauf die Zugangsdaten selbst einzugeben."
             ],
-            "points": 0,
+            "points": -1,
             "nextEvent": 9,
             "nextImage": "string",
             "nextEventText": 2,
             "image": "devices",
-            "feedback": "Dadurch können Sie sicher gehen, dass die Zugangsdaten nicht gespeichert werden und die andere Person nicht ohne vorherige Prüfung ins Netz kommt. Dennoch ist es besser externe Geräte gar nicht erst ins Netzwerk zu lassen. Wenn wichtige Daten ausgetauscht werden müssen, sollten Sie einen Wechseldatenträger dafür wählen, für den die alle möglichen Sicherheitsmaßnahmen umgesetzt werden."
+            "feedback": "Dadurch können Sie sicher gehen, dass die Zugangsdaten nicht gespeichert werden und die andere Person nicht ohne vorherige Prüfung ins Netz kommt. Dennoch ist es besser externe Geräte gar nicht erst ins Netzwerk zu lassen. Wenn wichtige Daten ausgetauscht werden müssen, sollten Sie einen Wechseldatenträger dafür wählen, für den alle möglichen Sicherheitsmaßnahmen umgesetzt werden."
           },
           {
             "name": "card19",
@@ -339,7 +343,8 @@
             "text": [
               "Weiter"
             ],
-            "points": 0
+            "points": 0,
+            "image": "empty"
           }
         ]
       },
@@ -396,7 +401,7 @@
           {
             "name": "card23",
             "text": [
-              "Den Stick auf Schadsoftware prüfen"
+              "Den Stick auf dem Leitrechner auf Schadsoftware prüfen"
             ],
             "points": 1,
             "nextEvent": 12,
@@ -419,7 +424,8 @@
             "text": [
               "Weiter"
             ],
-            "points": 0
+            "points": 0,
+            "image": "empty"
           }
         ]
       },

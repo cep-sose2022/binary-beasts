@@ -25,7 +25,6 @@ function Home(props) {
       setLoggedIn(true);
     } else {
       const newUserCreated = service.postUser(nameInputField.current.value, pinInputField.current.value);
-      console.log(newUserCreated.newUser === undefined);
       if (newUserCreated.newUser !== undefined) {
         lib.setNickname(nameInputField.current.value);
         setInputMessage(1);
@@ -52,12 +51,11 @@ function Home(props) {
 
           <div id="accountgrid">
             <div id="account" className="box2">
-            {!loggedIn ? <p>Wenn Sie noch nicht registriert sind, können Sid ihren gewünschten Nicknamen und ein Pin in die Login-Maske eingeben</p> : <p></p>}
+            {!loggedIn ? <p>Wenn Sie noch nicht registriert sind, können Sie Ihren gewünschten Nicknamen und einen Pin in die Login-Maske eingeben:</p> : <p></p>}
               {
                 localStorage.getItem("username") === null && // hide login-form when logged in
                 <div id="user-login">
                   <input id="nickname" placeholder="Nickname" type="text" ref={nameInputField} />
-                    {console.log(loggedIn)}
                   <input id="pin" placeholder="Pin" type="password" ref={pinInputField} />
                     
                   <button id="loginbutton" onClick={() => {checkInput()}}>Login</button>
@@ -66,8 +64,8 @@ function Home(props) {
 
               <div id="login-message">
                 {inputMessage === 1 ? <p>Neuer User mit dem Nicknamen "{lib.getNickname()}" wurde erstellt.</p> : //return the fitting feedback for inputField
-                  (inputMessage === 2 ? <p>Bitte füllen Sie beide Felder aus</p> :
-                    (inputMessage === 3 ? <p>Es existiert bereits ein User mit diesem Nicknamen</p> : 
+                  (inputMessage === 2 ? <p>Bitte füllen Sie beide Felder aus!</p> :
+                    (inputMessage === 3 ? <p>Es existiert bereits ein User mit diesem Nicknamen.</p> : 
                     (loggedIn ? <p>Willkommen {lib.getNickname()}</p> : <p></p>)))
                 }
               </div>

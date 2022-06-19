@@ -53,10 +53,6 @@ function PrivacyPolicy() {
                 Um den Spielstand individuell anzuzeigen sind Speicherungen auf dem Endnutzergerät nötig,
                 die vom Nutzer selbst gelöscht werden können. Dafür übernimmt Binary Beasts keinerlei Haftung.
             </p>
-            <h3>Urheberrecht</h3>
-            <p>
-                Alle Inhalte dieser Website sind geistiges Eigentum und dürfen nicht vervielfältigt oder kopiert werden.
-            </p>
         </div>
         </div>
         <Footer />
