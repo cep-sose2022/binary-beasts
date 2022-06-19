@@ -79,4 +79,4 @@ Sobald man sich auf der Webseite eingeloggt hat, wird der Username im Local-Stor
 Benutzt man die Software im Safari-Browser, so wird man z.B. im Level "Social Engineering und Phishing" auf ein Problem stoßen: Die Ereignis-Bilder sind zu groß und überdecken die Karten und den Ereignis-Text. Dieses Problem tritt jedoch nur im Safari-Browser auf, auf den anderen bekannten Browsern existiert dieses Problem nicht
 
 ## Lizenz
-Die Software ist lizenziert durch die [MIT-License](frontend/LICENSE)
+Die Software ist lizenziert durch die [MIT-License](LICENSE)
