@@ -3,7 +3,7 @@
     "_id": "627d20d2719807df66bcc94a",
     "name": "Datenträger und externe Geräte",
     "token": "level3",
-    "description": "Datenträger und mobile oder externe Geräte stellen ein erhötes Sicherheitsrisiko dar, weil sie mit anderen Netzwerken und somit auch unsicheren Netzen ausgesetzt sein können. Daher sollte man auf den richtigen Umgang achten, sodass das Sicherheitsrisiko möglichst gering gehalten wird.",
+    "description": "Datenträger und mobile oder externe Geräte stellen ein erhöhtes Sicherheitsrisiko dar, weil sie mit anderen Netzwerken und somit auch unsicheren Netzen ausgesetzt sein können. Daher sollte man auf den richtigen Umgang achten, sodass das Sicherheitsrisiko möglichst gering gehalten wird.",
     "events": {
       "0": {
         "name": "event1",
@@ -31,7 +31,7 @@
             "nextImage": "string",
             "nextEventText": 0,
             "image": "orga",
-            "feedback": "Mit Whitelisting können nur die Datenträger und Geräte auf das Netzwerk oder die Anlage zugreifen, wenn sie explizit zugelassen wurden. Das reduziert "
+            "feedback": "Mit Whitelisting können nur die Datenträger und Geräte auf das Netzwerk oder die Anlage zugreifen, die explizit zugelassen wurden. Somit können keine Wechseldatenträger mit potentiellem Schadcode die Anlage negativ beeinflussen."
           },
           {
             "name": "card3",
@@ -42,7 +42,7 @@
             "nextImage": "string",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "Dadurch kann verhindert werden, dass vor allem USB-Sticks auf denen Schadcode sein kann nicht an den Leitrechner angeschlossen werden und die Anlage infizieren."
+            "feedback": "Dadurch kann verhindert werden, dass vor allem USB-Sticks auf denen Schadcode sein kann, nicht an den Leitrechner angeschlossen werden und die Anlage infizieren."
           },
           {
             "name": "card4",
@@ -83,7 +83,7 @@
             "nextImage": "string",
             "nextEventText": 0,
             "image": "boss",
-            "feedback": "Es ist immer besser, wenn Sie sich direkt um unbekannte Datenträger kümmern, da andere nicht immer richtig damit umgehen. Besser wäre es wenn Sie den Kollegen persönlich ansprechen."
+            "feedback": "Es ist immer besser, wenn Sie sich direkt um unbekannte Datenträger kümmern, da andere nicht immer richtig damit umgehen. Besser wäre es wenn Sie den Kollegen persönlich auf den Stick ansprechen."
           },
           {
             "name": "card7",
@@ -95,19 +95,19 @@
             "nextImage": "string",
             "nextEventText": 1,
             "image": "deleted",
-            "feedback": "Man sollte schon schauen, welche Daten sich auf Datenträger befinden, aber auf einem sicheren Rechner."
+            "feedback": "Man sollte auf einem sicheren Rechner schauen, welche Daten sich auf dem Datenträger befinden."
           },
           {
             "name": "card8",
             "text": [
-              "Den USB-Stick in Ihren PC stecken um heraus zu finden, wem er gehört und ob etwas wichtiges darauf ist."
+              "Den USB-Stick in Ihren PC stecken, um heraus zu finden wem er gehört und ob etwas Wichtiges darauf ist."
             ],
             "points": -5,
             "nextEvent": 3,
             "nextImage": "string",
             "nextEventText": 0,
             "image": "mouseAction",
-            "feedback": "Das ist das denkbar schlechteste was Sie tun können. Schadcode kann direkt ins Office-Netz und dann Hackern Zugang ermöglichen, die sich bis zur Feldebene runter arbeiten können."
+            "feedback": "Das ist das denkbar Schlechteste was Sie tun können. Schadcode kann direkt ins Office-Netz und dann Hackern Zugang ermöglichen, die sich bis zur Feldebene runter arbeiten können."
           },
           {
             "name": "card9",
@@ -131,7 +131,7 @@
             "nextImage": "string",
             "nextEventText": 3,
             "image": "network",
-            "feedback": "Das ist das beste was Sie machen können, weil so ihr Unternehmens- und Produktionsnetz sicher bleiben."
+            "feedback": "Das ist das Beste was Sie machen können, weil so das Unternehmens- und das Produktionsnetz sicher bleiben."
           }
         ]
       },
@@ -170,7 +170,7 @@
       "3": {
         "name": "event4",
         "text": [
-          "Die IT-Abteilung prüft den Stick und entdeckt Malware. Leider haben Sie den infizierten Datenträger bereits in Ihren PC gesteckt und somit das gesamte Netz infiziert. Die Produktion wird leicht beeinträchtigt während die Malware entfert wird. Zum Glück wurde es noch frühzeitig erkannt, sodass keine weiteren Schäden entstehen.",
+          "Die IT-Abteilung prüft den Stick und entdeckt Malware. Leider haben Sie den infizierten Datenträger bereits in Ihren PC gesteckt und somit das gesamte Netz infiziert. Die Produktion wird leicht beeinträchtigt während die Malware entfernt wird. Zum Glück wurde es noch frühzeitig erkannt, sodass keine weiteren Schäden entstehen.",
           "Sie geben ihn bei der Fundstelle ab. Der Besitzer wird sich bestimmt freuen ihn wiederzubekommen. Eine Woche später erhalten Sie die Meldung, dass von Ihrem Arbeitsrechner aus Malware ins Netzwerk eingeschleust wurde. Die Produktion wurde lahmgelegt und erheblicher Schaden verursacht. Ihr Chef gibt Ihnen eine Abmahnung."
         ],
         "cards": [
@@ -189,11 +189,11 @@
       "4": {
         "name": "event5",
         "text": [
-          "Es kommt heraus, dass auf dem USB-Stick Schadcode war und Ihr Kollege den Stick in seinen Computer gesteckt hatte. Als er Firmware für ein SPS darauf bemerkte, steckte er ihn ins ICS, wodurch die Produktion für mehrere Tage komplett lahmgelegt wurde.",
+          "Es kommt heraus, dass auf dem USB-Stick Schadcode war und Ihr Kollege den Stick ahnungslos in seinen Computer gesteckt hatte. Als er Firmware für ein SPS darauf bemerkte, steckte er ihn ins ICS, wodurch die Produktion für mehrere Tage komplett lahmgelegt wurde.",
           "Einige Tage später erfahren Sie, dass es ein Stick der Firma mit wichtigen Dokumenten war. Ihr Chef ist nicht erfreut.",
           "In der IT-Abteilung wird der Stick gescannt und Schadcode gefunden. Zum Glück haben Sie ihn nicht in Ihren Computer gesteckt.",
           "Sie prüfen den Stick in dem von Ihnen eingerichteten isolierten Netzwerk auf einem extra dafür vorgesehenen Rechner und der Virenscanner erkennt Schadcode. Gut, dass Sie ihn nicht auf Ihrem Arbeitsrechner geprüft haben.",
-          "Auf dem Stick war Schadcode und Ihr Kollege hat ihn in seinen Arbeitsrechner eingesteckt, zum zu schauen, was drauf ist. Aber zum Glück haben Sie Whitelisting umgesetzt, sodass der USB-Stick keinen Schadenanrichten konnte."
+          "Auf dem Stick war Schadcode und Ihr Kollege hat ihn  in seinen Arbeitsrechner eingesteckt, um zu schauen was drauf ist. Aber zum Glück haben Sie Whitelisting umgesetzt, sodass der USB-Stick keinen Schaden anrichten konnte."
         ],
         "cards": [
           {
@@ -222,7 +222,7 @@
             "nextImage": "string",
             "nextEventText": 1,
             "image": "boss",
-            "feedback": "Sie sollten Datenträger die nur zum Gebrauch von firmenrelevanten Dingen nie mit nach Hause nehmen, da die Gefahr hoch ist, dass der Datenträger übers Heimnetzwerk oder sogar öffentliche Netzwerke unterwegs mit Schadcode infiziert wird."
+            "feedback": "Sie sollten Datenträger, die nur zum Gebrauch von firmenrelevanten Dingen gedacht sind nie mit nach Hause nehmen, da die Gefahr hoch ist, dass der Datenträger übers Heimnetzwerk oder sogar öffentliche Netzwerke unterwegs mit Schadcode infiziert wird."
           },
           {
             "name": "card14",
@@ -253,10 +253,10 @@
       "6": {
         "name": "event7",
         "text": [
-          "Dadurch, dass Sie von Zuhause weitergearbeitet haben und mit Ihrem Heimnetzwerk verbunden waren, dadurch wurde der USB-Stick infiziert und beim Anschließen an den Arbeitsrechner im Unternehmen wurde das Office-Netz dort infiziert. Das ermöglicht dem Hacker Informationen über das ICS zu sammeln und Schwachstellen auszunutzen, was die Produktion beeinträchtigen kann.",
-          "Auf dem Weg von der Arbeitsstelle nach Hause, werden Sie bestohlen und unter den verlorenen Gütern befindet sich auch der Unternehmensdatenträger. Weil Sie keine Verschlüsselung eingerichtet haben, kann der Dieb einfach darauf zugreifen und Schwachstellen in der Unternehmensinfrastruktur entdecken und ausnutzen. Das kann sogar dazu führen, dass die Produktion beeinträchtigt und im schlimmsten Fall lahmgelegt wird.",
+          "Dadurch, dass Sie von Zuhause weitergearbeitet haben und mit Ihrem Heimnetzwerk verbunden waren, wurde der USB-Stick infiziert und beim Anschließen an den Arbeitsrechner im Unternehmen, konnte Schadcode in das Office-Netz dringen. Das ermöglicht dem Hacker Informationen über das ICS zu sammeln und Schwachstellen auszunutzen, was die Produktion beeinträchtigen kann.",
+          "Auf dem Weg von der Arbeitsstelle nach Hause, werden Sie bestohlen und unter den verlorenen Sachen befindet sich auch der Unternehmensdatenträger. Weil Sie keine Verschlüsselung eingerichtet haben, kann der Dieb einfach darauf zugreifen und Schwachstellen in der Unternehmensinfrastruktur entdecken und ausnutzen. Das kann sogar dazu führen, dass die Produktion beeinträchtigt und im schlimmsten Fall lahmgelegt wird.",
           "Nachdem Sie den Arbeitsplatz verlassen haben, wird Ihr USB-Stick von einem Praktikanten genommen, der etwas missverstanden hat, was seine Anweisungen angingen. Er steckt den Stick in den Zentralrechner, der die SPS kontrolliert. Die Produktion wird gestört.",
-          "Als Sie nach dem Wochenende wiederkommen ist der Datenträger weg.",
+          "Als Sie nach dem Wochenende wiederkommen ist der Datenträger weg. Sie haben keinen Schimmer wo er sein könnte und finden ihn nach langem Suchen auch nicht wieder.",
           "Beruhigt können Sie ins Wochenede, in dem Wissen, dass der USB-Stick gut aufgehoben ist. Wer weiß, wer alles am Wochenende dort rumläuft."
         ],
         "cards": [
@@ -332,10 +332,10 @@
         "text": [
           "Nach einigen Tagen erfahren Sie, dass der Rechner des Auftraggebers mit Schadcode infiziert war und nun das Unternehmensnetz infiziert ist. Es gelingt einem Hacker Daten über das ICS herauszufinden und dadurch die Produktion maßgeblich zu beeinträchtigen.",
           "Nach dem Scan gibt es keine Auffälligkeiten. Was wollen Sie jetzt tun?",
-          "Er bemerkt Ihre Vorsicht und versichtert Ihnen, dass er nur kurz seine Mails checken möchte, da er eine wichtige geschäftliche Mail erwartet. Leider ist ihm nicht bewusst, dass auf seinem Laptop sich ein Schadprogramm befindet. Durch den Netzwerkzugang gelingt es dem Programm sich im gesamten Netz auszubreiten und Daten über das ICS zu sammeln. Durch die gesammelten Informationen gelingt es einem Hacker die Produktion zu beeinträchtigen.",
-          "Er empfindet Ihre Verweigerung als unhöflich, weil er es als Misstrauen interpretiert und hinterfragt seine Entscheidung Sie zu beauftragen. Sie erklären ihm daraufhin, dass es ein Sicherheitsrisiko darstellt mehr Geräte als nötig im Netzwerk zu haben, besonders Geräte, die auch mit anderen Netzwerken in Berührung kommen. Daraufhin ist er von Ihrem voraussichtlichen Handeln beeindruckt.",
+          "Er bemerkt Ihre Vorsicht und versichert Ihnen, dass er nur kurz seine Mails checken möchte, da er eine wichtige geschäftliche Mail erwartet. Leider ist ihm nicht bewusst, dass sich auf seinem Laptop ein Schadprogramm befindet. Durch den Netzwerkzugang gelingt es dem Programm sich im gesamten Netz auszubreiten und Daten über das ICS zu sammeln. Durch die gesammelten Informationen gelingt es einem Hacker die Produktion zu beeinträchtigen.",
+          "Er empfindet Ihre Verweigerung als unhöflich, weil er es als Misstrauen interpretiert und hinterfragt seine Entscheidung Sie zu beauftragen. Sie erklären ihm daraufhin, dass es ein Sicherheitsrisiko darstellt mehr Geräte als nötig im Netzwerk zu haben, besonders Geräte, die auch mit anderen Netzwerken in Kontakt kommen. Daraufhin ist er von Ihrem vorausschauendem Handeln beeindruckt.",
           "Nach einiger Zeit kommt Ihr Auftraggeber wieder vorbei. Da er das Passwort fürs WLAN gespeichert hat, loggt er seinen Laptop ohne vorherige Prüfung ins Netz ein. In der Zwischenzeit ist Schadcode auf seinen Laptop gekommen und dieser Schadcode gelangt somit ins Netz. Die Folge: Informationen werden über die Anlage an einen Hacker weitergegeben, wodurch dieser es schafft die Anlage zu hacken und die Produktion lahmzulegen.",
-          "Alles im grünen Bereich. Allerdings sollten Sie wissen, dass Virenscanner zwar sehr hilfreich und lohnenswert sind, aber nicht immer alle Schadsoftware erkennen. Sie prüfen nur auf bereits bekannte Malware, was bedeutet, dass neu entwickelter Schadcode unentdeckt bleibt und sich ins System einschleusen kann."
+          "Alles im grünen Bereich. Allerdings sollten Sie wissen, dass Virenscanner zwar sehr hilfreich und lohnenswert sind, aber nicht immer Schadsoftware erkennen. Sie prüfen nur auf bereits bekannte Malware, was bedeutet, dass neu entwickelter Schadcode unentdeckt bleibt und sich ins System einschleusen kann."
         ],
         "cards": [
           {
@@ -351,7 +351,7 @@
       "9": {
         "name": "event10",
         "text": [
-          "Sie erhalten von dem Dienstleister, der bei Ihnen in der Firma für die Wartung einer Anlage verantwortlich ist, per Email die Benachrichtigung, dass er Ihnen einen Stick zukommen lassen wird mit einem Sicherheitsupdate für die Anlage. Bald darauf erhalten Sie den angekündigten USB-Stick per Post. Was tuen Sie?"
+          "Sie erhalten von dem Dienstleister, der bei Ihnen in der Firma für die Wartung einer Anlage verantwortlich ist, per Email die Benachrichtigung, dass er Ihnen einen Stick zukommen lassen wird mit einem Sicherheitsupdate für die Anlage. Bald darauf erhalten Sie den angekündigten USB-Stick per Post. Was tun Sie?"
         ],
         "cards": [
           {
@@ -364,7 +364,7 @@
             "nextImage": "string",
             "nextEventText": 0,
             "image": "devices",
-            "feedback": "Das alleinige kopieren schützt nicht vor potientiellem Schadcode, der auf dem Wechseldatenträger ist. Man muss zusätzliche Prüfungen und Scanns durchführen, damit man sicher sein kann, das der Datenträger sauber ist."
+            "feedback": "Das alleinige Kopieren schützt nicht vor potientiellem Schadcode, der auf dem Wechseldatenträger ist. Man muss zusätzliche Prüfungen und Scanns durchführen, damit man sicher sein kann, dass der Datenträger frei von Malware ist."
           },
           {
             "name": "card21",
@@ -408,14 +408,14 @@
             "nextImage": "string",
             "nextEventText": 0,
             "image": "browse",
-            "feedback": "Sie müssen immer Datenträger prüfen, bevor Sie ihn in den Prozessleitrechner oder auch den Arbeitsrechner reinstecken. Denn es ist möglich, dass beim Reinstecken ein Hintergrundprogramm ausgeführt wird und so Schadcode auf die Anlage oder den Computer überträgt"
+            "feedback": "Sie müssen immer Datenträger prüfen, bevor Sie ihn in den Prozessleitrechner oder auch den Arbeitsrechner reinstecken. Denn es ist möglich, dass beim Reinstecken ein Hintergrundprogramm ausgeführt wird und so Schadcode auf die Anlage oder den Computer überträgt."
           }
         ]
       },
       "11": {
         "name": "event12",
         "text": [
-          "Es macht sicherheitstechnisch keinen Unterschied, ob der Stick direkt oder eine Kopie vom Stick in den Leitrechner gesteckt wird. Auf dem Stick war Schadcode drauf, der beim Einstecken und ausführen des Programms auf den Leitrechner übergegangen ist. Auch wenn der Absender nicht absichtlich Schadcode auf den Stick geladen hat, kann es vorkommen, dass beim Draufladen oder beim Transport Malware auf Datenträger drauf kommen.",
+          "Es macht sicherheitstechnisch keinen Unterschied, ob der Stick direkt oder eine Kopie vom Stick in den Leitrechner gesteckt wird. Auf dem Stick war Schadcode drauf, der allein beim Einstecken den Leitrechner infiziert hat. Auch wenn der Absender nicht absichtlich Schadcode auf den Stick geladen hat, kann es vorkommen, dass beim Aufspielen von Software oder beim Transport Malware auf Datenträger gelangen.",
           "Das System läuft problemlos und sicher."
         ],
         "cards": [
@@ -445,7 +445,7 @@
             "nextImage": "string",
             "nextEventText": 0,
             "image": "deleted",
-            "feedback": "Beim einfachen Löschen können die gelöschten Daten wieder hergestellt werden. Wenn ein Hacker an die Daten kommt, kann er Schwachstellen im System finden und sie ausnutzen, um das Unternehmen zu erpressen oder die Produktion zu stören."
+            "feedback": "Beim einfachen Löschen können die gelöschten Daten wiederhergestellt werden. Wenn ein Hacker an die Daten kommt, kann er Schwachstellen im System finden und sie ausnutzen, um das Unternehmen zu erpressen oder die Produktion zu stören."
           },
           {
             "name": "card25",
@@ -480,17 +480,17 @@
             "nextEvent": 14,
             "nextEventText": 3,
             "image": "alert",
-            "feedback": "Man sollte vermeiden wertvolle Firmendaten mit sich herumzutragen, denn in den falschen Händen kann erheblicher Schaden enstehen. Ein Hacker könnte Schwachstellen in der Infrastruktur erkennen, ausnutzen und den Produktionsprozess stören oder sogar lahmlegen."
+            "feedback": "Man sollte vermeiden wertvolle Firmendaten mit sich herumzutragen, denn in den falschen Händen kann erheblicher Schaden entstehen. Ein Hacker könnte Schwachstellen in der Infrastruktur erkennen, ausnutzen und den Produktionsprozess stören oder sogar lahmlegen."
           }
         ]
       },
       "13": {
         "name": "event14",
         "text": [
-          "Beim einfachen Löschen können die gelöschten Daten wieder hergestellt werden und dadurch, wenn ein Hacker an die Daten kommt, Schwachstellen im System finden und sie ausnutzen um das Unternehmen zu erpressen oder die Produktion zu stören oder Hardware-Komponenten so stark beeinträchtigen, dass im schlimmsten Fall Menschleben gefährdet werden.",
+          "Beim einfachen Löschen können die gelöschten Daten wieder hergestellt werden und dadurch, wenn ein Hacker an die Daten kommt, Schwachstellen im System finden und sie ausnutzen, um das Unternehmen zu erpressen oder die Produktion zu stören.",
           "Eine unerfahrene Person wird die Daten sicherlich nicht wiederherstellen können, aber mit genügend know-how ist es dennoch möglich. Mit den Daten selbst kann viel Unfug angestellt werden, sodass die Anlage beeinflusst werden kann.",
           "Das ist tatsächlich die beste Option, da die Daten wirklich nicht wiederherstellbar sind.",
-          "Der Gedankengang ist nachvollziehbar, jedoch sollte man vermeiden wertvolle Firmendaten mit sich herumzutragen, denn in den falschen Händen kann erheblicher Schaden enstehen. Ein Hacker könnte Schwachstellen in der Infrastruktur erkennen, ausnutzen und den Produktionsprozess stören."
+          "Der Gedankengang ist nachvollziehbar, jedoch sollte man vermeiden wertvolle Firmendaten mit sich herumzutragen, denn in den falschen Händen kann erheblicher Schaden entstehen. Ein Hacker könnte Schwachstellen in der Infrastruktur erkennen, ausnutzen und den Produktionsprozess stören."
         ],
         "cards": [
           {
@@ -531,19 +531,7 @@
             "nextImage": "string",
             "nextEventText": 2,
             "image": "devices",
-            "feedback": "Dadurch können Sie sicher gehen, dass die Zugangsdaten nicht gespeichert werden und die andere Person nicht ohne vorherige Prüfung ins Netz kommt. Dennoch ist es besser externe Geräte gar nicht erst ins Netzwerk zu lassen. Wenn wichtige Daten ausgetauscht werden müssen, sollten Sie einen Wechseldatenträger dafür wählen, für den die alle möglichen Sicherheitsmaßnahmen umgesetzt werden. Denn Virenscanner schließen Schadcode nicht zu 100% aus."
-          },
-          {
-            "name": "card19",
-            "text": [
-              "Sie weigern sich ihm die Zugangsdaten zu geben."
-            ],
-            "points": 3,
-            "nextEvent": 9,
-            "nextImage": "string",
-            "nextEventText": 3,
-            "image": "alert",
-            "feedback": "Das ist die beste Entscheidung, die Sie treffen können. Denn externe Geräte sollten keinen direkten Zugang zum Netzwerk bekommen. Allerdings war der Scan vorher nicht nötig. Wichtige Daten sollten über Wechseldatenträger ausgetauscht werden, für die alle notwendigen Sicherheitsmaßnahmen umgesetzt werden."
+            "feedback": "Dadurch können Sie sicher gehen, dass die Zugangsdaten nicht gespeichert werden und die andere Person nicht ohne vorherige Prüfung ins Netz kommt. Dennoch ist es besser externe Geräte gar nicht erst ins Netzwerk zu lassen. Wenn wichtige Daten ausgetauscht werden müssen, sollten Sie einen Wechseldatenträger dafür wählen, für den alle möglichen Sicherheitsmaßnahmen umgesetzt werden. Denn es gibt auch Schadcode, den Virenscanner nicht erkennen."
           }
         ]
       }
