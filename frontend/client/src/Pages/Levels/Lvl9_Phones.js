@@ -42,7 +42,7 @@ function Lvl9_Phones(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicate.includes(card.name)));
+        setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards.filter(card => !duplicate.includes(card.name))));
     }, [currentEvent]);
 
     React.useEffect(() => {
