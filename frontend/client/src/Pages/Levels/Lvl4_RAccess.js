@@ -53,7 +53,7 @@ function Lvl4_RAccess(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)));
+        setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name))));
     }, [currentEvent]);
 
     React.useEffect(() => {

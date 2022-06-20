@@ -54,13 +54,13 @@ function Lvl3_Devices(props) {
 
         //set cards 
         if (currentEvent === 1)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name))); //don't show already used cards
+            setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards.filter(card => !duplicates.includes(card.name)))); //don't show already used cards
         else if (!isolatedNetwork) {
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => (card.name !== "card10" && card.name !== "card21"))); // two events have one card less
+            setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards.filter(card => (card.name !== "card10" && card.name !== "card21")))); // two events have one card less
         } else if (isIsolatedChecked)
-            setCurrentCards(level.level.events[currentEvent - 1].cards.filter(card => card.name !== ("card23"))); //event11
+            setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards.filter(card => card.name !== ("card23")))); //event11
         else
-            setCurrentCards(level.level.events[currentEvent - 1].cards);
+            setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards));
     }, [currentEvent, eventTextNumber]);
 
     const handleAnswerButtonClick = (cardOption) => {

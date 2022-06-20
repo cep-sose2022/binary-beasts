@@ -43,7 +43,7 @@ function Lvl10_Phishing(props) {
 
     React.useEffect(() => {
         setEventText(level.level.events[currentEvent - 1].text[eventTextNumber]);
-        setCurrentCards(level.level.events[currentEvent - 1].cards);
+        setCurrentCards(lib.shuffle(level.level.events[currentEvent - 1].cards));
     }, [currentEvent]);
 
     const handleAnswerButtonClick = (cardOption) => {
