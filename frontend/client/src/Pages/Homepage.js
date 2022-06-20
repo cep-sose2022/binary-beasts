@@ -52,7 +52,7 @@ function Home(props) {
 
           <div id="accountgrid">
             <div id="account" className="box2">
-            {!loggedIn ? <p>Wenn Sie noch nicht registriert sind, können Sid ihren gewünschten Nicknamen und ein Pin in die Login-Maske eingeben</p> : <p></p>}
+            {!loggedIn ? <p>Wenn Sie noch nicht registriert sind, können Sie Ihren gewünschten Nicknamen und einen Pin in die Login-Maske eingeben</p> : <p></p>}
               {
                 localStorage.getItem("username") === null && // hide login-form when logged in
                 <div id="user-login">
